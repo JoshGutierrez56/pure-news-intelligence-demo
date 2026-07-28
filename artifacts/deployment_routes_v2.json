@@ -1,0 +1,137 @@
+[
+    {
+        "Route":  "/",
+        "Status":  200,
+        "Bytes":  8619
+    },
+    {
+        "Route":  "/demo/professor_presentation.html",
+        "Status":  200,
+        "Bytes":  26161
+    },
+    {
+        "Route":  "/demo/ranked_change_feed.html",
+        "Status":  200,
+        "Bytes":  12100
+    },
+    {
+        "Route":  "/demo/case_studies.html",
+        "Status":  200,
+        "Bytes":  8569
+    },
+    {
+        "Route":  "/demo/case_study_walkthrough.html",
+        "Status":  200,
+        "Bytes":  6281
+    },
+    {
+        "Route":  "/demo/company_comparison.html",
+        "Status":  200,
+        "Bytes":  31651
+    },
+    {
+        "Route":  "/demo/company_timeline.html",
+        "Status":  200,
+        "Bytes":  7828
+    },
+    {
+        "Route":  "/demo/research_results.html",
+        "Status":  200,
+        "Bytes":  8865
+    },
+    {
+        "Route":  "/demo/methodology.html",
+        "Status":  200,
+        "Bytes":  9509
+    },
+    {
+        "Route":  "/demo/innovation_framework.html",
+        "Status":  200,
+        "Bytes":  7265
+    },
+    {
+        "Route":  "/demo/pilot_plan.html",
+        "Status":  200,
+        "Bytes":  6539
+    },
+    {
+        "Route":  "/demo/professor_materials.html",
+        "Status":  200,
+        "Bytes":  4428
+    },
+    {
+        "Route":  "/demo/private_workspace.html",
+        "Status":  200,
+        "Bytes":  922950
+    },
+    {
+        "Route":  "/demo/materials/project_summary.html",
+        "Status":  200,
+        "Bytes":  2179
+    },
+    {
+        "Route":  "/demo/materials/research_results_summary.html",
+        "Status":  200,
+        "Bytes":  2047
+    },
+    {
+        "Route":  "/demo/materials/customer_discovery_summary.html",
+        "Status":  200,
+        "Bytes":  1660
+    },
+    {
+        "Route":  "/demo/materials/discussion_questions.html",
+        "Status":  200,
+        "Bytes":  1090
+    },
+    {
+        "Route":  "/demo/materials/feedback_worksheet.html",
+        "Status":  200,
+        "Bytes":  1193
+    },
+    {
+        "Route":  "/demo/data/changes.json",
+        "Status":  200,
+        "Bytes":  913032
+    },
+    {
+        "Route":  "/demo/evidence_packets/01_TFC.html",
+        "Status":  200,
+        "Bytes":  7346
+    },
+    {
+        "Route":  "/demo/evidence_packets/02_KHC.html",
+        "Status":  200,
+        "Bytes":  7521
+    },
+    {
+        "Route":  "/demo/evidence_packets/03_DLTR.html",
+        "Status":  200,
+        "Bytes":  6273
+    },
+    {
+        "Route":  "/demo/evidence_packets/04_DVN.html",
+        "Status":  200,
+        "Bytes":  6370
+    },
+    {
+        "Route":  "/demo/evidence_packets/05_RH.html",
+        "Status":  200,
+        "Bytes":  7948
+    },
+    {
+        "Route":  "/demo/evidence_packets/06_FCX.html",
+        "Status":  200,
+        "Bytes":  8520
+    },
+    {
+        "Route":  "/demo/evidence_packets/07_EFX.html",
+        "Status":  200,
+        "Bytes":  7877
+    },
+    {
+        "Route":  "/demo/evidence_packets/08_CHE.html",
+        "Status":  200,
+        "Bytes":  6572
+    }
+]

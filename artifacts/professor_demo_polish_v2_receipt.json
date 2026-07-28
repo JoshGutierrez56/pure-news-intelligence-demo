@@ -1,0 +1,89 @@
+{
+  "repository": "JoshGutierrez56/pure-news-intelligence-demo",
+  "branch": "feat/professor-demo-polish-v2",
+  "deployment_branch": "gh-pages",
+  "starting_commit": "1a8399dbded190197cd466a4d6643b4b361eabfc",
+  "final_commit": "69abfbaebb08d913f52e581c0eb26376ca9426d9",
+  "final_commit_scope": "validated product, content, tests, screenshots, and initial reports; this receipt and deployment report are a documentation-only follow-up",
+  "files_changed": {
+    "validated_commit_count": 78,
+    "required_pages": [
+      "demo/professor_presentation.html",
+      "demo/ranked_change_feed.html",
+      "demo/case_studies.html",
+      "demo/research_results.html",
+      "demo/methodology.html",
+      "demo/innovation_framework.html",
+      "demo/pilot_plan.html",
+      "demo/professor_materials.html",
+      "demo/assets/style.css",
+      "demo/assets/app.js",
+      "README.md"
+    ],
+    "additional_pages": [
+      "demo/case_study_walkthrough.html",
+      "demo/materials/project_summary.html",
+      "demo/materials/research_results_summary.html",
+      "demo/materials/customer_discovery_summary.html",
+      "demo/materials/discussion_questions.html",
+      "demo/materials/feedback_worksheet.html"
+    ],
+    "frozen_files_changed": 0
+  },
+  "tests_passed": {
+    "playwright": "17/17",
+    "responsive_overflow_checks": "84/84",
+    "public_deployment_routes": "27/27 HTTP 200",
+    "console_errors": 0,
+    "broken_internal_links": 0,
+    "npm_audit_vulnerabilities": 0
+  },
+  "accessibility_results": {
+    "lighthouse_overview": 100,
+    "lighthouse_professor_presentation": 100,
+    "lighthouse_ranked_feed": 100,
+    "axe_serious": 0,
+    "axe_critical": 0,
+    "keyboard_traps": 0
+  },
+  "reconciled_metrics": {
+    "issuer_disjoint_companies": 150,
+    "consecutive_10k_pairs": 150,
+    "evidence_backed_changes": 995,
+    "high_confidence_changes": 629,
+    "verified_excerpt_offsets": 1990,
+    "previously_disclosed": 394,
+    "genuinely_new_relative_to_study_sources": 342,
+    "partially_anticipated": 243,
+    "unclear": 16,
+    "completed_case_studies": 8,
+    "timing_violations": 0
+  },
+  "screenshot_hashes": {
+    "count": 40,
+    "manifest": "artifacts/screenshot_hashes_v2.json",
+    "manifest_sha256": "DF1794866D81C739A0F704E148F7DFBB2B1C759D7828E8BE3B8F54886D4D4616",
+    "directory": "artifacts/screenshots/v2"
+  },
+  "deployment_urls": {
+    "overview": "https://joshgutierrez56.github.io/pure-news-intelligence-demo/",
+    "professor_presentation": "https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/professor_presentation.html",
+    "ranked_feed": "https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/ranked_change_feed.html",
+    "case_studies": "https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/case_studies.html",
+    "innovation_framework": "https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/innovation_framework.html",
+    "pilot_plan": "https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/pilot_plan.html",
+    "professor_materials": "https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/professor_materials.html"
+  },
+  "research_integrity_audit": {
+    "changes_json_sha256": "17D3EC79EA48D8AFFA42F6F8A6B775B52A285736BF65853AE849BDB760211271",
+    "all_995_records_preserved": true,
+    "all_8_evidence_packets_preserved": true,
+    "source_links_preserved": true,
+    "novelty_classifications_preserved": true,
+    "point_in_time_boundaries_preserved": true,
+    "locked_results_preserved": true,
+    "unsupported_claims_added": false,
+    "final_research_classification": "INSUFFICIENT_EVIDENCE"
+  },
+  "final_status": "PROFESSOR_DEMO_V2_READY"
+}
