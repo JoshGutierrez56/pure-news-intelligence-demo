@@ -15,6 +15,11 @@
     "capex": ["capital expenditure", "capex", "construction", "development spend"],
     "new risk factor": ["risk factor", "material risk", "could adversely affect"]
   };
+  const PRIVATE_CATEGORY_PRIORITY = [
+    "going concern/distress", "impairment", "cyber/operations",
+    "litigation/regulatory", "covenant/facility", "debt/refinancing",
+    "liquidity", "restructuring", "capex", "new risk factor"
+  ];
   const ITEM_LABELS = {
     "1.01": "entry into a material agreement",
     "1.02": "termination of a material agreement",
@@ -34,48 +39,42 @@
     "8.01": "another material corporate event",
     "9.01": "financial statements or exhibits"
   };
-  const FILING_WHY = {
-    acquisition_disposition: "Transactions can change the issuer's asset mix, leverage, integration risk, and forward earnings base.",
-    financing_capital_structure: "Financing events can alter liquidity, refinancing risk, dilution, interest expense, and covenant headroom.",
-    governance_executive: "Leadership and governance changes can affect oversight, succession, strategy, and accountability.",
-    legal_regulatory: "Legal or regulatory developments can create cash costs, operating constraints, remediation work, or reputational exposure.",
-    operational: "Operating events can affect capacity, continuity, costs, customer delivery, and near-term execution.",
-    earnings_related: "Results disclosures can reset expectations for revenue, margins, cash generation, and guidance.",
-    other: "The filing may contain a material corporate update that warrants source review before changing an investment view."
-  };
-  const ITEM_WHY = {
-    "1.01": FILING_WHY.financing_capital_structure,
-    "1.02": FILING_WHY.operational,
-    "2.01": FILING_WHY.acquisition_disposition,
-    "2.02": FILING_WHY.earnings_related,
-    "2.03": FILING_WHY.financing_capital_structure,
-    "2.04": FILING_WHY.financing_capital_structure,
-    "2.05": FILING_WHY.operational,
-    "2.06": "A material impairment can reset asset values, earnings, covenant calculations, and assumptions about business economics.",
-    "3.01": "A listing notice can affect market access, liquidity, index eligibility, and the risk of delisting.",
-    "4.01": "An auditor change can warrant review of accounting oversight, transition risk, and the circumstances behind the change.",
-    "4.02": "Non-reliance means previously issued financial statements should not be used until the accounting issue is resolved.",
-    "5.02": FILING_WHY.governance_executive,
-    "5.03": FILING_WHY.governance_executive,
-    "5.07": FILING_WHY.governance_executive,
-    "7.01": "Regulation FD material often contains investor-facing operating or strategic information that can update expectations.",
-    "8.01": FILING_WHY.other
+  const ITEM_DILIGENCE = {
+    "1.01": "Read the agreement and exhibits: identify economics, counterparties, term, termination rights, covenants, and conditions.",
+    "1.02": "Quantify lost economics, termination payments, replacement options, and the operating dependency that ended.",
+    "2.01": "Rebuild transaction economics: price, consideration mix, financing, acquired earnings, synergies, integration costs, and closing adjustments.",
+    "2.02": "Compare reported revenue, margins, EPS, cash flow, and guidance with consensus and the prior period; isolate the source of the variance.",
+    "2.03": "Add the obligation to the debt schedule; verify principal, rate, maturity, security, covenants, permitted use, and incremental interest expense.",
+    "2.04": "Check the trigger, accelerated amount, cure period, cross-defaults, liquidity available, and creditor remedies.",
+    "2.05": "Quantify cash versus non-cash charges, expected savings, timing, payback, and execution or revenue risk.",
+    "2.06": "Identify the impaired asset, charge size, valuation assumptions, cash implications, and covenant or tax effects.",
+    "3.01": "Check the exchange requirement, cure period, compliance plan, financing implications, and probability of delisting.",
+    "4.01": "Review the reason for the auditor change, disagreements, reportable events, transition timing, and any control implications.",
+    "4.02": "Stop relying on the affected statements; identify periods and accounts involved, expected restatement size, control failures, and covenant effects.",
+    "5.02": "Establish whether the change was planned or abrupt; review succession, interim authority, incentives, strategy continuity, and stated reasons.",
+    "5.03": "Read the amendment for changes to shareholder rights, governance protections, voting, authorization, or takeover defenses.",
+    "5.07": "Compare vote outcomes with management recommendations and prior support; flag failed proposals or unusually high dissent.",
+    "7.01": "Open the furnished material and identify the actual KPI, guidance, financing, or strategic update; Item 7.01 alone does not reveal content.",
+    "8.01": "Open the filing and exhibits before escalating; Item 8.01 alone does not identify the underlying event.",
+    "9.01": "Use the exhibits as the primary evidence for terms, financial statements, presentations, or press releases."
   };
   const NEWS_RULES = [
-    { label: "earnings or guidance", terms: /earnings|revenue|profit|sales|guidance|quarter|eps|forecast/i,
-      why: "Earnings and guidance news can change estimates, valuation inputs, and the market's view of operating momentum." },
+    { label: "market recap or listicle", terms: /stock moves|ascends while market falls|market dipped|gained today|what you should know|best stocks|stocks? of 20\d\d|shares (rose|fell|rise|fall)|up today|down today/i,
+      why: "Low-information headline: no company-reported fundamental change is identified. Treat this as attention or price context only; look for a filing, release, or estimate revision before escalating." },
+    { label: "earnings or guidance", terms: /earnings|revenue|profit|sales|guidance|quarter|eps|forecast|outlook|beat|miss/i,
+      why: "Estimate impact: compare reported and guided revenue, margins, EPS, and cash flow with consensus and the prior period; isolate price, volume, mix, and one-offs." },
     { label: "merger, acquisition, or asset transaction", terms: /acqui|merger|deal|buyout|takeover|divest|sale of|strategic alternative/i,
-      why: "Transaction news can affect valuation, leverage, integration risk, ownership, and the issuer's future earnings base." },
+      why: "Rebuild deal economics: price, consideration and financing, acquired earnings, accretion or dilution, synergies, integration cost, approvals, and closing conditions." },
     { label: "financing or capital structure", terms: /debt|bond|loan|credit|financ|offering|capital raise|dividend|buyback|repurchase/i,
-      why: "Capital-structure news can affect liquidity, refinancing risk, dilution, shareholder distributions, and funding costs." },
+      why: "Update the capital structure: amount, rate or issue price, maturity, dilution, use of proceeds, covenant headroom, and effect on interest expense or shareholder distributions." },
     { label: "legal or regulatory development", terms: /lawsuit|court|legal|regulat|investigation|probe|settlement|fine|antitrust|sec /i,
-      why: "Legal and regulatory news can create cash costs, operating restrictions, remediation obligations, and reputational risk." },
+      why: "Determine procedural stage, alleged conduct, claimed or capped damages, reserve and insurance, operating restrictions, remediation, and appeal path." },
     { label: "management or governance change", terms: /ceo|cfo|chair|director|executive|appoint|resign|board|management/i,
-      why: "Leadership changes can alter strategy, execution, succession planning, incentives, and governance oversight." },
+      why: "Check whether the transition was planned or abrupt, who holds interim authority, stated reasons, incentive changes, and implications for strategy or controls." },
     { label: "operating or product development", terms: /launch|product|contract|customer|plant|factory|outage|recall|cyber|breach|production/i,
-      why: "Operating news can affect demand, capacity, costs, customer relationships, business continuity, and execution risk." },
-    { label: "analyst or market commentary", terms: /upgrade|downgrade|price target|analyst|stock|shares|market|bull|bear/i,
-      why: "Market commentary can explain near-term attention or positioning, but analysts should separate opinion from company-reported facts." }
+      why: "Quantify affected revenue, units, capacity, customers, downtime, remediation cost, launch timing, and whether the event changes guidance." },
+    { label: "analyst opinion", terms: /upgrade|downgrade|price target|analyst|bull|bear/i,
+      why: "This is an opinion or estimate signal, not issuer evidence. Identify the analyst's changed assumptions and consensus dispersion before using it." }
   ];
   const state = {
     source: "changes",
@@ -102,6 +101,24 @@
     status.setAttribute("aria-busy", String(busy));
   };
 
+  function compactText(value, limit = 260) {
+    const text = String(value || "").replace(/\s+/g, " ").trim();
+    if (!text || text.length <= limit) return text || "No extractive text is available.";
+    const clipped = text.slice(0, limit + 1);
+    const boundary = Math.max(clipped.lastIndexOf(". "), clipped.lastIndexOf("? "), clipped.lastIndexOf("! "));
+    if (boundary >= 90) return clipped.slice(0, boundary + 1);
+    const word = clipped.lastIndexOf(" ");
+    return `${clipped.slice(0, word > 0 ? word : limit).replace(/[ ,;:]+$/, "")}…`;
+  }
+
+  function joinedItems(codes) {
+    const material = codes.filter((code) => code !== "9.01");
+    const described = material.map((code) => ITEM_LABELS[code]).filter(Boolean);
+    if (!described.length) return `Items ${codes.join(", ") || "not specified"}`;
+    const items = described.slice(0, 3).map((label, index) => `Item ${material[index]} (${label})`);
+    return items.join("; ") + (codes.includes("9.01") ? "; with exhibits" : "");
+  }
+
   function analystContext(record) {
     if (state.source === "changes") {
       return {
@@ -112,31 +129,41 @@
     }
     if (state.source === "sec") {
       const codes = String(record.items || "").split(/\s+/).filter(Boolean);
-      const descriptions = codes.map((code) => ITEM_LABELS[code]).filter(Boolean);
-      const reported = descriptions.length
-        ? descriptions.slice(0, 3).join("; ")
-        : `reported 8-K items ${record.items || "not specified"}`;
+      const primaryCodes = codes.filter((code) => code !== "9.01");
+      const questions = [...new Set(primaryCodes.map((code) => ITEM_DILIGENCE[code]).filter(Boolean))];
       return {
-        summary: `The 8-K reports ${reported}.`,
-        why: FILING_WHY[record.category] || ITEM_WHY[codes.find((code) => ITEM_WHY[code])] || FILING_WHY.other,
-        basis: "Deterministic summary from SEC item codes and event category"
+        summary: `${record.issuer || record.ticker || "The issuer"} filed ${joinedItems(codes)}.`,
+        why: questions.slice(0, 2).join(" ") || "The archive metadata does not identify the event. Open the filing and exhibits before drawing a conclusion.",
+        basis: "SEC-item readout; filing text and exhibits require source review"
       };
     }
     if (state.source === "news") {
       const match = NEWS_RULES.find((rule) => rule.terms.test(record.headline || ""));
-      const label = match?.label || "company or market development";
       return {
-        summary: `Headline reports a ${label}: ${record.headline}`,
-        why: match?.why || "The headline may identify a change in expectations or company circumstances; review the underlying source before changing an investment conclusion.",
-        basis: "Headline-derived summary; publisher article body not available"
+        summary: compactText(record.headline),
+        why: match?.why || "Unclassified headline. Identify the specific financial driver, magnitude, timing, and primary-source confirmation before changing an investment view.",
+        basis: `${match?.label || "unclassified"} · headline-only; publisher article body unavailable`
       };
     }
+    const privateCategory = (record.categories || [])[0];
+    const privateQuestions = {
+      "debt/refinancing": "Extract amount, rate, maturity, security, use of proceeds, and covenant headroom; update interest expense and the maturity schedule.",
+      "liquidity": "Reconcile cash, revolver availability, working capital, and cash burn; stress-test funding runway.",
+      "covenant/facility": "Identify the tested ratio, threshold, headroom, waiver dates, and remedies.",
+      "going concern/distress": "Verify cash runway, default or waiver status, funding dependency, and auditor language.",
+      "impairment": "Identify the asset, charge, valuation assumptions, cash impact, and covenant or tax effects.",
+      "litigation/regulatory": "Identify forum, stage, damages, reserves, insurance, remedies, and operational restrictions.",
+      "cyber/operations": "Determine whether an event occurred, systems or data affected, downtime, recovery cost, and legal exposure.",
+      "restructuring": "Quantify charges, savings, timing, payback, and execution or revenue risk.",
+      "capex": "Quantify spend, timing, funding, free-cash-flow effect, capacity, and expected return.",
+      "new risk factor": "Identify the new exposure, probability, severity, affected financial lines, and mitigants."
+    };
     return {
-      summary: record.excerpt || "No summary available.",
+      summary: compactText(record.excerpt),
       why: (record.categories || []).includes("unclassified")
-        ? "No fixed-rule theme was detected. Analyst review is required."
-        : `The document contains language associated with ${(record.categories || []).join(", ")}; confirm materiality and context in the source.`,
-      basis: "Provisional browser-local classification"
+        ? "No fixed-rule theme was detected. Identify the event, affected financial driver, magnitude, timing, and primary evidence before escalating."
+        : privateQuestions[privateCategory] || `Verify the detected ${(record.categories || []).join(", ")} language against the full document and quantify its financial effect.`,
+      basis: "Provisional browser-local extract; analyst validation required"
     };
   }
 
@@ -205,7 +232,8 @@
     const lower = text.toLowerCase();
     const matches = Object.entries(CATEGORY_PATTERNS)
       .filter(([, terms]) => terms.some((term) => lower.includes(term)))
-      .map(([category]) => category);
+      .map(([category]) => category)
+      .sort((a, b) => PRIVATE_CATEGORY_PRIORITY.indexOf(a) - PRIVATE_CATEGORY_PRIORITY.indexOf(b));
     const severe = /substantial doubt|bankrupt|default|material weakness|ransomware|impairment/i.test(text);
     return {
       categories: matches.length ? matches : ["unclassified"],
