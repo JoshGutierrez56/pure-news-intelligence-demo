@@ -15,6 +15,68 @@
     "capex": ["capital expenditure", "capex", "construction", "development spend"],
     "new risk factor": ["risk factor", "material risk", "could adversely affect"]
   };
+  const ITEM_LABELS = {
+    "1.01": "entry into a material agreement",
+    "1.02": "termination of a material agreement",
+    "2.01": "completion of an acquisition or disposition",
+    "2.02": "results of operations or financial condition",
+    "2.03": "creation of a direct financial obligation",
+    "2.04": "an event accelerating or increasing a financial obligation",
+    "2.05": "costs associated with exit or disposal activities",
+    "2.06": "a material impairment",
+    "3.01": "a listing or continued-listing notice",
+    "4.01": "a change in the registrant's certifying accountant",
+    "4.02": "non-reliance on previously issued financial statements",
+    "5.02": "a director or executive officer change",
+    "5.03": "an amendment to governing documents",
+    "5.07": "submission of matters to a shareholder vote",
+    "7.01": "Regulation FD disclosure",
+    "8.01": "another material corporate event",
+    "9.01": "financial statements or exhibits"
+  };
+  const FILING_WHY = {
+    acquisition_disposition: "Transactions can change the issuer's asset mix, leverage, integration risk, and forward earnings base.",
+    financing_capital_structure: "Financing events can alter liquidity, refinancing risk, dilution, interest expense, and covenant headroom.",
+    governance_executive: "Leadership and governance changes can affect oversight, succession, strategy, and accountability.",
+    legal_regulatory: "Legal or regulatory developments can create cash costs, operating constraints, remediation work, or reputational exposure.",
+    operational: "Operating events can affect capacity, continuity, costs, customer delivery, and near-term execution.",
+    earnings_related: "Results disclosures can reset expectations for revenue, margins, cash generation, and guidance.",
+    other: "The filing may contain a material corporate update that warrants source review before changing an investment view."
+  };
+  const ITEM_WHY = {
+    "1.01": FILING_WHY.financing_capital_structure,
+    "1.02": FILING_WHY.operational,
+    "2.01": FILING_WHY.acquisition_disposition,
+    "2.02": FILING_WHY.earnings_related,
+    "2.03": FILING_WHY.financing_capital_structure,
+    "2.04": FILING_WHY.financing_capital_structure,
+    "2.05": FILING_WHY.operational,
+    "2.06": "A material impairment can reset asset values, earnings, covenant calculations, and assumptions about business economics.",
+    "3.01": "A listing notice can affect market access, liquidity, index eligibility, and the risk of delisting.",
+    "4.01": "An auditor change can warrant review of accounting oversight, transition risk, and the circumstances behind the change.",
+    "4.02": "Non-reliance means previously issued financial statements should not be used until the accounting issue is resolved.",
+    "5.02": FILING_WHY.governance_executive,
+    "5.03": FILING_WHY.governance_executive,
+    "5.07": FILING_WHY.governance_executive,
+    "7.01": "Regulation FD material often contains investor-facing operating or strategic information that can update expectations.",
+    "8.01": FILING_WHY.other
+  };
+  const NEWS_RULES = [
+    { label: "earnings or guidance", terms: /earnings|revenue|profit|sales|guidance|quarter|eps|forecast/i,
+      why: "Earnings and guidance news can change estimates, valuation inputs, and the market's view of operating momentum." },
+    { label: "merger, acquisition, or asset transaction", terms: /acqui|merger|deal|buyout|takeover|divest|sale of|strategic alternative/i,
+      why: "Transaction news can affect valuation, leverage, integration risk, ownership, and the issuer's future earnings base." },
+    { label: "financing or capital structure", terms: /debt|bond|loan|credit|financ|offering|capital raise|dividend|buyback|repurchase/i,
+      why: "Capital-structure news can affect liquidity, refinancing risk, dilution, shareholder distributions, and funding costs." },
+    { label: "legal or regulatory development", terms: /lawsuit|court|legal|regulat|investigation|probe|settlement|fine|antitrust|sec /i,
+      why: "Legal and regulatory news can create cash costs, operating restrictions, remediation obligations, and reputational risk." },
+    { label: "management or governance change", terms: /ceo|cfo|chair|director|executive|appoint|resign|board|management/i,
+      why: "Leadership changes can alter strategy, execution, succession planning, incentives, and governance oversight." },
+    { label: "operating or product development", terms: /launch|product|contract|customer|plant|factory|outage|recall|cyber|breach|production/i,
+      why: "Operating news can affect demand, capacity, costs, customer relationships, business continuity, and execution risk." },
+    { label: "analyst or market commentary", terms: /upgrade|downgrade|price target|analyst|stock|shares|market|bull|bear/i,
+      why: "Market commentary can explain near-term attention or positioning, but analysts should separate opinion from company-reported facts." }
+  ];
   const state = {
     source: "changes",
     records: JSON.parse(document.querySelector("#curated-change-data").textContent),
@@ -39,6 +101,44 @@
     status.textContent = message;
     status.setAttribute("aria-busy", String(busy));
   };
+
+  function analystContext(record) {
+    if (state.source === "changes") {
+      return {
+        summary: record.summary,
+        why: record.why,
+        basis: "Audited disclosure-change classification"
+      };
+    }
+    if (state.source === "sec") {
+      const codes = String(record.items || "").split(/\s+/).filter(Boolean);
+      const descriptions = codes.map((code) => ITEM_LABELS[code]).filter(Boolean);
+      const reported = descriptions.length
+        ? descriptions.slice(0, 3).join("; ")
+        : `reported 8-K items ${record.items || "not specified"}`;
+      return {
+        summary: `The 8-K reports ${reported}.`,
+        why: FILING_WHY[record.category] || ITEM_WHY[codes.find((code) => ITEM_WHY[code])] || FILING_WHY.other,
+        basis: "Deterministic summary from SEC item codes and event category"
+      };
+    }
+    if (state.source === "news") {
+      const match = NEWS_RULES.find((rule) => rule.terms.test(record.headline || ""));
+      const label = match?.label || "company or market development";
+      return {
+        summary: `Headline reports a ${label}: ${record.headline}`,
+        why: match?.why || "The headline may identify a change in expectations or company circumstances; review the underlying source before changing an investment conclusion.",
+        basis: "Headline-derived summary; publisher article body not available"
+      };
+    }
+    return {
+      summary: record.excerpt || "No summary available.",
+      why: (record.categories || []).includes("unclassified")
+        ? "No fixed-rule theme was detected. Analyst review is required."
+        : `The document contains language associated with ${(record.categories || []).join(", ")}; confirm materiality and context in the source.`,
+      basis: "Provisional browser-local classification"
+    };
+  }
 
   async function openPrivateDb() {
     return new Promise((resolve, reject) => {
@@ -161,6 +261,7 @@
     let classification = record.category || (record.categories || []).join(", ") || "Not classified";
     let evidence = "";
     let provenance = "";
+    const context = analystContext(record);
     if (state.source === "changes") {
       evidence = `${record.direction} · ${record.materiality} · confidence ${Number(record.confidence).toFixed(3)}`;
       provenance = `<a href="${escapeHtml(record.url)}" rel="noreferrer">SEC filing</a><br><small>${escapeHtml(record.id)}</small>`;
@@ -182,7 +283,11 @@
       <td><strong>${escapeHtml(issuer)}</strong>${record.ticker ? `<br><small>${escapeHtml(record.ticker)}</small>` : ""}</td>
       <td><span class="source-pill">${escapeHtml(sourceLabel(state.source))}</span></td>
       <td class="record-title"><strong>${escapeHtml(title)}</strong><small>${escapeHtml(evidence)}</small></td>
-      <td>${escapeHtml(classification)}</td>
+      <td class="analyst-context">
+        <p><strong>Short summary</strong><br>${escapeHtml(context.summary)}</p>
+        <p class="why"><strong>Why it matters</strong><br>${escapeHtml(context.why)}</p>
+        <span class="basis-label">${escapeHtml(context.basis)}</span>
+      </td>
       <td class="provenance">${provenance}</td>
     </tr>`;
   }
@@ -231,12 +336,12 @@
       state.archiveCache.set(key, await readGzipJson(partition.path));
     }
     state.records = state.archiveCache.get(key);
+    state.page = 1;
+    render();
     setStatus(
       `${formatNumber(state.records.length)} records loaded for ${year}. Searches run across this complete annual partition.`,
       false
     );
-    state.page = 1;
-    render();
   }
 
   async function selectSource(source) {

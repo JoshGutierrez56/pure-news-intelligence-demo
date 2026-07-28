@@ -106,6 +106,11 @@ footer { max-width: var(--max); margin: 0 auto; padding: 1rem 1.5rem 2rem; color
 .record-title { max-width: 560px; min-width: 300px; }
 .record-title strong { display: block; }
 .record-title small, .provenance { color: var(--slate); overflow-wrap: anywhere; }
+.analyst-context { display: grid; gap: .5rem; min-width: 390px; max-width: 650px; }
+.analyst-context p { margin: 0; }
+.analyst-context strong { display: inline; font-size: .76rem; text-transform: uppercase; letter-spacing: .04em; color: var(--teal); }
+.analyst-context .why { border-left: 3px solid var(--amber); background: #fffaf0; padding: .45rem .55rem; }
+.basis-label { display: inline-flex; width: fit-content; border: 1px solid var(--line); background: var(--surface-alt); color: var(--slate); padding: .1rem .35rem; font-size: .7rem; font-weight: 750; }
 .status-line { border-left: 4px solid var(--teal); background: #eefafa; padding: .65rem .8rem; }
 .status-line[aria-busy="true"] { border-left-color: var(--amber); background: #fffaf0; }
 .ingest-panel { margin: 1.2rem 0; border: 1px solid var(--line); background: white; }
