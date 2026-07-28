@@ -1,0 +1,179 @@
+{
+  "asOf": "2026-07-28",
+  "boundaries": {
+    "news": {
+      "bodySurface": "headline, timestamp, host, and identifiers only",
+      "dateEnd": "2024-12-31",
+      "dateStart": "2015-02-02",
+      "description": "Frozen first-substantive-story news corpus",
+      "providerFullTextExcluded": true,
+      "records": 731682,
+      "recordsWithProviderTextExcluded": 604800
+    },
+    "sec": {
+      "bodySurface": "SEC filing link and text hash; filing body not duplicated",
+      "dateEnd": "2024-12-31",
+      "dateStart": "2012-01-03",
+      "description": "Validated parsed SEC 8-K corpus",
+      "forms": [
+        "8-K"
+      ],
+      "manifestRows": 296120,
+      "parsedRows": 296119,
+      "unresolvedRows": 1
+    }
+  },
+  "schema": "pure-news-public-corpus-catalog.v1",
+  "sources": {
+    "news": {
+      "compressedBytes": 83126847,
+      "partitions": [
+        {
+          "bytes": 293284,
+          "path": "data/news-2015.pni.bin",
+          "records": 2334,
+          "year": 2015
+        },
+        {
+          "bytes": 630093,
+          "path": "data/news-2016.pni.bin",
+          "records": 4924,
+          "year": 2016
+        },
+        {
+          "bytes": 729866,
+          "path": "data/news-2017.pni.bin",
+          "records": 5727,
+          "year": 2017
+        },
+        {
+          "bytes": 973020,
+          "path": "data/news-2018.pni.bin",
+          "records": 7636,
+          "year": 2018
+        },
+        {
+          "bytes": 893116,
+          "path": "data/news-2019.pni.bin",
+          "records": 7049,
+          "year": 2019
+        },
+        {
+          "bytes": 1159472,
+          "path": "data/news-2020.pni.bin",
+          "records": 9689,
+          "year": 2020
+        },
+        {
+          "bytes": 19035198,
+          "path": "data/news-2021.pni.bin",
+          "records": 173068,
+          "year": 2021
+        },
+        {
+          "bytes": 21181845,
+          "path": "data/news-2022.pni.bin",
+          "records": 190218,
+          "year": 2022
+        },
+        {
+          "bytes": 20748064,
+          "path": "data/news-2023.pni.bin",
+          "records": 181437,
+          "year": 2023
+        },
+        {
+          "bytes": 17482889,
+          "path": "data/news-2024.pni.bin",
+          "records": 149600,
+          "year": 2024
+        }
+      ],
+      "records": 731682
+    },
+    "sec": {
+      "compressedBytes": 28867659,
+      "partitions": [
+        {
+          "bytes": 2217769,
+          "path": "data/sec-2012.pni.bin",
+          "records": 22953,
+          "year": 2012
+        },
+        {
+          "bytes": 2288346,
+          "path": "data/sec-2013.pni.bin",
+          "records": 23593,
+          "year": 2013
+        },
+        {
+          "bytes": 2395445,
+          "path": "data/sec-2014.pni.bin",
+          "records": 24631,
+          "year": 2014
+        },
+        {
+          "bytes": 2398927,
+          "path": "data/sec-2015.pni.bin",
+          "records": 24658,
+          "year": 2015
+        },
+        {
+          "bytes": 2250141,
+          "path": "data/sec-2016.pni.bin",
+          "records": 22967,
+          "year": 2016
+        },
+        {
+          "bytes": 2250886,
+          "path": "data/sec-2017.pni.bin",
+          "records": 23023,
+          "year": 2017
+        },
+        {
+          "bytes": 2221641,
+          "path": "data/sec-2018.pni.bin",
+          "records": 22748,
+          "year": 2018
+        },
+        {
+          "bytes": 2114062,
+          "path": "data/sec-2019.pni.bin",
+          "records": 21652,
+          "year": 2019
+        },
+        {
+          "bytes": 2355618,
+          "path": "data/sec-2020.pni.bin",
+          "records": 24167,
+          "year": 2020
+        },
+        {
+          "bytes": 2362642,
+          "path": "data/sec-2021.pni.bin",
+          "records": 24209,
+          "year": 2021
+        },
+        {
+          "bytes": 1996310,
+          "path": "data/sec-2022.pni.bin",
+          "records": 20428,
+          "year": 2022
+        },
+        {
+          "bytes": 2071516,
+          "path": "data/sec-2023.pni.bin",
+          "records": 21176,
+          "year": 2023
+        },
+        {
+          "bytes": 1944356,
+          "path": "data/sec-2024.pni.bin",
+          "records": 19914,
+          "year": 2024
+        }
+      ],
+      "records": 296119
+    }
+  }
+}
