@@ -25,6 +25,8 @@
         <a href="company_comparison.html">Comparisons</a>
         <a href="company_timeline.html">Timelines</a>
         <a href="research_results.html">Research Results</a>
+        <a href="innovation_framework.html">Innovation Framework</a>
+        <a href="pilot_plan.html">Pilot Plan</a>
         <a href="methodology.html">Methodology</a>
         <details class="utility-menu">
           <summary class="menu-button">Experimental tools</summary>
@@ -43,7 +45,7 @@
         <div class="hero-actions">
           <a class="button" href="professor_presentation.html">View guided presentation</a>
           <a class="button secondary" href="#ranked-changes">Explore ranked changes</a>
-          <a class="button ghost" href="evidence_packets/02_KHC.html">Open a case study</a>
+          <button class="button ghost" type="button" data-guided-example>Start guided example</button>
         </div>
       </div>
       <aside class="hero-aside" aria-label="Research boundary summary">
@@ -52,6 +54,19 @@
         <p>Final classification: <strong>INSUFFICIENT_EVIDENCE</strong></p>
         <div class="claim-boundary">No alpha, causal, trading, customer-adoption, or institutional-validation claim is supported.</div>
       </aside>
+    </section>
+
+    <section class="onboarding" id="feed-onboarding" aria-labelledby="onboarding-title">
+      <div class="onboarding-head"><div><p class="eyebrow">First-time workflow</p><h2 id="onboarding-title">Turn one disclosure into a defensible research record.</h2></div><button type="button" class="ghost" data-dismiss-onboarding>Dismiss</button></div>
+      <ol>
+        <li><span>1</span><strong>Choose</strong><small>Company, category, or theme</small></li>
+        <li><span>2</span><strong>Prioritize</strong><small>Review the highest-attention change</small></li>
+        <li><span>3</span><strong>Inspect</strong><small>Read the original evidence</small></li>
+        <li><span>4</span><strong>Check novelty</strong><small>Look for earlier disclosure</small></li>
+        <li><span>5</span><strong>Preserve</strong><small>Save or export the record</small></li>
+      </ol>
+      <button class="button" type="button" data-guided-example>Start with Kraft Heinz</button>
+      <p>Chosen for evidence diversity and clarity—not later market performance.</p>
     </section>
 
     <section class="section-block" aria-labelledby="coverage-heading">
@@ -72,6 +87,26 @@
         <div><p class="eyebrow">Analyst review queue</p><h2 id="ranked-heading">Ranked disclosure changes</h2></div>
         <p>Prioritize by filing-time evidence. Novelty means “new within the frozen, searched corpus,” not new to the world.</p>
       </div>
+
+      <aside class="classification-legend" aria-label="Classification legend">
+        <details open>
+          <summary>How to read each record</summary>
+          <div>
+            <span><strong>Materiality</strong> Estimated review attention: high, medium, or low.</span>
+            <span><strong>Novelty</strong> Whether strictly earlier study sources anticipated the issue.</span>
+            <span><strong>Confidence</strong> Strength of the fixed classification evidence.</span>
+            <span><strong>Direction</strong> Negative, positive, informational, or ambiguous—not an investment recommendation.</span>
+            <span><strong>At filing time</strong> Only prior/current filings and strictly earlier disclosures.</span>
+            <span><strong>Observed later</strong> Separated and never used to classify or prioritize.</span>
+          </div>
+        </details>
+      </aside>
+
+      <section class="shortlist" aria-labelledby="shortlist-title">
+        <div><p class="eyebrow">Local presentation shortlist</p><h3 id="shortlist-title">Saved for discussion <span id="shortlist-count">0</span></h3><p>Stored only in this browser. No account or backend.</p></div>
+        <div id="shortlist-items" aria-live="polite"><span class="quiet">No saved records yet.</span></div>
+        <div class="button-row"><button type="button" class="secondary" id="export-shortlist" disabled>Download shortlist</button><button type="button" class="ghost" id="clear-shortlist" disabled>Clear saved</button></div>
+      </section>
 
       <form class="controls-panel" id="filters" aria-label="Filter disclosure changes">
         <div class="control-grid">
@@ -136,7 +171,7 @@
     </section>
   </main>
 
-  <footer>Decision support, not investment advice. The demo does not support an alpha, causal, trading, adoption, or institutional-validation claim.</footer>
+  <footer><nav aria-label="Product resources"><a href="innovation_framework.html">Innovation Framework</a><a href="pilot_plan.html">Pilot Plan</a><a href="professor_materials.html">Professor Materials</a></nav><p>Decision support, not investment advice. The demo does not support an alpha, causal, trading, adoption, or institutional-validation claim.</p></footer>
   <script src="assets/site.js"></script>
   <script src="assets/feed.js"></script>
 </body>

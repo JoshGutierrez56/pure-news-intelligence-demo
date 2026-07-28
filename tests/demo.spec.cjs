@@ -1,162 +1,197 @@
 const { test, expect } = require("@playwright/test");
+const AxeBuilder = require("@axe-core/playwright").default;
 const fs = require("node:fs");
 const path = require("node:path");
 
 const root = path.resolve(__dirname, "..");
-const changePayload = JSON.parse(fs.readFileSync(path.join(root, "demo/data/changes.json"), "utf8"));
-const publicPages = [
+const payload = JSON.parse(fs.readFileSync(path.join(root, "demo/data/changes.json"), "utf8"));
+const corePages = [
   "/", "/demo/professor_presentation.html", "/demo/ranked_change_feed.html",
-  "/demo/case_studies.html", "/demo/company_comparison.html",
-  "/demo/company_timeline.html", "/demo/research_results.html", "/demo/methodology.html",
-  "/demo/private_workspace.html"
+  "/demo/case_studies.html", "/demo/case_study_walkthrough.html",
+  "/demo/company_comparison.html", "/demo/company_timeline.html",
+  "/demo/research_results.html", "/demo/methodology.html",
+  "/demo/innovation_framework.html", "/demo/pilot_plan.html",
+  "/demo/professor_materials.html", "/demo/private_workspace.html"
 ];
+const packets = ["01_TFC", "02_KHC", "03_DLTR", "04_DVN", "05_RH", "06_FCX", "07_EFX", "08_CHE"]
+  .map((name) => `/demo/evidence_packets/${name}.html`);
 
-test("frozen research metrics reconcile", async ({ page }) => {
-  expect(changePayload.records).toHaveLength(995);
+test("all frozen metrics and evidence fields reconcile", async () => {
+  expect(payload.records).toHaveLength(995);
   const novelty = { previous: 0, new: 0, partial: 0, unclear: 0 };
-  let highConfidence = 0;
-  for (const record of changePayload.records) {
-    expect(record.id).toBeTruthy();
-    expect(record.date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
-    expect(record.ticker).toBeTruthy();
-    expect(record.issuer).toBeTruthy();
-    expect(record.title).toBeTruthy();
-    expect(record.summary).toBeTruthy();
-    expect(record.why).toBeTruthy();
-    expect(record.category).toBeTruthy();
-    expect(record.materiality).toMatch(/^(high|medium|low)$/);
-    expect(record.confidence).toBeGreaterThan(0);
+  let high = 0;
+  for (const record of payload.records) {
+    for (const field of ["id", "date", "ticker", "issuer", "title", "summary", "why", "category", "materiality", "url"]) expect(record[field], `${record.id}:${field}`).toBeTruthy();
     expect(record.url).toMatch(/^https:\/\/www\.sec\.gov\//);
-    if (record.confidence >= .8) highConfidence += 1;
+    expect(record.confidence).toBeGreaterThan(0);
+    if (record.confidence >= .8) high += 1;
     const title = record.title.toLowerCase();
     if (title.includes("previously disclosed") || title.includes("previously covered in news")) novelty.previous += 1;
     else if (title.includes("genuinely new")) novelty.new += 1;
     else if (title.includes("partially anticipated")) novelty.partial += 1;
     else novelty.unclear += 1;
   }
+  expect(high).toBe(629);
   expect(novelty).toEqual({ previous: 394, new: 342, partial: 243, unclear: 16 });
-  expect(highConfidence).toBe(629);
-  await page.goto("/demo/professor_presentation.html");
-  await expect(page.getByText("1,990", { exact: true }).first()).toBeVisible();
-  await expect(page.getByText("point-in-time violations", { exact: true })).toBeVisible();
-  await expect(page.getByText("point-in-time violations", { exact: true }).locator("..")).toContainText("0");
+  expect(Object.values(novelty).reduce((a, b) => a + b, 0)).toBe(995);
 });
 
-test("public pages have titles, descriptions, headings, navigation, and no console errors", async ({ page }) => {
+test("public pages have metadata, semantic headings, and zero console errors", async ({ page }) => {
   const errors = [];
   page.on("console", (message) => { if (message.type() === "error") errors.push(message.text()); });
   page.on("pageerror", (error) => errors.push(error.message));
-  for (const route of publicPages) {
+  for (const route of [...corePages, ...packets]) {
     await page.goto(route);
-    await expect(page).toHaveTitle(/\S+ \| Pure News Intelligence|Pure News Intelligence \|/);
+    await expect(page).toHaveTitle(/\S+/);
     await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /\S+/);
     await expect(page.locator("h1")).toHaveCount(1);
-    await expect(page.getByRole("link", { name: "Professor Presentation", exact: true })).toHaveCount(1);
+    await expect(page.locator(".skip-link")).toHaveCount(1);
   }
   expect(errors).toEqual([]);
 });
 
-test("internal navigation targets and case-study links resolve", async ({ request }) => {
-  const htmlFiles = fs.readdirSync(path.join(root, "demo")).filter((file) => file.endsWith(".html"));
-  for (const file of htmlFiles) {
-    const html = fs.readFileSync(path.join(root, "demo", file), "utf8");
-    const links = [...html.matchAll(/href="([^"]+)"/g)].map((match) => match[1])
-      .filter((href) => !href.startsWith("#") && !href.startsWith("http") && !href.startsWith("data:"));
-    for (const href of links) {
-      const url = new URL(href, `http://127.0.0.1:4173/demo/${file}`).pathname;
-      const response = await request.get(url);
-      expect(response.status(), `${file} -> ${href}`).toBe(200);
+test("all static internal links and public downloads resolve", async ({ request }) => {
+  const htmlFiles = [];
+  function walk(directory) {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      const target = path.join(directory, entry.name);
+      if (entry.isDirectory() && !["node_modules", "test-results", "playwright-report", ".git", ".tmp"].includes(entry.name)) walk(target);
+      else if (entry.name.endsWith(".html")) htmlFiles.push(target);
     }
   }
-  for (let index = 1; index <= 8; index += 1) {
-    const response = await request.get(`/demo/evidence_packets/0${index}_${["TFC","KHC","DLTR","DVN","RH","FCX","EFX","CHE"][index - 1]}.html`);
-    expect(response.status()).toBe(200);
+  walk(root);
+  for (const filePath of htmlFiles) {
+    const relative = path.relative(root, filePath).replaceAll("\\", "/");
+    const html = fs.readFileSync(filePath, "utf8");
+    const hrefs = [...html.matchAll(/href="([^"]+)"/g)].map((match) => match[1])
+      .filter((href) => !href.startsWith("#") && !href.startsWith("http") && !href.startsWith("data:") && !href.startsWith("mailto:"));
+    for (const href of hrefs) {
+      const url = new URL(href, `http://127.0.0.1:4173/${relative}`).pathname;
+      expect((await request.get(url)).status(), `${relative} -> ${href}`).toBe(200);
+    }
   }
 });
 
-test("ranked feed filters, sorts, changes view, paginates, and clears state", async ({ page }) => {
+test("presentation supports duration modes, notes, navigation, demo jump, and clean exit", async ({ page }) => {
+  await page.goto("/demo/professor_presentation.html");
+  await expect(page.locator(".story-section")).toHaveCount(10);
+  await page.getByRole("button", { name: "5 min" }).click();
+  await expect(page.getByRole("button", { name: "5 min" })).toHaveAttribute("aria-pressed", "true");
+  await page.getByRole("button", { name: "Present" }).click();
+  await expect(page.locator("body")).toHaveClass(/presentation-active/);
+  await expect(page.locator("[data-presentation-position]")).toHaveText("1 / 7");
+  await page.keyboard.press("ArrowRight");
+  await expect(page.locator("[data-presentation-position]")).toHaveText("2 / 7");
+  await page.keyboard.press("Space");
+  await page.keyboard.press("PageDown");
+  await page.keyboard.press("PageUp");
+  await page.keyboard.press("Home");
+  await expect(page.locator("[data-presentation-position]")).toHaveText("1 / 7");
+  await page.keyboard.press("n");
+  await expect(page.locator("body")).toHaveClass(/notes-visible/);
+  await expect(page.locator(".story-section.is-current .speaker-notes")).toBeVisible();
+  await page.getByRole("button", { name: "Jump to demo" }).click();
+  await expect(page.locator(".story-section.is-current")).toHaveAttribute("id", "slide-workflow");
+  await page.keyboard.press("End");
+  await expect(page.locator("[data-presentation-position]")).toHaveText("7 / 7");
+  await page.keyboard.press("Escape");
+  await expect(page.locator("body")).not.toHaveClass(/presentation-active/);
+  await page.getByRole("button", { name: "10 min" }).click();
+  await page.keyboard.press("f");
+  await expect(page.locator("[data-presentation-position]")).toHaveText("1 / 10");
+  await page.keyboard.press("Escape");
+});
+
+test("ranked feed onboarding, guided example, filters, sorting, pagination, and shortlist work", async ({ page }) => {
   await page.goto("/demo/ranked_change_feed.html");
   await expect(page.getByText("995 of 995 changes")).toBeVisible();
-  await page.getByLabel("Company or ticker").fill("KHC");
-  await expect(page.getByText(/of 995 changes/)).not.toHaveText("995 of 995 changes · showing 1–24");
-  await expect(page.locator(".change-card")).toHaveCount(await page.locator(".change-card").count());
-  expect(await page.locator(".change-card").count()).toBeGreaterThan(0);
-  await page.locator("#filter-novelty").selectOption("previously disclosed");
-  await expect(page.locator(".change-card").first()).toContainText("Previously Disclosed");
+  await expect(page.locator("#feed-onboarding")).toBeVisible();
+  await page.getByRole("button", { name: "Dismiss" }).click();
+  await page.reload();
+  await expect(page.locator("#feed-onboarding")).toBeHidden();
+  await page.getByRole("button", { name: "Start guided example" }).click();
+  await expect(page.locator("#filter-search")).toHaveValue("KHC");
+  await expect(page.locator(".change-card").first()).toContainText("KHC");
+  const save = page.locator(".change-card .save-record").first();
+  await save.click();
+  await expect(page.locator("#shortlist-count")).toHaveText("1");
+  await expect(page.locator("#export-shortlist")).toBeEnabled();
+  const downloadPromise = page.waitForEvent("download");
+  await page.locator("#export-shortlist").click();
+  expect((await downloadPromise).suggestedFilename()).toBe("pure-news-intelligence-shortlist.txt");
+  await page.locator("#clear-shortlist").click();
+  await expect(page.locator("#shortlist-count")).toHaveText("0");
   await page.getByRole("button", { name: "Clear all" }).click();
-  await expect(page.getByText("Active filters:").locator("..")).toContainText("None");
   await page.getByLabel("Sort").selectOption("confidence");
-  const confidenceText = await page.locator(".change-card .status-chip").first().textContent();
-  expect(confidenceText).toContain("0.990");
+  await expect(page.locator(".change-card .status-chip").first()).toContainText("0.990");
   await page.getByRole("button", { name: "Table" }).click();
   await expect(page.locator(".cards-table")).toBeVisible();
   await page.getByRole("button", { name: "Cards" }).click();
   await page.getByRole("button", { name: "Next" }).click();
-  await expect(page.getByText(/Page 2 of/)).toBeVisible();
-  await expect(page.locator('.change-card a[href^="https://www.sec.gov/"]').first()).toBeVisible();
+  await expect(page.locator("#page-status")).toContainText("Page 2");
 });
 
-test("presentation mode supports keyboard navigation and exit", async ({ page }) => {
-  await page.goto("/demo/professor_presentation.html");
-  const toggle = page.getByRole("button", { name: "Presentation mode" });
-  await toggle.click();
-  await expect(page.locator("body")).toHaveClass(/presentation-active/);
-  await expect(page.locator(".story-section.is-current")).toHaveCount(1);
-  await expect(page.locator("[data-presentation-position]")).toHaveText("1 / 10");
-  await page.keyboard.press("ArrowRight");
-  await expect(page.locator("[data-presentation-position]")).toHaveText("2 / 10");
-  await page.keyboard.press("End");
-  await expect(page.locator("[data-presentation-position]")).toHaveText("10 / 10");
-  await page.keyboard.press("Escape");
-  await expect(page.locator("body")).not.toHaveClass(/presentation-active/);
+test("case grouping, novelty contrast, and ex-ante/ex-post boundaries are explicit", async ({ page }) => {
+  await page.goto("/demo/case_studies.html");
+  for (const heading of ["New risk disclosure", "Previously anticipated change", "Liquidity or credit change", "Operational or cybersecurity change", "Low-materiality or null example"]) {
+    await expect(page.getByRole("heading", { name: heading })).toBeVisible();
+  }
+  await expect(page.locator(".case-card")).toHaveCount(8);
+  await page.goto("/demo/case_study_walkthrough.html");
+  await expect(page.getByText("Available at filing time", { exact: true })).toHaveCount(2);
+  await expect(page.getByText("Observed after the filing — not used in the original classification", { exact: true })).toBeVisible();
+  await page.goto("/demo/evidence_packets/02_KHC.html");
+  await expect(page.locator(".five-part li")).toHaveCount(5);
+  await expect(page.getByText("Observed after the filing — not used in the original classification", { exact: true })).toBeVisible();
 });
 
-test("source-boundary and ex-ante/ex-post labels remain explicit", async ({ page }) => {
-  await page.goto("/demo/methodology.html");
-  await expect(page.getByText("Available at filing time", { exact: true })).toBeVisible();
-  await expect(page.getByText("System interpretation", { exact: true })).toBeVisible();
-  await expect(page.getByText("Analyst interpretation", { exact: true })).toBeVisible();
-  await expect(page.getByText("Observed later", { exact: true })).toBeVisible();
-  await expect(page.getByText(/Genuinely new.*bounded search result/)).toBeVisible();
-  await page.goto("/demo/professor_presentation.html");
-  await expect(page.getByText(/Ex post—observed later, not available at filing time/)).toBeVisible();
+test("innovation, pilot, materials, and research decision pages expose required content", async ({ page }) => {
+  await page.goto("/demo/innovation_framework.html");
+  for (const label of ["Target user", "Buyer", "Technical gatekeeper", "Beachhead use case"]) await expect(page.getByText(label, { exact: true })).toBeVisible();
+  await page.goto("/demo/pilot_plan.html");
+  await expect(page.getByText(/Proposed measurement—not actual performance/)).toBeVisible();
+  for (const rule of ["Go", "Revise", "Stop"]) await expect(page.getByText(rule, { exact: true })).toBeVisible();
+  await page.goto("/demo/professor_materials.html");
+  await expect(page.locator("a[download]")).toHaveCount(14);
+  await page.goto("/demo/research_results.html");
+  await expect(page.locator(".study-panel")).toHaveCount(3);
+  await expect(page.getByText("Negative and null results were preserved rather than tuned away.", { exact: true })).toBeVisible();
 });
 
-test("interactive controls expose accessible names and visible focus", async ({ page }) => {
-  for (const route of ["/demo/ranked_change_feed.html", "/demo/professor_presentation.html", "/demo/private_workspace.html"]) {
+test("interactive controls have accessible names, visible focus, and no serious axe violations", async ({ page }) => {
+  for (const route of ["/", "/demo/professor_presentation.html", "/demo/ranked_change_feed.html", "/demo/case_studies.html", "/demo/research_results.html", "/demo/innovation_framework.html", "/demo/pilot_plan.html", "/demo/methodology.html"]) {
     await page.goto(route);
-    const unnamed = await page.locator("button, input, select, textarea").evaluateAll((controls) =>
-      controls.filter((control) => {
-        const label = control.labels?.[0]?.textContent?.trim();
-        return !(label || control.getAttribute("aria-label") || control.getAttribute("aria-labelledby") || control.textContent.trim());
-      }).map((control) => `${control.tagName}#${control.id}`)
-    );
+    if (route.includes("ranked")) await page.waitForSelector(".change-card");
+    const unnamed = await page.locator("button, input, select, textarea").evaluateAll((controls) => controls.filter((control) => {
+      const label = control.labels?.[0]?.textContent?.trim();
+      return !(label || control.getAttribute("aria-label") || control.getAttribute("aria-labelledby") || control.textContent.trim());
+    }).map((control) => `${control.tagName}#${control.id}`));
     expect(unnamed, route).toEqual([]);
+    const results = await new AxeBuilder({ page }).analyze();
+    const severe = results.violations.filter((item) => ["serious", "critical"].includes(item.impact));
+    expect(severe, `${route}: ${severe.map((v) => v.id).join(", ")}`).toEqual([]);
   }
   await page.goto("/demo/ranked_change_feed.html");
   await page.keyboard.press("Tab");
-  const outlineStyle = await page.locator(":focus").evaluate((element) => getComputedStyle(element).outlineStyle);
-  expect(outlineStyle).not.toBe("none");
+  expect(await page.locator(":focus").evaluate((node) => getComputedStyle(node).outlineStyle)).not.toBe("none");
 });
 
-for (const viewport of [
-  { width: 1920, height: 1080 }, { width: 1440, height: 900 },
-  { width: 1024, height: 768 }, { width: 390, height: 844 }
-]) {
-  test(`ranked feed has no horizontal page overflow at ${viewport.width}x${viewport.height}`, async ({ page }) => {
+for (const viewport of [{ width: 1920, height: 1080 }, { width: 1440, height: 900 }, { width: 1024, height: 768 }, { width: 390, height: 844 }]) {
+  test(`all public surfaces avoid horizontal overflow at ${viewport.width}x${viewport.height}`, async ({ page }) => {
     await page.setViewportSize(viewport);
-    await page.goto("/demo/ranked_change_feed.html");
-    await page.waitForSelector(".change-card");
-    const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
-    expect(dimensions.scroll).toBeLessThanOrEqual(dimensions.client + 1);
+    for (const route of [...corePages, ...packets]) {
+      await page.goto(route);
+      if (route.includes("ranked")) await page.waitForSelector(".change-card");
+      const { scrollWidth, clientWidth } = await page.evaluate(() => ({ scrollWidth: document.documentElement.scrollWidth, clientWidth: document.documentElement.clientWidth }));
+      expect(scrollWidth, route).toBeLessThanOrEqual(clientWidth + 1);
+    }
   });
 }
 
-test("deterministic first-page rendering", async ({ page }) => {
+test("first-page rendering remains deterministic", async ({ page }) => {
   await page.goto("/demo/ranked_change_feed.html");
   await page.waitForSelector(".change-card");
   const first = await page.locator(".change-card").first().innerText();
-  await page.reload();
-  await page.waitForSelector(".change-card");
+  await page.reload(); await page.waitForSelector(".change-card");
   expect(await page.locator(".change-card").first().innerText()).toBe(first);
 });

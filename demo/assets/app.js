@@ -94,7 +94,7 @@
   })[character]);
   const formatNumber = (value) => new Intl.NumberFormat("en-US").format(Number(value || 0));
   const sourceLabel = (source) => ({
-    changes: "10-K change", sec: "SEC 8-K", news: "news", private: "private"
+    changes: "10-K change", sec: "SEC 8-K", news: "news", private: "local prototype"
   })[source] || source;
   const setStatus = (message, busy = false) => {
     status.textContent = message;

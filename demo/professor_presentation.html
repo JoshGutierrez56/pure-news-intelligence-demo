@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A guided innovation presentation for Pure News Intelligence.">
+  <meta name="description" content="A ten-screen guided innovation presentation for Pure News Intelligence.">
   <meta property="og:title" content="Professor Presentation | Pure News Intelligence">
-  <meta property="og:description" content="From an unsupported trading hypothesis to an evidence-linked analyst workflow.">
+  <meta property="og:description" content="How disciplined research turned an unsupported trading hypothesis into an evidence-linked analyst workflow.">
   <meta property="og:type" content="website">
   <title>Professor Presentation | Pure News Intelligence</title>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body class="presentation-page">
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="header-inner">
@@ -22,235 +22,242 @@
         <a href="professor_presentation.html" class="professor-link" aria-current="page">Professor Presentation</a>
         <a href="ranked_change_feed.html">Ranked Changes</a>
         <a href="case_studies.html">Case Studies</a>
-        <a href="company_comparison.html">Comparisons</a>
-        <a href="company_timeline.html">Timelines</a>
         <a href="research_results.html">Research Results</a>
+        <a href="innovation_framework.html">Innovation Framework</a>
+        <a href="pilot_plan.html">Pilot Plan</a>
         <a href="methodology.html">Methodology</a>
       </nav>
     </div>
   </header>
+
   <main id="main">
     <div class="presentation-bar" aria-label="Presentation controls">
-      <button type="button" data-presentation-toggle aria-pressed="false"><span>Presentation mode</span></button>
-      <button type="button" data-presentation-previous aria-label="Previous section">←</button>
-      <div class="presentation-progress" aria-hidden="true"><span></span></div>
-      <span data-presentation-position>1 / 10</span>
-      <button type="button" data-presentation-next aria-label="Next section">→</button>
+      <button type="button" data-presentation-toggle aria-pressed="false"><span>Present</span></button>
+      <button type="button" data-presentation-previous aria-label="Previous screen">←</button>
+      <div class="presentation-progress" role="progressbar" aria-label="Presentation progress" aria-valuemin="1" aria-valuemax="10" aria-valuenow="1"><span></span></div>
+      <strong data-presentation-position aria-live="polite">1 / 10</strong>
+      <button type="button" data-presentation-next aria-label="Next screen">→</button>
+      <div class="presentation-options">
+        <button type="button" data-duration-mode="5" aria-pressed="false">5 min</button>
+        <button type="button" data-duration-mode="10" aria-pressed="true">10 min</button>
+        <button type="button" data-notes-toggle aria-pressed="false" title="Toggle notes (N)">Notes</button>
+        <button type="button" data-jump-demo>Jump to demo</button>
+        <button type="button" data-print-presentation>Print</button>
+      </div>
     </div>
+    <p id="presentation-exit-status" class="sr-only" aria-live="polite"></p>
 
-    <section class="hero story-section" tabindex="-1" aria-labelledby="presentation-title">
+    <section id="slide-problem" class="hero story-section is-current" tabindex="-1" aria-labelledby="problem-title" data-next="Current tools organize information—but they do not resolve the attention decision.">
+      <div class="slide-kicker"><span>01</span><span>The customer problem</span></div>
       <div class="hero-copy">
-        <p class="eyebrow">INNO6200 innovation demonstration · 5–8 minutes</p>
-        <h1 id="presentation-title">Investment teams do not need more information. They need a defensible way to focus attention.</h1>
-        <p class="lede">Pure News Intelligence helps analysts decide what to read first, understand what changed, and support their conclusions with visible evidence—while leaving final judgment with the analyst.</p>
-        <div class="hero-actions">
-          <a class="button" href="#customer-problem">Start the story</a>
-          <a class="button secondary" href="ranked_change_feed.html">Open live product</a>
+        <p class="eyebrow">Institutional research workflow</p>
+        <h1 id="problem-title">Analyst attention—not information—is the scarce resource.</h1>
+        <p class="lede">Filings, alerts, headlines, and internal notes arrive continuously. Analysts still have to decide what deserves review, rebuild history, and defend the conclusion.</p>
+        <div class="pain-strip" aria-label="Primary workflow pains">
+          <span>Too much information</span><span>Manual comparison</span><span>Repeated searching</span><span>Fragmented memory</span>
         </div>
       </div>
-      <aside class="hero-aside">
+      <aside class="hero-aside innovation-frame">
         <p class="label">Innovation frame</p>
         <dl>
           <dt>Target user</dt><dd>Institutional research analyst</dd>
           <dt>Buyer</dt><dd>Director or Head of Research</dd>
-          <dt>Technical gatekeeper</dt><dd>CTO or Head of Data</dd>
-          <dt>MVP</dt><dd>Evidence-linked consecutive 10-K comparison</dd>
+          <dt>Gatekeeper</dt><dd>CTO or Head of Data</dd>
+          <dt>Beachhead</dt><dd>Changed SEC disclosures</dd>
         </dl>
       </aside>
+      <aside class="speaker-notes" aria-label="Presenter note"><strong>Speaking prompt · 20 sec</strong> Open with the queue, not the technology. The problem is the cost of deciding what to read, reconstructing what changed, and supporting that judgment when the team asks why.</aside>
+      <p class="next-idea"><span>Next</span> Current tools organize information—but they do not resolve the attention decision.</p>
     </section>
 
-    <section id="customer-problem" class="section-block story-section" tabindex="-1" aria-labelledby="problem-heading">
+    <section id="slide-tools" class="section-block story-section" tabindex="-1" aria-labelledby="tools-title" data-optional="true" data-next="Six interviews shifted the design from summary generation to evidence-backed prioritization.">
+      <div class="slide-kicker"><span>02</span><span>Current tools</span></div>
       <div class="section-intro">
-        <div><p class="eyebrow">01 · The customer problem</p><h2 id="problem-heading">Analyst attention—not information—is the scarce resource.</h2></div>
-        <p>Filings, headlines, internal notes, and alerts arrive continuously. Comparison is manual, relevance is uncertain, and valuable reasoning becomes trapped in inboxes and personal folders.</p>
+        <div><p class="eyebrow">Useful—but incomplete</p><h2 id="tools-title">Search finds documents. Summaries compress them. The analyst still has to decide what changed and why it matters.</h2></div>
+        <p>The opportunity is not another feed. It is a governed layer between incoming information and analyst judgment.</p>
       </div>
-      <div class="workflow" aria-label="Current analyst workflow">
-        <div class="workflow-step"><strong>Alerts & filings</strong><span>Continuous inputs</span></div><div class="workflow-arrow">→</div>
-        <div class="workflow-step"><strong>Locate</strong><span>Find documents</span></div><div class="workflow-arrow">→</div>
-        <div class="workflow-step"><strong>Read</strong><span>Review sources</span></div><div class="workflow-arrow">→</div>
-        <div class="workflow-step"><strong>Compare</strong><span>Rebuild history</span></div>
+      <div class="tool-gap">
+        <article><p class="label">What current tools do well</p><ul><li>Deliver filings and alerts quickly</li><li>Search large document collections</li><li>Summarize individual documents</li><li>Support notes and collaboration</li></ul></article>
+        <div class="gap-arrow" aria-hidden="true">→</div>
+        <article class="gap-card"><p class="label">What remains manual</p><ul><li>Compare against prior language</li><li>Judge review priority</li><li>Check earlier disclosure</li><li>Preserve a defensible evidence trail</li></ul></article>
       </div>
-      <div class="workflow" style="margin-top:.5rem">
-        <div class="workflow-step"><strong>Judge</strong><span>Assess relevance</span></div><div class="workflow-arrow">→</div>
-        <div class="workflow-step"><strong>Brief</strong><span>Explain to team</span></div><div class="workflow-arrow">→</div>
-        <div class="workflow-step"><strong>Store</strong><span>Save fragmented notes</span></div>
-      </div>
-      <div class="grid-4" style="margin-top:1rem">
-        <div class="plain-card"><strong>Too much information</strong><p class="quiet">The queue expands faster than review capacity.</p></div>
-        <div class="plain-card"><strong>Repeated searching</strong><p class="quiet">Context is rebuilt company by company.</p></div>
-        <div class="plain-card"><strong>Manual comparison</strong><p class="quiet">Important language changes are easy to miss.</p></div>
-        <div class="plain-card"><strong>Poor memory</strong><p class="quiet">Reasoning is difficult to retrieve or audit.</p></div>
-      </div>
-      <p class="notice" style="margin-top:1rem"><strong>Latent need:</strong> generic AI summaries do not tell the analyst what deserves review or why—and often hide the evidence trail needed to trust the answer.</p>
+      <p class="callout"><strong>Product wedge:</strong> rank changed disclosures, show the historical comparison, and keep the source evidence attached.</p>
+      <aside class="speaker-notes" aria-label="Presenter note"><strong>Speaking prompt · 20 sec</strong> Existing systems are inputs, not competitors to replace. Pure News Intelligence complements them by resolving the comparison and provenance work between the alert and the analyst’s conclusion.</aside>
+      <p class="next-idea"><span>Next</span> Six interviews shifted the design from summary generation to evidence-backed prioritization.</p>
     </section>
 
-    <section class="section-block story-section" tabindex="-1" aria-labelledby="discovery-heading">
+    <section id="slide-discovery" class="section-block story-section" tabindex="-1" aria-labelledby="discovery-title" data-next="The interviews challenged a broad trading hypothesis that the empirical work had already put under pressure.">
+      <div class="slide-kicker"><span>03</span><span>Customer discovery</span></div>
       <div class="section-intro">
-        <div><p class="eyebrow">02 · Customer discovery</p><h2 id="discovery-heading">N = 6 completed interviews</h2></div>
-        <p>Paraphrased findings informed the product direction. No direct quotations are attributed.</p>
+        <div><p class="eyebrow">N = 6 completed interviews</p><h2 id="discovery-title">Trust, fit, and prioritization mattered more than another summary.</h2></div>
+        <p>Paraphrased findings only. Titles, employers, and direct quotations are not inferred.</p>
+      </div>
+      <div class="interview-matrix" role="region" aria-label="Six-interview synthesis" tabindex="0">
+        <table>
+          <caption>Interview perspective, workflow need, trust requirement, and product implication</caption>
+          <thead><tr><th>Interviewee · perspective</th><th>Workflow problem</th><th>Trust requirement</th><th>Product implication</th></tr></thead>
+          <tbody>
+            <tr><th>Matthew G. Surprenant<br><span>Search, Q&amp;A, usability</span></th><td>Retrieval friction</td><td>Answers trace to evidence</td><td>Source-linked excerpts</td></tr>
+            <tr><th>Bilal Mustafa<br><span>Systematic, cross-asset</span></th><td>Noisy prediction target</td><td>Claims match evidence</td><td>Separate product from alpha</td></tr>
+            <tr><th>Matt DiCenso<br><span>Fundamental workflow</span></th><td>Manual prioritization</td><td>Historical context</td><td>Rank changes, show prior text</td></tr>
+            <tr><th>Joseph Marks<br><span>Innovation framing</span></th><td>Problem too broad</td><td>Testable value</td><td>Narrow the beachhead</td></tr>
+            <tr><th>Redmond Costello<br><span>Enterprise implementation</span></th><td>Workflow disruption</td><td>Integration and security</td><td>Complement existing systems</td></tr>
+            <tr><th>Krishna Valluru<br><span>Data, governance, analytics</span></th><td>Fragile research memory</td><td>Provenance and control</td><td>Governed evidence record</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="discovery-synthesis">
+        <div><strong>Users needed</strong><span>Prioritization · comparison · visible evidence · relevance · low friction</span></div>
+        <div><strong>Buyers and gatekeepers needed</strong><span>Productivity · adoption · integration · security · auditability · governance</span></div>
+        <div><strong>The product changed</strong><span>Evidence-first ranking · side-by-side history · institutional memory · analyst accountability</span></div>
+      </div>
+      <p class="boundary-note"><strong>Still unvalidated:</strong> measured time savings, repeat use, willingness to pay, buyer approval, and enterprise integration.</p>
+      <aside class="speaker-notes" aria-label="Presenter note"><strong>Speaking prompt · 25 sec</strong> The interviews did not validate demand. They exposed design requirements: prioritization over generic summarization, visible evidence, workflow fit, and analyst accountability. Adoption and willingness to pay remain open questions.</aside>
+      <p class="next-idea"><span>Next</span> The interviews challenged a broad trading hypothesis that the empirical work had already put under pressure.</p>
+    </section>
+
+    <section id="slide-hypothesis" class="section-block story-section" tabindex="-1" aria-labelledby="hypothesis-title" data-optional="true" data-next="The locked tests did not support the alpha claim—and the project preserved that result.">
+      <div class="slide-kicker"><span>04</span><span>The original hypothesis</span></div>
+      <div class="section-intro">
+        <div><p class="eyebrow">The first experiment</p><h2 id="hypothesis-title">Could news and filing language add incremental investment signal?</h2></div>
+        <p>The original project treated document information as a potential input to return and risk prediction.</p>
+      </div>
+      <div class="hypothesis-path" aria-label="Original hypothesis logic">
+        <div><strong>News + filings</strong><span>Point-in-time documents</span></div><span aria-hidden="true">→</span>
+        <div><strong>Language features</strong><span>Model representations</span></div><span aria-hidden="true">→</span>
+        <div><strong>Incremental signal?</strong><span>Locked empirical test</span></div><span aria-hidden="true">→</span>
+        <div><strong>Investment outcome</strong><span>Return or downside risk</span></div>
       </div>
       <div class="grid-3">
-        <article class="card interview-card"><h3>Matthew G. Surprenant</h3><p class="role">Search, Q&A, evidence, usability</p><p>Fast retrieval is useful only when answers remain traceable to the underlying record.</p></article>
-        <article class="card interview-card"><h3>Bilal Mustafa</h3><p class="role">Systematic investing and cross-asset research</p><p>Direct news-to-stock prediction is an unusually difficult and noisy product promise.</p></article>
-        <article class="card interview-card"><h3>Matt DiCenso</h3><p class="role">Fundamental investment workflow</p><p>Prioritization and historical context can fit naturally into existing research routines.</p></article>
-        <article class="card interview-card"><h3>Joseph Marks</h3><p class="role">Innovation framing and problem clarity</p><p>A narrow customer problem creates a more testable innovation than a broad model claim.</p></article>
-        <article class="card interview-card"><h3>Redmond Costello</h3><p class="role">Enterprise technology and implementation</p><p>Integration, security, governance, and measurable value determine enterprise feasibility.</p></article>
-        <article class="card interview-card"><h3>Krishna Valluru</h3><p class="role">Institutional data, governance, analytics</p><p>Visible provenance and analyst control are essential for governed research use.</p></article>
+        <article class="plain-card"><p class="label">Claim under test</p><p>Added documents improve out-of-sample prediction.</p></article>
+        <article class="plain-card"><p class="label">Evidence standard</p><p>Locked comparisons, issuer-disjoint samples, and point-in-time inputs.</p></article>
+        <article class="plain-card"><p class="label">Decision rule</p><p>Do not turn a null or inconclusive result into a product claim.</p></article>
       </div>
-      <div class="trust-note" style="margin-top:1rem"><strong>Design drivers:</strong> prioritize instead of summarize; expose evidence and provenance; complement current systems; preserve human judgment; measure workflow value; plan for integration and governance.</div>
+      <aside class="speaker-notes" aria-label="Presenter note"><strong>Speaking prompt · 20 sec</strong> This was a legitimate hypothesis, not a promise. The important design choice was to set an evidence standard before interpreting results and to keep the investment claim separate from the document-processing capability.</aside>
+      <p class="next-idea"><span>Next</span> The locked tests did not support the alpha claim—and the project preserved that result.</p>
     </section>
 
-    <section class="section-block story-section" tabindex="-1" aria-labelledby="pivot-heading">
+    <section id="slide-results" class="section-block story-section" tabindex="-1" aria-labelledby="results-title" data-next="The null result became a design input: refine the problem, not the statistics.">
+      <div class="slide-kicker"><span>05</span><span>The negative results</span></div>
       <div class="section-intro">
-        <div><p class="eyebrow">03 · Customer-discovery pivot</p><h2 id="pivot-heading">The problem changed before the product scaled.</h2></div>
-        <p>“The negative research findings did not end the project; they clarified which problem was worth solving.”</p>
-      </div>
-      <div class="before-after">
-        <article class="card before">
-          <p class="label">Before customer discovery</p>
-          <h3>Trading hypothesis</h3>
-          <ul><li>Broad news-to-stock prediction</li><li>Model sophistication emphasized</li><li>Trading signal and product combined</li><li>Large information universe</li><li>Success measured through return prediction</li></ul>
-        </article>
-        <div class="pivot-arrow" aria-hidden="true">→</div>
-        <article class="card after">
-          <p class="label">After customer discovery</p>
-          <h3>Analyst workflow</h3>
-          <ul><li>Attention and research workflow</li><li>Evidence and trust emphasized</li><li>Product and research separated</li><li>Narrow SEC filing use case</li><li>Success measured through time, recall, trust, adoption, and memory</li></ul>
-        </article>
-      </div>
-      <div class="grid-3" style="margin-top:1rem">
-        <div class="plain-card"><span class="label">Customer problem</span><p>Deciding what deserves attention and defending the conclusion.</p></div>
-        <div class="plain-card"><span class="label">Value proposition</span><p>What to read first, what changed, and where the evidence sits.</p></div>
-        <div class="plain-card"><span class="label">Human role</span><p>The analyst validates relevance and retains final judgment.</p></div>
-      </div>
-    </section>
-
-    <section class="section-block story-section" tabindex="-1" aria-labelledby="product-heading">
-      <div class="section-intro">
-        <div><p class="eyebrow">04 · What the MVP does</p><h2 id="product-heading">A six-step evidence-linked workflow</h2></div>
-        <p>The system compares consecutive 10-Ks, checks earlier disclosures, and preserves the research record.</p>
-      </div>
-      <div class="grid-3">
-        <div class="card"><span class="icon-number">1</span><h3>Ingest</h3><p>Load frozen prior and current SEC filings with timestamps and source identity.</p></div>
-        <div class="card"><span class="icon-number">2</span><h3>Compare</h3><p>Identify added, removed, and materially changed language in matched sections.</p></div>
-        <div class="card"><span class="icon-number">3</span><h3>Classify</h3><p>Apply fixed categories, direction, materiality, and confidence rules.</p></div>
-        <div class="card"><span class="icon-number">4</span><h3>Check prior disclosure</h3><p>Search strictly earlier 8-Ks and pre-filing headlines; exclude same-day news.</p></div>
-        <div class="card"><span class="icon-number">5</span><h3>Explain with evidence</h3><p>Show why the item may matter beside exact prior and current excerpts.</p></div>
-        <div class="card"><span class="icon-number">6</span><h3>Preserve the record</h3><p>Retain filing links, timestamps, hashes, offsets, and analyst context.</p></div>
-      </div>
-      <div class="trust-note" style="margin-top:1rem"><strong>The system answers:</strong> What changed? Where? Is it economically meaningful? Was it already disclosed? Why might an analyst care? Where is the exact evidence?</div>
-    </section>
-
-    <section class="section-block story-section" tabindex="-1" aria-labelledby="results-heading">
-      <div class="section-intro">
-        <div><p class="eyebrow">05 · Demo results</p><h2 id="results-heading">Curated product evidence first</h2></div>
-        <p>Counts reconcile to the frozen study. Large archive scale is a secondary technical foundation, not the value proposition.</p>
-      </div>
-      <div class="metric-grid">
-        <div class="metric primary"><strong>150</strong><span>companies and consecutive 10-K pairs</span></div>
-        <div class="metric primary"><strong>995</strong><span>evidence-backed changes</span></div>
-        <div class="metric primary"><strong>629</strong><span>high-confidence changes</span></div>
-        <div class="metric primary"><strong>1,990</strong><span>verified excerpt offsets</span></div>
-      </div>
-      <div class="metric-grid" style="margin-top:1rem">
-        <div class="metric secondary"><strong>394</strong><span>previously disclosed</span></div>
-        <div class="metric secondary"><strong>342</strong><span>genuinely new in bounded corpus</span></div>
-        <div class="metric secondary"><strong>243</strong><span>partially anticipated</span></div>
-        <div class="metric secondary"><strong>0</strong><span>point-in-time violations</span></div>
-      </div>
-      <details class="method technical-utility"><summary>Technical foundation</summary><div><p>296,119 validated parsed SEC 8-K records and 731,682 frozen first-substantive-story headlines. These annual partitions load only when opened; licensed article bodies are excluded.</p></div></details>
-    </section>
-
-    <section class="section-block story-section" tabindex="-1" aria-labelledby="case-heading">
-      <div class="section-intro">
-        <div><p class="eyebrow">06 · Guided case study</p><h2 id="case-heading">Kraft Heinz: covenant and refinancing language</h2></div>
-        <p>Selected for evidence diversity and clarity—not future performance.</p>
-      </div>
-      <div class="evidence-meta">
-        <div><strong>Current filing</strong><span>2023-02-16</span><span>Item 1A</span></div>
-        <div><strong>Change category</strong><span>Debt or refinancing pressure</span></div>
-        <div><strong>Materiality</strong><span>High · confidence 0.947</span></div>
-        <div><strong>Novelty</strong><span>Previously disclosed in 8-K</span></div>
-      </div>
-      <div class="comparison">
-        <article class="excerpt prior"><p class="label">Prior filing language</p><h3>Market and benchmark-rate risk</h3><blockquote>“Changes in financial and capital markets… may increase the cost of financing as well as the risks of refinancing maturing debt… [LIBOR] rates… phase out… by the end of June 2023.”</blockquote></article>
-        <article class="excerpt current"><p class="label">Current filing language</p><h3>Default, acceleration, waivers, and facility access</h3><blockquote>“The creditors who hold our debt could <mark>accelerate amounts due</mark>… If we breach any covenants… we may not be able to obtain a waiver… and [could be] <mark>unable to access our Senior Credit Facility</mark>.”</blockquote></article>
-      </div>
-      <div class="delta">
-        <div class="added"><strong>Added</strong><p>Specific language on acceleration, covenant breaches, waiver dependency, default, and facility access.</p></div>
-        <div class="removed"><strong>Removed</strong><p>General market-disruption, interest-rate volatility, refinancing, and LIBOR-transition language.</p></div>
-      </div>
-      <div class="grid-2" style="margin-top:1rem">
-        <div class="plain-card"><span class="label">Why an analyst may care</span><p>Debt and refinancing changes can alter cash demands, financing access, and downside exposure. The analyst should reconcile covenant headroom and waiver status.</p></div>
-        <div class="plain-card"><span class="label">Earlier filing-time evidence</span><p>An intervening 8-K and a strictly earlier headline existed. The 10-K adds detail; the underlying issue should not be treated as wholly new.</p></div>
-      </div>
-      <aside class="ex-post"><strong>Ex post—observed later, not available at filing time:</strong> the frozen packet reports later return and risk outcomes. They were never used for classification or case selection.</aside>
-      <div class="button-row">
-        <a class="button" href="https://www.sec.gov/Archives/edgar/data/1637459/000163745923000009/khc-20221231.htm" target="_blank">View original SEC filing</a>
-        <a class="button secondary" href="company_comparison.html#case-2">Open full comparison</a>
-        <a class="button secondary" href="company_timeline.html#timeline-2">View company timeline</a>
-        <a class="button secondary" href="evidence_packets/02_KHC.html">Download evidence packet</a>
-      </div>
-    </section>
-
-    <section class="section-block story-section" tabindex="-1" aria-labelledby="research-heading">
-      <div class="section-intro">
-        <div><p class="eyebrow">07 · What the research found</p><h2 id="research-heading">A product can work even when the market claim does not.</h2></div>
+        <div><p class="eyebrow">Disciplined innovation</p><h2 id="results-title">The market claims were not supported. The evidence-processing capability was.</h2></div>
         <p>Negative and null results were preserved rather than tuned away.</p>
       </div>
-      <div class="grid-3">
-        <article class="card"><p class="label">A · Raw 10-K feature study</p><h3>No incremental improvement</h3><p>Adding 10-Ks did not improve the existing 8-K and cheap-news model.</p></article>
-        <article class="card"><p class="label">B · Expected-language study</p><h3>Persistence baseline won</h3><p>The prior 10-K alone predicted the next filing’s representation better than models augmented with characteristics, 8-Ks, and news.</p></article>
-        <article class="card"><p class="label">C · Disclosure-change demo</p><h3>Product works; risk test inconclusive</h3><p>The system reliably identified evidence-backed changes, but the bounded risk test was inconclusive.</p></article>
+      <div class="result-gates">
+        <article><span class="status neutral">Not supported</span><h3>Incremental news or 10-K alpha</h3><p>Adding 10-K information did not improve the existing 8-K and inexpensive-news model.</p></article>
+        <article><span class="status neutral">Not supported</span><h3>Better expected-language reconstruction</h3><p>The prior 10-K alone predicted the next filing’s representation better than augmented models.</p></article>
+        <article><span class="status amber">Inconclusive</span><h3>Disclosure-change downside risk</h3><p>The product found evidence-backed changes; the bounded risk test did not establish a reliable signal.</p></article>
       </div>
-      <div class="claim-grid" style="margin-top:1rem">
-        <div class="claim-card supported"><h3>Supported</h3><ul><li>Technical feasibility</li><li>Point-in-time integrity</li><li>Evidence extraction</li><li>Disclosure comparison</li><li>Product demonstration</li></ul></div>
-        <div class="claim-card unsupported"><h3>Not supported</h3><ul><li>Proven alpha</li><li>Causal prediction</li><li>Validated risk signal</li><li>Customer adoption</li><li>Willingness to pay</li></ul></div>
-        <div class="claim-card pending"><h3>Still to test</h3><ul><li>Time savings and recall</li><li>Trust and correction rate</li><li>Repeat use</li><li>Institutional-memory value</li></ul></div>
-      </div>
+      <p class="classification"><span>Final research classification</span><strong>INSUFFICIENT_EVIDENCE</strong></p>
+      <aside class="speaker-notes" aria-label="Presenter note"><strong>Speaking prompt · 25 sec</strong> Say this plainly: the research did not prove alpha, causal prediction, or a validated risk signal. It did prove the technical ability to compare disclosures with point-in-time evidence. That distinction created the pivot.</aside>
+      <p class="next-idea"><span>Next</span> The null result became a design input: refine the problem, not the statistics.</p>
     </section>
 
-    <section class="section-block story-section" tabindex="-1" aria-labelledby="pilot-heading">
+    <section id="slide-pivot" class="section-block story-section" tabindex="-1" aria-labelledby="pivot-title" data-next="The redesigned workflow turns a filing into a ranked, evidence-linked research record.">
+      <div class="slide-kicker"><span>06</span><span>The product pivot</span></div>
       <div class="section-intro">
-        <div><p class="eyebrow">08 · Next pilot</p><h2 id="pilot-heading">Run a controlled 2–4 week analyst workflow pilot.</h2></div>
-        <p>The next question is operational—not whether another model can rescue an unsupported trading claim.</p>
+        <div><p class="eyebrow">Evidence changed the project</p><h2 id="pivot-title">The research did not prove alpha. It revealed a better innovation opportunity.</h2></div>
+        <p>Hypothesis tested. Result rejected. User problem refined. Solution redesigned. Next experiment defined.</p>
       </div>
-      <div class="grid-3">
-        <div class="card"><span class="label">Users</span><h3>3–6 analysts</h3><p>Bounded participants close enough to observe workflow quality and disagreement.</p></div>
-        <div class="card"><span class="label">Workflow</span><h3>Product versus normal process</h3><p>Review a bounded set of filings using both approaches without changing analyst authority.</p></div>
-        <div class="card"><span class="label">Decision question</span><h3>Better-supported conclusions, faster?</h3><p>Does the product improve speed without weakening judgment?</p></div>
+      <div class="pivot-journey" aria-label="Project pivot from original idea to analyst pilot">
+        <div><strong>Original idea</strong><span>Predict returns</span></div><i aria-hidden="true">→</i>
+        <div><strong>Empirical test</strong><span>Lock the comparison</span></div><i aria-hidden="true">→</i>
+        <div><strong>Null result</strong><span>Reject the claim</span></div><i aria-hidden="true">→</i>
+        <div><strong>Customer discovery</strong><span>Listen for workflow pain</span></div><i aria-hidden="true">→</i>
+        <div class="pivot-focus"><strong>New problem</strong><span>Focus analyst attention</span></div><i aria-hidden="true">→</i>
+        <div class="pivot-focus"><strong>Working product</strong><span>Evidence-linked changes</span></div><i aria-hidden="true">→</i>
+        <div><strong>Analyst pilot</strong><span>Test workflow value</span></div>
       </div>
-      <div class="grid-3" style="margin-top:1rem">
-        <div class="plain-card"><strong>Efficiency</strong><p>Time to identify the most important change; repeat use.</p></div>
-        <div class="plain-card"><strong>Quality</strong><p>Material-event recall; category and materiality agreement.</p></div>
-        <div class="plain-card"><strong>Trust</strong><p>Excerpt correction rate; novelty-label acceptance; stored-evidence usefulness.</p></div>
-      </div>
-      <p class="notice" style="margin-top:1rem"><strong>Primary pilot metric to resolve:</strong> analyst preference versus current workflow, anchored by time-to-important-change and material-event recall.</p>
+      <p class="pivot-caption">Evidence changed the project rather than being tuned away.</p>
+      <aside class="speaker-notes" aria-label="Presenter note"><strong>Speaking prompt · 20 sec</strong> Frame the null result as a decision gate. It prevented an unsupported trading pitch and redirected the project toward the concrete job interviews revealed: deciding what to read and preserving why it mattered.</aside>
+      <p class="next-idea"><span>Next</span> The redesigned workflow turns a filing into a ranked, evidence-linked research record.</p>
     </section>
 
-    <section class="section-block story-section" tabindex="-1" aria-labelledby="questions-heading">
+    <section id="slide-workflow" class="section-block story-section" tabindex="-1" aria-labelledby="workflow-title" data-next="One frozen Kraft Heinz case shows how comparison and novelty work together.">
+      <div class="slide-kicker"><span>07</span><span>How the workflow works</span></div>
       <div class="section-intro">
-        <div><p class="eyebrow">09 · Questions for the professor</p><h2 id="questions-heading">Where should the evidence standard move next?</h2></div>
-        <p>The project is ready for critique on focus, framing, pilot design, and enterprise access.</p>
+        <div><p class="eyebrow">The MVP</p><h2 id="workflow-title">From new filing to review-ready evidence in six steps.</h2></div>
+        <a class="button" href="ranked_change_feed.html?guided=khc">Open the live workflow</a>
       </div>
-      <ol class="questions">
-        <li>Is the customer problem focused enough?</li>
-        <li>Is the morning research workflow the right beachhead?</li>
-        <li>Is this best framed as a product, internal process innovation, or both?</li>
-        <li>Which user or buyer is still missing from the interview sample?</li>
-        <li>Which pilot metric should be primary?</li>
-        <li>What evidence would justify a go decision?</li>
-        <li>How much of the negative alpha research belongs in the final presentation?</li>
-        <li>What should I ask Fidelity for: feedback, users, a sponsor, or a pilot?</li>
+      <ol class="workflow-six">
+        <li><span>1</span><strong>Ingest</strong><small>Preserve source and filing time</small></li>
+        <li><span>2</span><strong>Compare</strong><small>Match prior and current sections</small></li>
+        <li><span>3</span><strong>Classify</strong><small>Category, direction, materiality</small></li>
+        <li><span>4</span><strong>Check earlier disclosure</strong><small>8-Ks and pre-filing headlines</small></li>
+        <li><span>5</span><strong>Explain</strong><small>Why it may merit review</small></li>
+        <li><span>6</span><strong>Preserve</strong><small>Export an auditable record</small></li>
       </ol>
-      <div class="hero-actions">
-        <a class="button" href="ranked_change_feed.html">Open the live workflow</a>
-        <a class="button secondary" href="research_results.html">Review research results</a>
-        <a class="button secondary" href="methodology.html">Audit the methodology</a>
+      <article class="product-specimen" aria-label="Example ranked disclosure change">
+        <div class="specimen-head"><div><span class="ticker">KHC</span><strong>The Kraft Heinz Company</strong></div><span class="badge high">High materiality</span><span class="badge anticipated">Previously disclosed</span><span class="confidence">Confidence 0.947</span></div>
+        <h3>Debt and refinancing language became more specific.</h3>
+        <p><mark>Added:</mark> acceleration, covenant breaches, waiver dependency, default, and access to the Senior Credit Facility.</p>
+        <div class="specimen-actions"><span>Why review: financing access and cash-demand risk</span><a href="evidence_packets/02_KHC.html">Inspect evidence →</a></div>
+      </article>
+      <aside class="speaker-notes" aria-label="Presenter note"><strong>Speaking prompt · 25 sec</strong> Show the handoff from system to analyst. The system narrows the queue and attaches evidence. It does not decide whether Kraft Heinz is an investment or predict what the stock will do.</aside>
+      <p class="next-idea"><span>Next</span> One frozen Kraft Heinz case shows how comparison and novelty work together.</p>
+    </section>
+
+    <section id="slide-case" class="section-block story-section" tabindex="-1" aria-labelledby="case-title" data-next="The product demonstration is supported; alpha, adoption, and workflow benefit are not.">
+      <div class="slide-kicker"><span>08</span><span>One real case</span></div>
+      <div class="section-intro">
+        <div><p class="eyebrow">Kraft Heinz · 2023 10-K · Item 1A</p><h2 id="case-title">A more specific debt warning—but not a wholly new issue.</h2></div>
+        <p>Selected for evidence diversity and clarity, not later market performance.</p>
       </div>
+      <div class="case-boundary"><strong>Available at filing time</strong><span>Prior 10-K + current 10-K + strictly earlier 8-K and headline evidence</span></div>
+      <div class="comparison compact">
+        <article class="excerpt prior"><p class="label">Prior filing</p><h3>General refinancing risk</h3><blockquote>“Changes in financial and capital markets … may increase the cost of financing as well as the risks of refinancing maturing debt…”</blockquote></article>
+        <article class="excerpt current"><p class="label">Current filing</p><h3>Specific covenant consequences</h3><blockquote>“The creditors who hold our debt could <mark>accelerate amounts due</mark> … [and we could be] <mark>unable to access our Senior Credit Facility</mark>.”</blockquote></article>
+      </div>
+      <div class="case-conclusion">
+        <div><span class="label">What changed</span><strong>Default, acceleration, waivers, and facility access were added.</strong></div>
+        <div><span class="label">Novelty</span><strong>Previously disclosed</strong><small>An intervening 8-K and earlier headline existed.</small></div>
+        <div><span class="label">Analyst judgment</span><strong>Reconcile covenant headroom and waiver status.</strong></div>
+      </div>
+      <div class="button-row"><a class="button" href="evidence_packets/02_KHC.html">Open evidence packet</a><a class="button secondary" href="case_study_walkthrough.html">Compare two novelty cases</a><a class="button secondary" href="https://www.sec.gov/Archives/edgar/data/1637459/000163745923000009/khc-20221231.htm" target="_blank">Original SEC filing</a></div>
+      <aside class="speaker-notes" aria-label="Presenter note"><strong>Speaking prompt · 30 sec</strong> Read only the highlighted phrases. The new 10-K language is more specific, but the topic appeared earlier. That distinction prevents the analyst from confusing sharper wording with a first disclosure.</aside>
+      <p class="next-idea"><span>Next</span> The product demonstration is supported; alpha, adoption, and workflow benefit are not.</p>
+    </section>
+
+    <section id="slide-claims" class="section-block story-section" tabindex="-1" aria-labelledby="claims-title" data-optional="true" data-next="The next experiment is a controlled workflow pilot—not another unsupported trading claim.">
+      <div class="slide-kicker"><span>09</span><span>Evidence boundary</span></div>
+      <div class="section-intro">
+        <div><p class="eyebrow">Supported versus unsupported</p><h2 id="claims-title">A working product demonstration is not the same as a validated business or investment result.</h2></div>
+        <p>Four labels keep the claims legible.</p>
+      </div>
+      <div class="claim-grid four">
+        <article class="claim-card supported"><span class="status teal">Supported</span><ul><li>Reliable document processing</li><li>Historical comparison</li><li>Evidence-linked change detection</li><li>Point-in-time integrity</li><li>Reproducible classifications</li></ul></article>
+        <article class="claim-card unsupported"><span class="status neutral">Not supported</span><ul><li>Incremental news alpha</li><li>Improved expected-language model</li><li>Causal prediction</li><li>Customer adoption</li><li>Willingness to pay</li></ul></article>
+        <article class="claim-card pending"><span class="status amber">Inconclusive</span><ul><li>Downside-risk signal</li><li>Economic usefulness of risk labels</li></ul></article>
+        <article class="claim-card untested"><span class="status outline">Not tested</span><ul><li>Analyst time savings</li><li>Recall and trust</li><li>Repeat use</li><li>Institutional-memory value</li></ul></article>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter note"><strong>Speaking prompt · 20 sec</strong> The site separates capability, research outcome, and commercial validation. The only green-light claim is that the bounded evidence workflow operates as demonstrated. User benefit still needs a pilot.</aside>
+      <p class="next-idea"><span>Next</span> The next experiment is a controlled workflow pilot—not another unsupported trading claim.</p>
+    </section>
+
+    <section id="slide-pilot" class="section-block story-section" tabindex="-1" aria-labelledby="pilot-title" data-next="Return to the overview or open the live workflow.">
+      <div class="slide-kicker"><span>10</span><span>Pilot and discussion</span></div>
+      <div class="section-intro">
+        <div><p class="eyebrow">Next experiment · 2–4 weeks</p><h2 id="pilot-title">Can 3–6 analysts reach better-supported conclusions faster?</h2></div>
+        <p>Compare the normal workflow with Pure News Intelligence-assisted review on a bounded set of 8-K and 10-K changes.</p>
+      </div>
+      <div class="pilot-grid">
+        <article><span class="label">Primary measure</span><h3>Time to identify and explain the most important change</h3></article>
+        <article><span class="label">Quality guardrails</span><h3>Recall, agreement, correction burden, and evidence quality</h3></article>
+        <article><span class="label">Adoption signals</span><h3>Repeat use, exports, stored-context usefulness, and preference</h3></article>
+      </div>
+      <div class="discussion-grid">
+        <div><p class="label">Questions for the professor</p><ul><li>Is the customer problem focused enough?</li><li>Which user or buyer is still missing?</li><li>Which pilot metric should be primary?</li><li>What evidence would justify a go decision?</li></ul></div>
+        <div class="cta-panel"><p class="label">Help test the next version</p><h3>Choose one concrete next step.</h3><a href="case_study_walkthrough.html">Review two contrasting cases</a><a href="pilot_plan.html">Critique the pilot plan</a><a href="professor_materials.html">Download professor materials</a><a href="innovation_framework.html">Review the class framework</a></div>
+      </div>
+      <div class="button-row"><a class="button" href="ranked_change_feed.html">Open live workflow</a><a class="button secondary" href="../index.html">Return to overview</a></div>
+      <aside class="speaker-notes" aria-label="Presenter note"><strong>Speaking prompt · 30 sec</strong> End with a decision, not a pitch. Ask which metric should govern the pilot and what evidence would warrant continuing, revising, or stopping. The requested help is feedback, an analyst introduction, or enterprise-requirement critique.</aside>
+      <p class="next-idea"><span>End</span> Return to the overview or open the live workflow.</p>
     </section>
   </main>
-  <footer>Decision support, not investment advice. Final research classification: INSUFFICIENT_EVIDENCE.</footer>
+  <footer>
+    <nav aria-label="Presentation resources"><a href="innovation_framework.html">Innovation Framework</a><a href="pilot_plan.html">Pilot Plan</a><a href="professor_materials.html">Professor Materials</a></nav>
+    <p>Decision support, not investment advice. Final research classification: <strong>INSUFFICIENT_EVIDENCE</strong>.</p>
+  </footer>
   <script src="assets/site.js"></script>
 </body>
 </html>
