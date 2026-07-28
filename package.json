@@ -1,0 +1,13 @@
+{
+  "name": "pure-news-intelligence-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static GitHub Pages demonstration for evidence-linked disclosure intelligence.",
+  "scripts": {
+    "test": "playwright test",
+    "test:update": "playwright test --update-snapshots"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.0"
+  }
+}
