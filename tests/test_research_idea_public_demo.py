@@ -269,7 +269,7 @@ def test_readme_documents_frozen_public_architecture():
         assert phrase in text
 
 
-def test_deployment_is_unchanged_before_p5():
+def test_validated_public_deployment_commit_is_preserved():
     result = subprocess.run(
         ["git", "rev-parse", "origin/gh-pages"],
         cwd=ROOT,
@@ -277,4 +277,4 @@ def test_deployment_is_unchanged_before_p5():
         capture_output=True,
         text=True,
     )
-    assert result.stdout.strip() == "74ec311a7eaf3e848ef242da4f5a8a4ff7b1613a"
+    assert result.stdout.strip() == "61c50b0b0f8d95ea9b39edd2a2b02d451ef9890f"

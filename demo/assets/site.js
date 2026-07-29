@@ -5,6 +5,30 @@
   const navToggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".primary-nav");
 
+  // Keep one concise, audience-neutral visitor path across public pages.
+  if (nav) {
+    const inDemo = location.pathname.includes("/demo/");
+    const prefix = inDemo ? "" : "demo/";
+    const overview = inDemo ? "../index.html" : "index.html";
+    const currentFile = location.pathname.split("/").pop() || "index.html";
+    const items = [
+      [overview, "Overview", currentFile === "index.html"],
+      [`${prefix}ranked_change_feed.html`, "Ranked Changes", currentFile === "ranked_change_feed.html"],
+      [`${prefix}case_studies.html`, "Case Studies", currentFile === "case_studies.html"],
+      [`${prefix}research_ideas.html`, "Research Ideas", currentFile.startsWith("research_idea")],
+      [`${prefix}research_results.html`, "Research Results", currentFile === "research_results.html"],
+      [`${prefix}methodology.html`, "Methodology", currentFile === "methodology.html" || currentFile === "research_idea_methodology.html"],
+      [`${prefix}pilot_plan.html`, "Pilot Plan", currentFile === "pilot_plan.html"]
+    ];
+    nav.replaceChildren(...items.map(([href, label, active]) => {
+      const link = document.createElement("a");
+      link.href = href;
+      link.textContent = label;
+      if (active) link.setAttribute("aria-current", "page");
+      return link;
+    }));
+  }
+
   if (navToggle && nav) {
     navToggle.addEventListener("click", () => {
       const open = nav.classList.toggle("open");
@@ -15,12 +39,10 @@
   // Keep the locked research-results HTML byte-identical while layering the
   // bounded V2 public-demo section at render time.
   if (location.pathname.endsWith("/research_results.html")) {
-    if (nav && !nav.querySelector('a[href="research_ideas.html"]')) {
-      const ideasLink = document.createElement("a");
-      ideasLink.href = "research_ideas.html";
-      ideasLink.textContent = "Research Ideas";
-      nav.insertBefore(ideasLink, nav.querySelector('a[href="research_results.html"]'));
-    }
+    document.title = "Research Program Results | Pure News Intelligence";
+    document.querySelector('meta[name="description"]')?.setAttribute("content", "Four-stage research program: null return-prediction findings, a disclosure-change workflow, and bounded grounded research hypotheses.");
+    const heroLede = document.querySelector(".hero .lede");
+    if (heroLede) heroLede.textContent = "Four locked stages separate what the evidence supports, does not support, leaves inconclusive, and has not tested.";
     const finalCta = document.querySelector("main > .section-block:last-of-type");
     if (finalCta && !byId("idea-v2-results")) {
       const ideaResults = document.createElement("section");

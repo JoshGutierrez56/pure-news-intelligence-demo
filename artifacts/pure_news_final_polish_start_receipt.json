@@ -1,0 +1,56 @@
+{
+  "receipt_version": "1.0",
+  "created_at_utc": "2026-07-29T21:35:00Z",
+  "repository": "JoshGutierrez56/pure-news-intelligence-demo",
+  "branch": "feat/research-idea-engine-public-demo-v1",
+  "starting_commit": "3539e9a60de1868a73968cfc1f33077f1f2fc0b7",
+  "live_gh_pages_commit": "61c50b0b0f8d95ea9b39edd2a2b02d451ef9890f",
+  "public_manifest_sha256": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7",
+  "locked_claims": {
+    "research_idea_cases_reviewed": 8,
+    "publishable_research_hypotheses": 2,
+    "safe_failures": 6,
+    "actionable_trade_views": 0,
+    "rh_evidence_coverage": 1.0,
+    "dvn_evidence_coverage": 1.0,
+    "efx_status": "REJECT_MISLEADING_COMPARISON",
+    "formal_blinded_human_review": "PENDING",
+    "sixty_case_phase": "BLOCKED_NOT_RUN",
+    "investment_performance_claim": "NOT_SUPPORTED",
+    "causal_claim": "NOT_SUPPORTED",
+    "commercial_validation": "NOT_ESTABLISHED"
+  },
+  "frozen_v1_packet_hashes_sha256": {
+    "279e7d4e407851a19548": "eaad36709c4bb22c9a0ce6181430d58b38051d4737eaca6c8fb8d490023e09bf",
+    "2f22dc2216c9df31d377": "09006f7faae1fd1ba33f53254f2608cbdc1ad477e054bcf52411d3079a981a23",
+    "339fae2941721ee094b0": "c48884a8d2416f77f3755704496a4fb46ce9245237a0e0be4af17456ec1eea56",
+    "412b08746bb0ed5a7745": "93f87375bd8be410bb78008880ee0111cd00ac62b9c0c0dabfa9040ce7f9bb85",
+    "4784f62ad001b2a12af4": "e0b2a6d2303a555abfd1dcc3233e55491c14ae11b03934eb343b851e58d85bbc",
+    "8d4598f4ea16f15c7048": "bc60517e32093b8f242678f89214de3387d522913d8f34728f5ceaef20516954",
+    "8f5336b55618ffe68e8a": "81b73939ed53148451c0ddcaf89bd7d478630dfff08a53061d40270403d7c075",
+    "dbe75bc24f2888f4166a": "2ee6dae07d49e105312a38a8c1ca3f978f468c8e788aafea205be2ff1a45a822"
+  },
+  "frozen_v2_packet_hashes_sha256": {
+    "279e7d4e407851a19548": "32056ef6523c5729fc1f98d1570e586a78dc43cd8a2648fc471599159679438a",
+    "2f22dc2216c9df31d377": "cce16b1202c72d51631f896cae1c31772f5832a5d9999adb2c91c7ef92510e62",
+    "339fae2941721ee094b0": "9fe49ca6034466fa37274bc438b8dc7efbc928800a2522ca50a8fc430c94d663",
+    "412b08746bb0ed5a7745": "e9004af7ed1ed1a536a94f0b3a73a658bd1736625c07fd9d055dcc5bb45f7921",
+    "4784f62ad001b2a12af4": "34059b002a144130c44de18de850ed00f09a4fbf052160e134626403b1d7b06f",
+    "8d4598f4ea16f15c7048": "a129b676aec00502ec18ff5dbf721741dfa528dad05f33d5c606dd1efc786ac7",
+    "8f5336b55618ffe68e8a": "1bceb7daf24aa59e98194b452f275f38203ef7095daae79d3c7869c31944fefb",
+    "dbe75bc24f2888f4166a": "727162fe17471d3a5bc5f92e30adc3d8376cc3d0154293165d451e8e2364cca9"
+  },
+  "other_frozen_hashes_sha256": {
+    "demo/data/changes.json": "17d3ec79ea48d8affa42f6f8a6b775b52a285736bf65853ae849bdb760211271",
+    "demo/data/catalog.json": "678dc89759e171d5a30593eb8120e9604d220380af63430d5559266047627d13",
+    "demo/research_results.html": "1db9185b725c3601098c082ff6f89469e86e8b6d9fa264a80bcacb90a60836f1"
+  },
+  "deployment_authorized": false,
+  "release_actions_prohibited": [
+    "tag",
+    "release",
+    "deploy",
+    "packet regeneration",
+    "60-case phase"
+  ]
+}

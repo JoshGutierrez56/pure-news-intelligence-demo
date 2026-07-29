@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite it using the metadata below."
+title: "Pure News Intelligence"
+type: software
+authors:
+  - family-names: "Gutierrez"
+    given-names: "Josh"
+repository-code: "https://github.com/JoshGutierrez56/pure-news-intelligence-demo"
+url: "https://joshgutierrez56.github.io/pure-news-intelligence-demo/"
+version: "1.0.0-rc"
+date-released: "2026-07-29"
+abstract: "An evidence-linked corporate disclosure research workflow with bounded, grounded research hypotheses and explicit safe rejection."
+keywords:
+  - financial-research
+  - sec-filings
+  - disclosure-analysis
+  - evidence-grounding
