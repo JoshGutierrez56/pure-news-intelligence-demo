@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Metadata coverage and processing-readiness preview for issuers observed in the frozen Pure News Intelligence SEC corpus.">
+  <meta property="og:title" content="Universe Coverage Preview | Pure News Intelligence"><meta property="og:type" content="website">
+  <title>Universe Coverage Preview | Pure News Intelligence</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-universe-preview>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="../index.html">Pure News Intelligence<small>Evidence-linked disclosure intelligence</small></a><button class="nav-toggle secondary" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button><nav class="primary-nav" id="primary-nav" aria-label="Primary navigation"></nav></div></header>
+  <main id="main">
+    <section class="hero compact"><div class="hero-copy"><p class="eyebrow">Broad U.S. public-company coverage preview</p><h1>See what is indexed, validated, and still missing.</h1><p class="lede">This local preview maps issuer-level filing and permitted news metadata already available in the frozen project corpus.</p><div class="hero-actions"><a class="button secondary" href="#universe-table">Browse coverage</a><a class="button ghost" href="methodology.html">Review methodology</a></div></div><aside class="hero-aside"><p class="label">As-of date</p><h2 id="universe-as-of">Loading…</h2><p>No live APIs, filing downloads, or model inference run from this page.</p></aside></section>
+    <div class="notice" role="note"><strong>Coverage boundary:</strong> This page shows metadata coverage and processing readiness. It does not mean every issuer has completed disclosure-change analysis or Research Idea Engine review.</div>
+    <section class="section-block" aria-labelledby="coverage-summary-title"><div class="section-intro"><div><p class="eyebrow">Coverage summary</p><h2 id="coverage-summary-title">Frozen metadata, explicit gaps</h2></div><p>Missing news metadata is shown as unavailable, never as zero news.</p></div><div class="metric-grid universe-metrics" id="universe-summary" aria-busy="true"></div></section>
+    <section class="section-block" aria-labelledby="status-title"><div class="section-intro"><div><p class="eyebrow">Status definitions</p><h2 id="status-title">Indexing is not analysis</h2></div><p>Each status describes the strongest completed stage for that issuer.</p></div><div class="resource-index universe-status-definitions">
+      <article><span class="status teal">Fully validated</span><p>Included in the frozen Disclosure Change Engine demo. Research Idea Engine review is separately labeled.</p></article>
+      <article><span class="status neutral">Metadata indexed</span><p>Normalized identity plus recent 8-K and permitted news metadata; no completed disclosure analysis is implied.</p></article>
+      <article><span class="status amber">Partial metadata</span><p>At least one useful metadata source is present, with other source gaps shown explicitly.</p></article>
+      <article><span class="status danger">Missing source coverage</span><p>Issuer identity or required source coverage is incomplete.</p></article>
+      <article><span class="status neutral">Not yet processed</span><p>Historical issuer metadata exists, but no recent source metadata or validated analysis is available.</p></article>
+    </div></section>
+    <section class="section-block" id="universe-table" aria-labelledby="universe-table-title"><div class="section-intro"><div><p class="eyebrow">Issuer coverage ledger</p><h2 id="universe-table-title">Search and filter the frozen universe</h2></div><p id="universe-result-count" role="status" aria-live="polite">Loading issuer metadata…</p></div>
+      <form class="universe-filters" id="universe-filters">
+        <label>Search ticker or company<input id="universe-search" type="search" autocomplete="off" placeholder="e.g., MSFT"></label>
+        <label>Processing status<select id="universe-status"><option value="">All statuses</option><option>Fully validated</option><option>Metadata indexed</option><option>Partial metadata</option><option>Missing source coverage</option><option>Not yet processed</option></select></label>
+        <label>10-K metadata<select id="universe-10k"><option value="">Any</option><option value="available">Available</option><option value="missing">Missing</option></select></label>
+        <label>Recent 8-K metadata<select id="universe-8k"><option value="">Any</option><option value="available">Available</option><option value="missing">Missing</option></select></label>
+        <label>Permitted news metadata<select id="universe-news"><option value="">Any</option><option value="available">Available</option><option value="missing">Unavailable</option></select></label>
+        <label>Validated demo status<select id="universe-validated"><option value="">Any</option><option value="validated">Validated in demo</option><option value="idea">Research Idea reviewed</option><option value="not_validated">Not validated</option></select></label>
+        <button type="reset" class="secondary" id="universe-reset">Reset filters</button>
+      </form>
+      <div class="table-wrap universe-table-wrap" tabindex="0" aria-label="Scrollable issuer coverage table">
+        <table class="scorecard universe-table"><caption>Issuer metadata coverage and processing readiness</caption><thead><tr><th scope="col">Ticker</th><th scope="col">Company</th><th scope="col">Latest 10-K</th><th scope="col">Recent 8-K count</th><th scope="col">News metadata</th><th scope="col">Processing status</th><th scope="col">Validated status</th><th scope="col">Source coverage</th></tr></thead><tbody id="universe-rows"><tr><td colspan="8">Loading frozen metadata…</td></tr></tbody></table>
+      </div>
+      <div class="pagination universe-pagination"><button class="secondary" type="button" id="universe-previous">Previous</button><span id="universe-page">Page 1</span><button class="secondary" type="button" id="universe-next">Next</button></div>
+    </section>
+    <section class="section-block"><div class="cta-wide"><div><p class="eyebrow">Provenance</p><h2>Built only from frozen project sources.</h2><p>Unique normalized CIKs from the parsed SEC 8-K metadata corpus define the preview universe. This is not Russell 3000 membership.</p></div><div class="cta-options"><a href="data/universe_preview/source_manifest.json">Source manifest</a><a href="data/universe_preview/build_receipt.json">Build receipt</a><a href="known_limitations.html">Known limitations</a></div></div></section>
+  </main>
+  <footer><nav aria-label="Universe preview resources"><a href="methodology.html">Methodology</a><a href="known_limitations.html">Known Limitations</a><a href="public_architecture.html">Architecture</a></nav><p>Metadata coverage preview only. No full-universe analysis or live inference.</p></footer>
+  <script src="assets/site.js"></script><script src="assets/universe_preview.js"></script>
+</body>
+</html>

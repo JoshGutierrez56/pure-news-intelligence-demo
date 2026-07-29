@@ -50,6 +50,30 @@ The project did not demonstrate alpha, Sharpe-ratio improvement, information-coe
 
 Supporting resources: [FAQ](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/faq.html), [Known Limitations](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/known_limitations.html), [Future Research](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/future_research.html), [Public Architecture](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/public_architecture.html), [Professor Presentation](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/professor_presentation.html), and [Innovation Framework](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/innovation_framework.html).
 
+## Universe coverage preview
+
+The local [Universe Coverage Preview](demo/universe_coverage_preview.html) indexes 6,190 normalized CIKs observed in the frozen parsed SEC 8-K metadata corpus. It is labeled **Broad U.S. public-company coverage preview** and does not claim Russell 3000 or other index membership.
+
+As of 2024-12-31, the preview combines:
+
+- frozen SEC 8-K metadata from 2012–2024;
+- permitted news metadata from 2015–2024, with article bodies excluded;
+- 10-K metadata available in the curated disclosure-change demo; and
+- bounded Research Idea Engine review status.
+
+The preview reports metadata availability and processing readiness—not completed full-universe analysis. Missing news coverage is `null`/unavailable, never interpreted as zero news. The page performs no live API calls.
+
+Rebuild and verify:
+
+```powershell
+python scripts/build_universe_preview.py
+python scripts/build_universe_preview.py --check
+python -m pytest -q tests/test_universe_preview.py
+npx playwright test tests/universe_preview.spec.cjs
+```
+
+Known gaps include 6,041 issuers without curated 10-K metadata, 5,414 without permitted news metadata, and 3,118 without 8-K metadata in the frozen 2024 recent window. These are explicit coverage gaps, not negative findings.
+
 ## Repository map
 
 - `demo/` — static public interface and public-safe data
