@@ -1,0 +1,2 @@
+# Preserve the validated public-manifest byte sequence for deployment hashing.
+demo/data/research_ideas/v2/manifest.json -text

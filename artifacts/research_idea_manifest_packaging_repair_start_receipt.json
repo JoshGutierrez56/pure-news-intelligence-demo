@@ -1,0 +1,27 @@
+{
+  "receipt_version": "1.0",
+  "created_at_utc": "2026-07-29T17:20:00Z",
+  "repository": "JoshGutierrez56/pure-news-intelligence-demo",
+  "branch": "feat/research-idea-engine-public-demo-v1",
+  "starting_commit": "61264078ccef73adc787d68636e6442799232eba",
+  "validated_implementation_commit": "934d0d8b8f5450cb89b70514136e98b69c03d697",
+  "current_gh_pages_commit": "74ec311a7eaf3e848ef242da4f5a8a4ff7b1613a",
+  "manifest_path": "demo/data/research_ideas/v2/manifest.json",
+  "validated_working_tree_sha256": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7",
+  "current_git_blob_sha256": "b0244bb062351e187411c4f0a8443bd8febb7e2e0c8e4d487393da1f6d6a6928",
+  "working_tree_bytes": 5747,
+  "git_blob_bytes": 5605,
+  "manifest_json_semantically_identical": true,
+  "frozen_hash_source": "artifacts/research_idea_public_demo_start_receipt.json",
+  "prior_deployment_receipt": "artifacts/research_idea_public_deployment_receipt.json",
+  "prior_deployment_report": "reports/research_idea_public_deployment_report.md",
+  "repair_scope": [
+    ".gitattributes",
+    "demo/data/research_ideas/v2/manifest.json"
+  ],
+  "prohibitions": [
+    "Do not change manifest JSON semantics.",
+    "Do not modify packet contents or frozen research artifacts.",
+    "Do not change routes, UI behavior, metrics, outcomes, conclusions, claim boundaries, or the 60-case gate."
+  ]
+}
