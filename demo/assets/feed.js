@@ -4,6 +4,12 @@
   const PAGE_SIZE = 18;
   const STORAGE = { onboarding: "pni-onboarding-dismissed-v2", shortlist: "pni-shortlist-v2" };
   const CASES = { TFC: "01_TFC", KHC: "02_KHC", DLTR: "03_DLTR", DVN: "04_DVN", RH: "05_RH", FCX: "06_FCX", EFX: "07_EFX", CHE: "08_CHE" };
+  const RESEARCH_IDEA_IDS = new Set([
+    "dbe75bc24f2888f4166a", "8f5336b55618ffe68e8a",
+    "339fae2941721ee094b0", "4784f62ad001b2a12af4",
+    "412b08746bb0ed5a7745", "8d4598f4ea16f15c7048",
+    "279e7d4e407851a19548", "2f22dc2216c9df31d377"
+  ]);
   const SECTORS = { TFC: "Financials", KHC: "Consumer Staples", DLTR: "Consumer Staples", DVN: "Energy", RH: "Consumer Discretionary", FCX: "Materials", EFX: "Industrials", CHE: "Health Care" };
   const materialityRank = { high: 3, medium: 2, low: 1 };
   const noveltyRank = { "genuinely new": 4, unclear: 3, "partially anticipated": 2, "previously disclosed": 1 };
@@ -29,6 +35,7 @@
   const noveltyClass = (value) => ({ "genuinely new": "new", "previously disclosed": "previous", "partially anticipated": "partial", unclear: "unclear" })[value];
   const comparisonUrl = (record) => isCase(record) ? `company_comparison.html#case-${Object.keys(CASES).indexOf(record.ticker) + 1}` : `company_comparison.html?ticker=${encodeURIComponent(record.ticker)}`;
   const timelineUrl = (record) => isCase(record) ? `company_timeline.html#timeline-${Object.keys(CASES).indexOf(record.ticker) + 1}` : `company_timeline.html?ticker=${encodeURIComponent(record.ticker)}`;
+  const researchIdeaUrl = (record) => `research_idea.html?change_id=${encodeURIComponent(record.id)}`;
 
   function cardHtml(record) {
     const novelty = noveltyOf(record);
@@ -49,6 +56,7 @@
       <details class="record-detail"><summary>Show full context</summary><div><p>${escapeHtml(summaryText(record))}</p><p><strong>Why it may matter:</strong> ${escapeHtml(record.why)}</p></div></details>
       <p class="why-brief"><strong>Why review:</strong> ${escapeHtml(record.why)}</p>
       <div class="card-actions">
+        <a class="button secondary" href="${researchIdeaUrl(record)}" data-research-idea-available="${RESEARCH_IDEA_IDS.has(record.id)}">Generate Research Idea</a>
         <a href="${escapeHtml(record.url)}" target="_blank">Original SEC filing ↗</a>
         <a href="${comparisonUrl(record)}">Compare filings</a><a href="${timelineUrl(record)}">Timeline</a>
         ${isCase(record) ? `<a href="evidence_packets/${CASES[record.ticker]}.html">Evidence packet</a>` : ""}
@@ -64,7 +72,7 @@
         const novelty = noveltyOf(record);
         return `<tr><td><strong>${escapeHtml(record.ticker)} · ${escapeHtml(record.issuer)}</strong></td><td>${escapeHtml(record.date)}<br>${escapeHtml(sectionOf(record))}</td>
           <td>${escapeHtml(record.category)}<br><span class="badge ${escapeHtml(record.materiality)}">${escapeHtml(record.materiality)}</span> <span class="badge ${noveltyClass(novelty)}">${escapeHtml(noveltyLabel(novelty))}</span></td>
-          <td>${escapeHtml(record.why)}</td><td><a href="${escapeHtml(record.url)}" target="_blank">SEC filing</a><br>Confidence ${Number(record.confidence).toFixed(3)}<br><button type="button" class="save-record table-save" data-save-record="${escapeHtml(record.id)}" aria-pressed="${state.saved.has(record.id)}">${state.saved.has(record.id) ? "Saved" : "Save"}</button></td></tr>`;
+          <td>${escapeHtml(record.why)}</td><td><a href="${researchIdeaUrl(record)}">Generate Research Idea</a><br><a href="${escapeHtml(record.url)}" target="_blank">SEC filing</a><br>Confidence ${Number(record.confidence).toFixed(3)}<br><button type="button" class="save-record table-save" data-save-record="${escapeHtml(record.id)}" aria-pressed="${state.saved.has(record.id)}">${state.saved.has(record.id) ? "Saved" : "Save"}</button></td></tr>`;
       }).join("")}</tbody></table></div>`;
   }
 

@@ -1,0 +1,495 @@
+{
+  "affected_entities": [
+    {
+      "confidence": 0.9,
+      "entity_id": "TFC",
+      "entity_or_group": "Truist Financial Corporation",
+      "evidence_ids": [
+        "evidence-v1:dbe75bc24f2888f4166a:current-10k-excerpt"
+      ],
+      "possible_effect": "Potential for increased operational costs or regulatory scrutiny related to technology and compliance.",
+      "reason": "The filing is Truist's 10-K, and the changes are in its risk disclosures.",
+      "relationship": "Issuer"
+    },
+    {
+      "confidence": 0.5,
+      "entity_id": "TFC-bondholders",
+      "entity_or_group": "Truist Financial Corporation bondholders",
+      "evidence_ids": [
+        "evidence-v1:dbe75bc24f2888f4166a:current-10k-excerpt"
+      ],
+      "possible_effect": "If the consolidation of compliance risk into liquidity risk reflects a genuine increase in operational tail risk, credit spreads may widen.",
+      "reason": "Bondholders are sensitive to operational and liquidity risk changes that affect repayment capacity.",
+      "relationship": "Creditors"
+    }
+  ],
+  "analyst_disposition": {
+    "analyst_notes": "",
+    "edited_fields": [],
+    "review_timestamp": null,
+    "saved_locally_only": true,
+    "status": "UNREVIEWED"
+  },
+  "analyst_questions": [
+    {
+      "evidence_ids": [
+        "evidence-v1:dbe75bc24f2888f4166a:removed-text",
+        "evidence-v1:dbe75bc24f2888f4166a:current-10k-excerpt"
+      ],
+      "question": "Why was the Compliance Risk section removed and merged into Liquidity Risk?",
+      "question_id": "q-001",
+      "required_data": [
+        "MD&A commentary on risk framework changes",
+        "Risk committee meeting minutes"
+      ],
+      "why_it_matters": "To determine if this is a substantive risk model change or a disclosure formatting choice."
+    },
+    {
+      "evidence_ids": [
+        "evidence-v1:dbe75bc24f2888f4166a:added-text"
+      ],
+      "question": "What specific technology risks is Truist highlighting with the new Technology Risk section?",
+      "question_id": "q-002",
+      "required_data": [
+        "Detailed risk factor disclosures in the 10-K",
+        "Investor presentations"
+      ],
+      "why_it_matters": "To assess the materiality and specificity of the tech risk exposure."
+    },
+    {
+      "evidence_ids": [
+        "evidence-v1:dbe75bc24f2888f4166a:added-text"
+      ],
+      "question": "How does Truist's technology risk disclosure compare to its peers?",
+      "question_id": "q-003",
+      "required_data": [
+        "Peer 10-K filings",
+        "Industry risk surveys"
+      ],
+      "why_it_matters": "To determine if this is an industry-wide trend or a Truist-specific issue."
+    },
+    {
+      "evidence_ids": [
+        "evidence-v1:dbe75bc24f2888f4166a:current-10k-excerpt"
+      ],
+      "question": "Has Truist experienced any significant technology or compliance incidents in the past year?",
+      "question_id": "q-004",
+      "required_data": [
+        "Quarterly earnings calls",
+        "Press releases"
+      ],
+      "why_it_matters": "To validate if the new disclosures are reactive to recent events."
+    },
+    {
+      "evidence_ids": [
+        "evidence-v1:dbe75bc24f2888f4166a:added-text"
+      ],
+      "question": "What is the impact of the technology risk framework on Truist's capital allocation?",
+      "question_id": "q-005",
+      "required_data": [
+        "Capital allocation reports",
+        "Investor day materials"
+      ],
+      "why_it_matters": "To assess the financial implications of the new risk focus."
+    }
+  ],
+  "audit_metadata": {
+    "audit_findings": [
+      "The frozen classification 'Liquidity deterioration' is a structural mapping error. The evidence shows a taxonomy change (Compliance Risk moved to Liquidity section) and a new section (Technology Risk), but no evidence of actual liquidity deterioration (e.g., funding stress, spread widening, or liquidity ratio decline). The mechanism linking 'Compliance Risk text moved to Liquidity section' to 'Liquidity deterioration' is incoherent; it conflates disclosure structure with financial condition.",
+      "Hypothesis hyp-002 (Compliance Risk Materialization) relies on a false premise: that the removal of the standalone Compliance Risk section implies an increased risk of fines. The evidence shows the text was merged, not deleted, and the definition remains standard. There is no evidence of heightened compliance risk, only a change in reporting format. This hypothesis is unsupported and misleading.",
+      "Hypothesis hyp-001 (Technology Risk Spend Increase) is a generic inference. The addition of a boilerplate Technology Risk section is standard for large banks and does not imply increased spend or specific risk exposure. The link between 'new section' and 'increased expenses' is weak and lacks grounding in the specific text, which defines the risk but does not quantify it.",
+      "The trade hypothesis correctly identifies 'insufficient evidence' but the supporting mechanism in the candidate packet is flawed. The 'Illustrative Trade Hypothesis' section is currently the only robust part of the packet, but the surrounding research agenda is contaminated by the 'Liquidity deterioration' misclassification.",
+      "Skeptic correction rejected by policy: reviewer attempted to edit immutable field: /frozen_classification/category",
+      "Skeptic correction rejected by policy: reviewer attempted to edit immutable field: /frozen_classification/direction"
+    ],
+    "audit_version": "research_idea_audit_v1",
+    "audited_at": "2026-07-29T03:14:25.359606Z",
+    "determinism": {
+      "cache_hit": false,
+      "repeated_generation_matches": null,
+      "stable_content_sha256": "865aa5b6bd94aeae110212f234d1dec9f2d2ea6e4e31d570cd537daff448e194",
+      "status": "PASS"
+    },
+    "evidence_integrity": {
+      "offsets_verified": true,
+      "referenced_evidence_ids": [
+        "evidence-v1:dbe75bc24f2888f4166a:added-text",
+        "evidence-v1:dbe75bc24f2888f4166a:current-10k-excerpt",
+        "evidence-v1:dbe75bc24f2888f4166a:prior-10k-excerpt",
+        "evidence-v1:dbe75bc24f2888f4166a:removed-text"
+      ],
+      "source_url_present": true,
+      "status": "PASS",
+      "unresolved_evidence_ids": []
+    },
+    "future_information": {
+      "checked_timestamp_count": 0,
+      "formation_timestamp": "2023-02-28T21:47:54.000Z",
+      "status": "PASS",
+      "violations": []
+    },
+    "grounding": {
+      "checked_claim_count": 17,
+      "critical_defects": [
+        "The frozen classification 'Liquidity deterioration' is a structural mapping error. The evidence shows a taxonomy change (Compliance Risk moved to Liquidity section) and a new section (Technology Risk), but no evidence of actual liquidity deterioration (e.g., funding stress, spread widening, or liquidity ratio decline). The mechanism linking 'Compliance Risk text moved to Liquidity section' to 'Liquidity deterioration' is incoherent; it conflates disclosure structure with financial condition.",
+        "Hypothesis hyp-002 (Compliance Risk Materialization) relies on a false premise: that the removal of the standalone Compliance Risk section implies an increased risk of fines. The evidence shows the text was merged, not deleted, and the definition remains standard. There is no evidence of heightened compliance risk, only a change in reporting format. This hypothesis is unsupported and misleading.",
+        "Hypothesis hyp-001 (Technology Risk Spend Increase) is a generic inference. The addition of a boilerplate Technology Risk section is standard for large banks and does not imply increased spend or specific risk exposure. The link between 'new section' and 'increased expenses' is weak and lacks grounding in the specific text, which defines the risk but does not quantify it.",
+        "The trade hypothesis correctly identifies 'insufficient evidence' but the supporting mechanism in the candidate packet is flawed. The 'Illustrative Trade Hypothesis' section is currently the only robust part of the packet, but the surrounding research agenda is contaminated by the 'Liquidity deterioration' misclassification.",
+        "Skeptic correction rejected by policy: reviewer attempted to edit immutable field: /frozen_classification/category",
+        "Skeptic correction rejected by policy: reviewer attempted to edit immutable field: /frozen_classification/direction"
+      ],
+      "grounded_claim_count": 17,
+      "status": "HOLD"
+    },
+    "prohibited_language": {
+      "matches": [],
+      "registry_version": "1.0",
+      "status": "PASS",
+      "violation_count": 0
+    },
+    "publication_decision": "HOLD_INSUFFICIENT_EVIDENCE",
+    "schema_validation": {
+      "errors": [],
+      "status": "PASS",
+      "validated_at": "2026-07-29T03:14:25.359606Z",
+      "validator_name": "jsonschema.Draft202012Validator",
+      "validator_version": "4.26.0"
+    }
+  },
+  "change_id": "dbe75bc24f2888f4166a",
+  "confidence": {
+    "evidence": 0.8,
+    "hypothesis": 0.6,
+    "mechanism": 0.3,
+    "novelty": 0.6,
+    "trade_readiness": 0.2
+  },
+  "disclaimer": "AI-generated research hypothesis based on the cited evidence. It is not a fact, personalized investment advice, or a validated trading signal. Analyst review is required.",
+  "economic_mechanisms": [],
+  "evidence": {
+    "added_text": "“Liquidity” Technology Technology business associated with the use, ownership, operation, involvement, influence, and adoption of information technology across the Company. Truist has defined and adopted a technology risk framework that provides the foundation for technology risk strategy, program, and oversight and defines key objectives, operating model components, risk domains, and capabilities manage this risk.",
+    "current_excerpt": "Liquidity Risk Liquidity risk is the risk that (i) Truist will be unable to meet its obligations as they come due because of an inability to obtain adequate funding (funding liquidity risk), or (ii) Truist cannot easily unwind or offset specific exposures without significantly lowering market prices because of inadequate market depth or market disruptions (market liquidity risk). Refer to the “Liquidity” section in MD&A for additional discussion. Technology Risk Technology risk is the business risk associated with the use, ownership, operation, involvement, influence, and adoption of information technology across the Company. Truist has defined and adopted a technology risk framework that provides the foundation for technology risk strategy, program, and oversight and defines key objectives, operating model components, risk domains, and capabilities to manage this risk.",
+    "current_filing_id": "sec10k:0000092230-23-000034",
+    "current_source_url": "https://www.sec.gov/Archives/edgar/data/92230/000009223023000034/tfc-20221231.htm",
+    "evidence_ids": {
+      "added_text": "evidence-v1:dbe75bc24f2888f4166a:added-text",
+      "current_excerpt": "evidence-v1:dbe75bc24f2888f4166a:current-10k-excerpt",
+      "prior_excerpt": "evidence-v1:dbe75bc24f2888f4166a:prior-10k-excerpt",
+      "removed_text": "evidence-v1:dbe75bc24f2888f4166a:removed-text"
+    },
+    "evidence_offsets": {
+      "current": {
+        "end": 311161,
+        "start": 310279
+      },
+      "prior": {
+        "end": 311408,
+        "start": 310563
+      }
+    },
+    "evidence_offsets_verified": true,
+    "prior_excerpt": "Truist Financial Corporation 69 Liquidity Risk Liquidity risk is the risk that (i) Truist will be unable to meet its obligations as they come due because of an inability to obtain adequate funding (funding liquidity risk), or (ii) Truist cannot easily unwind or offset specific exposures without significantly lowering market prices because of inadequate market depth or market disruptions (market liquidity risk). Refer to the \"Liquidity” section in MD&A for additional discussion. Compliance Risk Compliance risk is the risk to current or anticipated earnings or capital arising from violations of laws, rules, or regulations, or from non-conformance with prescribed practices, internal policies and procedures or ethical standards. This risk exposes Truist to fines, civil monetary penalties, payment of damages, and the voiding of contracts.",
+    "prior_filing_id": "sec10k:0000092230-22-000008",
+    "prior_source_url": "https://www.sec.gov/Archives/edgar/data/92230/000009223022000008/tfc-20211231.htm",
+    "related_prior_8k": [],
+    "related_prior_news": [],
+    "removed_text": "Truist Financial Corporation 69 \"Liquidity” Compliance Compliance current or anticipated earnings or capital arising from violations of laws, rules, or regulations, or from non-conformance with prescribed practices, internal policies and procedures or ethical standards. This risk exposes Truist to fines, civil monetary penalties, payment of damages, and the voiding of contracts."
+  },
+  "filing_date": "2023-02-28",
+  "formation_timestamp": "2023-02-28T21:47:54.000Z",
+  "frozen_classification": {
+    "category": "Liquidity deterioration",
+    "classification_method": "deterministic-evidence-rule-v1",
+    "confidence": 0.738,
+    "direction": "ambiguous",
+    "materiality": "high",
+    "novelty": "genuinely new in the 10-K",
+    "novelty_is_causal_claim": false,
+    "novelty_method": "corpus-bounded-deterministic-headline-and-8k-text-match-v1"
+  },
+  "generation_metadata": {
+    "accepted_packet_regeneration_policy": "NEVER_SILENTLY_REGENERATE",
+    "generation_policy_version": "research_idea_generation_policy_v1",
+    "generator_run": {
+      "attempt": 1,
+      "cache_key_sha256": "b680e5a31359889a492abb79bb3d7558ea2ce3351b8f4945de7b788cbf77339c",
+      "completed_at": "2026-07-29T02:06:05.693502Z",
+      "context_length": 32768,
+      "maximum_output_tokens": 8192,
+      "model_manifest_digest": "sha256:07d35212591fc27746f0a317c975a6d68754fb38e9053d82e25f06057af28522",
+      "model_name": "qwen3.6:35b-a3b",
+      "prompt_sha256": "22de2d6bf245a0bbeb2e7fdf9ec618f2115d6236a3a5393f129db881b540ead7",
+      "prompt_version": "research_idea_generator_v1",
+      "request_sha256": "3a991a42cd9aa69fdc3ba216bfc8219316f5a3d1a07c4accaff623f9b614ccb9",
+      "response_sha256": "bff96f50d9ac57e242e761a289705b595d57f74e76de350a46f5da92488c14ab",
+      "role": "GENERATOR",
+      "run_status": "COMPLETE",
+      "runtime_name": "Ollama",
+      "runtime_version": "0.32.5",
+      "schema_sha256": "4a1c2717a477770cbd5fd8dc5566146bf403c91d59c0b97584e837314c9b1ed4",
+      "schema_version": "1.0",
+      "seed": 20260728,
+      "started_at": "2026-07-29T02:05:45.777447Z",
+      "temperature": 0,
+      "think_enabled": false
+    },
+    "hardware": {
+      "cpu": "AMD Ryzen 9 5900XT (16 cores / 32 threads)",
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "gpu_memory_mib": 32607,
+      "operating_system": "Windows 11 Home 10.0.26200",
+      "system_memory_gib": 127.91
+    },
+    "maximum_schema_repair_retries": 1,
+    "no_chain_of_thought_stored": true,
+    "no_cloud_calls": true,
+    "skeptic_run": {
+      "attempt": 1,
+      "cache_key_sha256": "b9e1647b5fd342090309aa181c24b4831b5d4fa86418f06f6246e26e2c7332b6",
+      "completed_at": "2026-07-29T03:14:25.322385Z",
+      "context_length": 32768,
+      "maximum_output_tokens": 8192,
+      "model_manifest_digest": "sha256:07d35212591fc27746f0a317c975a6d68754fb38e9053d82e25f06057af28522",
+      "model_name": "qwen3.6:35b-a3b",
+      "prompt_sha256": "c308632c768a59ef6ef6bdb02f886ba53f4c7c2c3b74cec1f836def1f03235ab",
+      "prompt_version": "research_idea_skeptic_v1",
+      "request_sha256": "ed4f2743c6044ef10050b0d7956f245fb7e1cdc357638d6da1d1dc669c8caa61",
+      "response_sha256": "ee3042d3e2c987a0d103ee3adbcf497c2803ef4bf5bf8663409dd27ad7ae6bb0",
+      "role": "SKEPTIC",
+      "run_status": "COMPLETE",
+      "runtime_name": "Ollama",
+      "runtime_version": "0.32.5",
+      "schema_sha256": "4a1c2717a477770cbd5fd8dc5566146bf403c91d59c0b97584e837314c9b1ed4",
+      "schema_version": "1.0",
+      "seed": 20260728,
+      "started_at": "2026-07-29T03:14:18.286836Z",
+      "temperature": 0,
+      "think_enabled": false
+    },
+    "valid_outputs_cached": true
+  },
+  "illustrative_trade_hypothesis": {
+    "analyst_review_required": true,
+    "candidate_view": "insufficient evidence",
+    "current_market_data_used": false,
+    "entry_or_confirmation_conditions": [],
+    "evidence_ids": [
+      "evidence-v1:dbe75bc24f2888f4166a:current-10k-excerpt"
+    ],
+    "expected_horizon": "Not specified because the hypothesis is withheld.",
+    "illustrative_only": true,
+    "instrument_rationale": "The skeptical review did not clear a grounded instrument expression from the cited disclosure evidence.",
+    "invalidation_conditions": [],
+    "key_risks": [],
+    "label": "Illustrative Trade Hypothesis — Analyst Review Required",
+    "liquidity_and_cost_checks": [],
+    "market_data_required_before_action": [],
+    "no_position_size_generated": true,
+    "preferred_instrument_class_to_investigate": "no instrument identified",
+    "status": "WITHHELD_BY_SKEPTIC",
+    "trade_readiness": "NOT_READY",
+    "trade_readiness_reason": "The skeptical review did not clear the evidence and mechanism gates."
+  },
+  "input_lineage": {
+    "allowed_input_fields_used": [
+      "issuer",
+      "ticker",
+      "filing_date",
+      "formation_timestamp",
+      "section",
+      "prior_filing_excerpt",
+      "current_filing_excerpt",
+      "added_language",
+      "removed_language",
+      "frozen_classification",
+      "related_prior_8k",
+      "related_prior_news",
+      "frozen_company_metadata",
+      "source_urls_and_identifiers",
+      "current_product_reason_code",
+      "evidence_offsets"
+    ],
+    "cloud_calls_made": false,
+    "ex_post_outcomes_excluded": true,
+    "formation_time_enforced": true,
+    "future_information_excluded": true,
+    "input_contract_version": "research_idea_input_v1",
+    "post_filing_news_excluded": true,
+    "source_record_sha256": "ab5391740a7256c1de5219fa490b2f50c741055e03ae9f43ca5a9428236331f7"
+  },
+  "issuer": "TRUIST FINANCIAL CORP",
+  "packet_hash": "653c331dfdf2b30b2936cb51e715cc71be8d09c7adcb3b9db0db1fbdfd119b80",
+  "packet_id": "research-idea-v1:dbe75bc24f2888f4166a",
+  "packet_status": "HOLD_INSUFFICIENT_EVIDENCE",
+  "packet_version": "1.0",
+  "research_hypotheses": [],
+  "scenario_analysis": {
+    "base": {
+      "conditions": [
+        "Tech risk is standard boilerplate",
+        "Compliance risk remains managed",
+        "No major incidents"
+      ],
+      "evidence_ids": [
+        "evidence-v1:dbe75bc24f2888f4166a:added-text",
+        "evidence-v1:dbe75bc24f2888f4166a:removed-text"
+      ],
+      "implications": [
+        "Minimal market reaction",
+        "Risk profile unchanged"
+      ],
+      "scenario": "Routine Risk Disclosure Update"
+    },
+    "bear": {
+      "conditions": [
+        "Consolidation reflects genuine increase in compliance/tech risk",
+        "Significant tech or compliance incidents occur",
+        "Tech spend increases materially"
+      ],
+      "evidence_ids": [
+        "evidence-v1:dbe75bc24f2888f4166a:added-text",
+        "evidence-v1:dbe75bc24f2888f4166a:removed-text"
+      ],
+      "implications": [
+        "Increased operational costs",
+        "Potential regulatory fines",
+        "Downgrade in risk ratings"
+      ],
+      "scenario": "Hidden Risk Materialization"
+    },
+    "bull": {
+      "conditions": [
+        "Management clarifies that the consolidation is for disclosure clarity only",
+        "No significant tech or compliance incidents occur",
+        "Tech spend remains stable"
+      ],
+      "evidence_ids": [
+        "evidence-v1:dbe75bc24f2888f4166a:current-10k-excerpt"
+      ],
+      "implications": [
+        "No material change in risk profile",
+        "Stock price unaffected by this disclosure change"
+      ],
+      "scenario": "Compliance Risk Consolidation is Benign"
+    }
+  },
+  "section": "item_7",
+  "skeptical_review": {
+    "alternative_explanations": [
+      "The 'Compliance Risk' text was moved to the 'Liquidity Risk' section due to a regulatory reporting requirement or internal audit recommendation to group 'operational' risks under a broader 'liquidity/operational' umbrella, not because compliance failures are now a direct liquidity threat.",
+      "The 'Technology Risk' section was added to satisfy new SEC guidance or industry best practices regarding cyber risk disclosure, which is a routine compliance update rather than a signal of specific vulnerability or increased spend.",
+      "The 'Liquidity deterioration' classification is a deterministic artifact of the word 'Liquidity' appearing in the section header where 'Compliance' used to be, incorrectly triggering a liquidity-focused classifier."
+    ],
+    "critical_grounding_defect": true,
+    "critical_objections": [
+      "The frozen classification 'Liquidity deterioration' is a structural mapping error. The evidence shows a taxonomy change (Compliance Risk moved to Liquidity section) and a new section (Technology Risk), but no evidence of actual liquidity deterioration (e.g., funding stress, spread widening, or liquidity ratio decline). The mechanism linking 'Compliance Risk text moved to Liquidity section' to 'Liquidity deterioration' is incoherent; it conflates disclosure structure with financial condition.",
+      "Hypothesis hyp-002 (Compliance Risk Materialization) relies on a false premise: that the removal of the standalone Compliance Risk section implies an increased risk of fines. The evidence shows the text was merged, not deleted, and the definition remains standard. There is no evidence of heightened compliance risk, only a change in reporting format. This hypothesis is unsupported and misleading.",
+      "Hypothesis hyp-001 (Technology Risk Spend Increase) is a generic inference. The addition of a boilerplate Technology Risk section is standard for large banks and does not imply increased spend or specific risk exposure. The link between 'new section' and 'increased expenses' is weak and lacks grounding in the specific text, which defines the risk but does not quantify it.",
+      "The trade hypothesis correctly identifies 'insufficient evidence' but the supporting mechanism in the candidate packet is flawed. The 'Illustrative Trade Hypothesis' section is currently the only robust part of the packet, but the surrounding research agenda is contaminated by the 'Liquidity deterioration' misclassification.",
+      "Skeptic correction rejected by policy: reviewer attempted to edit immutable field: /frozen_classification/category",
+      "Skeptic correction rejected by policy: reviewer attempted to edit immutable field: /frozen_classification/direction"
+    ],
+    "evidence_ids_reviewed": [
+      "evidence-v1:dbe75bc24f2888f4166a:added-text",
+      "evidence-v1:dbe75bc24f2888f4166a:current-10k-excerpt",
+      "evidence-v1:dbe75bc24f2888f4166a:prior-10k-excerpt",
+      "evidence-v1:dbe75bc24f2888f4166a:removed-text"
+    ],
+    "final_review_status": "HOLD_INSUFFICIENT_EVIDENCE",
+    "pricing_or_attention_concerns": [
+      "The prior filing (2021 10-K) contained a distinct Compliance Risk section. The current filing (2022 10-K) merges it. This is a structural change, not a new risk event. There is no evidence in the allowed input that the market has priced this as a deterioration or that it represents novel information beyond standard disclosure evolution.",
+      "No prior 8-K or news evidence is provided to suggest this change was anticipated or accompanied by specific incidents. The novelty is in the taxonomy, not the risk profile."
+    ],
+    "review_summary": "The candidate packet contains a critical grounding defect: the frozen classification 'Liquidity deterioration' is incorrect. The evidence shows a structural change in risk disclosure taxonomy (Compliance Risk moved to Liquidity section, Technology Risk added) but no evidence of actual liquidity deterioration or increased compliance risk. The research hypotheses (hyp-001, hyp-002) are generic inferences or rely on this false premise. The trade hypothesis correctly identifies 'insufficient evidence' but the surrounding research agenda is invalid. The packet is held because the change is real (taxonomy) but cannot support the proposed research agenda (risk deterioration) or a trade view without adding external facts or correcting the fundamental classification.",
+    "review_version": "research_idea_skeptic_v1",
+    "unsupported_claims_removed": [
+      "Applied skeptic correction at /research_hypotheses: The existing hypotheses are unsupported by the evidence. hyp-002 relies on a false premise (consolidation implies risk increase). hyp-001 is a generic inference. Both are removed to prevent misleading analyst review.",
+      "Applied skeptic correction at /economic_mechanisms: The mechanisms rely on the false premise of 'Liquidity deterioration' or generic tech spend increases. They are removed as they do not represent grounded, testable hypotheses from the specific evidence."
+    ]
+  },
+  "source_url": "https://www.sec.gov/Archives/edgar/data/92230/000009223023000034/tfc-20221231.htm",
+  "system_interpretation": {
+    "evidence_facts": [
+      {
+        "evidence_ids": [
+          "evidence-v1:dbe75bc24f2888f4166a:prior-10k-excerpt",
+          "evidence-v1:dbe75bc24f2888f4166a:removed-text"
+        ],
+        "fact_id": "fact-001",
+        "fact_type": "prior_disclosure",
+        "statement": "The prior filing (2021 10-K) contained a distinct 'Compliance Risk' section defining compliance risk as exposure to fines, penalties, and contract voiding due to regulatory violations."
+      },
+      {
+        "evidence_ids": [
+          "evidence-v1:dbe75bc24f2888f4166a:current-10k-excerpt",
+          "evidence-v1:dbe75bc24f2888f4166a:added-text"
+        ],
+        "fact_id": "fact-002",
+        "fact_type": "filing_text",
+        "statement": "The current filing (2022 10-K) contains a new 'Technology Risk' section defining technology risk as business risk associated with IT use, ownership, and operation, citing a defined technology risk framework."
+      },
+      {
+        "evidence_ids": [
+          "evidence-v1:dbe75bc24f2888f4166a:current-10k-excerpt",
+          "evidence-v1:dbe75bc24f2888f4166a:prior-10k-excerpt"
+        ],
+        "fact_id": "fact-003",
+        "fact_type": "filing_text",
+        "statement": "The 'Liquidity Risk' definition in the current filing is identical to the prior filing, but the prior 'Compliance Risk' text now appears within the 'Liquidity Risk' section boundary in the current filing."
+      },
+      {
+        "evidence_ids": [
+          "evidence-v1:dbe75bc24f2888f4166a:current-10k-excerpt"
+        ],
+        "fact_id": "fact-004",
+        "fact_type": "frozen_classification",
+        "statement": "The frozen classification identifies the category as 'Liquidity deterioration' with high materiality and ambiguous direction."
+      }
+    ],
+    "inferences": [
+      {
+        "caveat": "This is a structural disclosure change, not necessarily a change in risk profile. The text was moved, not deleted, suggesting consolidation rather than elimination of concern.",
+        "confidence": 0.4,
+        "evidence_ids": [
+          "evidence-v1:dbe75bc24f2888f4166a:removed-text",
+          "evidence-v1:dbe75bc24f2888f4166a:current-10k-excerpt"
+        ],
+        "inference_id": "inf-001",
+        "inference_type": "research_implication",
+        "statement": "The removal of the standalone Compliance Risk section may indicate a strategic decision to consolidate risk disclosures or reflect that compliance failures are now viewed as a subset of operational or liquidity risks rather than a distinct primary risk driver."
+      },
+      {
+        "caveat": "The text is standard boilerplate for a financial institution. It does not quantify spend, incidents, or specific vulnerabilities. It may reflect routine regulatory compliance rather than a new material risk.",
+        "confidence": 0.6,
+        "evidence_ids": [
+          "evidence-v1:dbe75bc24f2888f4166a:added-text"
+        ],
+        "inference_id": "inf-002",
+        "inference_type": "economic_mechanism",
+        "statement": "The addition of a specific Technology Risk section suggests an elevated management focus on IT infrastructure, cybersecurity, or digital transformation risks, potentially signaling increased exposure to tech-related operational failures or regulatory scrutiny in this domain."
+      }
+    ],
+    "plain_language_change": "Truist Financial Corporation has restructured its risk disclosure taxonomy in its 2022 10-K. Specifically, the company removed the standalone 'Compliance Risk' section and merged its definition into the 'Liquidity Risk' section, while simultaneously adding a new 'Technology Risk' section. The 'Liquidity Risk' definition itself remains unchanged from the prior year, but its contextual placement has shifted to include the former compliance text and the new technology text.",
+    "uncertainties": [
+      {
+        "data_needed": [
+          "Management Discussion and Analysis (MD&A) commentary on risk framework changes",
+          "Internal audit reports or risk committee minutes (if publicly available)"
+        ],
+        "uncertainty": "It is unclear if the consolidation of Compliance Risk into Liquidity Risk reflects a genuine risk model change or merely a formatting preference for the 10-K.",
+        "uncertainty_id": "unc-001",
+        "why_it_matters": "If it is a risk model change, it may imply that compliance failures are now considered a direct threat to funding stability, which is a significant qualitative shift."
+      },
+      {
+        "data_needed": [
+          "Subsequent quarterly filings (10-Q) for specific technology risk incidents or expenditures",
+          "Industry peer disclosures for comparison"
+        ],
+        "uncertainty": "The 'Technology Risk' definition is generic and does not specify the nature of the technology risk (e.g., cyber, legacy systems, cloud migration).",
+        "uncertainty_id": "unc-002",
+        "why_it_matters": "Without specificity, it is difficult to assess the potential financial impact or the likelihood of a material event."
+      }
+    ]
+  },
+  "ticker": "TFC"
+}

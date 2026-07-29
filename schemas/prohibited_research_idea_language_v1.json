@@ -1,0 +1,107 @@
+{
+  "registry_version": "1.0",
+  "description": "Context-aware public-language controls for AI Research Idea packets.",
+  "blocked_phrases": [
+    "buy now",
+    "sell now",
+    "guaranteed",
+    "sure profit",
+    "cannot lose",
+    "can't lose",
+    "target price",
+    "price target",
+    "position size",
+    "position sizing",
+    "personalized recommendation",
+    "personalized investment advice",
+    "trade recommendation",
+    "buy signal",
+    "sell signal",
+    "model portfolio",
+    "certainty of profit",
+    "guaranteed return"
+  ],
+  "blocked_patterns": [
+    {
+      "id": "transaction_instruction",
+      "pattern": "\\b(buy|sell|short|cover)\\s+(the\\s+)?(stock|shares|bonds?|calls?|puts?|options?)\\b"
+    },
+    {
+      "id": "exact_leverage",
+      "pattern": "\\b\\d+(?:\\.\\d+)?\\s*x\\s+leverage\\b"
+    },
+    {
+      "id": "exact_stop_loss",
+      "pattern": "\\bstop[- ]loss\\s+(?:at|of)?\\s*\\d"
+    },
+    {
+      "id": "exact_portfolio_weight",
+      "pattern": "\\b\\d+(?:\\.\\d+)?%\\s+(?:of\\s+the\\s+)?portfolio\\b"
+    },
+    {
+      "id": "allocation_instruction",
+      "pattern": "\\b(?:you\\s+should|should|must|recommend(?:ed)?\\s+to)\\s+allocate\\b"
+    }
+  ],
+  "negated_context_terms": [
+    "no",
+    "not",
+    "never",
+    "without",
+    "prohibit",
+    "prohibited",
+    "exclude",
+    "excluded",
+    "remove",
+    "removed",
+    "removing",
+    "do not",
+    "does not",
+    "must not",
+    "cannot generate",
+    "is not",
+    "isn't"
+  ],
+  "direct_negation_bridge_terms": [
+    "a",
+    "an",
+    "the",
+    "any",
+    "exact",
+    "new",
+    "provide",
+    "provides",
+    "provided",
+    "generate",
+    "generates",
+    "generated",
+    "calculate",
+    "calculates",
+    "calculated",
+    "create",
+    "creates",
+    "created",
+    "include",
+    "includes",
+    "included",
+    "offer",
+    "offers",
+    "offered",
+    "produce",
+    "produces",
+    "produced"
+  ],
+  "allowed_exact_statements": [
+    "AI-generated research hypothesis based on the cited evidence. It is not a fact, personalized investment advice, or a validated trading signal. Analyst review is required.",
+    "No position size generated.",
+    "No position sizing is generated.",
+    "No target price is generated.",
+    "It is not personalized investment advice.",
+    "This is not a trade recommendation.",
+    "Position sizing is prohibited.",
+    "Target prices are excluded."
+  ],
+  "always_allowed_json_paths": [
+    "/illustrative_trade_hypothesis/no_position_size_generated"
+  ]
+}

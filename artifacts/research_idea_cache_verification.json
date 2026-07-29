@@ -1,0 +1,41 @@
+{
+  "verification_version": "1.0",
+  "verified_at_utc": "2026-07-29T03:15:42.9896741Z",
+  "result": "PASS",
+  "scope": "bounded-eight-case-rerun",
+  "generator": {
+    "attempted": 8,
+    "cache_hits": 8,
+    "prompt_sha256": "22de2d6bf245a0bbeb2e7fdf9ec618f2115d6236a3a5393f129db881b540ead7",
+    "schema_sha256": "4a1c2717a477770cbd5fd8dc5566146bf403c91d59c0b97584e837314c9b1ed4",
+    "cache_keys": [
+      "b680e5a31359889a492abb79bb3d7558ea2ce3351b8f4945de7b788cbf77339c",
+      "87b3a9bacc8efe7cdc9c835c1488cfd024b47e838e857f0b2f4cb48d1a1367e2",
+      "9cc43758bf4c251a15b60f7de462afef0bb5d3873e712aabe01b48f00541449e",
+      "40938d5b4730f2c460849f8d1f4231bcf9bdb7fe299199867fd1721228327131",
+      "17b739fe0c040cde8c1f53a5ae09ecf1af5b0480bad1cab4b93b2a05b2e6c87f",
+      "51d8bf65072b723824d084cbe72994b3ce8bc45bfab68e0988167132c16e113e",
+      "89d1cf5fffbf45220159f7b2c8b7ddb83b85d559898b8c59c34ec1b98269999e",
+      "f234e7b4884e2706a921c9835368221fcaad08a2daed52f454129aaefd880b4d"
+    ]
+  },
+  "skeptic": {
+    "attempted": 8,
+    "cache_hits": 8,
+    "prompt_sha256": "c308632c768a59ef6ef6bdb02f886ba53f4c7c2c3b74cec1f836def1f03235ab",
+    "schema_sha256": "4a1c2717a477770cbd5fd8dc5566146bf403c91d59c0b97584e837314c9b1ed4",
+    "application_policy_version": "research_idea_skeptic_application_v1.7",
+    "language_registry_sha256": "6c77381ab6c79883b2d0cd740576216a967c656defb7553712554279c71ab59a",
+    "cache_keys": [
+      "b9e1647b5fd342090309aa181c24b4831b5d4fa86418f06f6246e26e2c7332b6",
+      "2a02f3018d7879d9a63bd3bc62db0c25d00d6a7d3a0612549fabe1f0bab42483",
+      "e0ed550449067fa7f35be383b9c620ef28d8f442360df31511e34c94db83e9c0",
+      "11f537f62bcb0763abcaca391596b7c5bf83d92cac3ef34294e598aeaad4ec1c",
+      "c24bf8af3ef042130a2bdff33b27376de12a51f80fd578dba74004f94764fa67",
+      "96df7b85ad8883a8af35810e96f110df6f6affea9695990bee81b5d74f5fa7f8",
+      "716b8d97c7b9ea136d595d099997a43a403cd5ff608677f579972a8c2dda4548",
+      "7daa9839be66815ebd97c505d35038929fd2b8952c7d9d2c50a7da4aade2cd61"
+    ]
+  },
+  "interpretation": "The second bounded invocation returned all eight stage-one and all eight skeptical-review packets from valid immutable caches; no model generation was performed and no accepted packet was silently regenerated."
+}

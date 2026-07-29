@@ -1,0 +1,545 @@
+{
+  "export_version": "research_idea_evidence_hypothesis_export_v1",
+  "packet": {
+    "affected_entities": [
+      {
+        "confidence": 0.8,
+        "entity_id": "EFX",
+        "entity_or_group": "Equifax Inc. Common Equity",
+        "evidence_ids": [
+          "evidence-v1:279e7d4e407851a19548:current-10k-excerpt"
+        ],
+        "possible_effect": "Potential dilution of earnings per share and increased financial leverage if additional funds are required.",
+        "reason": "The $125M liability is a direct claim on the issuer's assets.",
+        "relationship": "Issuer"
+      },
+      {
+        "confidence": 0.7,
+        "entity_id": "EFX-Debt",
+        "entity_or_group": "Equifax Inc. Corporate Bondholders",
+        "evidence_ids": [
+          "evidence-v1:279e7d4e407851a19548:current-10k-excerpt"
+        ],
+        "possible_effect": "Potential impact on capital structure if the contingent liability is triggered and funded through debt.",
+        "reason": "The liability is a fixed financial obligation that affects the capital structure.",
+        "relationship": "Senior Creditors"
+      },
+      {
+        "confidence": 0.9,
+        "entity_id": "Consumer-Settlement-Fund",
+        "entity_or_group": "Consumer Restitution Fund",
+        "evidence_ids": [
+          "evidence-v1:279e7d4e407851a19548:current-10k-excerpt"
+        ],
+        "possible_effect": "Potential increase in fund size by up to $125M.",
+        "reason": "The filing explicitly references the fund as the recipient of additional deposits.",
+        "relationship": "Beneficiary"
+      }
+    ],
+    "analyst_disposition": {
+      "analyst_notes": "",
+      "edited_fields": [],
+      "review_timestamp": null,
+      "saved_locally_only": true,
+      "status": "UNREVIEWED"
+    },
+    "analyst_questions": [
+      {
+        "evidence_ids": [
+          "evidence-v1:279e7d4e407851a19548:current-10k-excerpt",
+          "evidence-v1:279e7d4e407851a19548:prior-10k-excerpt"
+        ],
+        "question": "Is the $125 million additional deposit in addition to the $346.7 million previously disclosed, or is it a revised total cap?",
+        "question_id": "q-001",
+        "required_data": [
+          "Full text of the settlement agreement",
+          "Notes to financial statements"
+        ],
+        "why_it_matters": "This determines the total maximum exposure and the adequacy of current reserves."
+      },
+      {
+        "evidence_ids": [
+          "evidence-v1:279e7d4e407851a19548:prior-10k-excerpt"
+        ],
+        "question": "What is the current status of the 'pending appeals' mentioned in the prior filing, and do they affect the trigger for the additional deposit?",
+        "question_id": "q-002",
+        "required_data": [
+          "Court dockets for the MDL litigation",
+          "Legal counsel updates"
+        ],
+        "why_it_matters": "The timing and outcome of appeals determine when and if the liability becomes due."
+      },
+      {
+        "evidence_ids": [
+          "evidence-v1:279e7d4e407851a19548:current-10k-excerpt"
+        ],
+        "question": "How sensitive is the 'claims experience' to changes in consumer behavior or economic conditions?",
+        "question_id": "q-003",
+        "required_data": [
+          "Actuarial models",
+          "Consumer credit trend data"
+        ],
+        "why_it_matters": "This determines the probability of the $125M liability being triggered."
+      },
+      {
+        "evidence_ids": [
+          "evidence-v1:279e7d4e407851a19548:current-10k-excerpt"
+        ],
+        "question": "Does Equifax have sufficient cash on hand to cover the $125M without impacting its share repurchase program or M&A activity?",
+        "question_id": "q-004",
+        "required_data": [
+          "Cash and cash equivalents balance",
+          "Share repurchase authorization details"
+        ],
+        "why_it_matters": "This affects the impact on equity value and strategic flexibility."
+      },
+      {
+        "evidence_ids": [
+          "evidence-v1:279e7d4e407851a19548:current-10k-excerpt"
+        ],
+        "question": "Are there any other pending litigation or regulatory matters that could result in similar contingent liabilities?",
+        "question_id": "q-005",
+        "required_data": [
+          "Full litigation disclosure in the 10-K",
+          "Regulatory filings"
+        ],
+        "why_it_matters": "This helps assess the total tail risk beyond the consumer settlement."
+      }
+    ],
+    "audit_metadata": {
+      "audit_findings": [
+        "The candidate view 'insufficient evidence' and trade status 'INSUFFICIENT_EVIDENCE' directly contradict the packet's own classification of 'high materiality' and the presence of a specific, quantified contingent liability ($125M). The evidence is sufficient to support a research agenda on liability adequacy and liquidity risk, even if the trade execution is not ready.",
+        "The 'Liquidity Constraint Hypothesis' (hyp-002) relies on the prior filing's statement that operating cash flows 'may not be sufficient' for 2021. This is a forward-looking statement from a prior period, not a current fact. Using it to assert a current 'credit-negative' mechanism without current cash flow data is a grounding defect. The current filing does not reiterate this insufficiency for the current period.",
+        "The 'Liability Adequacy Test' (hyp-001) claims the liability is 'not adequately reserved.' The filing states management 'does not believe' additional deposits are required. This is a management assertion, not an independent fact of under-reservation. The hypothesis conflates the existence of a potential obligation with the accounting treatment of that obligation, which is not evidenced in the excerpt.",
+        "The affected entity 'Equifax Inc. Corporate Bondholders' is linked to 'increased leverage ratios.' The $125M is a contingent liability, not an existing debt instrument. Unless the fund is exhausted and the deposit is made, there is no immediate impact on leverage ratios. This is a speculative chain of events presented as a direct effect."
+      ],
+      "audit_version": "research_idea_audit_v1",
+      "audited_at": "2026-07-29T03:15:27.498458Z",
+      "determinism": {
+        "cache_hit": false,
+        "repeated_generation_matches": null,
+        "stable_content_sha256": "c4a2efdf281d85f964cfac92e59c829f866ba162c200ca662c4f84b47b783d5f",
+        "status": "PASS"
+      },
+      "evidence_integrity": {
+        "offsets_verified": true,
+        "referenced_evidence_ids": [
+          "evidence-v1:279e7d4e407851a19548:current-10k-excerpt",
+          "evidence-v1:279e7d4e407851a19548:prior-10k-excerpt"
+        ],
+        "source_url_present": true,
+        "status": "PASS",
+        "unresolved_evidence_ids": []
+      },
+      "future_information": {
+        "checked_timestamp_count": 0,
+        "formation_timestamp": "2022-02-24T21:55:14.000Z",
+        "status": "PASS",
+        "violations": []
+      },
+      "grounding": {
+        "checked_claim_count": 23,
+        "critical_defects": [
+          "The candidate view 'insufficient evidence' and trade status 'INSUFFICIENT_EVIDENCE' directly contradict the packet's own classification of 'high materiality' and the presence of a specific, quantified contingent liability ($125M). The evidence is sufficient to support a research agenda on liability adequacy and liquidity risk, even if the trade execution is not ready.",
+          "The 'Liquidity Constraint Hypothesis' (hyp-002) relies on the prior filing's statement that operating cash flows 'may not be sufficient' for 2021. This is a forward-looking statement from a prior period, not a current fact. Using it to assert a current 'credit-negative' mechanism without current cash flow data is a grounding defect. The current filing does not reiterate this insufficiency for the current period.",
+          "The 'Liability Adequacy Test' (hyp-001) claims the liability is 'not adequately reserved.' The filing states management 'does not believe' additional deposits are required. This is a management assertion, not an independent fact of under-reservation. The hypothesis conflates the existence of a potential obligation with the accounting treatment of that obligation, which is not evidenced in the excerpt.",
+          "The affected entity 'Equifax Inc. Corporate Bondholders' is linked to 'increased leverage ratios.' The $125M is a contingent liability, not an existing debt instrument. Unless the fund is exhausted and the deposit is made, there is no immediate impact on leverage ratios. This is a speculative chain of events presented as a direct effect."
+        ],
+        "grounded_claim_count": 23,
+        "status": "HOLD"
+      },
+      "prohibited_language": {
+        "matches": [],
+        "registry_version": "1.0",
+        "status": "PASS",
+        "violation_count": 0
+      },
+      "publication_decision": "HOLD_INSUFFICIENT_EVIDENCE",
+      "schema_validation": {
+        "errors": [],
+        "status": "PASS",
+        "validated_at": "2026-07-29T03:15:27.498458Z",
+        "validator_name": "jsonschema.Draft202012Validator",
+        "validator_version": "4.26.0"
+      }
+    },
+    "change_id": "279e7d4e407851a19548",
+    "confidence": {
+      "evidence": 0.9,
+      "hypothesis": 0.7,
+      "mechanism": 0.6,
+      "novelty": 0.7,
+      "trade_readiness": 0.2
+    },
+    "disclaimer": "AI-generated research hypothesis based on the cited evidence. It is not a fact, personalized investment advice, or a validated trading signal. Analyst review is required.",
+    "economic_mechanisms": [
+      {
+        "affected_financial_driver": "Cash Flow / Liquidity",
+        "causal_chain": [
+          "Equifax faces potential additional deposits to the consumer settlement fund.",
+          "If claims experience worsens, up to $125M may be required.",
+          "This creates a direct cash outflow risk.",
+          "If operating cash flow is insufficient (as previously noted), external financing may be needed.",
+          "Increased leverage or reduced liquidity could negatively impact credit metrics and equity valuation."
+        ],
+        "counterargument": "The company states it 'does not believe' it will be required to deposit additional amounts based on current claims experience, suggesting the probability is low. The $125M cap may also be well within existing cash reserves or credit facilities.",
+        "mechanism": "Contingent Liability Recognition and Cash Flow Risk",
+        "mechanism_confidence": 0.65,
+        "mechanism_id": "mech-001",
+        "supporting_evidence_ids": [
+          "evidence-v1:279e7d4e407851a19548:current-10k-excerpt",
+          "evidence-v1:279e7d4e407851a19548:prior-10k-excerpt"
+        ]
+      },
+      {
+        "affected_financial_driver": "Cost of Capital / Brand Value",
+        "causal_chain": [
+          "The disclosure highlights ongoing compliance risks with business practice commitments.",
+          "Potential enforcement actions or contempt proceedings create legal uncertainty.",
+          "Investors may demand a higher risk premium for this uncertainty.",
+          "This could lead to a multiple compression in equity valuation or wider credit spreads.",
+          "Reputational damage may also impact customer acquisition costs."
+        ],
+        "counterargument": "The settlement may have resolved the primary legal risks, and the 'business practice commitments' may be operational rather than punitive. The market may have already priced in the settlement risk.",
+        "mechanism": "Legal Uncertainty and Reputational Overhang",
+        "mechanism_confidence": 0.5,
+        "mechanism_id": "mech-002",
+        "supporting_evidence_ids": [
+          "evidence-v1:279e7d4e407851a19548:current-10k-excerpt"
+        ]
+      }
+    ],
+    "evidence": {
+      "added_text": "To the extent we are unable comply or we are viewed as not being in compliance with these business practice commitments or other requirements of a relevant order, we could face an enforcement action or contempt proceeding that could potentially result in fines, penalties and new business practice commitments, which, depending on the amount and type, could have a material adverse effect on our financial condition. In addition, we may required deposit additional amounts in consumer settlement fund under certain circumstances if the fund is insufficient to cover claims and certain expenses. While we do not believe that we required to deposit add",
+      "current_excerpt": "To the extent we are unable to comply or we are viewed as not being in compliance with these business practice commitments or other requirements of a relevant order, we could face an enforcement action or contempt proceeding that could potentially result in fines, penalties and new business practice commitments, which, depending on the amount and type, could have a material adverse effect on our financial condition. In addition, we may be required to deposit additional amounts in the consumer settlement fund under certain circumstances if the fund is insufficient to cover claims and certain expenses. While we do not believe that we will be required to deposit additional amounts into the consumer settlement fund based on our claims experience to date, we could be obligated to fund up to an additional $125 million if our claims experience changes and the consumer fund is exhausted.",
+      "current_filing_id": "sec10k:0000033185-22-000014",
+      "current_source_url": "https://www.sec.gov/Archives/edgar/data/33185/000003318522000014/efx-20211231.htm",
+      "evidence_ids": {
+        "added_text": "evidence-v1:279e7d4e407851a19548:added-text",
+        "current_excerpt": "evidence-v1:279e7d4e407851a19548:current-10k-excerpt",
+        "prior_excerpt": "evidence-v1:279e7d4e407851a19548:prior-10k-excerpt",
+        "removed_text": "evidence-v1:279e7d4e407851a19548:removed-text"
+      },
+      "evidence_offsets": {
+        "current": {
+          "end": 114219,
+          "start": 113327
+        },
+        "prior": {
+          "end": 199295,
+          "start": 198392
+        }
+      },
+      "evidence_offsets_verified": true,
+      "prior_excerpt": "The remaining $346.7 million to be paid to the Consumer Restitution Fund will be made after a final adjudication affirming the U.S. Consumer MDL Litigation Settlement or dismissal of the pending appeals. Although we expect this payment and the remaining settlement payments to be made in 2021, we can give no assurance that these payments will occur in 2021 due to pending approvals or appeals. As a result of the possible payments that could be made in 2021 related to the losses associated with certain legal proceedings and government investigations related to the 2017 cybersecurity incident and other requirements, funds generated by operating activities may not be sufficient to fund working capital and other cash requirements, including for acquisitions and share repurchases, throughout 2021. Our plan is to finance the payments with existing cash balances and borrowing capacity, as necessa",
+      "prior_filing_id": "sec10k:0000033185-21-000025",
+      "prior_source_url": "https://www.sec.gov/Archives/edgar/data/33185/000003318521000025/efx-20201231.htm",
+      "related_prior_8k": [],
+      "related_prior_news": [],
+      "removed_text": "The remaining $346.7 million paid Consumer Restitution Fund made after a final adjudication affirming U.S. Consumer MDL Litigation Settlement or dismissal of the pending appeals. Although expect this payment remaining settlement payments to be made in 2021, we can give no assurance that these payments will occur in 2021 due to pending approvals or appeals. As a result of the possible payments that could be made in 2021 related to the losses associated with certain legal proceedings and government investigations related to the 2017 cybersecurity incident and other requirements, funds generated by operating activities may not be sufficient to w"
+    },
+    "filing_date": "2022-02-24",
+    "formation_timestamp": "2022-02-24T21:55:14.000Z",
+    "frozen_classification": {
+      "category": "Litigation or regulatory escalation",
+      "classification_method": "deterministic-evidence-rule-v1",
+      "confidence": 0.941,
+      "direction": "negative",
+      "materiality": "high",
+      "novelty": "genuinely new in the 10-K",
+      "novelty_is_causal_claim": false,
+      "novelty_method": "corpus-bounded-deterministic-headline-and-8k-text-match-v1"
+    },
+    "illustrative_trade_hypothesis": {
+      "analyst_review_required": true,
+      "candidate_view": "insufficient evidence",
+      "current_market_data_used": false,
+      "entry_or_confirmation_conditions": [],
+      "evidence_ids": [
+        "evidence-v1:279e7d4e407851a19548:current-10k-excerpt"
+      ],
+      "expected_horizon": "Not specified because the hypothesis is withheld.",
+      "illustrative_only": true,
+      "instrument_rationale": "The skeptical review did not clear a grounded instrument expression from the cited disclosure evidence.",
+      "invalidation_conditions": [],
+      "key_risks": [],
+      "label": "Illustrative Trade Hypothesis — Analyst Review Required",
+      "liquidity_and_cost_checks": [],
+      "market_data_required_before_action": [],
+      "no_position_size_generated": true,
+      "preferred_instrument_class_to_investigate": "no instrument identified",
+      "status": "WITHHELD_BY_SKEPTIC",
+      "trade_readiness": "NOT_READY",
+      "trade_readiness_reason": "The skeptical review did not clear the evidence and mechanism gates."
+    },
+    "input_lineage": {
+      "allowed_input_fields_used": [
+        "issuer",
+        "ticker",
+        "filing_date",
+        "formation_timestamp",
+        "section",
+        "prior_filing_excerpt",
+        "current_filing_excerpt",
+        "added_language",
+        "removed_language",
+        "frozen_classification",
+        "related_prior_8k",
+        "related_prior_news",
+        "frozen_company_metadata",
+        "source_urls_and_identifiers",
+        "current_product_reason_code",
+        "evidence_offsets"
+      ],
+      "cloud_calls_made": false,
+      "ex_post_outcomes_excluded": true,
+      "formation_time_enforced": true,
+      "future_information_excluded": true,
+      "input_contract_version": "research_idea_input_v1",
+      "post_filing_news_excluded": true,
+      "source_record_sha256": "ff3ec52f37c10e27d53634772d5aebec1116f1becd2439f45a0ef8b9862080ac"
+    },
+    "issuer": "EQUIFAX INC",
+    "packet_hash": "f0795be953c1f9b946579ad3d4d4d4aaaee7d237c269a137e4227d1a7b2d9a7b",
+    "packet_id": "research-idea-v1:279e7d4e407851a19548",
+    "packet_status": "HOLD_INSUFFICIENT_EVIDENCE",
+    "packet_version": "1.0",
+    "research_hypotheses": [
+      {
+        "confirmation_conditions": [
+          "Subsequent quarterly filings show a significant increase in litigation reserves.",
+          "Analyst estimates are revised downward based on the new liability."
+        ],
+        "confounders": [
+          "General market sentiment towards credit reporting agencies.",
+          "Broader economic conditions affecting consumer claims."
+        ],
+        "evidence_ids": [
+          "evidence-v1:279e7d4e407851a19548:current-10k-excerpt"
+        ],
+        "expected_direction": "bearish bias",
+        "falsification_conditions": [
+          "Management provides clear evidence that the $125M is fully reserved.",
+          "Claims experience remains stable and well below the threshold for additional deposits."
+        ],
+        "grounding_score": 0.7,
+        "hypothesis": "The $125 million contingent liability cap represents a specific, quantified tail risk that may differ from the previously disclosed $346.7M exposure, requiring verification of the total maximum exposure in the settlement agreement.",
+        "hypothesis_id": "hyp-001",
+        "novelty_assessment": "The specific $125M figure is new, but the general risk of additional payments was known.",
+        "required_data": [
+          "Detailed litigation reserve notes in the 10-K",
+          "Actuarial reports on claim severity",
+          "Management discussion of legal contingencies"
+        ],
+        "testability_score": 0.8,
+        "time_horizon": "1-3 quarters",
+        "title": "Liability Adequacy Test",
+        "unit_of_analysis": "Equifax Inc. (EFX) Book Value per Share"
+      },
+      {
+        "confirmation_conditions": [
+          "Equifax draws down on credit facilities to fund payments.",
+          "Credit spreads widen relative to peers without similar settlement risks."
+        ],
+        "confounders": [
+          "Changes in interest rates.",
+          "Peer-specific credit events."
+        ],
+        "evidence_ids": [
+          "evidence-v1:279e7d4e407851a19548:prior-10k-excerpt",
+          "evidence-v1:279e7d4e407851a19548:current-10k-excerpt"
+        ],
+        "expected_direction": "credit-negative",
+        "falsification_conditions": [
+          "Equifax demonstrates sufficient cash on hand to cover all potential liabilities.",
+          "Credit spreads remain stable or tighten."
+        ],
+        "grounding_score": 0.6,
+        "hypothesis": "If the $125 million liability is triggered, it may strain liquidity if operating cash flows are insufficient, but current filing does not confirm current cash flow insufficiency.",
+        "hypothesis_id": "hyp-002",
+        "novelty_assessment": "The liquidity concern was present in the prior filing; the novelty is the specific liability amount.",
+        "required_data": [
+          "Cash flow statements from the 10-K",
+          "Credit facility terms and utilization",
+          "Market data for EFX credit spreads"
+        ],
+        "testability_score": 0.7,
+        "time_horizon": "6-12 months",
+        "title": "Liquidity Constraint Hypothesis",
+        "unit_of_analysis": "Equifax Inc. Credit Spreads"
+      }
+    ],
+    "scenario_analysis": {
+      "base": {
+        "conditions": [
+          "Claims experience worsens but not catastrophically.",
+          "The fund is exhausted, triggering the deposit."
+        ],
+        "evidence_ids": [
+          "evidence-v1:279e7d4e407851a19548:current-10k-excerpt"
+        ],
+        "implications": [
+          "Equifax pays up to $125M.",
+          "Earnings are impacted, but liquidity is managed.",
+          "Valuation adjusts to reflect the known liability."
+        ],
+        "scenario": "Claims experience is moderate, and a partial or full additional deposit is required."
+      },
+      "bear": {
+        "conditions": [
+          "Claims exceed expectations significantly.",
+          "Regulators impose new fines or penalties."
+        ],
+        "evidence_ids": [
+          "evidence-v1:279e7d4e407851a19548:current-10k-excerpt"
+        ],
+        "implications": [
+          "Equifax pays the full $125M plus potential new fines.",
+          "Liquidity is strained, requiring external financing.",
+          "Reputational damage impacts business."
+        ],
+        "scenario": "Claims experience worsens significantly, and additional enforcement actions occur."
+      },
+      "bull": {
+        "conditions": [
+          "Consumer claims are lower than expected.",
+          "Appeals are resolved in Equifax's favor or on favorable terms."
+        ],
+        "evidence_ids": [
+          "evidence-v1:279e7d4e407851a19548:current-10k-excerpt"
+        ],
+        "implications": [
+          "The $125M liability is avoided.",
+          "Equifax retains cash for share buybacks or dividends.",
+          "Market may view the risk as overpriced."
+        ],
+        "scenario": "Claims experience remains stable, and no additional deposit is required."
+      }
+    },
+    "section": "item_1a",
+    "skeptical_review": {
+      "alternative_explanations": [
+        "The $125M cap may represent a revised total maximum exposure rather than an additional layer on top of the $346.7M, depending on the legal settlement terms not fully disclosed in this excerpt. The prior $346.7M may have been fully accrued or settled.",
+        "The 'business practice commitments' risk may be operational and already priced in as part of the ongoing cost of doing business for credit reporting agencies, rather than a novel 'reputational overhang' requiring a multiple compression.",
+        "The company may have sufficient unutilized borrowing capacity or cash reserves to cover the $125M without impacting share repurchases or M&A, making the liquidity risk negligible for equity holders."
+      ],
+      "critical_grounding_defect": true,
+      "critical_objections": [
+        "The candidate view 'insufficient evidence' and trade status 'INSUFFICIENT_EVIDENCE' directly contradict the packet's own classification of 'high materiality' and the presence of a specific, quantified contingent liability ($125M). The evidence is sufficient to support a research agenda on liability adequacy and liquidity risk, even if the trade execution is not ready.",
+        "The 'Liquidity Constraint Hypothesis' (hyp-002) relies on the prior filing's statement that operating cash flows 'may not be sufficient' for 2021. This is a forward-looking statement from a prior period, not a current fact. Using it to assert a current 'credit-negative' mechanism without current cash flow data is a grounding defect. The current filing does not reiterate this insufficiency for the current period.",
+        "The 'Liability Adequacy Test' (hyp-001) claims the liability is 'not adequately reserved.' The filing states management 'does not believe' additional deposits are required. This is a management assertion, not an independent fact of under-reservation. The hypothesis conflates the existence of a potential obligation with the accounting treatment of that obligation, which is not evidenced in the excerpt.",
+        "The affected entity 'Equifax Inc. Corporate Bondholders' is linked to 'increased leverage ratios.' The $125M is a contingent liability, not an existing debt instrument. Unless the fund is exhausted and the deposit is made, there is no immediate impact on leverage ratios. This is a speculative chain of events presented as a direct effect."
+      ],
+      "evidence_ids_reviewed": [
+        "evidence-v1:279e7d4e407851a19548:added-text",
+        "evidence-v1:279e7d4e407851a19548:current-10k-excerpt",
+        "evidence-v1:279e7d4e407851a19548:prior-10k-excerpt",
+        "evidence-v1:279e7d4e407851a19548:removed-text"
+      ],
+      "final_review_status": "HOLD_INSUFFICIENT_EVIDENCE",
+      "pricing_or_attention_concerns": [
+        "The prior filing explicitly discussed the $346.7M payment and liquidity risks. The market may have already incorporated the general risk of settlement payments. The novelty is the specific $125M cap, but if the total exposure is similar, the pricing impact may be minimal.",
+        "The 'genuinely new' classification may be overstated if the $125M is simply a refinement of the previously disclosed $346.7M risk. Attention may be low if investors view this as a known litigation tail risk."
+      ],
+      "review_summary": "The candidate packet contains a critical grounding defect: it classifies the trade readiness as 'INSUFFICIENT_EVIDENCE' while simultaneously classifying the filing change as 'high materiality' and 'genuinely new.' The evidence supports a research agenda on the adequacy of the $125M contingent liability and its potential liquidity impact, but the specific hypotheses (hyp-001 and hyp-002) rely on unsupported inferences about current cash flow sufficiency and accounting treatment. The 'Liquidity Constraint Hypothesis' incorrectly treats a prior-period forward-looking statement as a current fact. The 'Liability Adequacy Test' incorrectly treats management's belief as an independent fact of under-reservation. The packet is held because the research hypotheses are not sufficiently grounded in the current filing's facts to support a directional view, and the trade hypothesis is correctly identified as not ready but the reasoning is flawed. The packet requires significant narrowing to focus on the specific $125M cap and its comparison to the prior $346.7M exposure, rather than speculative liquidity or accounting claims.",
+      "review_version": "research_idea_skeptic_v1",
+      "unsupported_claims_removed": [
+        "Applied skeptic correction at /research_hypotheses/0/hypothesis: Removed unsupported claim that the liability is 'not adequately reserved.' Replaced with a testable hypothesis about the magnitude of the exposure relative to prior disclosures.",
+        "Applied skeptic correction at /research_hypotheses/1/hypothesis: Removed unsupported claim that operating cash flows are currently insufficient. The prior filing's statement was forward-looking for 2021 and is not a current fact.",
+        "Applied skeptic correction at /affected_entities/1/possible_effect: Narrowed the effect from 'increased leverage ratios' (immediate) to 'potential impact' (contingent)."
+      ]
+    },
+    "source_url": "https://www.sec.gov/Archives/edgar/data/33185/000003318522000014/efx-20211231.htm",
+    "system_interpretation": {
+      "evidence_facts": [
+        {
+          "evidence_ids": [
+            "evidence-v1:279e7d4e407851a19548:current-10k-excerpt"
+          ],
+          "fact_id": "fact-001",
+          "fact_type": "filing_text",
+          "statement": "The current filing states: 'we could be obligated to fund up to an additional $125 million if our claims experience changes and the consumer fund is exhausted.'"
+        },
+        {
+          "evidence_ids": [
+            "evidence-v1:279e7d4e407851a19548:prior-10k-excerpt"
+          ],
+          "fact_id": "fact-002",
+          "fact_type": "prior_disclosure",
+          "statement": "The prior filing stated: 'The remaining $346.7 million to be paid to the Consumer Restitution Fund will be made after a final adjudication...'"
+        },
+        {
+          "evidence_ids": [
+            "evidence-v1:279e7d4e407851a19548:prior-10k-excerpt"
+          ],
+          "fact_id": "fact-003",
+          "fact_type": "prior_disclosure",
+          "statement": "The prior filing emphasized that 'funds generated by operating activities may not be sufficient to fund working capital... throughout 2021.'"
+        },
+        {
+          "evidence_ids": [
+            "evidence-v1:279e7d4e407851a19548:current-10k-excerpt"
+          ],
+          "fact_id": "fact-004",
+          "fact_type": "filing_metadata",
+          "statement": "The filing section is Item 1A (Risk Factors) of the 10-K."
+        },
+        {
+          "evidence_ids": [
+            "evidence-v1:279e7d4e407851a19548:current-10k-excerpt"
+          ],
+          "fact_id": "fact-005",
+          "fact_type": "frozen_classification",
+          "statement": "Frozen classification: Litigation or regulatory escalation, negative direction, high materiality."
+        }
+      ],
+      "inferences": [
+        {
+          "caveat": "This is an inference based on disclosure structure; the actual legal settlement terms may have changed in ways not fully captured in this excerpt.",
+          "confidence": 0.6,
+          "evidence_ids": [
+            "evidence-v1:279e7d4e407851a19548:current-10k-excerpt",
+            "evidence-v1:279e7d4e407851a19548:prior-10k-excerpt"
+          ],
+          "inference_id": "inf-001",
+          "inference_type": "research_implication",
+          "statement": "The shift from a general liquidity warning to a specific $125M cap suggests management or legal counsel has refined the estimate of the maximum potential loss, potentially indicating that the $346.7M figure is largely settled or reserved, but a new, smaller tail risk has emerged."
+        },
+        {
+          "caveat": "The sensitivity of claims experience to macroeconomic factors is a general inference, not a specific fact from the filing.",
+          "confidence": 0.7,
+          "evidence_ids": [
+            "evidence-v1:279e7d4e407851a19548:current-10k-excerpt"
+          ],
+          "inference_id": "inf-002",
+          "inference_type": "economic_mechanism",
+          "statement": "The explicit mention of 'claims experience changes' introduces a variable that is sensitive to consumer behavior and legal interpretation, making the liability less deterministic than the prior 'remaining payment' language."
+        }
+      ],
+      "plain_language_change": "Equifax updated its risk factors to explicitly state that it could be obligated to deposit up to an additional $125 million into the consumer settlement fund if claims experience worsens and the existing fund is exhausted. This replaces prior language that focused on the timing of the remaining $346.7 million payment and the sufficiency of operating cash flows, shifting the disclosure from a liquidity/timing risk to a specific, quantified contingent liability risk.",
+      "uncertainties": [
+        {
+          "data_needed": [
+            "Full text of the underlying settlement agreement",
+            "Notes to financial statements regarding litigation reserves"
+          ],
+          "uncertainty": "It is unclear if the $125 million is in addition to the $346.7 million or if it represents a revised total maximum exposure.",
+          "uncertainty_id": "unc-001",
+          "why_it_matters": "This distinction fundamentally changes the magnitude of the financial impact on equity and credit."
+        },
+        {
+          "data_needed": [
+            "Actuarial estimates of claim frequency and severity",
+            "Management guidance on claim trends"
+          ],
+          "uncertainty": "The probability of the 'claims experience changing' enough to trigger the additional deposit is not quantified in the filing.",
+          "uncertainty_id": "unc-002",
+          "why_it_matters": "Without probability weighting, the expected value of the liability cannot be accurately assessed."
+        }
+      ]
+    },
+    "ticker": "EFX"
+  },
+  "source_packet_id": "research-idea-v1:279e7d4e407851a19548",
+  "source_packet_sha256": "f0795be953c1f9b946579ad3d4d4d4aaaee7d237c269a137e4227d1a7b2d9a7b"
+}

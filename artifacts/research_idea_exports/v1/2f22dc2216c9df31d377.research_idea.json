@@ -1,0 +1,337 @@
+{
+  "export_version": "research_idea_evidence_hypothesis_export_v1",
+  "packet": {
+    "affected_entities": [],
+    "analyst_disposition": {
+      "analyst_notes": "",
+      "edited_fields": [],
+      "review_timestamp": null,
+      "saved_locally_only": true,
+      "status": "UNREVIEWED"
+    },
+    "analyst_questions": [],
+    "audit_metadata": {
+      "audit_findings": [
+        "The candidate packet contains zero research hypotheses, rendering the core research agenda empty. The system correctly identified insufficient evidence but failed to generate even a minimal, grounded inquiry.",
+        "The 'Removed or softened risk language' classification relies on a comparison between a substantive legal risk disclosure (prior) and a section header (current). This is a structural mismatch; the current excerpt provided is only the title 'Item 7. Management’s Discussion...', not the risk disclosure section itself. The 'removed text' is inferred from the prior filing, not present in the current filing's provided evidence.",
+        "The novelty classification 'previously disclosed in 8-K' is based on a low-similarity match (0.0483) to a governance 8-K, which does not substantiate that the specific legal risk language was previously disclosed. The novelty is actually 'newly absent' in the provided corpus, but the mechanism for that absence is unverified.",
+        "The trade hypothesis correctly defaults to 'insufficient evidence' but the reasoning 'novelty is low as similar language changes are common' is a generic heuristic not supported by the specific evidence. The specific change here is the removal of a specific uncertainty disclaimer regarding VITAS, which is distinct from generic boilerplate.",
+        "Skeptic correction rejected by policy: reviewer attempted to edit immutable field: /frozen_classification/novelty"
+      ],
+      "audit_version": "research_idea_audit_v1",
+      "audited_at": "2026-07-29T03:15:33.581034Z",
+      "determinism": {
+        "cache_hit": false,
+        "repeated_generation_matches": null,
+        "stable_content_sha256": "cff3820660c3a5964dabaebffe15cf08c395b5a2d0ad630b8147055e8bbf8906",
+        "status": "PASS"
+      },
+      "evidence_integrity": {
+        "offsets_verified": true,
+        "referenced_evidence_ids": [
+          "evidence-v1:2f22dc2216c9df31d377:current-10k-excerpt",
+          "evidence-v1:2f22dc2216c9df31d377:prior-10k-excerpt"
+        ],
+        "source_url_present": true,
+        "status": "PASS",
+        "unresolved_evidence_ids": []
+      },
+      "future_information": {
+        "checked_timestamp_count": 1,
+        "formation_timestamp": "2022-02-28T15:40:26.000Z",
+        "status": "PASS",
+        "violations": []
+      },
+      "grounding": {
+        "checked_claim_count": 9,
+        "critical_defects": [
+          "The candidate packet contains zero research hypotheses, rendering the core research agenda empty. The system correctly identified insufficient evidence but failed to generate even a minimal, grounded inquiry.",
+          "The 'Removed or softened risk language' classification relies on a comparison between a substantive legal risk disclosure (prior) and a section header (current). This is a structural mismatch; the current excerpt provided is only the title 'Item 7. Management’s Discussion...', not the risk disclosure section itself. The 'removed text' is inferred from the prior filing, not present in the current filing's provided evidence.",
+          "The novelty classification 'previously disclosed in 8-K' is based on a low-similarity match (0.0483) to a governance 8-K, which does not substantiate that the specific legal risk language was previously disclosed. The novelty is actually 'newly absent' in the provided corpus, but the mechanism for that absence is unverified.",
+          "The trade hypothesis correctly defaults to 'insufficient evidence' but the reasoning 'novelty is low as similar language changes are common' is a generic heuristic not supported by the specific evidence. The specific change here is the removal of a specific uncertainty disclaimer regarding VITAS, which is distinct from generic boilerplate.",
+          "Skeptic correction rejected by policy: reviewer attempted to edit immutable field: /frozen_classification/novelty"
+        ],
+        "grounded_claim_count": 9,
+        "status": "HOLD"
+      },
+      "prohibited_language": {
+        "matches": [],
+        "registry_version": "1.0",
+        "status": "PASS",
+        "violation_count": 0
+      },
+      "publication_decision": "HOLD_INSUFFICIENT_EVIDENCE",
+      "schema_validation": {
+        "errors": [],
+        "status": "PASS",
+        "validated_at": "2026-07-29T03:15:33.581034Z",
+        "validator_name": "jsonschema.Draft202012Validator",
+        "validator_version": "4.26.0"
+      }
+    },
+    "change_id": "2f22dc2216c9df31d377",
+    "confidence": {
+      "evidence": 0.8,
+      "hypothesis": 0.0,
+      "mechanism": 0.0,
+      "novelty": 0.2,
+      "trade_readiness": 0.0
+    },
+    "disclaimer": "AI-generated research hypothesis based on the cited evidence. It is not a fact, personalized investment advice, or a validated trading signal. Analyst review is required.",
+    "economic_mechanisms": [],
+    "evidence": {
+      "added_text": "Item 7. M anagement’s Discussion Analysis Financial Conditions Results Operations",
+      "current_excerpt": "Item 7. M anagement’s Discussion and Analysis of Financial Conditions and Results of Operations",
+      "current_filing_id": "sec10k:0001562762-22-000060",
+      "current_source_url": "https://www.sec.gov/Archives/edgar/data/19584/000156276222000060/che-20211231x10k.htm",
+      "evidence_ids": {
+        "added_text": "evidence-v1:2f22dc2216c9df31d377:added-text",
+        "current_excerpt": "evidence-v1:2f22dc2216c9df31d377:current-10k-excerpt",
+        "prior_excerpt": "evidence-v1:2f22dc2216c9df31d377:prior-10k-excerpt",
+        "removed_text": "evidence-v1:2f22dc2216c9df31d377:removed-text"
+      },
+      "evidence_offsets": {
+        "current": {
+          "end": 123095,
+          "start": 123000
+        },
+        "prior": {
+          "end": 299913,
+          "start": 299073
+        }
+      },
+      "evidence_offsets_verified": true,
+      "prior_excerpt": "We are subject to various lawsuits and claims in the normal course of our business. In addition, we periodically receive communications from governmental and regulatory agencies concerning compliance with Medicare and Medicaid billing requirements at our VITAS subsidiary. We establish reserves for specific, uninsured liabilities in connection with regulatory and legal action that we deem to be probable and estimable. We disclose the existence of regulatory and legal actions when we believe it is reasonably possible that a loss could occur in connection with the specific action. In most instances, we are unable to make a reasonable estimate of any reasonably possible liability due to the uncertainty of the outcome and stage of litigation. We record legal fees associated with legal and regulatory actions as the costs are incurred.",
+      "prior_filing_id": "sec10k:0000019584-21-000003",
+      "prior_source_url": "https://www.sec.gov/Archives/edgar/data/19584/000001958421000003/che-20201231x10k.htm",
+      "related_prior_8k": [
+        {
+          "acceptance_timestamp": "2021-05-19T10:57:38-04:00",
+          "accession_number": "0001562762-21-000230",
+          "evidence_id": "evidence-v1:2f22dc2216c9df31d377:prior-8k:0001562762-21-000230",
+          "information_date": "2021-05-19",
+          "item_codes": "5.07",
+          "match_score": 4.193,
+          "matched_terms": [
+            "material",
+            "may"
+          ],
+          "primary_category": "governance_executive",
+          "similarity": 0.0483,
+          "url": "https://www.sec.gov/Archives/edgar/data/19584/000156276221000230/che-20210519x8k.htm"
+        }
+      ],
+      "related_prior_news": [],
+      "removed_text": "We are subject to various lawsuits claims in the normal course our business. In addition, we periodically receive communications from governmental regulatory agencies concerning compliance with Medicare and Medicaid billing requirements at our VITAS subsidiary. We establish reserves for specific, uninsured liabilities in connection with regulatory and legal action that we deem to be probable and estimable. We disclose the existence regulatory and legal actions when we believe it is reasonably possible that a loss could occur in connection with the specific action. In most instances, we are unable to make a reasonable estimate of any reasonabl"
+    },
+    "filing_date": "2022-02-28",
+    "formation_timestamp": "2022-02-28T15:40:26.000Z",
+    "frozen_classification": {
+      "category": "Removed or softened risk language",
+      "classification_method": "deterministic-evidence-rule-v1",
+      "confidence": 0.81,
+      "direction": "positive",
+      "materiality": "medium",
+      "novelty": "previously disclosed in 8-K",
+      "novelty_is_causal_claim": false,
+      "novelty_method": "corpus-bounded-deterministic-headline-and-8k-text-match-v1"
+    },
+    "illustrative_trade_hypothesis": {
+      "analyst_review_required": true,
+      "candidate_view": "insufficient evidence",
+      "current_market_data_used": false,
+      "entry_or_confirmation_conditions": [],
+      "evidence_ids": [
+        "evidence-v1:2f22dc2216c9df31d377:current-10k-excerpt"
+      ],
+      "expected_horizon": "Not specified because the hypothesis is withheld.",
+      "illustrative_only": true,
+      "instrument_rationale": "The skeptical review did not clear a grounded instrument expression from the cited disclosure evidence.",
+      "invalidation_conditions": [],
+      "key_risks": [],
+      "label": "Illustrative Trade Hypothesis — Analyst Review Required",
+      "liquidity_and_cost_checks": [],
+      "market_data_required_before_action": [],
+      "no_position_size_generated": true,
+      "preferred_instrument_class_to_investigate": "no instrument identified",
+      "status": "WITHHELD_BY_SKEPTIC",
+      "trade_readiness": "NOT_READY",
+      "trade_readiness_reason": "The skeptical review did not clear the evidence and mechanism gates."
+    },
+    "input_lineage": {
+      "allowed_input_fields_used": [
+        "issuer",
+        "ticker",
+        "filing_date",
+        "formation_timestamp",
+        "section",
+        "prior_filing_excerpt",
+        "current_filing_excerpt",
+        "added_language",
+        "removed_language",
+        "frozen_classification",
+        "related_prior_8k",
+        "related_prior_news",
+        "frozen_company_metadata",
+        "source_urls_and_identifiers",
+        "current_product_reason_code",
+        "evidence_offsets"
+      ],
+      "cloud_calls_made": false,
+      "ex_post_outcomes_excluded": true,
+      "formation_time_enforced": true,
+      "future_information_excluded": true,
+      "input_contract_version": "research_idea_input_v1",
+      "post_filing_news_excluded": true,
+      "source_record_sha256": "4ffdcac873359b2a5b8d05ca6c20777d2cfad9156da678a1c98d9ef070ff4a4e"
+    },
+    "issuer": "CHEMED CORP",
+    "packet_hash": "7d43ba00b7075744ed599f6cd77b578d58d5eda732ef9affb811f41612f779c1",
+    "packet_id": "research-idea-v1:2f22dc2216c9df31d377",
+    "packet_status": "HOLD_INSUFFICIENT_EVIDENCE",
+    "packet_version": "1.0",
+    "research_hypotheses": [],
+    "scenario_analysis": {
+      "base": {
+        "conditions": [
+          "The change is purely stylistic or due to a change in legal counsel's standard boilerplate.",
+          "No material change in VITAS regulatory exposure occurs."
+        ],
+        "evidence_ids": [
+          "evidence-v1:2f22dc2216c9df31d377:current-10k-excerpt",
+          "evidence-v1:2f22dc2216c9df31d377:prior-10k-excerpt"
+        ],
+        "implications": [
+          "No significant impact on valuation or risk profile.",
+          "Market reaction is neutral as the substantive risk remains unchanged."
+        ],
+        "scenario": "Base Scenario"
+      },
+      "bear": {
+        "conditions": [
+          "The removal of uncertainty language masks an increase in regulatory exposure or a lack of ability to estimate losses due to complexity.",
+          "Subsequent filings reveal significant legal reserves or settlements."
+        ],
+        "evidence_ids": [
+          "evidence-v1:2f22dc2216c9df31d377:current-10k-excerpt"
+        ],
+        "implications": [
+          "Potential for negative surprise if losses materialize.",
+          "Loss of credibility in disclosure practices."
+        ],
+        "scenario": "Bear Scenario"
+      },
+      "bull": {
+        "conditions": [
+          "The removal of uncertainty language reflects CHEMED's successful resolution of key regulatory issues at VITAS.",
+          "Subsequent filings show stable or increased reserves, indicating confidence in estimation."
+        ],
+        "evidence_ids": [
+          "evidence-v1:2f22dc2216c9df31d377:current-10k-excerpt"
+        ],
+        "implications": [
+          "Reduced legal overhang could lead to multiple expansion.",
+          "Lower perceived tail risk might attract risk-averse institutional capital."
+        ],
+        "scenario": "Bull Scenario"
+      }
+    },
+    "section": "item_7",
+    "skeptical_review": {
+      "alternative_explanations": [
+        "The removal of the uncertainty disclaimer may reflect a change in legal counsel's standard language rather than a change in the underlying risk or estimation capability.",
+        "The company may have resolved the specific regulatory issues at VITAS, allowing for more precise estimation, but this is not evidenced in the current filing excerpt.",
+        "The change may be an artifact of a different drafting style or template update for the 2021 10-K, unrelated to the substance of legal liabilities.",
+        "The 'removed text' might have been moved to a different section (e.g., Note 12 Litigation) rather than deleted entirely, which the current evidence does not confirm."
+      ],
+      "critical_grounding_defect": true,
+      "critical_objections": [
+        "The candidate packet contains zero research hypotheses, rendering the core research agenda empty. The system correctly identified insufficient evidence but failed to generate even a minimal, grounded inquiry.",
+        "The 'Removed or softened risk language' classification relies on a comparison between a substantive legal risk disclosure (prior) and a section header (current). This is a structural mismatch; the current excerpt provided is only the title 'Item 7. Management’s Discussion...', not the risk disclosure section itself. The 'removed text' is inferred from the prior filing, not present in the current filing's provided evidence.",
+        "The novelty classification 'previously disclosed in 8-K' is based on a low-similarity match (0.0483) to a governance 8-K, which does not substantiate that the specific legal risk language was previously disclosed. The novelty is actually 'newly absent' in the provided corpus, but the mechanism for that absence is unverified.",
+        "The trade hypothesis correctly defaults to 'insufficient evidence' but the reasoning 'novelty is low as similar language changes are common' is a generic heuristic not supported by the specific evidence. The specific change here is the removal of a specific uncertainty disclaimer regarding VITAS, which is distinct from generic boilerplate.",
+        "Skeptic correction rejected by policy: reviewer attempted to edit immutable field: /frozen_classification/novelty"
+      ],
+      "evidence_ids_reviewed": [
+        "evidence-v1:2f22dc2216c9df31d377:added-text",
+        "evidence-v1:2f22dc2216c9df31d377:current-10k-excerpt",
+        "evidence-v1:2f22dc2216c9df31d377:prior-10k-excerpt",
+        "evidence-v1:2f22dc2216c9df31d377:prior-8k:0001562762-21-000230",
+        "evidence-v1:2f22dc2216c9df31d377:removed-text"
+      ],
+      "final_review_status": "HOLD_INSUFFICIENT_EVIDENCE",
+      "pricing_or_attention_concerns": [
+        "The prior 8-K (2021-05-19) had a very low similarity score (0.0483) and matched on generic terms ('material', 'may'), suggesting it did not specifically disclose the legal risk language in question. Therefore, the market may not have had specific prior attention to this exact disclosure nuance.",
+        "The absence of the uncertainty disclaimer could be interpreted by the market as a reduction in tail risk, potentially impacting the stock's risk premium, but this effect is unquantifiable without current market data."
+      ],
+      "review_summary": "The candidate packet is held because it contains no research hypotheses. The underlying evidence supports a classification of 'Removed or softened risk language' only if we assume the current filing's full text (not provided) lacks the prior's specific disclaimer. The provided current excerpt is merely a section header. The novelty claim is weak due to the low-similarity prior 8-K. The trade hypothesis is correctly marked as insufficient evidence. The packet cannot be published as a research idea because it offers no testable hypothesis, only a classification of a text change that is not fully grounded in the provided current evidence. The critical defect is the lack of any actionable research agenda derived from the evidence.",
+      "review_version": "research_idea_skeptic_v1",
+      "unsupported_claims_removed": []
+    },
+    "source_url": "https://www.sec.gov/Archives/edgar/data/19584/000156276222000060/che-20211231x10k.htm",
+    "system_interpretation": {
+      "evidence_facts": [
+        {
+          "evidence_ids": [
+            "evidence-v1:2f22dc2216c9df31d377:prior-10k-excerpt"
+          ],
+          "fact_id": "fact-001",
+          "fact_type": "prior_disclosure",
+          "statement": "The prior filing excerpt explicitly states: 'In most instances, we are unable to make a reasonable estimate of any reasonably possible liability due to the uncertainty of the outcome and stage of litigation.'"
+        },
+        {
+          "evidence_ids": [
+            "evidence-v1:2f22dc2216c9df31d377:current-10k-excerpt"
+          ],
+          "fact_id": "fact-002",
+          "fact_type": "filing_text",
+          "statement": "The current filing excerpt omits the sentence regarding the inability to make reasonable estimates of liability due to uncertainty."
+        },
+        {
+          "evidence_ids": [
+            "evidence-v1:2f22dc2216c9df31d377:prior-10k-excerpt"
+          ],
+          "fact_id": "fact-003",
+          "fact_type": "prior_disclosure",
+          "statement": "The prior filing excerpt mentions periodic communications from governmental and regulatory agencies concerning compliance with Medicare and Medicaid billing requirements at the VITAS subsidiary."
+        },
+        {
+          "evidence_ids": [
+            "evidence-v1:2f22dc2216c9df31d377:current-10k-excerpt"
+          ],
+          "fact_id": "fact-004",
+          "fact_type": "frozen_classification",
+          "statement": "The frozen classification indicates the change is a 'Removed or softened risk language' with 'medium' materiality and 'positive' direction."
+        }
+      ],
+      "inferences": [
+        {
+          "caveat": "This is a bounded inference based on standard disclosure practices; the actual reason for removal is not stated in the filing.",
+          "confidence": 0.4,
+          "evidence_ids": [
+            "evidence-v1:2f22dc2216c9df31d377:current-10k-excerpt",
+            "evidence-v1:2f22dc2216c9df31d377:prior-10k-excerpt"
+          ],
+          "inference_id": "inf-001",
+          "inference_type": "research_implication",
+          "statement": "The removal of the uncertainty disclaimer may suggest improved confidence in estimating legal/regulatory liabilities or a strategic decision to reduce perceived risk disclosure, but it does not confirm a change in the underlying legal exposure."
+        }
+      ],
+      "plain_language_change": "CHEMED Corp removed specific language from its 10-K filing regarding the uncertainty of estimating losses from regulatory and legal actions, particularly those related to its VITAS hospice subsidiary. The prior text explicitly stated that the company was often unable to make reasonable estimates of liability due to litigation uncertainty. The current text no longer contains this specific disclaimer of uncertainty, though it retains the general framework for establishing reserves for probable and estimable liabilities.",
+      "uncertainties": [
+        {
+          "data_needed": [
+            "Subsequent quarterly 10-Q filings to see if the language is reinstated or if reserves are adjusted.",
+            "Legal proceedings updates in subsequent 8-K filings."
+          ],
+          "uncertainty": "It is unknown whether the removal reflects a genuine improvement in legal predictability, a change in legal counsel's advice, or a stylistic update without substantive change in risk profile.",
+          "uncertainty_id": "unc-001",
+          "why_it_matters": "Without knowing the driver, the 'positive' direction classification may be misleading regarding actual financial health."
+        }
+      ]
+    },
+    "ticker": "CHE"
+  },
+  "source_packet_id": "research-idea-v1:2f22dc2216c9df31d377",
+  "source_packet_sha256": "7d43ba00b7075744ed599f6cd77b578d58d5eda732ef9affb811f41612f779c1"
+}

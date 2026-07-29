@@ -1,0 +1,566 @@
+{
+  "export_version": "research_idea_evidence_hypothesis_export_v1",
+  "packet": {
+    "affected_entities": [
+      {
+        "confidence": 0.95,
+        "entity_id": "RH-issuer",
+        "entity_or_group": "RH (Restoration Hardware Holdings, Inc.)",
+        "evidence_ids": [
+          "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt"
+        ],
+        "possible_effect": "Direct financial impact from compliance costs, litigation, or revenue loss due to data security issues.",
+        "reason": "The filing is a 10-K by RH, explicitly disclosing risks to its own business.",
+        "relationship": "Issuer"
+      },
+      {
+        "confidence": 0.8,
+        "entity_id": "RH-customers",
+        "entity_or_group": "RH Customers",
+        "evidence_ids": [
+          "evidence-v1:412b08746bb0ed5a7745:added-text"
+        ],
+        "possible_effect": "Loss of confidence in the security of RH's website and systems, potentially leading to reduced willingness to purchase.",
+        "reason": "The filing mentions consumers losing confidence in the security of RH's website and systems.",
+        "relationship": "Data Subjects"
+      },
+      {
+        "confidence": 0.3,
+        "entity_id": "RH-peers",
+        "entity_or_group": "Home Furnishings Retail Peers",
+        "evidence_ids": [
+          "evidence-v1:412b08746bb0ed5a7745:added-text"
+        ],
+        "possible_effect": "Potential sector-wide regulatory scrutiny or increased compliance costs if regulators target the industry.",
+        "reason": "The risk is specific to data security, which is a common industry risk, but the filing is issuer-specific.",
+        "relationship": "Industry Peers"
+      }
+    ],
+    "analyst_disposition": {
+      "analyst_notes": "",
+      "edited_fields": [],
+      "review_timestamp": null,
+      "saved_locally_only": true,
+      "status": "UNREVIEWED"
+    },
+    "analyst_questions": [
+      {
+        "evidence_ids": [
+          "evidence-v1:412b08746bb0ed5a7745:added-text"
+        ],
+        "question": "Has RH experienced any data breaches or security incidents in the past 12 months that were not publicly disclosed?",
+        "question_id": "q-1",
+        "required_data": [
+          "RH press releases and regulatory filings for data incidents",
+          "Management discussion in earnings calls"
+        ],
+        "why_it_matters": "The filing mentions 'possibility of fines, lawsuits,' which may imply underlying incidents. Undisclosed incidents would increase the risk profile."
+      },
+      {
+        "evidence_ids": [
+          "evidence-v1:412b08746bb0ed5a7745:added-text"
+        ],
+        "question": "What specific payment card association rules or data security certifications is RH currently working to comply with, and what is the estimated cost?",
+        "question_id": "q-2",
+        "required_data": [
+          "RH investor presentations or earnings call transcripts",
+          "Industry reports on PCI-DSS compliance costs"
+        ],
+        "why_it_matters": "The filing mentions 'significant resources' but provides no quantification. Specific rules and costs help assess the financial impact."
+      },
+      {
+        "evidence_ids": [
+          "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt"
+        ],
+        "question": "How does RH's data security risk disclosure compare to its peers in the home furnishings sector in terms of specificity and materiality?",
+        "question_id": "q-3",
+        "required_data": [
+          "10-K filings of peer home furnishings retailers",
+          "Comparative risk factor analysis"
+        ],
+        "why_it_matters": "If peers have similar disclosures, the risk may be industry-wide and less idiosyncratic to RH. If RH's disclosure is more severe, it may indicate higher relative risk."
+      },
+      {
+        "evidence_ids": [
+          "evidence-v1:412b08746bb0ed5a7745:prior-8k:0001558370-22-018485",
+          "evidence-v1:412b08746bb0ed5a7745:prior-8k:0001558370-22-009063"
+        ],
+        "question": "Did RH's prior 8-K disclosures on data security trigger any significant market reaction or analyst attention?",
+        "question_id": "q-4",
+        "required_data": [
+          "Market data around prior 8-K filing dates",
+          "Analyst reports from the time of prior 8-Ks"
+        ],
+        "why_it_matters": "The novelty classification indicates prior disclosure. If the market already reacted to those 8-Ks, the 10-K addition may have limited marginal impact."
+      },
+      {
+        "evidence_ids": [
+          "evidence-v1:412b08746bb0ed5a7745:added-text"
+        ],
+        "question": "What is RH's current cyber insurance coverage, and does it exclude certain types of data breaches or regulatory fines?",
+        "question_id": "q-5",
+        "required_data": [
+          "RH proxy statement or insurance disclosures",
+          "Industry standards for cyber insurance exclusions"
+        ],
+        "why_it_matters": "Insurance can mitigate financial impact. Exclusions would leave RH exposed to the risks mentioned in the filing."
+      }
+    ],
+    "audit_metadata": {
+      "audit_findings": [
+        "Hypothesis hyp-3 (Credit Spread Widening) relies on an instrument (corporate bonds) that is not supported by the evidence. The filing is a 10-K risk factor disclosure; it does not contain bond covenants, credit ratings, or issuance data. Credit markets often price data risk into equity first; assuming bond spread widening without evidence of bond-specific triggers or existing bond liquidity is a weak mechanism.",
+        "Hypothesis hyp-1 (Implied Volatility) assumes a direct causal link between a boilerplate risk factor addition and a measurable increase in implied volatility relative to peers. The novelty is explicitly bounded as 'previously disclosed in 8-K'. Without evidence of a material change in the *nature* or *imminence* of the risk compared to prior disclosures, a volatility spike is speculative and likely untestable as a distinct signal from general market noise.",
+        "The 'affected_entity' for 'Home Furnishings Retail Peers' is unsupported. The filing is issuer-specific. Inferring sector-wide regulatory scrutiny or peer impact from a single issuer's risk factor addition is an over-broad generalization not supported by the text.",
+        "Analyst question q-4 asks about market reaction to prior 8-Ks. The allowed input contains no market data (prices, volumes, returns) for those dates. This question requires external data not present in the runtime input, making it unanswerable within the bounded evidence.",
+        "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/affected_entities/2: None is not of type 'object')",
+        "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/analyst_questions/3: None is not of type 'object')"
+      ],
+      "audit_version": "research_idea_audit_v1",
+      "audited_at": "2026-07-29T03:15:12.485370Z",
+      "determinism": {
+        "cache_hit": false,
+        "repeated_generation_matches": null,
+        "stable_content_sha256": "7bf742b62becd4033ab5fcda8864385e2ce7393e9369bc7d74c339c6546e2e1a",
+        "status": "PASS"
+      },
+      "evidence_integrity": {
+        "offsets_verified": true,
+        "referenced_evidence_ids": [
+          "evidence-v1:412b08746bb0ed5a7745:added-text",
+          "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt",
+          "evidence-v1:412b08746bb0ed5a7745:prior-10k-excerpt",
+          "evidence-v1:412b08746bb0ed5a7745:prior-8k:0001558370-22-009063",
+          "evidence-v1:412b08746bb0ed5a7745:prior-8k:0001558370-22-018485",
+          "evidence-v1:412b08746bb0ed5a7745:removed-text"
+        ],
+        "source_url_present": true,
+        "status": "PASS",
+        "unresolved_evidence_ids": []
+      },
+      "future_information": {
+        "checked_timestamp_count": 3,
+        "formation_timestamp": "2023-03-29T21:11:45.000Z",
+        "status": "PASS",
+        "violations": []
+      },
+      "grounding": {
+        "checked_claim_count": 22,
+        "critical_defects": [
+          "Hypothesis hyp-3 (Credit Spread Widening) relies on an instrument (corporate bonds) that is not supported by the evidence. The filing is a 10-K risk factor disclosure; it does not contain bond covenants, credit ratings, or issuance data. Credit markets often price data risk into equity first; assuming bond spread widening without evidence of bond-specific triggers or existing bond liquidity is a weak mechanism.",
+          "Hypothesis hyp-1 (Implied Volatility) assumes a direct causal link between a boilerplate risk factor addition and a measurable increase in implied volatility relative to peers. The novelty is explicitly bounded as 'previously disclosed in 8-K'. Without evidence of a material change in the *nature* or *imminence* of the risk compared to prior disclosures, a volatility spike is speculative and likely untestable as a distinct signal from general market noise.",
+          "The 'affected_entity' for 'Home Furnishings Retail Peers' is unsupported. The filing is issuer-specific. Inferring sector-wide regulatory scrutiny or peer impact from a single issuer's risk factor addition is an over-broad generalization not supported by the text.",
+          "Analyst question q-4 asks about market reaction to prior 8-Ks. The allowed input contains no market data (prices, volumes, returns) for those dates. This question requires external data not present in the runtime input, making it unanswerable within the bounded evidence.",
+          "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/affected_entities/2: None is not of type 'object')",
+          "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/analyst_questions/3: None is not of type 'object')"
+        ],
+        "grounded_claim_count": 22,
+        "status": "HOLD"
+      },
+      "prohibited_language": {
+        "matches": [],
+        "registry_version": "1.0",
+        "status": "PASS",
+        "violation_count": 0
+      },
+      "publication_decision": "REJECTED_BY_SKEPTIC",
+      "schema_validation": {
+        "errors": [],
+        "status": "PASS",
+        "validated_at": "2026-07-29T03:15:12.485370Z",
+        "validator_name": "jsonschema.Draft202012Validator",
+        "validator_version": "4.26.0"
+      }
+    },
+    "change_id": "412b08746bb0ed5a7745",
+    "confidence": {
+      "evidence": 0.9,
+      "hypothesis": 0.6,
+      "mechanism": 0.5,
+      "novelty": 0.3,
+      "trade_readiness": 0.1
+    },
+    "disclaimer": "AI-generated research hypothesis based on the cited evidence. It is not a fact, personalized investment advice, or a validated trading signal. Analyst review is required.",
+    "economic_mechanisms": [
+      {
+        "affected_financial_driver": "Operating Expenses",
+        "causal_chain": [
+          "RH discloses heightened exposure to payment card and data security rules.",
+          "Regulatory bodies or card associations impose stricter compliance requirements or fines.",
+          "RH must invest in enhanced security infrastructure and legal compliance.",
+          "Operating expenses increase, reducing net income.",
+          "Lower earnings may negatively impact equity valuation."
+        ],
+        "counterargument": "Compliance costs may be offset by improved consumer trust or may be immaterial relative to RH's total operating expenses if the company is already well-prepared.",
+        "mechanism": "Regulatory and Compliance Cost Increase",
+        "mechanism_confidence": 0.5,
+        "mechanism_id": "mech-1",
+        "supporting_evidence_ids": [
+          "evidence-v1:412b08746bb0ed5a7745:added-text"
+        ]
+      },
+      {
+        "affected_financial_driver": "Revenue",
+        "causal_chain": [
+          "A data breach occurs involving RH's customer PII.",
+          "Consumers lose confidence in the security of RH's website and systems.",
+          "Customers choose not to purchase from RH or switch to competitors.",
+          "Sales trends decline, impacting revenue and profitability.",
+          "Negative revenue impact may lead to downward revisions in analyst estimates."
+        ],
+        "counterargument": "RH's brand strength and product differentiation may mitigate consumer churn, or the breach may be minor and not widely publicized.",
+        "mechanism": "Consumer Confidence Erosion Post-Breach",
+        "mechanism_confidence": 0.4,
+        "mechanism_id": "mech-2",
+        "supporting_evidence_ids": [
+          "evidence-v1:412b08746bb0ed5a7745:added-text"
+        ]
+      },
+      {
+        "affected_financial_driver": "Legal Liabilities and Provisions",
+        "causal_chain": [
+          "RH discloses potential for lawsuits related to PII protection.",
+          "Class-action lawsuits are filed following a data incident or regulatory inquiry.",
+          "RH incurs legal defense costs and potential settlement payments.",
+          "Increased legal provisions reduce net income.",
+          "Investors may perceive higher legal risk, leading to a risk premium in valuation."
+        ],
+        "counterargument": "Litigation outcomes are uncertain, and insurance may cover some costs; past disclosures in 8-Ks may have already allowed the market to price in this risk.",
+        "mechanism": "Litigation and Legal Liability",
+        "mechanism_confidence": 0.4,
+        "mechanism_id": "mech-3",
+        "supporting_evidence_ids": [
+          "evidence-v1:412b08746bb0ed5a7745:added-text"
+        ]
+      }
+    ],
+    "evidence": {
+      "added_text": "In addition to the possibility of fines, lawsuits and other claims, we could be required to expend significant resources to change our business practices or modify our service offerings in connection with the protection of personally identifiable information, which could a material adverse effect on our business. Any breach could also cause consumers to lose confidence security of website and information technology systems and choose not us. We are also subject to payment card association rules and network operating rules, data security rules, certification requirements rules governing electronic funds transfers, could change over time.",
+      "current_excerpt": "In addition to the possibility of fines, lawsuits and other claims, we could be required to expend significant resources to change our business practices or modify our service offerings in connection with the protection of personally identifiable information, which could have a material adverse effect on our business. Any breach could also cause consumers to lose confidence in the security of our website and information technology systems and choose not to purchase from us. We are also subject to payment card association rules and network operating rules, including data security rules, certification requirements and rules governing electronic funds transfers, which could change over time.",
+      "current_filing_id": "sec10k:0001558370-23-004942",
+      "current_source_url": "https://www.sec.gov/Archives/edgar/data/1528849/000155837023004942/rh-20230128x10k.htm",
+      "evidence_ids": {
+        "added_text": "evidence-v1:412b08746bb0ed5a7745:added-text",
+        "current_excerpt": "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt",
+        "prior_excerpt": "evidence-v1:412b08746bb0ed5a7745:prior-10k-excerpt",
+        "removed_text": "evidence-v1:412b08746bb0ed5a7745:removed-text"
+      },
+      "evidence_offsets": {
+        "current": {
+          "end": 126737,
+          "start": 126040
+        },
+        "prior": {
+          "end": 209800,
+          "start": 209055
+        }
+      },
+      "evidence_offsets_verified": true,
+      "prior_excerpt": "We have in the past experienced volatility in our sales trends related to many of these factors and believe our sales may be impacted by these economic factors in future periods. These headwinds tied to macroeconomic factors may continue in future quarters. For more information, refer to Item 1A—Risk Factors — Changes in consumer spending and factors that influence spending of the specific categories of consumers that purchase from us, including the health of the high-end housing market, may significantly impact our revenue and results of operations —The COVID-19 pandemic poses significant and widespread risks to our business as well as to the business environment and the markets in which we operate . Fluctuation in Quarterly Results .",
+      "prior_filing_id": "sec10k:0001558370-22-004753",
+      "prior_source_url": "https://www.sec.gov/Archives/edgar/data/1528849/000155837022004753/rh-20220129x10k.htm",
+      "related_prior_8k": [
+        {
+          "acceptance_timestamp": "2022-12-08T16:19:27-05:00",
+          "accession_number": "0001558370-22-018485",
+          "evidence_id": "evidence-v1:412b08746bb0ed5a7745:prior-8k:0001558370-22-018485",
+          "information_date": "2022-12-09",
+          "item_codes": "8.01 9.01",
+          "match_score": 9.239,
+          "matched_terms": [
+            "could",
+            "may",
+            "risk",
+            "uncertain"
+          ],
+          "primary_category": "other",
+          "similarity": 0.0598,
+          "url": "https://www.sec.gov/Archives/edgar/data/1528849/000155837022018485/rh-20221208x8k.htm"
+        },
+        {
+          "acceptance_timestamp": "2022-05-17T07:30:32-04:00",
+          "accession_number": "0001558370-22-009063",
+          "evidence_id": "evidence-v1:412b08746bb0ed5a7745:prior-8k:0001558370-22-009063",
+          "information_date": "2022-05-17",
+          "item_codes": "1.01 2.03 7.01 8.01 9.01",
+          "match_score": 9.117,
+          "matched_terms": [
+            "could",
+            "may",
+            "risk",
+            "uncertain"
+          ],
+          "primary_category": "financing_capital_structure",
+          "similarity": 0.0293,
+          "url": "https://www.sec.gov/Archives/edgar/data/1528849/000155837022009063/rh-20220513x8k.htm"
+        },
+        {
+          "acceptance_timestamp": "2022-04-18T06:03:32-04:00",
+          "accession_number": "0001104659-22-046630",
+          "evidence_id": "evidence-v1:412b08746bb0ed5a7745:prior-8k:0001104659-22-046630",
+          "information_date": "2022-04-18",
+          "item_codes": "1.01 8.01 9.01",
+          "match_score": 9.11,
+          "matched_terms": [
+            "could",
+            "may",
+            "risk",
+            "uncertain"
+          ],
+          "primary_category": "financing_capital_structure",
+          "similarity": 0.0274,
+          "url": "https://www.sec.gov/Archives/edgar/data/1528849/000110465922046630/tm2212856d1_8k.htm"
+        }
+      ],
+      "related_prior_news": [],
+      "removed_text": "We past experienced volatility in sales trends related many of these factors and believe our sales may be impacted by these economic factors in future periods. These headwinds tied to macroeconomic factors may continue in future quarters. For more information, refer to Item 1A—Risk Factors — Changes in consumer spending and factors that influence spending of the specific categories of consumers that us, the health of the high-end housing market, may significantly impact our revenue results of operations —The COVID-19 pandemic poses significant and widespread risks to our business as well as to the business environment and the markets in we op"
+    },
+    "filing_date": "2023-03-29",
+    "formation_timestamp": "2023-03-29T21:11:45.000Z",
+    "frozen_classification": {
+      "category": "Newly added risk factor",
+      "classification_method": "deterministic-evidence-rule-v1",
+      "confidence": 0.99,
+      "direction": "negative",
+      "materiality": "high",
+      "novelty": "previously disclosed in 8-K",
+      "novelty_is_causal_claim": false,
+      "novelty_method": "corpus-bounded-deterministic-headline-and-8k-text-match-v1"
+    },
+    "illustrative_trade_hypothesis": {
+      "analyst_review_required": true,
+      "candidate_view": "insufficient evidence",
+      "current_market_data_used": false,
+      "entry_or_confirmation_conditions": [],
+      "evidence_ids": [
+        "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt"
+      ],
+      "expected_horizon": "Not specified because the hypothesis is withheld.",
+      "illustrative_only": true,
+      "instrument_rationale": "The skeptical review did not clear a grounded instrument expression from the cited disclosure evidence.",
+      "invalidation_conditions": [],
+      "key_risks": [],
+      "label": "Illustrative Trade Hypothesis — Analyst Review Required",
+      "liquidity_and_cost_checks": [],
+      "market_data_required_before_action": [],
+      "no_position_size_generated": true,
+      "preferred_instrument_class_to_investigate": "no instrument identified",
+      "status": "WITHHELD_BY_SKEPTIC",
+      "trade_readiness": "NOT_READY",
+      "trade_readiness_reason": "The skeptical review did not clear the evidence and mechanism gates."
+    },
+    "input_lineage": {
+      "allowed_input_fields_used": [
+        "issuer",
+        "ticker",
+        "filing_date",
+        "formation_timestamp",
+        "section",
+        "prior_filing_excerpt",
+        "current_filing_excerpt",
+        "added_language",
+        "removed_language",
+        "frozen_classification",
+        "related_prior_8k",
+        "related_prior_news",
+        "frozen_company_metadata",
+        "source_urls_and_identifiers",
+        "current_product_reason_code",
+        "evidence_offsets"
+      ],
+      "cloud_calls_made": false,
+      "ex_post_outcomes_excluded": true,
+      "formation_time_enforced": true,
+      "future_information_excluded": true,
+      "input_contract_version": "research_idea_input_v1",
+      "post_filing_news_excluded": true,
+      "source_record_sha256": "849a672e4aad05b8cf56a7616012f70f98e1435e5b393650906dbe4bec766972"
+    },
+    "issuer": "RH",
+    "packet_hash": "66ff9ef61252eec8ac618e9e1e3469e542547d5450e5a3295ed22f0555171907",
+    "packet_id": "research-idea-v1:412b08746bb0ed5a7745",
+    "packet_status": "REJECTED_BY_SKEPTIC",
+    "packet_version": "1.0",
+    "research_hypotheses": [],
+    "scenario_analysis": {
+      "base": {
+        "conditions": [
+          "The market perceives the risk as material but manageable",
+          "No immediate breaches or regulatory actions are reported",
+          "Analysts update models to reflect potential compliance costs"
+        ],
+        "evidence_ids": [
+          "evidence-v1:412b08746bb0ed5a7745:added-text",
+          "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt"
+        ],
+        "implications": [
+          "Slight increase in implied volatility and potential minor widening of credit spreads.",
+          "Analyst estimates may be adjusted for higher operating expenses."
+        ],
+        "scenario": "Moderate Market Reaction to New Risk Factor"
+      },
+      "bear": {
+        "conditions": [
+          "A significant data breach occurs shortly after the filing",
+          "Regulators impose fines or stricter rules",
+          "Consumer confidence drops significantly"
+        ],
+        "evidence_ids": [
+          "evidence-v1:412b08746bb0ed5a7745:added-text"
+        ],
+        "implications": [
+          "Sharp increase in equity volatility and potential decline in stock price.",
+          "Credit spreads widen significantly due to increased legal and operational risk.",
+          "Revenue declines due to loss of consumer trust."
+        ],
+        "scenario": "Data Breach or Regulatory Action Follows"
+      },
+      "bull": {
+        "conditions": [
+          "RH has already invested in robust security infrastructure",
+          "Prior 8-K disclosures adequately informed the market",
+          "No actual breaches occur"
+        ],
+        "evidence_ids": [
+          "evidence-v1:412b08746bb0ed5a7745:prior-8k:0001558370-22-018485"
+        ],
+        "implications": [
+          "The 10-K addition is seen as boilerplate and has no marginal impact on valuation.",
+          "Equity and credit spreads remain stable or tighten if other risks (e.g., macro) ease."
+        ],
+        "scenario": "Data Security Risk is Priced In and Mitigated"
+      }
+    },
+    "section": "item_1a",
+    "skeptical_review": {
+      "alternative_explanations": [
+        "The new risk factor text may be standard boilerplate required by evolving SEC guidance or legal counsel advice, rather than reflecting a specific, new, or imminent threat. In this case, the market would view it as non-incremental information.",
+        "The removal of macroeconomic risk language (housing market, pandemic) may reflect management's view that those risks have receded, not that data security has become the *primary* risk. The net effect on valuation could be neutral if the macro tailwinds offset the new data risks.",
+        "Prior 8-K disclosures (e.g., 2022-12-08) may have already caused the market to incorporate data security risks into the price. The 10-K inclusion would then be a confirmation of known risks, generating no marginal alpha or price movement."
+      ],
+      "critical_grounding_defect": true,
+      "critical_objections": [
+        "Hypothesis hyp-3 (Credit Spread Widening) relies on an instrument (corporate bonds) that is not supported by the evidence. The filing is a 10-K risk factor disclosure; it does not contain bond covenants, credit ratings, or issuance data. Credit markets often price data risk into equity first; assuming bond spread widening without evidence of bond-specific triggers or existing bond liquidity is a weak mechanism.",
+        "Hypothesis hyp-1 (Implied Volatility) assumes a direct causal link between a boilerplate risk factor addition and a measurable increase in implied volatility relative to peers. The novelty is explicitly bounded as 'previously disclosed in 8-K'. Without evidence of a material change in the *nature* or *imminence* of the risk compared to prior disclosures, a volatility spike is speculative and likely untestable as a distinct signal from general market noise.",
+        "The 'affected_entity' for 'Home Furnishings Retail Peers' is unsupported. The filing is issuer-specific. Inferring sector-wide regulatory scrutiny or peer impact from a single issuer's risk factor addition is an over-broad generalization not supported by the text.",
+        "Analyst question q-4 asks about market reaction to prior 8-Ks. The allowed input contains no market data (prices, volumes, returns) for those dates. This question requires external data not present in the runtime input, making it unanswerable within the bounded evidence.",
+        "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/affected_entities/2: None is not of type 'object')",
+        "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/analyst_questions/3: None is not of type 'object')"
+      ],
+      "evidence_ids_reviewed": [
+        "evidence-v1:412b08746bb0ed5a7745:added-text",
+        "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt",
+        "evidence-v1:412b08746bb0ed5a7745:prior-10k-excerpt",
+        "evidence-v1:412b08746bb0ed5a7745:prior-8k:0001104659-22-046630",
+        "evidence-v1:412b08746bb0ed5a7745:prior-8k:0001558370-22-009063",
+        "evidence-v1:412b08746bb0ed5a7745:prior-8k:0001558370-22-018485",
+        "evidence-v1:412b08746bb0ed5a7745:removed-text"
+      ],
+      "final_review_status": "REJECTED_BY_SKEPTIC",
+      "pricing_or_attention_concerns": [
+        "The novelty classification explicitly states 'previously disclosed in 8-K'. The prior 8-Ks (2022-12-08, 2022-05-17, 2022-04-18) contain matched terms related to risk and uncertainty. This suggests the information is not novel to the market corpus, reducing the potential for an unpriced surprise.",
+        "The filing is a 10-K, a periodic report. Risk factors in 10-Ks are often updated incrementally. Without evidence of a specific incident or quantified cost, the attention generated is likely low compared to earnings or guidance updates."
+      ],
+      "review_summary": "The candidate packet is rejected because its core research hypotheses rely on mechanisms (credit spread widening, volatility spikes) that are not sufficiently grounded in the provided evidence. The novelty of the risk factor is explicitly bounded by prior 8-K disclosures, meaning the information is not new to the market corpus. The packet incorrectly infers sector-wide peer impacts and proposes questions requiring external market data not present in the allowed input. The trade hypothesis correctly identifies insufficient evidence, but the research agenda is too generic and unsupported to justify analyst review. The packet is held as rejected.",
+      "review_version": "research_idea_skeptic_v1",
+      "unsupported_claims_removed": [
+        "Applied skeptic correction at /research_hypotheses: All three hypotheses are rejected. hyp-1 (volatility) and hyp-3 (credit spreads) rely on weak mechanisms given the bounded novelty and lack of specific triggers. hyp-2 (expense revisions) is too generic and likely already priced in via prior disclosures. No grounded, specific, falsifiable hypotheses remain.",
+        "Applied skeptic correction at /affected_entities/1/possible_effect: Narrowed the effect to what is explicitly stated in the filing ('lose confidence... choose not to purchase'). Removed unsupported 'identity theft' claim."
+      ]
+    },
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1528849/000155837023004942/rh-20230128x10k.htm",
+    "system_interpretation": {
+      "evidence_facts": [
+        {
+          "evidence_ids": [
+            "evidence-v1:412b08746bb0ed5a7745:added-text",
+            "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt"
+          ],
+          "fact_id": "fact-1",
+          "fact_type": "filing_text",
+          "statement": "The current 10-K excerpt explicitly warns that failure to protect PII could lead to significant resource expenditure, fines, lawsuits, and loss of consumer confidence, potentially having a material adverse effect on the business."
+        },
+        {
+          "evidence_ids": [
+            "evidence-v1:412b08746bb0ed5a7745:added-text",
+            "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt"
+          ],
+          "fact_id": "fact-2",
+          "fact_type": "filing_text",
+          "statement": "The issuer is subject to payment card association rules, network operating rules, data security rules, certification requirements, and rules governing electronic funds transfers, which could change over time."
+        },
+        {
+          "evidence_ids": [
+            "evidence-v1:412b08746bb0ed5a7745:prior-10k-excerpt",
+            "evidence-v1:412b08746bb0ed5a7745:removed-text"
+          ],
+          "fact_id": "fact-3",
+          "fact_type": "prior_disclosure",
+          "statement": "The prior 10-K excerpt focused on volatility in sales trends, macroeconomic factors, the high-end housing market, and the COVID-19 pandemic, with no specific mention of PII or data security risks."
+        },
+        {
+          "evidence_ids": [
+            "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt"
+          ],
+          "fact_id": "fact-4",
+          "fact_type": "filing_metadata",
+          "statement": "The filing section is Item 1A (Risk Factors) of the 10-K for the period ending January 28, 2023, filed on March 29, 2023."
+        },
+        {
+          "evidence_ids": [
+            "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt"
+          ],
+          "fact_id": "fact-5",
+          "fact_type": "frozen_classification",
+          "statement": "The frozen classification identifies this as a 'Newly added risk factor' with high materiality and negative direction."
+        }
+      ],
+      "inferences": [
+        {
+          "caveat": "This is an inference based on the presence of the new text; it does not prove that a breach has occurred or is imminent, only that the risk is now formally disclosed as material.",
+          "confidence": 0.6,
+          "evidence_ids": [
+            "evidence-v1:412b08746bb0ed5a7745:added-text",
+            "evidence-v1:412b08746bb0ed5a7745:removed-text"
+          ],
+          "inference_id": "inf-1",
+          "inference_type": "research_implication",
+          "statement": "The shift from macroeconomic to data-security risk factors suggests management perceives regulatory or operational threats from data handling as more immediate or material than previous economic headwinds."
+        },
+        {
+          "caveat": "This relies on general industry knowledge of retail operations; specific internal data handling practices are not detailed in the filing.",
+          "confidence": 0.8,
+          "evidence_ids": [
+            "evidence-v1:412b08746bb0ed5a7745:added-text"
+          ],
+          "inference_id": "inf-2",
+          "inference_type": "affected_entity",
+          "statement": "As a retailer of home furnishings, RH likely handles significant customer PII for transactions, warranties, and loyalty programs, making it a target for data breaches and subject to payment card network rules (PCI-DSS)."
+        }
+      ],
+      "plain_language_change": "RH added a specific risk factor regarding personally identifiable information (PII) and data security to its 2023 10-K. The new text explicitly states that compliance costs, potential fines, and loss of consumer confidence due to a breach could have a material adverse effect on the business. It also highlights exposure to evolving payment card association rules and electronic funds transfer regulations. This replaces prior language that focused on macroeconomic headwinds, housing market health, and pandemic-related volatility.",
+      "uncertainties": [
+        {
+          "data_needed": [
+            "Management discussion of data security incidents in earnings calls",
+            "Historical data breach costs for peer retailers"
+          ],
+          "uncertainty": "The filing does not quantify the potential financial impact of a data breach or compliance failure, nor does it specify if any breach has already occurred.",
+          "uncertainty_id": "unc-1",
+          "why_it_matters": "Without quantification, it is difficult to assess the immediate financial liability or the likelihood of the risk materializing compared to other risks."
+        },
+        {
+          "data_needed": [
+            "Market reaction to prior 8-K disclosures related to data security",
+            "Analyst commentary on data risk prior to this filing"
+          ],
+          "uncertainty": "The novelty classification indicates this risk was previously disclosed in 8-K filings, suggesting it may not be entirely new to the market, but the 10-K inclusion elevates its formal risk profile.",
+          "uncertainty_id": "unc-2",
+          "why_it_matters": "If the market has already priced in this risk via prior 8-Ks, the marginal impact of the 10-K addition may be limited."
+        }
+      ]
+    },
+    "ticker": "RH"
+  },
+  "source_packet_id": "research-idea-v1:412b08746bb0ed5a7745",
+  "source_packet_sha256": "66ff9ef61252eec8ac618e9e1e3469e542547d5450e5a3295ed22f0555171907"
+}

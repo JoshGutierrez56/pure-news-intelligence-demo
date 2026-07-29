@@ -1,0 +1,764 @@
+{
+  "affected_entities": [
+    {
+      "confidence": 0.9,
+      "entity_id": "KHC",
+      "entity_or_group": "Kraft Heinz Co",
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+      ],
+      "possible_effect": "Loss of access to Senior Credit Facility and potential default on debt obligations.",
+      "reason": "The filing explicitly states that a breach would result in being 'unable to access our Senior Credit Facility' and being 'in default under our debt instruments'.",
+      "relationship": "Issuer"
+    },
+    {
+      "confidence": 0.7,
+      "entity_id": "creditors-001",
+      "entity_or_group": "Holders of Kraft Heinz's senior debt",
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+      ],
+      "possible_effect": "Increased leverage of negotiating power to demand higher yields or stricter covenants in future financing.",
+      "reason": "The need to 'obtain waivers from the required creditors' implies that these creditors hold the power to prevent or allow default.",
+      "relationship": "Creditors"
+    },
+    {
+      "confidence": 0.3,
+      "entity_id": "peers-001",
+      "entity_or_group": "Consumer Staples peers",
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:prior-8k:0001193125-22-190553"
+      ],
+      "possible_effect": "Potential sector-wide repricing of credit risk if Kraft Heinz's situation signals broader industry liquidity stress.",
+      "reason": "Kraft Heinz is a major player in the consumer staples sector; its credit stress could impact peer valuations if the market perceives systemic issues.",
+      "relationship": "Peer Group"
+    }
+  ],
+  "analyst_disposition": {
+    "analyst_notes": "",
+    "edited_fields": [],
+    "review_timestamp": null,
+    "saved_locally_only": true,
+    "status": "UNREVIEWED"
+  },
+  "analyst_questions": [
+    {
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+      ],
+      "question": "What are the specific financial covenants (e.g., leverage ratio, interest coverage ratio) in Kraft Heinz's Senior Credit Facility, and what is the current compliance status?",
+      "question_id": "q-001",
+      "required_data": [
+        "Senior Credit Facility term sheet",
+        "Latest financial covenant compliance certificate"
+      ],
+      "why_it_matters": "Knowing the thresholds and current status is critical to assessing the likelihood of a breach."
+    },
+    {
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+      ],
+      "question": "Has Kraft Heinz filed all periodic reports with the SEC on time in the past 12 months?",
+      "question_id": "q-002",
+      "required_data": [
+        "SEC EDGAR filing history for KHC"
+      ],
+      "why_it_matters": "The filing highlights SEC filing timeliness as a potential covenant breach trigger; past performance is a leading indicator."
+    },
+    {
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+      ],
+      "question": "What is the current utilization rate of Kraft Heinz's revolving credit facility?",
+      "question_id": "q-003",
+      "required_data": [
+        "Latest quarterly financial statements",
+        "Management discussion of liquidity"
+      ],
+      "why_it_matters": "High utilization reduces the buffer available in the facility, increasing the risk of a liquidity crunch if access is lost."
+    },
+    {
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+      ],
+      "question": "Are there any cross-default clauses in Kraft Heinz's other debt instruments that could be triggered by a default on the Senior Credit Facility?",
+      "question_id": "q-004",
+      "required_data": [
+        "Indentures of other outstanding debt instruments"
+      ],
+      "why_it_matters": "Cross-defaults could amplify the impact of a single breach, leading to a broader liquidity crisis."
+    },
+    {
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:prior-8k:0001193125-22-190553"
+      ],
+      "question": "What is the maturity profile of Kraft Heinz's outstanding debt, and how much is due in the next 12 months?",
+      "question_id": "q-005",
+      "required_data": [
+        "Debt maturity schedule"
+      ],
+      "why_it_matters": "Near-term maturities increase refinancing risk, especially if credit conditions deteriorate."
+    },
+    {
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+      ],
+      "question": "Has Kraft Heinz previously obtained waivers for covenant breaches, and what were the terms?",
+      "question_id": "q-006",
+      "required_data": [
+        "Prior SEC filings (8-Ks) regarding covenant waivers"
+      ],
+      "why_it_matters": "Past behavior can indicate the likelihood and cost of future waivers."
+    },
+    {
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:prior-8k:0001193125-22-190553"
+      ],
+      "question": "What is the current credit rating of Kraft Heinz, and what are the potential downgrade triggers?",
+      "question_id": "q-007",
+      "required_data": [
+        "Credit rating reports from S&P, Moody's, Fitch"
+      ],
+      "why_it_matters": "A downgrade could trigger additional covenants or increase borrowing costs."
+    },
+    {
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:prior-10k-excerpt"
+      ],
+      "question": "How sensitive is Kraft Heinz's operating performance to interest rate changes, given its variable rate debt?",
+      "question_id": "q-008",
+      "required_data": [
+        "Debt structure details (fixed vs. variable rate)",
+        "Interest rate sensitivity analysis"
+      ],
+      "why_it_matters": "Interest rate volatility could impact the cost of debt and operating margins, affecting covenant compliance."
+    },
+    {
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:prior-8k:0001193125-22-190553"
+      ],
+      "question": "What are the terms of any recent debt issuances or refinancings by Kraft Heinz?",
+      "question_id": "q-009",
+      "required_data": [
+        "Recent 8-K filings regarding debt issuances"
+      ],
+      "why_it_matters": "Recent transactions may have altered the company's leverage profile or covenant structure."
+    },
+    {
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+      ],
+      "question": "Are there any pending litigations or regulatory actions that could impact Kraft Heinz's liquidity or creditworthiness?",
+      "question_id": "q-010",
+      "required_data": [
+        "Legal proceedings disclosures in recent filings"
+      ],
+      "why_it_matters": "Legal liabilities could result in significant cash outflows or reputational damage."
+    }
+  ],
+  "audit_metadata": {
+    "audit_findings": [
+      "The packet claims novelty for the Senior Credit Facility loss risk, but the prior 8-K (2022-07-08) already disclosed financing/capital structure risks with high similarity, and the prior 10-K discussed refinancing risks. The current filing is a standard annual update of known credit risks, not a new disclosure of imminent distress.",
+      "Hypothesis hyp-001 ('Covenant Breach Imminence') asserts a specific likelihood ('likely to breach') and direction ('credit-negative') based solely on boilerplate risk factor language. The evidence only states that a breach *could* happen; it provides no data on current compliance status, leverage ratios, or operating trends to support a 'likely' prediction.",
+      "Hypothesis hyp-002 ('Waiver Dependency Risk') focuses on SEC filing timeliness. While the filing mentions this as a covenant trigger, there is no evidence of actual filing delays or operational governance issues. This hypothesis confuses a conditional risk clause with an active operational failure.",
+      "The 'affected_entities' section for 'Consumer Staples peers' is unsupported. The evidence is issuer-specific. There is no data in the allowed input to support a sector-wide repricing or systemic liquidity stress hypothesis.",
+      "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/research_hypotheses/0: None is not of type 'object')",
+      "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/research_hypotheses/1: None is not of type 'object')",
+      "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/research_hypotheses/2: None is not of type 'object')",
+      "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/affected_entities/2: None is not of type 'object')"
+    ],
+    "audit_version": "research_idea_audit_v1",
+    "audited_at": "2026-07-29T03:14:46.020309Z",
+    "determinism": {
+      "cache_hit": false,
+      "repeated_generation_matches": null,
+      "stable_content_sha256": "640a20a978550296479a55475d992a145b8287eb33af3ab0f5ca5711a6718a76",
+      "status": "PASS"
+    },
+    "evidence_integrity": {
+      "offsets_verified": true,
+      "referenced_evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt",
+        "evidence-v1:8f5336b55618ffe68e8a:prior-10k-excerpt",
+        "evidence-v1:8f5336b55618ffe68e8a:prior-8k:0001193125-22-190553"
+      ],
+      "source_url_present": true,
+      "status": "PASS",
+      "unresolved_evidence_ids": []
+    },
+    "future_information": {
+      "checked_timestamp_count": 2,
+      "formation_timestamp": "2023-02-16T12:50:46.000Z",
+      "status": "PASS",
+      "violations": []
+    },
+    "grounding": {
+      "checked_claim_count": 31,
+      "critical_defects": [
+        "The packet claims novelty for the Senior Credit Facility loss risk, but the prior 8-K (2022-07-08) already disclosed financing/capital structure risks with high similarity, and the prior 10-K discussed refinancing risks. The current filing is a standard annual update of known credit risks, not a new disclosure of imminent distress.",
+        "Hypothesis hyp-001 ('Covenant Breach Imminence') asserts a specific likelihood ('likely to breach') and direction ('credit-negative') based solely on boilerplate risk factor language. The evidence only states that a breach *could* happen; it provides no data on current compliance status, leverage ratios, or operating trends to support a 'likely' prediction.",
+        "Hypothesis hyp-002 ('Waiver Dependency Risk') focuses on SEC filing timeliness. While the filing mentions this as a covenant trigger, there is no evidence of actual filing delays or operational governance issues. This hypothesis confuses a conditional risk clause with an active operational failure.",
+        "The 'affected_entities' section for 'Consumer Staples peers' is unsupported. The evidence is issuer-specific. There is no data in the allowed input to support a sector-wide repricing or systemic liquidity stress hypothesis.",
+        "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/research_hypotheses/0: None is not of type 'object')",
+        "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/research_hypotheses/1: None is not of type 'object')",
+        "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/research_hypotheses/2: None is not of type 'object')",
+        "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/affected_entities/2: None is not of type 'object')"
+      ],
+      "grounded_claim_count": 31,
+      "status": "HOLD"
+    },
+    "prohibited_language": {
+      "matches": [],
+      "registry_version": "1.0",
+      "status": "PASS",
+      "violation_count": 0
+    },
+    "publication_decision": "REJECTED_BY_SKEPTIC",
+    "schema_validation": {
+      "errors": [],
+      "status": "PASS",
+      "validated_at": "2026-07-29T03:14:46.020309Z",
+      "validator_name": "jsonschema.Draft202012Validator",
+      "validator_version": "4.26.0"
+    }
+  },
+  "change_id": "8f5336b55618ffe68e8a",
+  "confidence": {
+    "evidence": 0.8,
+    "hypothesis": 0.7,
+    "mechanism": 0.5,
+    "novelty": 0.5,
+    "trade_readiness": 0.1
+  },
+  "disclaimer": "AI-generated research hypothesis based on the cited evidence. It is not a fact, personalized investment advice, or a validated trading signal. Analyst review is required.",
+  "economic_mechanisms": [
+    {
+      "affected_financial_driver": "Liquidity and Refinancing Risk",
+      "causal_chain": [
+        "Operating performance declines or SEC filing delays occur.",
+        "Company breaches a financial or non-financial covenant in its debt instruments.",
+        "Company seeks a waiver from creditors.",
+        "Creditors deny the waiver or fail to provide timely approval.",
+        "Company is declared in default and loses access to the Senior Credit Facility.",
+        "Liquidity dries up, forcing asset sales or distressed refinancing."
+      ],
+      "counterargument": "The company may have sufficient cash reserves or alternative liquidity sources to cure any technical default without needing to access the Senior Credit Facility, making the disclosure a standard boilerplate update rather than a sign of imminent distress.",
+      "mechanism": "Covenant Breach and Liquidity Constriction",
+      "mechanism_confidence": 0.5,
+      "mechanism_id": "mech-001",
+      "supporting_evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+      ]
+    },
+    {
+      "affected_financial_driver": "Credit Risk and Counterparty Confidence",
+      "causal_chain": [
+        "A default or acceleration on one debt instrument occurs.",
+        "Cross-default clauses are triggered in other debt agreements.",
+        "Creditors accelerate other debt maturities simultaneously.",
+        "The company faces a liquidity crunch across its entire capital structure.",
+        "Credit ratings are downgraded, increasing borrowing costs further."
+      ],
+      "counterargument": "Cross-default clauses often have materiality thresholds or grace periods, and creditors may coordinate to avoid a disorderly liquidation if the underlying business remains viable.",
+      "mechanism": "Cross-Default Contagion",
+      "mechanism_confidence": 0.4,
+      "mechanism_id": "mech-002",
+      "supporting_evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+      ]
+    },
+    {
+      "affected_financial_driver": "Negotiation Leverage and Cost of Capital",
+      "causal_chain": [
+        "Company needs a waiver for a covenant breach.",
+        "Creditors demand higher interest rates or stricter terms as a condition for the waiver.",
+        "The cost of debt increases, further straining operating performance.",
+        "The company's financial flexibility is reduced, limiting strategic options."
+      ],
+      "counterargument": "Waivers are often granted without significant cost if the company is otherwise solvent and the breach is technical, as creditors prefer a working borrower over a distressed one.",
+      "mechanism": "Waiver Dependency and Creditor Power Shift",
+      "mechanism_confidence": 0.45,
+      "mechanism_id": "mech-003",
+      "supporting_evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+      ]
+    }
+  ],
+  "evidence": {
+    "added_text": "The creditors who hold our could accelerate amounts due event that we default, which could potentially trigger a default or acceleration of the maturity of our other debt. If our operating performance declines, or if we are unable comply with any covenant, such as our ability to timely prepare and file our periodic reports with SEC, we have in the past needed and may in the future need to obtain waivers from the required creditors under instruments to avoid being in default. If we breach any covenants under our debt instruments and seek a waiver, we may not be able to obtain a waiver from the required creditors, or we may not be able to remed",
+    "current_excerpt": "The creditors who hold our debt could accelerate amounts due in the event that we default, which could potentially trigger a default or acceleration of the maturity of our other debt. If our operating performance declines, or if we are unable to comply with any covenant, such as our ability to timely prepare and file our periodic reports with the SEC, we have in the past needed and may in the future need to obtain waivers from the required creditors under our debt instruments to avoid being in default. If we breach any covenants under our debt instruments and seek a waiver, we may not be able to obtain a waiver from the required creditors, or we may not be able to remedy compliance within the terms of any waivers approved by the required creditors. If this occurs, we would be in default under our debt instruments and unable to access our Senior Credit Facility.",
+    "current_filing_id": "sec10k:0001637459-23-000009",
+    "current_source_url": "https://www.sec.gov/Archives/edgar/data/1637459/000163745923000009/khc-20221231.htm",
+    "evidence_ids": {
+      "added_text": "evidence-v1:8f5336b55618ffe68e8a:added-text",
+      "current_excerpt": "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt",
+      "prior_excerpt": "evidence-v1:8f5336b55618ffe68e8a:prior-10k-excerpt",
+      "removed_text": "evidence-v1:8f5336b55618ffe68e8a:removed-text"
+    },
+    "evidence_offsets": {
+      "current": {
+        "end": 77382,
+        "start": 76509
+      },
+      "prior": {
+        "end": 119301,
+        "start": 118798
+      }
+    },
+    "evidence_offsets_verified": true,
+    "prior_excerpt": "Changes in financial and capital markets, including market disruptions, limited liquidity, and interest rate volatility, may increase the cost of financing as well as the risks of refinancing maturing debt. Our U.S. dollar variable rate debt uses London Interbank Offered Rate (“LIBOR”) as a benchmark for determining interest rates and the Financial Conduct Authority in the United Kingdom intends to phase out the LIBOR rates associated with our outstanding variable rate debt by the end of June 2023.",
+    "prior_filing_id": "sec10k:0001637459-22-000018",
+    "prior_source_url": "https://www.sec.gov/Archives/edgar/data/1637459/000163745922000018/khc-20211225.htm",
+    "related_prior_8k": [
+      {
+        "acceptance_timestamp": "2022-07-08T16:58:35-04:00",
+        "accession_number": "0001193125-22-190553",
+        "evidence_id": "evidence-v1:8f5336b55618ffe68e8a:prior-8k:0001193125-22-190553",
+        "information_date": "2022-07-11",
+        "item_codes": "1.01 1.02 2.03 8.01 9.01",
+        "match_score": 8.533,
+        "matched_terms": [
+          "borrowings",
+          "debt",
+          "increase",
+          "limited",
+          "mature",
+          "maturity"
+        ],
+        "primary_category": "financing_capital_structure",
+        "similarity": 0.0709,
+        "url": "https://www.sec.gov/Archives/edgar/data/1637459/000119312522190553/d317404d8k.htm"
+      }
+    ],
+    "related_prior_news": [
+      {
+        "evidence_id": "evidence-v1:8f5336b55618ffe68e8a:prior-news:ec2c4753d37a663719b833c169572452a38917f58015c6222c57dc39ba92f092",
+        "headline": "Kraft Heinz Affirms Full Year 2022 Guidance, Reduces Leverage Target and Details Long-term Algorithm",
+        "match_score": 2.0,
+        "matched_terms": [
+          "leverage"
+        ],
+        "provider_host": "finance.yahoo.com",
+        "publication_timestamp": "2022-09-07T12:00:00+00:00",
+        "similarity": 0.0,
+        "story_chain_id": "EC2C4753D37A663719B833C169572452A38917F58015C6222C57DC39BA92F092"
+      }
+    ],
+    "removed_text": "Changes in financial and capital markets, including market disruptions, limited liquidity, and interest rate volatility, may increase the cost of financing as well as the risks of refinancing maturing debt. Our U.S. dollar variable rate uses London Interbank Offered Rate (“LIBOR”) as a benchmark for determining interest rates and the Financial Conduct Authority United Kingdom intends phase out LIBOR rates associated with outstanding variable rate end of June 2023."
+  },
+  "filing_date": "2023-02-16",
+  "formation_timestamp": "2023-02-16T12:50:46.000Z",
+  "frozen_classification": {
+    "category": "Debt or refinancing pressure",
+    "classification_method": "deterministic-evidence-rule-v1",
+    "confidence": 0.947,
+    "direction": "ambiguous",
+    "materiality": "high",
+    "novelty": "previously disclosed in 8-K",
+    "novelty_is_causal_claim": false,
+    "novelty_method": "corpus-bounded-deterministic-headline-and-8k-text-match-v1"
+  },
+  "generation_metadata": {
+    "accepted_packet_regeneration_policy": "NEVER_SILENTLY_REGENERATE",
+    "generation_policy_version": "research_idea_generation_policy_v1",
+    "generator_run": {
+      "attempt": 2,
+      "cache_key_sha256": "87b3a9bacc8efe7cdc9c835c1488cfd024b47e838e857f0b2f4cb48d1a1367e2",
+      "completed_at": "2026-07-29T02:07:00.370632Z",
+      "context_length": 32768,
+      "maximum_output_tokens": 8192,
+      "model_manifest_digest": "sha256:07d35212591fc27746f0a317c975a6d68754fb38e9053d82e25f06057af28522",
+      "model_name": "qwen3.6:35b-a3b",
+      "prompt_sha256": "22de2d6bf245a0bbeb2e7fdf9ec618f2115d6236a3a5393f129db881b540ead7",
+      "prompt_version": "research_idea_generator_v1",
+      "request_sha256": "9fc364247df874b5f38b38f82b27431a943cd10066a74b151518fac2ec56682a",
+      "response_sha256": "c01e0c349aeb38807673df57f713912ec177977dd226bbf04875906eea65928d",
+      "role": "GENERATOR",
+      "run_status": "COMPLETE",
+      "runtime_name": "Ollama",
+      "runtime_version": "0.32.5",
+      "schema_sha256": "4a1c2717a477770cbd5fd8dc5566146bf403c91d59c0b97584e837314c9b1ed4",
+      "schema_version": "1.0",
+      "seed": 20260728,
+      "started_at": "2026-07-29T02:06:32.286100Z",
+      "temperature": 0,
+      "think_enabled": false
+    },
+    "hardware": {
+      "cpu": "AMD Ryzen 9 5900XT (16 cores / 32 threads)",
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "gpu_memory_mib": 32607,
+      "operating_system": "Windows 11 Home 10.0.26200",
+      "system_memory_gib": 127.91
+    },
+    "maximum_schema_repair_retries": 1,
+    "no_chain_of_thought_stored": true,
+    "no_cloud_calls": true,
+    "skeptic_run": {
+      "attempt": 2,
+      "cache_key_sha256": "2a02f3018d7879d9a63bd3bc62db0c25d00d6a7d3a0612549fabe1f0bab42483",
+      "completed_at": "2026-07-29T03:14:45.883759Z",
+      "context_length": 32768,
+      "maximum_output_tokens": 8192,
+      "model_manifest_digest": "sha256:07d35212591fc27746f0a317c975a6d68754fb38e9053d82e25f06057af28522",
+      "model_name": "qwen3.6:35b-a3b",
+      "prompt_sha256": "c308632c768a59ef6ef6bdb02f886ba53f4c7c2c3b74cec1f836def1f03235ab",
+      "prompt_version": "research_idea_skeptic_v1",
+      "request_sha256": "bb1df94cc64f4555011ec558a0cd7f1c22d469e8fe6b8cb67b44ffa3482668cd",
+      "response_sha256": "7863d3d637789340ec0ea808d072766ed6190ff0bcc9c4987abb9867b23c8c4e",
+      "role": "SKEPTIC",
+      "run_status": "COMPLETE",
+      "runtime_name": "Ollama",
+      "runtime_version": "0.32.5",
+      "schema_sha256": "4a1c2717a477770cbd5fd8dc5566146bf403c91d59c0b97584e837314c9b1ed4",
+      "schema_version": "1.0",
+      "seed": 20260728,
+      "started_at": "2026-07-29T03:14:35.437278Z",
+      "temperature": 0,
+      "think_enabled": false
+    },
+    "valid_outputs_cached": true
+  },
+  "illustrative_trade_hypothesis": {
+    "analyst_review_required": true,
+    "candidate_view": "insufficient evidence",
+    "current_market_data_used": false,
+    "entry_or_confirmation_conditions": [],
+    "evidence_ids": [
+      "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+    ],
+    "expected_horizon": "Not specified because the hypothesis is withheld.",
+    "illustrative_only": true,
+    "instrument_rationale": "The skeptical review did not clear a grounded instrument expression from the cited disclosure evidence.",
+    "invalidation_conditions": [],
+    "key_risks": [],
+    "label": "Illustrative Trade Hypothesis — Analyst Review Required",
+    "liquidity_and_cost_checks": [],
+    "market_data_required_before_action": [],
+    "no_position_size_generated": true,
+    "preferred_instrument_class_to_investigate": "no instrument identified",
+    "status": "WITHHELD_BY_SKEPTIC",
+    "trade_readiness": "NOT_READY",
+    "trade_readiness_reason": "The skeptical review did not clear the evidence and mechanism gates."
+  },
+  "input_lineage": {
+    "allowed_input_fields_used": [
+      "issuer",
+      "ticker",
+      "filing_date",
+      "formation_timestamp",
+      "section",
+      "prior_filing_excerpt",
+      "current_filing_excerpt",
+      "added_language",
+      "removed_language",
+      "frozen_classification",
+      "related_prior_8k",
+      "related_prior_news",
+      "frozen_company_metadata",
+      "source_urls_and_identifiers",
+      "current_product_reason_code",
+      "evidence_offsets"
+    ],
+    "cloud_calls_made": false,
+    "ex_post_outcomes_excluded": true,
+    "formation_time_enforced": true,
+    "future_information_excluded": true,
+    "input_contract_version": "research_idea_input_v1",
+    "post_filing_news_excluded": true,
+    "source_record_sha256": "1f1ad41a7c13ba64109bf3604f35ad89849ec0732f509bad4074f6b67ba68931"
+  },
+  "issuer": "Kraft Heinz Co",
+  "packet_hash": "a35baf991764badb752529ed1ad25ed12983f608213663156630449b18d40660",
+  "packet_id": "research-idea-v1:8f5336b55618ffe68e8a",
+  "packet_status": "REJECTED_BY_SKEPTIC",
+  "packet_version": "1.0",
+  "research_hypotheses": [
+    {
+      "confirmation_conditions": [
+        "Public disclosure of a covenant waiver request or grant.",
+        "Downgrade of credit rating by a major agency.",
+        "Significant increase in credit default swap (CDS) spreads."
+      ],
+      "confounders": [
+        "General market liquidity conditions.",
+        "Changes in interest rates affecting variable rate debt.",
+        "One-time accounting adjustments."
+      ],
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+      ],
+      "expected_direction": "credit-negative",
+      "falsification_conditions": [
+        "Public disclosure of full covenant compliance.",
+        "Successful refinancing of maturing debt on favorable terms.",
+        "Sustained improvement in operating cash flow."
+      ],
+      "grounding_score": 0.2,
+      "hypothesis": "Kraft Heinz is likely to breach a financial covenant in the next 12 months due to declining operating performance or liquidity constraints.",
+      "hypothesis_id": "hyp-001",
+      "novelty_assessment": "The risk of losing credit facility access is a standard consequence of default, not a new risk factor.",
+      "required_data": [
+        "Quarterly financial statements for the last 4 quarters",
+        "Senior Credit Facility covenant terms (leverage, interest coverage)",
+        "Management discussion of liquidity in subsequent 10-Q filings"
+      ],
+      "testability_score": 0.8,
+      "time_horizon": "12 months",
+      "title": "Covenant Breach Imminence",
+      "unit_of_analysis": "Kraft Heinz Co debt instruments"
+    },
+    {
+      "confirmation_conditions": [
+        "A late 10-K or 10-Q filing.",
+        "A public statement regarding a waiver for a non-financial covenant."
+      ],
+      "confounders": [
+        "Internal accounting system issues.",
+        "Regulatory delays unrelated to company performance."
+      ],
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+      ],
+      "expected_direction": "credit-negative",
+      "falsification_conditions": [
+        "All periodic reports filed on time.",
+        "No public mention of waiver requests for non-financial covenants."
+      ],
+      "grounding_score": 0.2,
+      "hypothesis": "Kraft Heinz will require a waiver for a non-financial covenant (e.g., SEC filing timeliness) in the near term, indicating operational or governance challenges.",
+      "hypothesis_id": "hyp-002",
+      "novelty_assessment": "The link between SEC filing timeliness and covenant breach is standard in credit agreements.",
+      "required_data": [
+        "SEC EDGAR filing dates for periodic reports.",
+        "Any public notices of late filings or extensions."
+      ],
+      "testability_score": 0.9,
+      "time_horizon": "6 months",
+      "title": "Waiver Dependency Risk",
+      "unit_of_analysis": "Kraft Heinz Co SEC filing history"
+    },
+    {
+      "confirmation_conditions": [
+        "Public disclosure of inability to access the credit facility.",
+        "Significant drawdowns on other liquidity sources.",
+        "Distressed asset sales."
+      ],
+      "confounders": [
+        "Seasonal working capital needs.",
+        "One-time capital expenditures."
+      ],
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+      ],
+      "expected_direction": "credit-negative",
+      "falsification_conditions": [
+        "Adequate cash reserves to cover working capital needs.",
+        "Successful access to alternative financing."
+      ],
+      "grounding_score": 0.2,
+      "hypothesis": "The loss of access to the Senior Credit Facility would significantly impair Kraft Heinz's ability to fund working capital, leading to a liquidity crisis.",
+      "hypothesis_id": "hyp-003",
+      "novelty_assessment": "The explicit mention of Senior Credit Facility loss is a new specific risk factor.",
+      "required_data": [
+        "Current cash and cash equivalents.",
+        "Revolving credit facility utilization.",
+        "Working capital requirements."
+      ],
+      "testability_score": 0.7,
+      "time_horizon": "12 months",
+      "title": "Liquidity Backstop Erosion",
+      "unit_of_analysis": "Kraft Heinz Co cash flow and liquidity ratios"
+    }
+  ],
+  "scenario_analysis": {
+    "base": {
+      "conditions": [
+        "Kraft Heinz breaches a covenant due to temporary operational issues.",
+        "Creditors grant a waiver, possibly with a fee or slight term adjustment.",
+        "No cross-defaults are triggered."
+      ],
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+      ],
+      "implications": [
+        "Short-term credit spread widening.",
+        "Increased scrutiny from creditors.",
+        "Stock price volatility but no immediate liquidity crisis."
+      ],
+      "scenario": "Technical Breach and Waiver"
+    },
+    "bear": {
+      "conditions": [
+        "Kraft Heinz fails to obtain a waiver for a covenant breach.",
+        "Cross-default clauses are triggered.",
+        "Access to Senior Credit Facility is lost."
+      ],
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+      ],
+      "implications": [
+        "Severe credit spread widening or default.",
+        "Distressed debt trading.",
+        "Potential restructuring or bankruptcy."
+      ],
+      "scenario": "Default and Liquidity Crisis"
+    },
+    "bull": {
+      "conditions": [
+        "Kraft Heinz maintains covenant compliance.",
+        "Operating performance improves, generating strong cash flow.",
+        "Creditors grant waivers if needed without significant cost."
+      ],
+      "evidence_ids": [
+        "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+      ],
+      "implications": [
+        "Credit spreads tighten.",
+        "Stock price may recover as distress risk fades.",
+        "Senior Credit Facility remains accessible."
+      ],
+      "scenario": "No Breach and Improved Liquidity"
+    }
+  },
+  "section": "item_1a",
+  "skeptical_review": {
+    "alternative_explanations": [
+      "The change in language from LIBOR/market risk to covenant/default risk may simply reflect a standard annual refresh of risk factors to ensure comprehensiveness, rather than a change in the company's actual risk profile or management's perception of imminent distress.",
+      "The mention of 'past needed... waivers' is a standard disclosure of historical flexibility and does not imply that waivers are currently needed or that the company is in technical default.",
+      "The removal of LIBOR-specific language is likely due to the phase-out timeline (end of June 2023) approaching, making the specific benchmark reference less relevant for forward-looking risk, not because the underlying refinancing risk has disappeared."
+    ],
+    "critical_grounding_defect": true,
+    "critical_objections": [
+      "The packet claims novelty for the Senior Credit Facility loss risk, but the prior 8-K (2022-07-08) already disclosed financing/capital structure risks with high similarity, and the prior 10-K discussed refinancing risks. The current filing is a standard annual update of known credit risks, not a new disclosure of imminent distress.",
+      "Hypothesis hyp-001 ('Covenant Breach Imminence') asserts a specific likelihood ('likely to breach') and direction ('credit-negative') based solely on boilerplate risk factor language. The evidence only states that a breach *could* happen; it provides no data on current compliance status, leverage ratios, or operating trends to support a 'likely' prediction.",
+      "Hypothesis hyp-002 ('Waiver Dependency Risk') focuses on SEC filing timeliness. While the filing mentions this as a covenant trigger, there is no evidence of actual filing delays or operational governance issues. This hypothesis confuses a conditional risk clause with an active operational failure.",
+      "The 'affected_entities' section for 'Consumer Staples peers' is unsupported. The evidence is issuer-specific. There is no data in the allowed input to support a sector-wide repricing or systemic liquidity stress hypothesis.",
+      "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/research_hypotheses/0: None is not of type 'object')",
+      "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/research_hypotheses/1: None is not of type 'object')",
+      "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/research_hypotheses/2: None is not of type 'object')",
+      "Skeptic correction rejected by policy: reviewer correction would violate the frozen schema (/affected_entities/2: None is not of type 'object')"
+    ],
+    "evidence_ids_reviewed": [
+      "evidence-v1:8f5336b55618ffe68e8a:added-text",
+      "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt",
+      "evidence-v1:8f5336b55618ffe68e8a:prior-10k-excerpt",
+      "evidence-v1:8f5336b55618ffe68e8a:prior-8k:0001193125-22-190553",
+      "evidence-v1:8f5336b55618ffe68e8a:prior-news:ec2c4753d37a663719b833c169572452a38917f58015c6222c57dc39ba92f092",
+      "evidence-v1:8f5336b55618ffe68e8a:removed-text"
+    ],
+    "final_review_status": "REJECTED_BY_SKEPTIC",
+    "pricing_or_attention_concerns": [
+      "The prior 8-K (2022-07-08) and prior news (2022-09-07) indicate that debt structure and leverage were already public topics. The market has had ample time to incorporate general refinancing risks. The current filing adds specificity to *consequences* of default but does not provide new information on the *probability* of default.",
+      "The novelty classification 'previously disclosed in 8-K' is accurate. The packet should not treat the specific covenant language as 'newly revealed' information that was previously unpriced or ignored."
+    ],
+    "review_summary": "The candidate packet is rejected because it mischaracterizes a standard annual risk factor update as a novel signal of imminent covenant breach. The current filing's language regarding default consequences is boilerplate and does not provide evidence of actual distress, breach, or imminent default. The prior 8-K and news already covered debt structure and leverage. The hypotheses hyp-001 and hyp-002 make specific directional predictions ('likely to breach', 'will require waiver') that are not supported by the evidence, which only describes conditional risks. The peer impact hypothesis is entirely unsupported. The trade hypothesis is correctly identified as insufficient evidence, but the research agenda itself is too generic and unsupported to warrant analyst review as a distinct research idea. The packet requires wholesale rejection of the specific hypotheses and the novelty claim.",
+    "review_version": "research_idea_skeptic_v1",
+    "unsupported_claims_removed": [
+      "Applied skeptic correction at /illustrative_trade_hypothesis/status: The trade hypothesis is withheld because the underlying research agenda is rejected due to lack of grounding in specific, non-boilerplate evidence of distress.",
+      "Applied skeptic correction at /research_hypotheses/0/novelty_assessment: Corrected novelty assessment to reflect that the risk is standard, not novel.",
+      "Applied skeptic correction at /research_hypotheses/1/novelty_assessment: Corrected novelty assessment to reflect that the link is standard.",
+      "Applied skeptic correction at /research_hypotheses/0/grounding_score: Lowered grounding score to reflect that the evidence only supports the existence of a risk clause, not the likelihood of breach.",
+      "Applied skeptic correction at /research_hypotheses/1/grounding_score: Lowered grounding score to reflect that the evidence only supports the existence of a risk clause, not the likelihood of breach.",
+      "Applied skeptic correction at /research_hypotheses/2/grounding_score: Lowered grounding score to reflect that the evidence only supports the existence of a risk clause, not the likelihood of breach."
+    ]
+  },
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1637459/000163745923000009/khc-20221231.htm",
+  "system_interpretation": {
+    "evidence_facts": [
+      {
+        "evidence_ids": [
+          "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+        ],
+        "fact_id": "fact-001",
+        "fact_type": "filing_text",
+        "statement": "The current filing excerpt states: 'The creditors who hold our debt could accelerate amounts due in the event that we default, which could potentially trigger a default or acceleration of the maturity of our other debt.'"
+      },
+      {
+        "evidence_ids": [
+          "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+        ],
+        "fact_id": "fact-002",
+        "fact_type": "filing_text",
+        "statement": "The current filing excerpt states: 'If our operating performance declines, or if we are unable to comply with any covenant, such as our ability to timely prepare and file our periodic reports with the SEC, we have in the past needed and may in the future need to obtain waivers from the required creditors under our debt instruments to avoid being in default.'"
+      },
+      {
+        "evidence_ids": [
+          "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+        ],
+        "fact_id": "fact-003",
+        "fact_type": "filing_text",
+        "statement": "The current filing excerpt states: 'If this occurs, we would be in default under our debt instruments and unable to access our Senior Credit Facility.'"
+      },
+      {
+        "evidence_ids": [
+          "evidence-v1:8f5336b55618ffe68e8a:prior-10k-excerpt"
+        ],
+        "fact_id": "fact-004",
+        "fact_type": "prior_disclosure",
+        "statement": "The prior filing excerpt discussed LIBOR phase-out and general market liquidity risks: 'Changes in financial and capital markets, including market disruptions, limited liquidity, and interest rate volatility, may increase the cost of financing as well as the risks of refinancing maturing debt.'"
+      },
+      {
+        "evidence_ids": [
+          "evidence-v1:8f5336b55618ffe68e8a:prior-8k:0001193125-22-190553"
+        ],
+        "fact_id": "fact-005",
+        "fact_type": "prior_disclosure",
+        "statement": "A prior 8-K (filed 2022-07-08) identified 'borrowings', 'debt', 'maturity', and 'limited' as matched terms, with a primary category of 'financing_capital_structure'."
+      },
+      {
+        "evidence_ids": [
+          "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+        ],
+        "fact_id": "fact-006",
+        "fact_type": "frozen_classification",
+        "statement": "Frozen classification indicates the category is 'Debt or refinancing pressure' with high materiality and ambiguous direction."
+      }
+    ],
+    "inferences": [
+      {
+        "caveat": "This is an inference based on the specificity of the new language; it does not prove an imminent breach, only that the risk is now explicitly disclosed.",
+        "confidence": 0.6,
+        "evidence_ids": [
+          "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt",
+          "evidence-v1:8f5336b55618ffe68e8a:prior-10k-excerpt"
+        ],
+        "inference_id": "inf-001",
+        "inference_type": "economic_mechanism",
+        "statement": "The shift from LIBOR/market risk language to specific covenant/waiver language suggests management perceives a heightened risk of technical default or covenant breach, possibly due to near-term liquidity constraints or operational challenges."
+      },
+      {
+        "caveat": "This assumes the Senior Credit Facility is the primary source of flexible liquidity, which is typical but not confirmed by the text alone.",
+        "confidence": 0.8,
+        "evidence_ids": [
+          "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt"
+        ],
+        "inference_id": "inf-002",
+        "inference_type": "affected_entity",
+        "statement": "The explicit mention of 'unable to access our Senior Credit Facility' implies that the revolving credit facility is a critical liquidity backstop, and its loss would significantly impair the company's ability to manage short-term obligations."
+      }
+    ],
+    "plain_language_change": "Kraft Heinz updated its risk factors to explicitly state that creditors holding its debt could accelerate repayment upon default, potentially triggering cross-defaults on other debt. The company acknowledges that if operating performance declines or it fails to comply with covenants (such as timely SEC filings), it may need to seek waivers from creditors. The update clarifies that if waivers are denied or compliance cannot be remedied, the company would be in default and unable to access its Senior Credit Facility. This replaces prior language focused on LIBOR transition and general market liquidity risks with specific language about covenant breaches and credit facility access.",
+    "uncertainties": [
+      {
+        "data_needed": [
+          "Current covenant compliance reports",
+          "Recent SEC filing timeliness records"
+        ],
+        "uncertainty": "It is unknown whether Kraft Heinz has already breached a covenant or is merely updating language due to general market conditions.",
+        "uncertainty_id": "unc-001",
+        "why_it_matters": "An existing breach would imply immediate liquidity stress, while a prospective update might reflect caution."
+      },
+      {
+        "data_needed": [
+          "Senior Credit Facility term sheet",
+          "Latest financial covenants disclosure"
+        ],
+        "uncertainty": "The specific terms of the Senior Credit Facility (e.g., leverage ratios, interest coverage ratios) are not disclosed in this excerpt.",
+        "uncertainty_id": "unc-002",
+        "why_it_matters": "Without knowing the thresholds, it is impossible to assess how close the company is to a breach."
+      }
+    ]
+  },
+  "ticker": "KHC"
+}

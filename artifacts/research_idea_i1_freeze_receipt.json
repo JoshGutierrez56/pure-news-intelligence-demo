@@ -1,0 +1,48 @@
+{
+  "gate": "I1",
+  "status": "PASS",
+  "frozen_at": "2026-07-29T03:15:42.9896741Z",
+  "freeze_revision": "The skeptic prompt remained frozen after its packet-versus-envelope correction. The prohibited-language registry was re-frozen after adversarial tests narrowed direct-negation handling to an explicit bridge-term allowlist.",
+  "schema": {
+    "path": "schemas/research_idea_packet_v1.schema.json",
+    "sha256": "4a1c2717a477770cbd5fd8dc5566146bf403c91d59c0b97584e837314c9b1ed4"
+  },
+  "generator_prompt": {
+    "path": "prompts/research_idea_generator_v1.md",
+    "sha256": "22de2d6bf245a0bbeb2e7fdf9ec618f2115d6236a3a5393f129db881b540ead7"
+  },
+  "skeptic_prompt": {
+    "path": "prompts/research_idea_skeptic_v1.md",
+    "sha256": "c308632c768a59ef6ef6bdb02f886ba53f4c7c2c3b74cec1f836def1f03235ab"
+  },
+  "prohibited_language_registry": {
+    "path": "schemas/prohibited_research_idea_language_v1.json",
+    "sha256": "6c77381ab6c79883b2d0cd740576216a967c656defb7553712554279c71ab59a"
+  },
+  "bounded_input": {
+    "path": "demo/data/research_idea_inputs/v1/eight_case_inputs.json",
+    "membership_sha256": "b79e392fcf82ba13f7dfa9c6b7e539e8e702bea040d0f7bdbb6404dd4ae17322",
+    "file_sha256": "8088ed16c4a1d4aee13d9047c440f255f7a51233829f261a46bed7037b6abfcf",
+    "record_count": 8
+  },
+  "model": {
+    "name": "qwen3.6:35b-a3b",
+    "manifest_digest": "sha256:07d35212591fc27746f0a317c975a6d68754fb38e9053d82e25f06057af28522",
+    "runtime": "Ollama 0.32.5",
+    "temperature": 0,
+    "seed": 20260728,
+    "context_length": 32768,
+    "maximum_output_tokens": 8192,
+    "think_enabled": false,
+    "cloud_calls_allowed": false
+  },
+  "quality_controls": {
+    "schema_meta_validation": "PASS",
+    "local_reference_resolution": "PASS",
+    "locked_evidence_id_validation": "PASS",
+    "frozen_offset_validation": "PASS",
+    "prompt_requirement_validation": "PASS",
+    "schema_repair_retry_limit": 1,
+    "accepted_packet_silent_regeneration": false
+  }
+}

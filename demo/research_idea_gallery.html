@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Filter and review validated, precomputed AI research idea packets.">
+  <meta property="og:title" content="AI Research Idea Gallery | Pure News Intelligence">
+  <meta property="og:description" content="Browse evidence-grounded research hypotheses by filing-time attributes and analyst-review status.">
+  <meta property="og:type" content="website">
+  <title>AI Research Idea Gallery | Pure News Intelligence</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-research-idea-page="gallery">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html">Pure News Intelligence<small>Evidence-linked disclosure intelligence</small></a>
+      <button class="nav-toggle secondary" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="../index.html">Overview</a>
+        <a href="ranked_change_feed.html">Ranked Changes</a>
+        <a href="research_idea.html">AI Research Idea</a>
+        <a href="research_idea_gallery.html" aria-current="page">Idea Gallery</a>
+        <a href="research_idea_methodology.html">Idea Methodology</a>
+        <a href="research_results.html">Research Results</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero compact ri-hero" aria-labelledby="gallery-title">
+      <div class="hero-copy">
+        <p class="eyebrow">AI Research Idea gallery</p>
+        <h1 id="gallery-title">Research agendas organized for evidence-first review.</h1>
+        <p class="lede">Browse frozen packets by filing-time attributes, hypothesis design, skeptical-review status, and your browser-local analyst disposition.</p>
+      </div>
+      <aside class="hero-aside">
+        <p class="label">Public demo mode</p>
+        <h2>Precomputed packets only</h2>
+        <p>No cloud model, credentials, current prices, or later outcomes are loaded.</p>
+        <div class="claim-boundary">Packets are never ranked by later returns or realized profitability.</div>
+      </aside>
+    </section>
+
+    <div class="notice ri-disclaimer" role="note">
+      <strong>Research boundary:</strong>
+      AI-generated research hypothesis based on the cited evidence. It is not a fact, personalized investment advice, or a validated trading signal. Analyst review is required.
+    </div>
+
+    <section class="section-block" aria-labelledby="gallery-review-heading">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">Validated packet index</p>
+          <h2 id="gallery-review-heading">Filter the analyst-review queue</h2>
+        </div>
+        <p>Filters use packet evidence and local analyst state. Sort choices intentionally exclude ex-post performance.</p>
+      </div>
+
+      <form class="controls-panel ri-gallery-controls" id="research-idea-filters" aria-label="Filter research idea packets">
+        <div class="ri-gallery-filter-grid">
+          <label for="ri-filter-issuer">Issuer or ticker
+            <input id="ri-filter-issuer" name="issuer" type="search" autocomplete="off" placeholder="e.g., Kraft Heinz or KHC">
+          </label>
+          <label for="ri-filter-year">Filing year
+            <select id="ri-filter-year" name="year"><option value="">All years</option></select>
+          </label>
+          <label for="ri-filter-category">Disclosure category
+            <select id="ri-filter-category" name="category"><option value="">All categories</option></select>
+          </label>
+          <label for="ri-filter-novelty">Novelty
+            <select id="ri-filter-novelty" name="novelty"><option value="">All novelty labels</option></select>
+          </label>
+          <label for="ri-filter-materiality">Materiality
+            <select id="ri-filter-materiality" name="materiality">
+              <option value="">All levels</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </label>
+          <label for="ri-filter-asset">Affected asset class
+            <select id="ri-filter-asset" name="asset"><option value="">All asset classes</option></select>
+          </label>
+          <label for="ri-filter-horizon">Hypothesis horizon
+            <select id="ri-filter-horizon" name="horizon"><option value="">All horizons</option></select>
+          </label>
+          <label for="ri-filter-review">Idea-review status
+            <select id="ri-filter-review" name="review">
+              <option value="">All review statuses</option>
+              <option value="PENDING_REVIEW">Pending skeptical review</option>
+              <option value="PASS">Pass</option>
+              <option value="PASS_WITH_EDITS">Pass with edits</option>
+              <option value="HOLD_UNSUPPORTED">Hold — unsupported</option>
+              <option value="HOLD_AMBIGUOUS">Hold — ambiguous</option>
+              <option value="HOLD_INSUFFICIENT_EVIDENCE">Hold — insufficient evidence</option>
+              <option value="REJECTED_BY_SKEPTIC">Rejected by skeptic</option>
+            </select>
+          </label>
+          <label for="ri-filter-readiness">Trade-readiness status
+            <select id="ri-filter-readiness" name="readiness">
+              <option value="">All readiness statuses</option>
+              <option value="NOT_READY">Not ready</option>
+              <option value="READY_FOR_ANALYST_RESEARCH">Ready for analyst research</option>
+            </select>
+          </label>
+        </div>
+        <div class="ri-gallery-toolbar">
+          <p id="ri-gallery-count" class="result-count" role="status" aria-live="polite">Loading packet index…</p>
+          <label for="ri-gallery-sort">Sort packets
+            <select id="ri-gallery-sort" name="sort">
+              <option value="evidence">Evidence confidence</option>
+              <option value="testability">Hypothesis testability</option>
+              <option value="materiality">Materiality</option>
+              <option value="date">Filing date</option>
+              <option value="disposition">Analyst disposition</option>
+            </select>
+          </label>
+          <button class="ghost" id="ri-clear-filters" type="button">Clear filters</button>
+        </div>
+      </form>
+
+      <div id="research-idea-gallery" class="ri-gallery-grid" aria-busy="true">
+        <div class="ri-loading-state" role="status">
+          <span class="ri-loading-block" aria-hidden="true"></span>
+          <div><h3>Loading validated packets</h3><p>Reading the frozen public packet index.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" aria-labelledby="gallery-boundary-heading">
+      <div class="section-intro">
+        <div><p class="eyebrow">Interpretation boundary</p><h2 id="gallery-boundary-heading">A queue for review—not an outcome leaderboard.</h2></div>
+        <p>Evidence confidence and hypothesis testability describe packet quality. They are not probabilities of return.</p>
+      </div>
+      <div class="grid-3">
+        <article class="plain-card"><span class="ri-stage-label ri-stage-evidence">EVIDENCE</span><h3>Filing-time source record</h3><p>Each packet links back to exact filing excerpts and strictly earlier disclosures.</p></article>
+        <article class="plain-card"><span class="ri-stage-label ri-stage-hypothesis">AI-GENERATED HYPOTHESIS</span><h3>Unvalidated research agenda</h3><p>Hypotheses are designed to be tested and falsified, not treated as facts.</p></article>
+        <article class="plain-card"><span class="ri-stage-label ri-stage-review">ANALYST REVIEW</span><h3>Local disposition</h3><p>Your status and notes stay in this browser and do not alter the frozen packet.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <nav aria-label="Research idea resources">
+      <a href="innovation_framework.html">Innovation Framework</a>
+      <a href="research_idea.html">AI Research Idea</a>
+      <a href="research_idea_methodology.html">Idea Methodology</a>
+      <a href="methodology.html">Core Methodology</a>
+    </nav>
+    <p>Decision support, not investment advice. Packets are sorted only by filing-time and review-quality attributes.</p>
+  </footer>
+  <script src="assets/site.js"></script>
+  <script src="assets/research_idea.js"></script>
+</body>
+</html>

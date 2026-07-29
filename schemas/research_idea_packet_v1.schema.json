@@ -1,0 +1,1860 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://joshgutierrez56.github.io/pure-news-intelligence-demo/schemas/research_idea_packet_v1.schema.json",
+  "title": "Pure News Intelligence Research Idea Packet V1",
+  "description": "Strict point-in-time contract for an evidence-grounded AI Research Idea and an optional illustrative trade hypothesis. The packet contains no ex-post outcome, price target, position size, leverage, allocation, or personalized-advice field.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "packet_version",
+    "packet_id",
+    "packet_hash",
+    "packet_status",
+    "change_id",
+    "issuer",
+    "ticker",
+    "filing_date",
+    "formation_timestamp",
+    "section",
+    "source_url",
+    "input_lineage",
+    "evidence",
+    "frozen_classification",
+    "system_interpretation",
+    "economic_mechanisms",
+    "affected_entities",
+    "research_hypotheses",
+    "analyst_questions",
+    "scenario_analysis",
+    "illustrative_trade_hypothesis",
+    "skeptical_review",
+    "confidence",
+    "analyst_disposition",
+    "generation_metadata",
+    "audit_metadata",
+    "disclaimer"
+  ],
+  "properties": {
+    "packet_version": {
+      "const": "1.0"
+    },
+    "packet_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "packet_hash": {
+      "description": "Lowercase SHA-256 of UTF-8 JSON serialized with keys sorted, separators (',' and ':'), and ensure_ascii=false after replacing packet_hash with 64 zeroes. Stage-one artifacts retain the 64-zero placeholder until the deterministic wrapper computes this value.",
+      "$ref": "#/$defs/sha256"
+    },
+    "packet_status": {
+      "$ref": "#/$defs/packetStatus"
+    },
+    "change_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "issuer": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "ticker": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 24,
+      "pattern": "^[A-Z0-9][A-Z0-9.\\-]*$"
+    },
+    "filing_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "formation_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "section": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "input_lineage": {
+      "$ref": "#/$defs/inputLineage"
+    },
+    "evidence": {
+      "$ref": "#/$defs/evidence"
+    },
+    "frozen_classification": {
+      "$ref": "#/$defs/frozenClassification"
+    },
+    "system_interpretation": {
+      "$ref": "#/$defs/systemInterpretation"
+    },
+    "economic_mechanisms": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "$ref": "#/$defs/economicMechanism"
+      }
+    },
+    "affected_entities": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "$ref": "#/$defs/affectedEntity"
+      }
+    },
+    "research_hypotheses": {
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+        "$ref": "#/$defs/researchHypothesis"
+      }
+    },
+    "analyst_questions": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "$ref": "#/$defs/analystQuestion"
+      }
+    },
+    "scenario_analysis": {
+      "$ref": "#/$defs/scenarioAnalysis"
+    },
+    "illustrative_trade_hypothesis": {
+      "$ref": "#/$defs/tradeHypothesis"
+    },
+    "skeptical_review": {
+      "$ref": "#/$defs/skepticalReview"
+    },
+    "confidence": {
+      "$ref": "#/$defs/confidence"
+    },
+    "analyst_disposition": {
+      "$ref": "#/$defs/analystDisposition"
+    },
+    "generation_metadata": {
+      "$ref": "#/$defs/generationMetadata"
+    },
+    "audit_metadata": {
+      "$ref": "#/$defs/auditMetadata"
+    },
+    "disclaimer": {
+      "const": "AI-generated research hypothesis based on the cited evidence. It is not a fact, personalized investment advice, or a validated trading signal. Analyst review is required."
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "packet_status": {
+            "enum": [
+              "DRAFT_PENDING_SKEPTIC",
+              "PUBLISHABLE"
+            ]
+          }
+        },
+        "required": [
+          "packet_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "economic_mechanisms": {
+            "minItems": 1
+          },
+          "research_hypotheses": {
+            "minItems": 2
+          },
+          "analyst_questions": {
+            "minItems": 5
+          },
+          "scenario_analysis": {
+            "properties": {
+              "bull": {
+                "properties": {
+                  "conditions": {
+                    "minItems": 1
+                  },
+                  "implications": {
+                    "minItems": 1
+                  }
+                }
+              },
+              "base": {
+                "properties": {
+                  "conditions": {
+                    "minItems": 1
+                  },
+                  "implications": {
+                    "minItems": 1
+                  }
+                }
+              },
+              "bear": {
+                "properties": {
+                  "conditions": {
+                    "minItems": 1
+                  },
+                  "implications": {
+                    "minItems": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "packet_status": {
+            "const": "PUBLISHABLE"
+          }
+        },
+        "required": [
+          "packet_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "skeptical_review": {
+            "properties": {
+              "critical_grounding_defect": {
+                "const": false
+              },
+              "final_review_status": {
+                "enum": [
+                  "PASS",
+                  "PASS_WITH_EDITS"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "packet_status": {
+            "enum": [
+              "HOLD_UNSUPPORTED",
+              "HOLD_AMBIGUOUS",
+              "HOLD_INSUFFICIENT_EVIDENCE",
+              "REJECTED_BY_SKEPTIC"
+            ]
+          }
+        },
+        "required": [
+          "packet_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "illustrative_trade_hypothesis": {
+            "properties": {
+              "trade_readiness": {
+                "const": "NOT_READY"
+              },
+              "no_position_size_generated": {
+                "const": true
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "shortString": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "identifier": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 160,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]*$"
+    },
+    "evidenceId": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 160,
+      "pattern": "^(?:EV-|evidence-v1:)[A-Za-z0-9][A-Za-z0-9._:\\-]*$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "sha256Digest": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "nullableSha256": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/sha256"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "nullableTimestamp": {
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "nullableUri": {
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "confidenceScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "stringList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/nonEmptyString"
+      }
+    },
+    "evidenceIdList": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/evidenceId"
+      }
+    },
+    "packetStatus": {
+      "type": "string",
+      "enum": [
+        "DRAFT_PENDING_SKEPTIC",
+        "PUBLISHABLE",
+        "HOLD_UNSUPPORTED",
+        "HOLD_AMBIGUOUS",
+        "HOLD_INSUFFICIENT_EVIDENCE",
+        "REJECTED_BY_SKEPTIC"
+      ]
+    },
+    "inputLineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "input_contract_version",
+        "source_record_sha256",
+        "allowed_input_fields_used",
+        "formation_time_enforced",
+        "future_information_excluded",
+        "post_filing_news_excluded",
+        "ex_post_outcomes_excluded",
+        "cloud_calls_made"
+      ],
+      "properties": {
+        "input_contract_version": {
+          "const": "research_idea_input_v1"
+        },
+        "source_record_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "allowed_input_fields_used": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "issuer",
+              "ticker",
+              "filing_date",
+              "formation_timestamp",
+              "section",
+              "prior_filing_excerpt",
+              "current_filing_excerpt",
+              "added_language",
+              "removed_language",
+              "frozen_classification",
+              "related_prior_8k",
+              "related_prior_news",
+              "frozen_company_metadata",
+              "source_urls_and_identifiers",
+              "current_product_reason_code",
+              "evidence_offsets"
+            ]
+          }
+        },
+        "formation_time_enforced": {
+          "const": true
+        },
+        "future_information_excluded": {
+          "const": true
+        },
+        "post_filing_news_excluded": {
+          "const": true
+        },
+        "ex_post_outcomes_excluded": {
+          "const": true
+        },
+        "cloud_calls_made": {
+          "const": false
+        }
+      }
+    },
+    "sourceRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "source_url",
+        "start",
+        "end",
+        "offset_unit",
+        "verified"
+      ],
+      "properties": {
+        "document_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "offset_unit": {
+          "const": "unicode_code_points"
+        },
+        "verified": {
+          "const": true
+        }
+      }
+    },
+    "nullableSourceRange": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/sourceRange"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "evidenceIdMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prior_excerpt",
+        "current_excerpt",
+        "added_text",
+        "removed_text"
+      ],
+      "properties": {
+        "prior_excerpt": {
+          "$ref": "#/$defs/evidenceId"
+        },
+        "current_excerpt": {
+          "$ref": "#/$defs/evidenceId"
+        },
+        "added_text": {
+          "$ref": "#/$defs/evidenceId"
+        },
+        "removed_text": {
+          "$ref": "#/$defs/evidenceId"
+        }
+      }
+    },
+    "evidenceOffsets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prior",
+        "current"
+      ],
+      "properties": {
+        "prior": {
+          "$ref": "#/$defs/simpleOffsetRange"
+        },
+        "current": {
+          "$ref": "#/$defs/simpleOffsetRange"
+        }
+      }
+    },
+    "simpleOffsetRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "end"
+      ],
+      "properties": {
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "relatedPrior8k": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "accession_number",
+        "url",
+        "acceptance_timestamp",
+        "information_date",
+        "item_codes",
+        "match_score",
+        "matched_terms",
+        "primary_category",
+        "similarity"
+      ],
+      "properties": {
+        "evidence_id": {
+          "$ref": "#/$defs/evidenceId"
+        },
+        "accession_number": {
+          "$ref": "#/$defs/identifier"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "acceptance_timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "information_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "item_codes": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "match_score": {
+          "type": "number",
+          "minimum": 0
+        },
+        "matched_terms": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/shortString"
+          }
+        },
+        "primary_category": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "similarity": {
+          "$ref": "#/$defs/confidenceScore"
+        }
+      }
+    },
+    "relatedPriorNews": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "story_chain_id",
+        "provider_host",
+        "publication_timestamp",
+        "headline",
+        "match_score",
+        "matched_terms",
+        "similarity"
+      ],
+      "properties": {
+        "evidence_id": {
+          "$ref": "#/$defs/evidenceId"
+        },
+        "story_chain_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "provider_host": {
+          "$ref": "#/$defs/shortString"
+        },
+        "publication_timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "headline": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "match_score": {
+          "type": "number",
+          "minimum": 0
+        },
+        "matched_terms": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/shortString"
+          }
+        },
+        "similarity": {
+          "$ref": "#/$defs/confidenceScore"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prior_filing_id",
+        "current_filing_id",
+        "prior_source_url",
+        "current_source_url",
+        "prior_excerpt",
+        "current_excerpt",
+        "added_text",
+        "removed_text",
+        "evidence_ids",
+        "evidence_offsets",
+        "evidence_offsets_verified",
+        "related_prior_8k",
+        "related_prior_news"
+      ],
+      "properties": {
+        "prior_filing_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "current_filing_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "prior_source_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "current_source_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "prior_excerpt": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "current_excerpt": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "added_text": {
+          "type": "string",
+          "maxLength": 12000
+        },
+        "removed_text": {
+          "type": "string",
+          "maxLength": 12000
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/evidenceIdMap"
+        },
+        "evidence_offsets": {
+          "$ref": "#/$defs/evidenceOffsets"
+        },
+        "evidence_offsets_verified": {
+          "const": true
+        },
+        "related_prior_8k": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relatedPrior8k"
+          }
+        },
+        "related_prior_news": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relatedPriorNews"
+          }
+        }
+      }
+    },
+    "frozenClassification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "category",
+        "direction",
+        "materiality",
+        "novelty",
+        "confidence",
+        "classification_method",
+        "novelty_method",
+        "novelty_is_causal_claim"
+      ],
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/shortString"
+        },
+        "direction": {
+          "type": "string",
+          "enum": [
+            "positive",
+            "negative",
+            "mixed",
+            "ambiguous"
+          ]
+        },
+        "materiality": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "novelty": {
+          "$ref": "#/$defs/shortString"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidenceScore"
+        },
+        "classification_method": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "novelty_method": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "novelty_is_causal_claim": {
+          "const": false
+        }
+      }
+    },
+    "evidenceFact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fact_id",
+        "statement",
+        "fact_type",
+        "evidence_ids"
+      ],
+      "properties": {
+        "fact_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "statement": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "fact_type": {
+          "type": "string",
+          "enum": [
+            "filing_text",
+            "filing_metadata",
+            "prior_disclosure",
+            "frozen_classification",
+            "frozen_company_metadata"
+          ]
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/evidenceIdList"
+        }
+      }
+    },
+    "inference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inference_id",
+        "statement",
+        "inference_type",
+        "evidence_ids",
+        "confidence",
+        "caveat"
+      ],
+      "properties": {
+        "inference_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "statement": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "inference_type": {
+          "type": "string",
+          "enum": [
+            "economic_mechanism",
+            "affected_entity",
+            "research_implication",
+            "scenario",
+            "instrument_fit"
+          ]
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/evidenceIdList"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidenceScore"
+        },
+        "caveat": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "uncertainty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "uncertainty_id",
+        "uncertainty",
+        "why_it_matters",
+        "data_needed"
+      ],
+      "properties": {
+        "uncertainty_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "uncertainty": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "why_it_matters": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "data_needed": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        }
+      }
+    },
+    "systemInterpretation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "plain_language_change",
+        "evidence_facts",
+        "inferences",
+        "uncertainties"
+      ],
+      "properties": {
+        "plain_language_change": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "evidence_facts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidenceFact"
+          }
+        },
+        "inferences": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/inference"
+          }
+        },
+        "uncertainties": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/uncertainty"
+          }
+        }
+      }
+    },
+    "economicMechanism": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mechanism_id",
+        "mechanism",
+        "affected_financial_driver",
+        "causal_chain",
+        "supporting_evidence_ids",
+        "counterargument",
+        "mechanism_confidence"
+      ],
+      "properties": {
+        "mechanism_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "mechanism": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "affected_financial_driver": {
+          "$ref": "#/$defs/shortString"
+        },
+        "causal_chain": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "supporting_evidence_ids": {
+          "$ref": "#/$defs/evidenceIdList"
+        },
+        "counterargument": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "mechanism_confidence": {
+          "$ref": "#/$defs/confidenceScore"
+        }
+      }
+    },
+    "affectedEntity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entity_id",
+        "entity_or_group",
+        "relationship",
+        "possible_effect",
+        "reason",
+        "evidence_ids",
+        "confidence"
+      ],
+      "properties": {
+        "entity_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "entity_or_group": {
+          "$ref": "#/$defs/shortString"
+        },
+        "relationship": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "possible_effect": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "reason": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/evidenceIdList"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidenceScore"
+        }
+      }
+    },
+    "researchHypothesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hypothesis_id",
+        "title",
+        "hypothesis",
+        "expected_direction",
+        "time_horizon",
+        "unit_of_analysis",
+        "required_data",
+        "confirmation_conditions",
+        "falsification_conditions",
+        "confounders",
+        "evidence_ids",
+        "novelty_assessment",
+        "testability_score",
+        "grounding_score"
+      ],
+      "properties": {
+        "hypothesis_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "title": {
+          "$ref": "#/$defs/shortString"
+        },
+        "hypothesis": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "expected_direction": {
+          "$ref": "#/$defs/shortString"
+        },
+        "time_horizon": {
+          "$ref": "#/$defs/shortString"
+        },
+        "unit_of_analysis": {
+          "$ref": "#/$defs/shortString"
+        },
+        "required_data": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "confirmation_conditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "falsification_conditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "confounders": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/evidenceIdList"
+        },
+        "novelty_assessment": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "testability_score": {
+          "$ref": "#/$defs/confidenceScore"
+        },
+        "grounding_score": {
+          "$ref": "#/$defs/confidenceScore"
+        }
+      }
+    },
+    "analystQuestion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "question_id",
+        "question",
+        "why_it_matters",
+        "required_data",
+        "evidence_ids"
+      ],
+      "properties": {
+        "question_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "question": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "why_it_matters": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "required_data": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/evidenceIdList"
+        }
+      }
+    },
+    "scenario": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scenario",
+        "conditions",
+        "implications",
+        "evidence_ids"
+      ],
+      "properties": {
+        "scenario": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "conditions": {
+          "$ref": "#/$defs/stringList"
+        },
+        "implications": {
+          "$ref": "#/$defs/stringList"
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/evidenceIdList"
+        }
+      }
+    },
+    "scenarioAnalysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bull",
+        "base",
+        "bear"
+      ],
+      "properties": {
+        "bull": {
+          "$ref": "#/$defs/scenario"
+        },
+        "base": {
+          "$ref": "#/$defs/scenario"
+        },
+        "bear": {
+          "$ref": "#/$defs/scenario"
+        }
+      }
+    },
+    "tradeHypothesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "status",
+        "candidate_view",
+        "preferred_instrument_class_to_investigate",
+        "instrument_rationale",
+        "expected_horizon",
+        "entry_or_confirmation_conditions",
+        "invalidation_conditions",
+        "key_risks",
+        "market_data_required_before_action",
+        "liquidity_and_cost_checks",
+        "evidence_ids",
+        "trade_readiness",
+        "trade_readiness_reason",
+        "current_market_data_used",
+        "illustrative_only",
+        "analyst_review_required",
+        "no_position_size_generated"
+      ],
+      "properties": {
+        "label": {
+          "const": "Illustrative Trade Hypothesis — Analyst Review Required"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "RESEARCH_ONLY",
+            "NO_ACTIONABLE_VIEW",
+            "INSUFFICIENT_EVIDENCE",
+            "WITHHELD_BY_SKEPTIC"
+          ]
+        },
+        "candidate_view": {
+          "type": "string",
+          "enum": [
+            "bullish bias",
+            "bearish bias",
+            "credit-positive",
+            "credit-negative",
+            "volatility-up",
+            "volatility-down",
+            "relative-value monitor",
+            "no actionable view",
+            "insufficient evidence"
+          ]
+        },
+        "preferred_instrument_class_to_investigate": {
+          "type": "string",
+          "enum": [
+            "common equity",
+            "corporate bonds",
+            "CDS, if data access exists",
+            "listed options",
+            "sector ETF",
+            "peer basket",
+            "no instrument identified"
+          ]
+        },
+        "instrument_rationale": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "expected_horizon": {
+          "$ref": "#/$defs/shortString"
+        },
+        "entry_or_confirmation_conditions": {
+          "$ref": "#/$defs/stringList"
+        },
+        "invalidation_conditions": {
+          "$ref": "#/$defs/stringList"
+        },
+        "key_risks": {
+          "$ref": "#/$defs/stringList"
+        },
+        "market_data_required_before_action": {
+          "$ref": "#/$defs/stringList"
+        },
+        "liquidity_and_cost_checks": {
+          "$ref": "#/$defs/stringList"
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/evidenceIdList"
+        },
+        "trade_readiness": {
+          "type": "string",
+          "enum": [
+            "NOT_READY",
+            "READY_FOR_ANALYST_RESEARCH"
+          ]
+        },
+        "trade_readiness_reason": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "current_market_data_used": {
+          "const": false
+        },
+        "illustrative_only": {
+          "const": true
+        },
+        "analyst_review_required": {
+          "const": true
+        },
+        "no_position_size_generated": {
+          "const": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "trade_readiness": {
+                "const": "READY_FOR_ANALYST_RESEARCH"
+              }
+            },
+            "required": [
+              "trade_readiness"
+            ]
+          },
+          "then": {
+            "properties": {
+              "status": {
+                "const": "RESEARCH_ONLY"
+              },
+              "entry_or_confirmation_conditions": {
+                "minItems": 1
+              },
+              "invalidation_conditions": {
+                "minItems": 1
+              },
+              "key_risks": {
+                "minItems": 1
+              },
+              "market_data_required_before_action": {
+                "minItems": 1
+              },
+              "liquidity_and_cost_checks": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "skepticalReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "review_version",
+        "critical_objections",
+        "alternative_explanations",
+        "pricing_or_attention_concerns",
+        "unsupported_claims_removed",
+        "evidence_ids_reviewed",
+        "critical_grounding_defect",
+        "final_review_status",
+        "review_summary"
+      ],
+      "properties": {
+        "review_version": {
+          "const": "research_idea_skeptic_v1"
+        },
+        "critical_objections": {
+          "$ref": "#/$defs/stringList"
+        },
+        "alternative_explanations": {
+          "$ref": "#/$defs/stringList"
+        },
+        "pricing_or_attention_concerns": {
+          "$ref": "#/$defs/stringList"
+        },
+        "unsupported_claims_removed": {
+          "$ref": "#/$defs/stringList"
+        },
+        "evidence_ids_reviewed": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/evidenceId"
+          }
+        },
+        "critical_grounding_defect": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "final_review_status": {
+          "type": "string",
+          "enum": [
+            "PENDING_REVIEW",
+            "PASS",
+            "PASS_WITH_EDITS",
+            "HOLD_UNSUPPORTED",
+            "HOLD_AMBIGUOUS",
+            "HOLD_INSUFFICIENT_EVIDENCE",
+            "REJECTED_BY_SKEPTIC"
+          ]
+        },
+        "review_summary": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence",
+        "novelty",
+        "mechanism",
+        "hypothesis",
+        "trade_readiness"
+      ],
+      "properties": {
+        "evidence": {
+          "$ref": "#/$defs/confidenceScore"
+        },
+        "novelty": {
+          "$ref": "#/$defs/confidenceScore"
+        },
+        "mechanism": {
+          "$ref": "#/$defs/confidenceScore"
+        },
+        "hypothesis": {
+          "$ref": "#/$defs/confidenceScore"
+        },
+        "trade_readiness": {
+          "$ref": "#/$defs/confidenceScore"
+        }
+      }
+    },
+    "analystDisposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "analyst_notes",
+        "edited_fields",
+        "review_timestamp",
+        "saved_locally_only"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "UNREVIEWED",
+            "ACCEPTED",
+            "ACCEPTED_WITH_EDITS",
+            "REJECTED",
+            "ESCALATED",
+            "SAVED_FOR_DISCUSSION"
+          ]
+        },
+        "analyst_notes": {
+          "type": "string",
+          "maxLength": 12000
+        },
+        "edited_fields": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^/"
+          }
+        },
+        "review_timestamp": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "saved_locally_only": {
+          "const": true
+        }
+      }
+    },
+    "modelRun": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "run_status",
+        "model_name",
+        "model_manifest_digest",
+        "runtime_name",
+        "runtime_version",
+        "prompt_version",
+        "prompt_sha256",
+        "schema_version",
+        "schema_sha256",
+        "temperature",
+        "seed",
+        "context_length",
+        "maximum_output_tokens",
+        "think_enabled",
+        "started_at",
+        "completed_at",
+        "request_sha256",
+        "response_sha256",
+        "cache_key_sha256",
+        "attempt"
+      ],
+      "properties": {
+        "role": {
+          "type": "string",
+          "enum": [
+            "GENERATOR",
+            "SKEPTIC"
+          ]
+        },
+        "run_status": {
+          "type": "string",
+          "enum": [
+            "NOT_RUN",
+            "COMPLETE",
+            "FAILED"
+          ]
+        },
+        "model_name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "model_manifest_digest": {
+          "$ref": "#/$defs/sha256Digest"
+        },
+        "runtime_name": {
+          "const": "Ollama"
+        },
+        "runtime_version": {
+          "$ref": "#/$defs/shortString"
+        },
+        "prompt_version": {
+          "$ref": "#/$defs/identifier"
+        },
+        "prompt_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "schema_version": {
+          "const": "1.0"
+        },
+        "schema_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "temperature": {
+          "type": "number",
+          "const": 0
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "context_length": {
+          "type": "integer",
+          "minimum": 4096
+        },
+        "maximum_output_tokens": {
+          "type": "integer",
+          "minimum": 512
+        },
+        "think_enabled": {
+          "const": false
+        },
+        "started_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "completed_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "request_sha256": {
+          "$ref": "#/$defs/nullableSha256"
+        },
+        "response_sha256": {
+          "$ref": "#/$defs/nullableSha256"
+        },
+        "cache_key_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "attempt": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        }
+      }
+    },
+    "hardware": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "operating_system",
+        "cpu",
+        "system_memory_gib",
+        "gpu",
+        "gpu_memory_mib"
+      ],
+      "properties": {
+        "operating_system": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "cpu": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "system_memory_gib": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "gpu": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "gpu_memory_mib": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "generationMetadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generation_policy_version",
+        "generator_run",
+        "skeptic_run",
+        "hardware",
+        "no_cloud_calls",
+        "no_chain_of_thought_stored",
+        "valid_outputs_cached",
+        "maximum_schema_repair_retries",
+        "accepted_packet_regeneration_policy"
+      ],
+      "properties": {
+        "generation_policy_version": {
+          "const": "research_idea_generation_policy_v1"
+        },
+        "generator_run": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/modelRun"
+            },
+            {
+              "properties": {
+                "role": {
+                  "const": "GENERATOR"
+                }
+              }
+            }
+          ]
+        },
+        "skeptic_run": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/modelRun"
+            },
+            {
+              "properties": {
+                "role": {
+                  "const": "SKEPTIC"
+                }
+              }
+            }
+          ]
+        },
+        "hardware": {
+          "$ref": "#/$defs/hardware"
+        },
+        "no_cloud_calls": {
+          "const": true
+        },
+        "no_chain_of_thought_stored": {
+          "const": true
+        },
+        "valid_outputs_cached": {
+          "const": true
+        },
+        "maximum_schema_repair_retries": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "accepted_packet_regeneration_policy": {
+          "const": "NEVER_SILENTLY_REGENERATE"
+        }
+      }
+    },
+    "auditStatus": {
+      "type": "string",
+      "enum": [
+        "NOT_RUN",
+        "PASS",
+        "FAIL",
+        "HOLD"
+      ]
+    },
+    "schemaValidationAudit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "validator_name",
+        "validator_version",
+        "validated_at",
+        "errors"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/auditStatus"
+        },
+        "validator_name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "validator_version": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "validated_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "errors": {
+          "$ref": "#/$defs/stringList"
+        }
+      }
+    },
+    "groundingAudit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "checked_claim_count",
+        "grounded_claim_count",
+        "critical_defects"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/auditStatus"
+        },
+        "checked_claim_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "grounded_claim_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "critical_defects": {
+          "$ref": "#/$defs/stringList"
+        }
+      }
+    },
+    "futureInformationAudit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "formation_timestamp",
+        "checked_timestamp_count",
+        "violations"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/auditStatus"
+        },
+        "formation_timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "checked_timestamp_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "violations": {
+          "$ref": "#/$defs/stringList"
+        }
+      }
+    },
+    "evidenceIntegrityAudit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "referenced_evidence_ids",
+        "unresolved_evidence_ids",
+        "source_url_present",
+        "offsets_verified"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/auditStatus"
+        },
+        "referenced_evidence_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/evidenceId"
+          }
+        },
+        "unresolved_evidence_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/evidenceId"
+          }
+        },
+        "source_url_present": {
+          "type": "boolean"
+        },
+        "offsets_verified": {
+          "type": "boolean"
+        }
+      }
+    },
+    "prohibitedLanguageMatch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "phrase",
+        "json_pointer",
+        "classification"
+      ],
+      "properties": {
+        "phrase": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "json_pointer": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "classification": {
+          "type": "string",
+          "enum": [
+            "VIOLATION",
+            "ALLOWED_CONTEXT"
+          ]
+        }
+      }
+    },
+    "prohibitedLanguageAudit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "registry_version",
+        "matches",
+        "violation_count"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/auditStatus"
+        },
+        "registry_version": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "matches": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/prohibitedLanguageMatch"
+          }
+        },
+        "violation_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "determinismAudit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "cache_hit",
+        "repeated_generation_matches",
+        "stable_content_sha256"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/auditStatus"
+        },
+        "cache_hit": {
+          "type": "boolean"
+        },
+        "repeated_generation_matches": {
+          "oneOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "stable_content_sha256": {
+          "$ref": "#/$defs/nullableSha256"
+        }
+      }
+    },
+    "auditMetadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "audit_version",
+        "audited_at",
+        "schema_validation",
+        "grounding",
+        "future_information",
+        "evidence_integrity",
+        "prohibited_language",
+        "determinism",
+        "publication_decision",
+        "audit_findings"
+      ],
+      "properties": {
+        "audit_version": {
+          "const": "research_idea_audit_v1"
+        },
+        "audited_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "schema_validation": {
+          "$ref": "#/$defs/schemaValidationAudit"
+        },
+        "grounding": {
+          "$ref": "#/$defs/groundingAudit"
+        },
+        "future_information": {
+          "$ref": "#/$defs/futureInformationAudit"
+        },
+        "evidence_integrity": {
+          "$ref": "#/$defs/evidenceIntegrityAudit"
+        },
+        "prohibited_language": {
+          "$ref": "#/$defs/prohibitedLanguageAudit"
+        },
+        "determinism": {
+          "$ref": "#/$defs/determinismAudit"
+        },
+        "publication_decision": {
+          "$ref": "#/$defs/packetStatus"
+        },
+        "audit_findings": {
+          "$ref": "#/$defs/stringList"
+        }
+      }
+    }
+  }
+}

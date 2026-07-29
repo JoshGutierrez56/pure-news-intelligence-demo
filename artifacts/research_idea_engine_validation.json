@@ -1,0 +1,130 @@
+{
+  "audit_version": "research_idea_packet_validator_v1",
+  "collection_findings": [],
+  "error_count": 0,
+  "failed_packet_count": 0,
+  "finding_code_counts": {},
+  "input_bundle_file_sha256": "8088ed16c4a1d4aee13d9047c440f255f7a51233829f261a46bed7037b6abfcf",
+  "input_membership_sha256": "b79e392fcf82ba13f7dfa9c6b7e539e8e702bea040d0f7bdbb6404dd4ae17322",
+  "mode": "final",
+  "packet_count": 8,
+  "packet_status_counts": {
+    "HOLD_INSUFFICIENT_EVIDENCE": 4,
+    "REJECTED_BY_SKEPTIC": 4
+  },
+  "packets": [
+    {
+      "change_id": "279e7d4e407851a19548",
+      "error_count": 0,
+      "findings": [],
+      "packet_hash": "f0795be953c1f9b946579ad3d4d4d4aaaee7d237c269a137e4227d1a7b2d9a7b",
+      "packet_id": "research-idea-v1:279e7d4e407851a19548",
+      "packet_status": "HOLD_INSUFFICIENT_EVIDENCE",
+      "skeptic_status": "HOLD_INSUFFICIENT_EVIDENCE",
+      "source_file": "279e7d4e407851a19548.json",
+      "stage": "final",
+      "status": "PASS",
+      "warning_count": 0
+    },
+    {
+      "change_id": "2f22dc2216c9df31d377",
+      "error_count": 0,
+      "findings": [],
+      "packet_hash": "7d43ba00b7075744ed599f6cd77b578d58d5eda732ef9affb811f41612f779c1",
+      "packet_id": "research-idea-v1:2f22dc2216c9df31d377",
+      "packet_status": "HOLD_INSUFFICIENT_EVIDENCE",
+      "skeptic_status": "HOLD_INSUFFICIENT_EVIDENCE",
+      "source_file": "2f22dc2216c9df31d377.json",
+      "stage": "final",
+      "status": "PASS",
+      "warning_count": 0
+    },
+    {
+      "change_id": "339fae2941721ee094b0",
+      "error_count": 0,
+      "findings": [],
+      "packet_hash": "1715d50142121af012e1185c4881a37b344c13933b0f86506c0662f65c78ef46",
+      "packet_id": "research-idea-v1:339fae2941721ee094b0",
+      "packet_status": "HOLD_INSUFFICIENT_EVIDENCE",
+      "skeptic_status": "HOLD_INSUFFICIENT_EVIDENCE",
+      "source_file": "339fae2941721ee094b0.json",
+      "stage": "final",
+      "status": "PASS",
+      "warning_count": 0
+    },
+    {
+      "change_id": "412b08746bb0ed5a7745",
+      "error_count": 0,
+      "findings": [],
+      "packet_hash": "66ff9ef61252eec8ac618e9e1e3469e542547d5450e5a3295ed22f0555171907",
+      "packet_id": "research-idea-v1:412b08746bb0ed5a7745",
+      "packet_status": "REJECTED_BY_SKEPTIC",
+      "skeptic_status": "REJECTED_BY_SKEPTIC",
+      "source_file": "412b08746bb0ed5a7745.json",
+      "stage": "final",
+      "status": "PASS",
+      "warning_count": 0
+    },
+    {
+      "change_id": "4784f62ad001b2a12af4",
+      "error_count": 0,
+      "findings": [],
+      "packet_hash": "45853fb155b00b55e8eb0d24bc3315ed604898e1a861b87325ec7f88d8a604a0",
+      "packet_id": "research-idea-v1:4784f62ad001b2a12af4",
+      "packet_status": "REJECTED_BY_SKEPTIC",
+      "skeptic_status": "REJECTED_BY_SKEPTIC",
+      "source_file": "4784f62ad001b2a12af4.json",
+      "stage": "final",
+      "status": "PASS",
+      "warning_count": 0
+    },
+    {
+      "change_id": "8d4598f4ea16f15c7048",
+      "error_count": 0,
+      "findings": [],
+      "packet_hash": "23d1795168dc1242096c3eeda951f2146cdee6eb268c7a4cad73947afde524a1",
+      "packet_id": "research-idea-v1:8d4598f4ea16f15c7048",
+      "packet_status": "REJECTED_BY_SKEPTIC",
+      "skeptic_status": "REJECTED_BY_SKEPTIC",
+      "source_file": "8d4598f4ea16f15c7048.json",
+      "stage": "final",
+      "status": "PASS",
+      "warning_count": 0
+    },
+    {
+      "change_id": "8f5336b55618ffe68e8a",
+      "error_count": 0,
+      "findings": [],
+      "packet_hash": "a35baf991764badb752529ed1ad25ed12983f608213663156630449b18d40660",
+      "packet_id": "research-idea-v1:8f5336b55618ffe68e8a",
+      "packet_status": "REJECTED_BY_SKEPTIC",
+      "skeptic_status": "REJECTED_BY_SKEPTIC",
+      "source_file": "8f5336b55618ffe68e8a.json",
+      "stage": "final",
+      "status": "PASS",
+      "warning_count": 0
+    },
+    {
+      "change_id": "dbe75bc24f2888f4166a",
+      "error_count": 0,
+      "findings": [],
+      "packet_hash": "653c331dfdf2b30b2936cb51e715cc71be8d09c7adcb3b9db0db1fbdfd119b80",
+      "packet_id": "research-idea-v1:dbe75bc24f2888f4166a",
+      "packet_status": "HOLD_INSUFFICIENT_EVIDENCE",
+      "skeptic_status": "HOLD_INSUFFICIENT_EVIDENCE",
+      "source_file": "dbe75bc24f2888f4166a.json",
+      "stage": "final",
+      "status": "PASS",
+      "warning_count": 0
+    }
+  ],
+  "passed_packet_count": 8,
+  "registry_sha256": "6c77381ab6c79883b2d0cd740576216a967c656defb7553712554279c71ab59a",
+  "schema_sha256": "4a1c2717a477770cbd5fd8dc5566146bf403c91d59c0b97584e837314c9b1ed4",
+  "skeptic_status_counts": {
+    "HOLD_INSUFFICIENT_EVIDENCE": 4,
+    "REJECTED_BY_SKEPTIC": 4
+  },
+  "status": "PASS",
+  "warning_count": 0
+}

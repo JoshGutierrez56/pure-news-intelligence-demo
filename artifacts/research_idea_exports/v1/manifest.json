@@ -1,0 +1,111 @@
+{
+  "export_count": 8,
+  "export_version": "research_idea_evidence_hypothesis_export_v1",
+  "exports": [
+    {
+      "change_id": "279e7d4e407851a19548",
+      "json": {
+        "path": "279e7d4e407851a19548.research_idea.json",
+        "sha256": "c9551836aed3f17f52537a7e9beda8160dfe0f32b7a177cf44d615056ae70386"
+      },
+      "markdown": {
+        "path": "279e7d4e407851a19548.research_idea.md",
+        "sha256": "f1538d1ebc4cb70082470964c42529914cc2218b66331293085cf851b8357c54"
+      },
+      "packet_id": "research-idea-v1:279e7d4e407851a19548",
+      "source_packet_sha256": "f0795be953c1f9b946579ad3d4d4d4aaaee7d237c269a137e4227d1a7b2d9a7b"
+    },
+    {
+      "change_id": "2f22dc2216c9df31d377",
+      "json": {
+        "path": "2f22dc2216c9df31d377.research_idea.json",
+        "sha256": "a0d0896ca54837348cfc687f9be21140b675de37d36e60a129b3d6a18bf31f05"
+      },
+      "markdown": {
+        "path": "2f22dc2216c9df31d377.research_idea.md",
+        "sha256": "44362b2cfa3c5d1c066049c66cf534905e7eb1e14aa2bc42dd125407d958ac20"
+      },
+      "packet_id": "research-idea-v1:2f22dc2216c9df31d377",
+      "source_packet_sha256": "7d43ba00b7075744ed599f6cd77b578d58d5eda732ef9affb811f41612f779c1"
+    },
+    {
+      "change_id": "339fae2941721ee094b0",
+      "json": {
+        "path": "339fae2941721ee094b0.research_idea.json",
+        "sha256": "f058b549523694bf8e44e9e93f0af318d99cd8d97438b94da3465b828a422dae"
+      },
+      "markdown": {
+        "path": "339fae2941721ee094b0.research_idea.md",
+        "sha256": "6e76391d4942d975fa92363dd2bb3fc14aebcf8b8e9b5fe7d8e4b1eff9537fdf"
+      },
+      "packet_id": "research-idea-v1:339fae2941721ee094b0",
+      "source_packet_sha256": "1715d50142121af012e1185c4881a37b344c13933b0f86506c0662f65c78ef46"
+    },
+    {
+      "change_id": "412b08746bb0ed5a7745",
+      "json": {
+        "path": "412b08746bb0ed5a7745.research_idea.json",
+        "sha256": "b5a9d61645984a9abef7e104520f8d2a494001b2d624e524ab5d5b1533cf7ffb"
+      },
+      "markdown": {
+        "path": "412b08746bb0ed5a7745.research_idea.md",
+        "sha256": "9cba1f7c34b3cd3353830e9624566bead520cdf11e39fda9a2f20f84999462b3"
+      },
+      "packet_id": "research-idea-v1:412b08746bb0ed5a7745",
+      "source_packet_sha256": "66ff9ef61252eec8ac618e9e1e3469e542547d5450e5a3295ed22f0555171907"
+    },
+    {
+      "change_id": "4784f62ad001b2a12af4",
+      "json": {
+        "path": "4784f62ad001b2a12af4.research_idea.json",
+        "sha256": "dde1fcdff7fe01dff190c357d8c8c820c7900e11c0deaf926c1dd03c888e666c"
+      },
+      "markdown": {
+        "path": "4784f62ad001b2a12af4.research_idea.md",
+        "sha256": "f057226bf5181997866ce035333788c924a71ad649a2b58e98f591c7c009014d"
+      },
+      "packet_id": "research-idea-v1:4784f62ad001b2a12af4",
+      "source_packet_sha256": "45853fb155b00b55e8eb0d24bc3315ed604898e1a861b87325ec7f88d8a604a0"
+    },
+    {
+      "change_id": "8d4598f4ea16f15c7048",
+      "json": {
+        "path": "8d4598f4ea16f15c7048.research_idea.json",
+        "sha256": "ecf369738901bd7f08f76adc0c7632386116f1d9bc5fc5aa2b580d6fe5e866b8"
+      },
+      "markdown": {
+        "path": "8d4598f4ea16f15c7048.research_idea.md",
+        "sha256": "2367b162755bc95aca28389f20894cfc2c753ab7ebb7cffd404ac6a8ba25b4cc"
+      },
+      "packet_id": "research-idea-v1:8d4598f4ea16f15c7048",
+      "source_packet_sha256": "23d1795168dc1242096c3eeda951f2146cdee6eb268c7a4cad73947afde524a1"
+    },
+    {
+      "change_id": "8f5336b55618ffe68e8a",
+      "json": {
+        "path": "8f5336b55618ffe68e8a.research_idea.json",
+        "sha256": "6969154916217b6a1db401abc3e324fe120f52eab459a19f8d32bf0966205692"
+      },
+      "markdown": {
+        "path": "8f5336b55618ffe68e8a.research_idea.md",
+        "sha256": "e44e6891a353e0f8073a5fee3b14971b2ba68f5b4ad073ef9077ac9c2fb8cd74"
+      },
+      "packet_id": "research-idea-v1:8f5336b55618ffe68e8a",
+      "source_packet_sha256": "a35baf991764badb752529ed1ad25ed12983f608213663156630449b18d40660"
+    },
+    {
+      "change_id": "dbe75bc24f2888f4166a",
+      "json": {
+        "path": "dbe75bc24f2888f4166a.research_idea.json",
+        "sha256": "8252c117c7937f543097e6793e6cef3530526ea4dd7b009edb7f880bf341dfda"
+      },
+      "markdown": {
+        "path": "dbe75bc24f2888f4166a.research_idea.md",
+        "sha256": "2f7fe5b81a701a5699dc67b423b22eabd6cc89316e6d3ba93d3778b768d60ec4"
+      },
+      "packet_id": "research-idea-v1:dbe75bc24f2888f4166a",
+      "source_packet_sha256": "653c331dfdf2b30b2936cb51e715cc71be8d09c7adcb3b9db0db1fbdfd119b80"
+    }
+  ],
+  "status": "PASS"
+}

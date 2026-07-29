@@ -1,0 +1,993 @@
+{
+  "bundle_version": "1.0",
+  "bundle_kind": "bounded-eight-case-formation-time-inputs",
+  "source": {
+    "name": "case_studies.csv",
+    "sha256": "fa7e4fb3809d622ddee4144fc3b75d54314db7091491d3635f194b0f5349396d",
+    "row_count": 8,
+    "allowed_column_cutoff": "change_novelty_method"
+  },
+  "formation_policy": {
+    "formation_timestamp_field": "change_current_acceptance",
+    "future_information_excluded": true,
+    "local_provenance_paths_excluded": true,
+    "selection_is_outcome_independent": true
+  },
+  "member_hash_algorithm": "sha256(canonical-json-without-member_sha256)",
+  "bundle_hash_algorithm": "sha256(ordered-input-id-tab-member-sha256-lf)",
+  "case_count": 8,
+  "bundle_sha256": "b79e392fcf82ba13f7dfa9c6b7e539e8e702bea040d0f7bdbb6404dd4ae17322",
+  "inputs": [
+    {
+      "input_version": "1.0",
+      "input_id": "research-idea-input-v1:dbe75bc24f2888f4166a",
+      "case_order": 1,
+      "change_id": "dbe75bc24f2888f4166a",
+      "issuer": "TRUIST FINANCIAL CORP",
+      "ticker": "TFC",
+      "filing_date": "2023-02-28",
+      "formation_timestamp": "2023-02-28T21:47:54.000Z",
+      "section": "item_7",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/92230/000009223023000034/tfc-20221231.htm",
+      "selection": {
+        "rationale": "Liquidity deterioration",
+        "used_future_outcomes": false
+      },
+      "identifiers": {
+        "cik": "0000092230",
+        "permno": "71563",
+        "sector_code": "6",
+        "current_filing_id": "sec10k:0000092230-23-000034",
+        "prior_filing_id": "sec10k:0000092230-22-000008",
+        "current_accession_number": "0000092230-23-000034",
+        "prior_accession_number": "0000092230-22-000008"
+      },
+      "prior_filing": {
+        "filing_date": "2022-02-23",
+        "acceptance_timestamp": "2022-02-22T22:33:55.000Z",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/92230/000009223022000008/tfc-20211231.htm"
+      },
+      "evidence": {
+        "evidence_ids": {
+          "prior_excerpt": "evidence-v1:dbe75bc24f2888f4166a:prior-10k-excerpt",
+          "current_excerpt": "evidence-v1:dbe75bc24f2888f4166a:current-10k-excerpt",
+          "added_text": "evidence-v1:dbe75bc24f2888f4166a:added-text",
+          "removed_text": "evidence-v1:dbe75bc24f2888f4166a:removed-text"
+        },
+        "prior_excerpt": "Truist Financial Corporation 69 Liquidity Risk Liquidity risk is the risk that (i) Truist will be unable to meet its obligations as they come due because of an inability to obtain adequate funding (funding liquidity risk), or (ii) Truist cannot easily unwind or offset specific exposures without significantly lowering market prices because of inadequate market depth or market disruptions (market liquidity risk). Refer to the \"Liquidity” section in MD&A for additional discussion. Compliance Risk Compliance risk is the risk to current or anticipated earnings or capital arising from violations of laws, rules, or regulations, or from non-conformance with prescribed practices, internal policies and procedures or ethical standards. This risk exposes Truist to fines, civil monetary penalties, payment of damages, and the voiding of contracts.",
+        "current_excerpt": "Liquidity Risk Liquidity risk is the risk that (i) Truist will be unable to meet its obligations as they come due because of an inability to obtain adequate funding (funding liquidity risk), or (ii) Truist cannot easily unwind or offset specific exposures without significantly lowering market prices because of inadequate market depth or market disruptions (market liquidity risk). Refer to the “Liquidity” section in MD&A for additional discussion. Technology Risk Technology risk is the business risk associated with the use, ownership, operation, involvement, influence, and adoption of information technology across the Company. Truist has defined and adopted a technology risk framework that provides the foundation for technology risk strategy, program, and oversight and defines key objectives, operating model components, risk domains, and capabilities to manage this risk.",
+        "added_text": "“Liquidity” Technology Technology business associated with the use, ownership, operation, involvement, influence, and adoption of information technology across the Company. Truist has defined and adopted a technology risk framework that provides the foundation for technology risk strategy, program, and oversight and defines key objectives, operating model components, risk domains, and capabilities manage this risk.",
+        "removed_text": "Truist Financial Corporation 69 \"Liquidity” Compliance Compliance current or anticipated earnings or capital arising from violations of laws, rules, or regulations, or from non-conformance with prescribed practices, internal policies and procedures or ethical standards. This risk exposes Truist to fines, civil monetary penalties, payment of damages, and the voiding of contracts.",
+        "offsets": {
+          "prior": {
+            "start": 310563,
+            "end": 311408
+          },
+          "current": {
+            "start": 310279,
+            "end": 311161
+          }
+        },
+        "changed_numbers": {
+          "added": [],
+          "removed": [
+            "69"
+          ]
+        },
+        "new_entities": [
+          "Company. Truist",
+          "Technology Risk Technology"
+        ],
+        "related_prior_8k": [],
+        "related_prior_news": []
+      },
+      "frozen_classification": {
+        "category": "Liquidity deterioration",
+        "category_slug": "liquidity_deterioration",
+        "direction": "ambiguous",
+        "materiality": "high",
+        "confidence": 0.738,
+        "classification_method": "deterministic-evidence-rule-v1",
+        "alignment_model": "sklearn-hashing-word-bigram-l2-v1",
+        "alignment_similarity": 0.7278,
+        "matched_terms": [
+          "liquidity"
+        ]
+      },
+      "reason": {
+        "code": "liquidity_deterioration",
+        "why_it_matters": "Liquidity language can change an analyst's assessment of funding flexibility and near-term resilience."
+      },
+      "novelty": {
+        "classification": "genuinely new in the 10-K",
+        "prior_8k_search_count": 13,
+        "prior_news_search_count": 380,
+        "method": "corpus-bounded-deterministic-headline-and-8k-text-match-v1"
+      },
+      "provenance": {
+        "document_hashes": {
+          "current_parsed_artifact_hash": "586e723997095f7caf8b4f464ef7d39d23edf815c7a7bddb67de0fa71c73482a",
+          "current_primary_document_hash": "595db9af8a57412571649bf557801cde769a51d6408e2e4d24867a9cc9f16b6c",
+          "prior_parsed_artifact_hash": "67287bf11fb8691b5d25d75e2073aac5e0a7ea030aea23ce39c50506e9f00e23",
+          "prior_primary_document_hash": "82c186ba57724e3ccc609cbaacca8802680c12c76d5ab2b66ccc693a00a86c2f"
+        }
+      },
+      "member_sha256": "ab5391740a7256c1de5219fa490b2f50c741055e03ae9f43ca5a9428236331f7"
+    },
+    {
+      "input_version": "1.0",
+      "input_id": "research-idea-input-v1:8f5336b55618ffe68e8a",
+      "case_order": 2,
+      "change_id": "8f5336b55618ffe68e8a",
+      "issuer": "Kraft Heinz Co",
+      "ticker": "KHC",
+      "filing_date": "2023-02-16",
+      "formation_timestamp": "2023-02-16T12:50:46.000Z",
+      "section": "item_1a",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1637459/000163745923000009/khc-20221231.htm",
+      "selection": {
+        "rationale": "Debt/refinancing pressure",
+        "used_future_outcomes": false
+      },
+      "identifiers": {
+        "cik": "0001637459",
+        "permno": "15408",
+        "sector_code": "9",
+        "current_filing_id": "sec10k:0001637459-23-000009",
+        "prior_filing_id": "sec10k:0001637459-22-000018",
+        "current_accession_number": "0001637459-23-000009",
+        "prior_accession_number": "0001637459-22-000018"
+      },
+      "prior_filing": {
+        "filing_date": "2022-02-17",
+        "acceptance_timestamp": "2022-02-17T21:22:45.000Z",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1637459/000163745922000018/khc-20211225.htm"
+      },
+      "evidence": {
+        "evidence_ids": {
+          "prior_excerpt": "evidence-v1:8f5336b55618ffe68e8a:prior-10k-excerpt",
+          "current_excerpt": "evidence-v1:8f5336b55618ffe68e8a:current-10k-excerpt",
+          "added_text": "evidence-v1:8f5336b55618ffe68e8a:added-text",
+          "removed_text": "evidence-v1:8f5336b55618ffe68e8a:removed-text"
+        },
+        "prior_excerpt": "Changes in financial and capital markets, including market disruptions, limited liquidity, and interest rate volatility, may increase the cost of financing as well as the risks of refinancing maturing debt. Our U.S. dollar variable rate debt uses London Interbank Offered Rate (“LIBOR”) as a benchmark for determining interest rates and the Financial Conduct Authority in the United Kingdom intends to phase out the LIBOR rates associated with our outstanding variable rate debt by the end of June 2023.",
+        "current_excerpt": "The creditors who hold our debt could accelerate amounts due in the event that we default, which could potentially trigger a default or acceleration of the maturity of our other debt. If our operating performance declines, or if we are unable to comply with any covenant, such as our ability to timely prepare and file our periodic reports with the SEC, we have in the past needed and may in the future need to obtain waivers from the required creditors under our debt instruments to avoid being in default. If we breach any covenants under our debt instruments and seek a waiver, we may not be able to obtain a waiver from the required creditors, or we may not be able to remedy compliance within the terms of any waivers approved by the required creditors. If this occurs, we would be in default under our debt instruments and unable to access our Senior Credit Facility.",
+        "added_text": "The creditors who hold our could accelerate amounts due event that we default, which could potentially trigger a default or acceleration of the maturity of our other debt. If our operating performance declines, or if we are unable comply with any covenant, such as our ability to timely prepare and file our periodic reports with SEC, we have in the past needed and may in the future need to obtain waivers from the required creditors under instruments to avoid being in default. If we breach any covenants under our debt instruments and seek a waiver, we may not be able to obtain a waiver from the required creditors, or we may not be able to remed",
+        "removed_text": "Changes in financial and capital markets, including market disruptions, limited liquidity, and interest rate volatility, may increase the cost of financing as well as the risks of refinancing maturing debt. Our U.S. dollar variable rate uses London Interbank Offered Rate (“LIBOR”) as a benchmark for determining interest rates and the Financial Conduct Authority United Kingdom intends phase out LIBOR rates associated with outstanding variable rate end of June 2023.",
+        "offsets": {
+          "prior": {
+            "start": 118798,
+            "end": 119301
+          },
+          "current": {
+            "start": 76509,
+            "end": 77382
+          }
+        },
+        "changed_numbers": {
+          "added": [],
+          "removed": [
+            "2023"
+          ]
+        },
+        "new_entities": [
+          "Senior Credit Facility"
+        ],
+        "related_prior_8k": [
+          {
+            "evidence_id": "evidence-v1:8f5336b55618ffe68e8a:prior-8k:0001193125-22-190553",
+            "acceptance_timestamp": "2022-07-08T16:58:35-04:00",
+            "accession_number": "0001193125-22-190553",
+            "information_date": "2022-07-11",
+            "item_codes": "1.01 1.02 2.03 8.01 9.01",
+            "match_score": 8.533,
+            "matched_terms": [
+              "borrowings",
+              "debt",
+              "increase",
+              "limited",
+              "mature",
+              "maturity"
+            ],
+            "primary_category": "financing_capital_structure",
+            "similarity": 0.0709,
+            "url": "https://www.sec.gov/Archives/edgar/data/1637459/000119312522190553/d317404d8k.htm"
+          }
+        ],
+        "related_prior_news": [
+          {
+            "evidence_id": "evidence-v1:8f5336b55618ffe68e8a:prior-news:ec2c4753d37a663719b833c169572452a38917f58015c6222c57dc39ba92f092",
+            "headline": "Kraft Heinz Affirms Full Year 2022 Guidance, Reduces Leverage Target and Details Long-term Algorithm",
+            "match_score": 2.0,
+            "matched_terms": [
+              "leverage"
+            ],
+            "provider_host": "finance.yahoo.com",
+            "publication_timestamp": "2022-09-07T12:00:00+00:00",
+            "similarity": 0.0,
+            "story_chain_id": "EC2C4753D37A663719B833C169572452A38917F58015C6222C57DC39BA92F092"
+          }
+        ]
+      },
+      "frozen_classification": {
+        "category": "Debt or refinancing pressure",
+        "category_slug": "debt_refinancing_pressure",
+        "direction": "ambiguous",
+        "materiality": "high",
+        "confidence": 0.947,
+        "classification_method": "deterministic-evidence-rule-v1",
+        "alignment_model": "sklearn-hashing-word-bigram-l2-v1",
+        "alignment_similarity": 0.0928,
+        "matched_terms": [
+          "debt",
+          "maturity",
+          "refinanc"
+        ]
+      },
+      "reason": {
+        "code": "debt_refinancing_pressure",
+        "why_it_matters": "Debt and refinancing changes can alter cash demands, financing access, and downside exposure."
+      },
+      "novelty": {
+        "classification": "previously disclosed in 8-K",
+        "prior_8k_search_count": 8,
+        "prior_news_search_count": 490,
+        "method": "corpus-bounded-deterministic-headline-and-8k-text-match-v1"
+      },
+      "provenance": {
+        "document_hashes": {
+          "current_parsed_artifact_hash": "e393c60f230f7ba0caa17e28785c11c8cb0061555b437f4750e2f1ae912d5f52",
+          "current_primary_document_hash": "a0e0876da2a7bb5d2147782a4ac30c76df09358e93a1563136354b200f3c558b",
+          "prior_parsed_artifact_hash": "dc43ed020d424fb36d780d0a420cacbe4005d3193b3a605542cc5d88ed876b2c",
+          "prior_primary_document_hash": "99d59d8797371c7807419d5e876f4ed9bf22b020e25e4132db657b970efab615"
+        }
+      },
+      "member_sha256": "1f1ad41a7c13ba64109bf3604f35ad89849ec0732f509bad4074f6b67ba68931"
+    },
+    {
+      "input_version": "1.0",
+      "input_id": "research-idea-input-v1:339fae2941721ee094b0",
+      "case_order": 3,
+      "change_id": "339fae2941721ee094b0",
+      "issuer": "DOLLAR TREE, INC.",
+      "ticker": "DLTR",
+      "filing_date": "2022-03-15",
+      "formation_timestamp": "2022-03-15T12:07:20.000Z",
+      "section": "item_1a",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570322000020/dltr-20220129.htm",
+      "selection": {
+        "rationale": "Impairment",
+        "used_future_outcomes": false
+      },
+      "identifiers": {
+        "cik": "0000935703",
+        "permno": "81481",
+        "sector_code": "5",
+        "current_filing_id": "sec10k:0000935703-22-000020",
+        "prior_filing_id": "sec10k:0000935703-21-000014",
+        "current_accession_number": "0000935703-22-000020",
+        "prior_accession_number": "0000935703-21-000014"
+      },
+      "prior_filing": {
+        "filing_date": "2021-03-16",
+        "acceptance_timestamp": "2021-03-16T12:50:43.000Z",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570321000014/dltr-20210130.htm"
+      },
+      "evidence": {
+        "evidence_ids": {
+          "prior_excerpt": "evidence-v1:339fae2941721ee094b0:prior-10k-excerpt",
+          "current_excerpt": "evidence-v1:339fae2941721ee094b0:current-10k-excerpt",
+          "added_text": "evidence-v1:339fae2941721ee094b0:added-text",
+          "removed_text": "evidence-v1:339fae2941721ee094b0:removed-text"
+        },
+        "prior_excerpt": "Item 1A. Risk Factors ” and elsewhere within this “Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations.” If our assumptions and related estimates change in the future, we may be required to record impairment charges against earnings in future periods. Any impairment charges that we may take in the future could be material to our results of operations and financial condition.",
+        "current_excerpt": "We recorded a non-cash goodwill impairment charge of $313.0 million in fiscal 2019, as discussed further in to our consolidated financial statements under the caption “Goodwill and Nonamortizing Intangible Assets.” Excluding the goodwill impairment charge in 2019, the selling, general and administrative expense rate was 23.2% in 2019. Operating Income",
+        "added_text": "We recorded a non-cash goodwill impairment charge $313.0 million fiscal 2019, as discussed further consolidated financial statements under the caption “Goodwill Nonamortizing Intangible Assets.” Excluding the goodwill impairment charge in 2019, the selling, general and administrative expense rate was 23.2% in 2019. Operating Income",
+        "removed_text": "Item 1A. Risk Factors ” and elsewhere within this “Item 7. Management’s Discussion and Analysis Financial Condition and Results of Operations.” If our assumptions and related estimates change the future, we may be required to record impairment charges against earnings future periods. Any impairment charges that we may take in the future could be material results of operations financial condition.",
+        "offsets": {
+          "prior": {
+            "start": 173505,
+            "end": 173924
+          },
+          "current": {
+            "start": 137352,
+            "end": 137705
+          }
+        },
+        "changed_numbers": {
+          "added": [
+            "$313.0 million",
+            "2019",
+            "2019,",
+            "23.2%"
+          ],
+          "removed": [
+            "1",
+            "7"
+          ]
+        },
+        "new_entities": [
+          "Nonamortizing Intangible Assets",
+          "Operating Income"
+        ],
+        "related_prior_8k": [],
+        "related_prior_news": []
+      },
+      "frozen_classification": {
+        "category": "Impairment or write-down",
+        "category_slug": "impairment_write_down",
+        "direction": "negative",
+        "materiality": "high",
+        "confidence": 0.924,
+        "classification_method": "deterministic-evidence-rule-v1",
+        "alignment_model": "sklearn-hashing-word-bigram-l2-v1",
+        "alignment_similarity": 0.069,
+        "matched_terms": [
+          "goodwill",
+          "impairment",
+          "intangible asset"
+        ]
+      },
+      "reason": {
+        "code": "impairment_write_down",
+        "why_it_matters": "Impairments can reveal changed assumptions about asset values or business economics."
+      },
+      "novelty": {
+        "classification": "genuinely new in the 10-K",
+        "prior_8k_search_count": 19,
+        "prior_news_search_count": 411,
+        "method": "corpus-bounded-deterministic-headline-and-8k-text-match-v1"
+      },
+      "provenance": {
+        "document_hashes": {
+          "current_parsed_artifact_hash": "619626067f5915d3c03fb08c21cf266a5eb139bce7211b84660eca612f0e6c9b",
+          "current_primary_document_hash": "c24d6245a26f5b1a606d2ef246c9fed23c23c70b5995ea5ea8fa8f093a85ca8d",
+          "prior_parsed_artifact_hash": "f48700ae2645dc414a0bb428c8cd36a0361c8a1e88e938e7685d0beca651810e",
+          "prior_primary_document_hash": "f61ece52f3eec22e767720c5963059a6912c9d14ecd7f6d2065d28ff3d9008ec"
+        }
+      },
+      "member_sha256": "99d86312ed7d03498567642cab2581004603af22caf4a9382eac4007f3ed4f41"
+    },
+    {
+      "input_version": "1.0",
+      "input_id": "research-idea-input-v1:4784f62ad001b2a12af4",
+      "case_order": 4,
+      "change_id": "4784f62ad001b2a12af4",
+      "issuer": "DEVON ENERGY CORP/DE",
+      "ticker": "DVN",
+      "filing_date": "2022-02-16",
+      "formation_timestamp": "2022-02-16T17:02:22.000Z",
+      "section": "item_7",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1090012/000156459022005321/dvn-10k_20211231.htm",
+      "selection": {
+        "rationale": "Capex change",
+        "used_future_outcomes": false
+      },
+      "identifiers": {
+        "cik": "0001090012",
+        "permno": "87137",
+        "sector_code": "1",
+        "current_filing_id": "sec10k:0001564590-22-005321",
+        "prior_filing_id": "sec10k:0001564590-21-006239",
+        "current_accession_number": "0001564590-22-005321",
+        "prior_accession_number": "0001564590-21-006239"
+      },
+      "prior_filing": {
+        "filing_date": "2021-02-17",
+        "acceptance_timestamp": "2021-02-17T16:02:04.000Z",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1090012/000156459021006239/dvn-10k_20201231.htm"
+      },
+      "evidence": {
+        "evidence_ids": {
+          "prior_excerpt": "evidence-v1:4784f62ad001b2a12af4:prior-10k-excerpt",
+          "current_excerpt": "evidence-v1:4784f62ad001b2a12af4:current-10k-excerpt",
+          "added_text": "evidence-v1:4784f62ad001b2a12af4:added-text",
+          "removed_text": "evidence-v1:4784f62ad001b2a12af4:removed-text"
+        },
+        "prior_excerpt": "Reduced demand from the COVID-19 pandemic and management of production levels from OPEC caused WTI pricing to decrease more than 60% during the first quarter of 2020. As a result, we reduced our planned 2020 capital investment 45%. With materially lower commodity prices and reduced near-term investment, we assessed all our oil and gas fields for impairment as of March 31, 2020 and recognized proved and unproved impairments totaling $2.8 billion. The impairments relate to our Anadarko Basin and Rockies fields in which our basis included acquisitions completed in 2016 and 2015, respectively, when commodity prices were much higher than they are today.",
+        "current_excerpt": "As a result of the impairments recognized in 2020 and the significant increases in commodity prices during 2021, none of our oil and gas assets were at risk of impairment as of December 31, 2021.",
+        "added_text": "result of the impairments recognized in and the significant increases in during 2021, none of assets were at risk of December 2021.",
+        "removed_text": "Reduced demand from the COVID-19 pandemic and management of production levels from OPEC caused WTI pricing to decrease more than 60% during the first quarter of 2020. result, we reduced our planned capital investment 45%. With materially lower and reduced near-term investment, we assessed all fields for March 2020 and recognized proved and unproved impairments totaling $2.8 billion. The impairments relate to our Anadarko Basin and Rockies fields in which our basis included acquisitions completed in 2016 and 2015, respectively, when commodity prices were much higher than they are today.",
+        "offsets": {
+          "prior": {
+            "start": 145242,
+            "end": 145898
+          },
+          "current": {
+            "start": 144747,
+            "end": 144942
+          }
+        },
+        "changed_numbers": {
+          "added": [
+            "2021",
+            "2021,"
+          ],
+          "removed": [
+            "$2.8 billion",
+            "19",
+            "2015,",
+            "2016",
+            "45%",
+            "60%"
+          ]
+        },
+        "new_entities": [],
+        "related_prior_8k": [],
+        "related_prior_news": []
+      },
+      "frozen_classification": {
+        "category": "Material capex increase or reduction",
+        "category_slug": "material_capex_change",
+        "direction": "ambiguous",
+        "materiality": "high",
+        "confidence": 0.858,
+        "classification_method": "deterministic-evidence-rule-v1",
+        "alignment_model": "sklearn-hashing-word-bigram-l2-v1",
+        "alignment_similarity": 0.2509,
+        "matched_terms": [
+          "capital investment"
+        ]
+      },
+      "reason": {
+        "code": "material_capex_change",
+        "why_it_matters": "Material capital-spending changes can signal altered growth plans, constraints, or operating priorities."
+      },
+      "novelty": {
+        "classification": "genuinely new in the 10-K",
+        "prior_8k_search_count": 7,
+        "prior_news_search_count": 509,
+        "method": "corpus-bounded-deterministic-headline-and-8k-text-match-v1"
+      },
+      "provenance": {
+        "document_hashes": {
+          "current_parsed_artifact_hash": "85e22fec6dacf9ef77fb0b262106ec3382066e3ba685738a92b8bf9aba0464f8",
+          "current_primary_document_hash": "4dcaf0f3a0bc9a3b521707500bfb4e225b0230c9664f05d6b58af2c23e67aef9",
+          "prior_parsed_artifact_hash": "f416ee82aa3bd786d88c939d7d3441d4370eba1b03b3e23a6c7025ae5ed71ac6",
+          "prior_primary_document_hash": "280852ae5f8c401df1a84be450b6320ff3f99342bf1ac70cbe6ddd933bea771f"
+        }
+      },
+      "member_sha256": "4f23ed094488118287364da4a04edfaddd7a4ee00b4e09782a5b1018a0191fb8"
+    },
+    {
+      "input_version": "1.0",
+      "input_id": "research-idea-input-v1:412b08746bb0ed5a7745",
+      "case_order": 5,
+      "change_id": "412b08746bb0ed5a7745",
+      "issuer": "RH",
+      "ticker": "RH",
+      "filing_date": "2023-03-29",
+      "formation_timestamp": "2023-03-29T21:11:45.000Z",
+      "section": "item_1a",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1528849/000155837023004942/rh-20230128x10k.htm",
+      "selection": {
+        "rationale": "New risk factor",
+        "used_future_outcomes": false
+      },
+      "identifiers": {
+        "cik": "0001528849",
+        "permno": "13687",
+        "sector_code": "5",
+        "current_filing_id": "sec10k:0001558370-23-004942",
+        "prior_filing_id": "sec10k:0001558370-22-004753",
+        "current_accession_number": "0001558370-23-004942",
+        "prior_accession_number": "0001558370-22-004753"
+      },
+      "prior_filing": {
+        "filing_date": "2022-03-30",
+        "acceptance_timestamp": "2022-03-30T20:26:53.000Z",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1528849/000155837022004753/rh-20220129x10k.htm"
+      },
+      "evidence": {
+        "evidence_ids": {
+          "prior_excerpt": "evidence-v1:412b08746bb0ed5a7745:prior-10k-excerpt",
+          "current_excerpt": "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt",
+          "added_text": "evidence-v1:412b08746bb0ed5a7745:added-text",
+          "removed_text": "evidence-v1:412b08746bb0ed5a7745:removed-text"
+        },
+        "prior_excerpt": "We have in the past experienced volatility in our sales trends related to many of these factors and believe our sales may be impacted by these economic factors in future periods. These headwinds tied to macroeconomic factors may continue in future quarters. For more information, refer to Item 1A—Risk Factors — Changes in consumer spending and factors that influence spending of the specific categories of consumers that purchase from us, including the health of the high-end housing market, may significantly impact our revenue and results of operations —The COVID-19 pandemic poses significant and widespread risks to our business as well as to the business environment and the markets in which we operate . Fluctuation in Quarterly Results .",
+        "current_excerpt": "In addition to the possibility of fines, lawsuits and other claims, we could be required to expend significant resources to change our business practices or modify our service offerings in connection with the protection of personally identifiable information, which could have a material adverse effect on our business. Any breach could also cause consumers to lose confidence in the security of our website and information technology systems and choose not to purchase from us. We are also subject to payment card association rules and network operating rules, including data security rules, certification requirements and rules governing electronic funds transfers, which could change over time.",
+        "added_text": "In addition to the possibility of fines, lawsuits and other claims, we could be required to expend significant resources to change our business practices or modify our service offerings in connection with the protection of personally identifiable information, which could a material adverse effect on our business. Any breach could also cause consumers to lose confidence security of website and information technology systems and choose not us. We are also subject to payment card association rules and network operating rules, data security rules, certification requirements rules governing electronic funds transfers, could change over time.",
+        "removed_text": "We past experienced volatility in sales trends related many of these factors and believe our sales may be impacted by these economic factors in future periods. These headwinds tied to macroeconomic factors may continue in future quarters. For more information, refer to Item 1A—Risk Factors — Changes in consumer spending and factors that influence spending of the specific categories of consumers that us, the health of the high-end housing market, may significantly impact our revenue results of operations —The COVID-19 pandemic poses significant and widespread risks to our business as well as to the business environment and the markets in we op",
+        "offsets": {
+          "prior": {
+            "start": 209055,
+            "end": 209800
+          },
+          "current": {
+            "start": 126040,
+            "end": 126737
+          }
+        },
+        "changed_numbers": {
+          "added": [],
+          "removed": [
+            "1",
+            "19"
+          ]
+        },
+        "new_entities": [],
+        "related_prior_8k": [
+          {
+            "evidence_id": "evidence-v1:412b08746bb0ed5a7745:prior-8k:0001558370-22-018485",
+            "acceptance_timestamp": "2022-12-08T16:19:27-05:00",
+            "accession_number": "0001558370-22-018485",
+            "information_date": "2022-12-09",
+            "item_codes": "8.01 9.01",
+            "match_score": 9.239,
+            "matched_terms": [
+              "could",
+              "may",
+              "risk",
+              "uncertain"
+            ],
+            "primary_category": "other",
+            "similarity": 0.0598,
+            "url": "https://www.sec.gov/Archives/edgar/data/1528849/000155837022018485/rh-20221208x8k.htm"
+          },
+          {
+            "evidence_id": "evidence-v1:412b08746bb0ed5a7745:prior-8k:0001558370-22-009063",
+            "acceptance_timestamp": "2022-05-17T07:30:32-04:00",
+            "accession_number": "0001558370-22-009063",
+            "information_date": "2022-05-17",
+            "item_codes": "1.01 2.03 7.01 8.01 9.01",
+            "match_score": 9.117,
+            "matched_terms": [
+              "could",
+              "may",
+              "risk",
+              "uncertain"
+            ],
+            "primary_category": "financing_capital_structure",
+            "similarity": 0.0293,
+            "url": "https://www.sec.gov/Archives/edgar/data/1528849/000155837022009063/rh-20220513x8k.htm"
+          },
+          {
+            "evidence_id": "evidence-v1:412b08746bb0ed5a7745:prior-8k:0001104659-22-046630",
+            "acceptance_timestamp": "2022-04-18T06:03:32-04:00",
+            "accession_number": "0001104659-22-046630",
+            "information_date": "2022-04-18",
+            "item_codes": "1.01 8.01 9.01",
+            "match_score": 9.11,
+            "matched_terms": [
+              "could",
+              "may",
+              "risk",
+              "uncertain"
+            ],
+            "primary_category": "financing_capital_structure",
+            "similarity": 0.0274,
+            "url": "https://www.sec.gov/Archives/edgar/data/1528849/000110465922046630/tm2212856d1_8k.htm"
+          }
+        ],
+        "related_prior_news": []
+      },
+      "frozen_classification": {
+        "category": "Newly added risk factor",
+        "category_slug": "new_risk_factor",
+        "direction": "negative",
+        "materiality": "high",
+        "confidence": 0.99,
+        "classification_method": "deterministic-evidence-rule-v1",
+        "alignment_model": "sklearn-hashing-word-bigram-l2-v1",
+        "alignment_similarity": 0.0696,
+        "matched_terms": [
+          "could",
+          "material adverse",
+          "may",
+          "risk"
+        ]
+      },
+      "reason": {
+        "code": "new_risk_factor",
+        "why_it_matters": "A clearly new risk-factor passage can focus analyst review on newly disclosed exposure."
+      },
+      "novelty": {
+        "classification": "previously disclosed in 8-K",
+        "prior_8k_search_count": 7,
+        "prior_news_search_count": 0,
+        "method": "corpus-bounded-deterministic-headline-and-8k-text-match-v1"
+      },
+      "provenance": {
+        "document_hashes": {
+          "current_parsed_artifact_hash": "e906669b90eb9f4945953766e777fbec19803f84deffc9f59aa2e7e42f313b2f",
+          "current_primary_document_hash": "6338c7b6d29e2587bf5d9f9f9ea5d3f4021e0fdf63c6d55189043e80b0ad6479",
+          "prior_parsed_artifact_hash": "7ada4186f7aafe2206b63548bc5c412912b834169158e9f6f7ed17b6a5e84250",
+          "prior_primary_document_hash": "608277a1bc585c0a82233619e408b4bef073eb31af9fd4c151e5c32bf408ae9b"
+        }
+      },
+      "member_sha256": "849a672e4aad05b8cf56a7616012f70f98e1435e5b393650906dbe4bec766972"
+    },
+    {
+      "input_version": "1.0",
+      "input_id": "research-idea-input-v1:8d4598f4ea16f15c7048",
+      "case_order": 6,
+      "change_id": "8d4598f4ea16f15c7048",
+      "issuer": "FREEPORT-MCMORAN INC",
+      "ticker": "FCX",
+      "filing_date": "2021-02-16",
+      "formation_timestamp": "2021-02-16T20:38:33.000Z",
+      "section": "item_1a",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/831259/000083125921000009/fcx-20201231.htm",
+      "selection": {
+        "rationale": "Change already anticipated by an intervening 8-K",
+        "used_future_outcomes": false
+      },
+      "identifiers": {
+        "cik": "0000831259",
+        "permno": "81774",
+        "sector_code": "1",
+        "current_filing_id": "sec10k:0000831259-21-000009",
+        "prior_filing_id": "sec10k:0000831259-20-000004",
+        "current_accession_number": "0000831259-21-000009",
+        "prior_accession_number": "0000831259-20-000004"
+      },
+      "prior_filing": {
+        "filing_date": "2020-02-14",
+        "acceptance_timestamp": "2020-02-14T20:59:58.000Z",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/831259/000083125920000004/a2019form10-k.htm"
+      },
+      "evidence": {
+        "evidence_ids": {
+          "prior_excerpt": "evidence-v1:8d4598f4ea16f15c7048:prior-10k-excerpt",
+          "current_excerpt": "evidence-v1:8d4598f4ea16f15c7048:current-10k-excerpt",
+          "added_text": "evidence-v1:8d4598f4ea16f15c7048:added-text",
+          "removed_text": "evidence-v1:8d4598f4ea16f15c7048:removed-text"
+        },
+        "prior_excerpt": "If PT-FI does not complete the construction of a new smelter in Indonesia by December 21, 2023, or fulfill its defined fiscal obligations to the Indonesia government as set forth in the IUPK, the IUPK will likely not be extended from 2031 to 2041, and we would be unable to mine all of PT-FI’s ore reserves in the Grasberg minerals district, which would adversely affect our business, results of operations and financial position. Operational risks Our mining operations are subject to operational risks that could adversely affect our business and our underground mining operations can be particularly dangerous. Our mines are very large in scale and, by their nature are subject to significant operational risks, some of which are outside of our control, and many of which are not covered fully, or in some cases even partially, by insurance.",
+        "current_excerpt": "Additionally, although several vaccines for COVID-19 have been approved, there are risks that these vaccines will not be effective against variants of the virus and that these vaccines may not be accepted or widely available in the areas in which we operate due to shortages or other issues with distribution. A major outbreak of COVID-19 at any of our operating sites, and particularly at PT-FI’s remote operating site, could have a material adverse effect on our business and results of operations. Actions taken by governmental authorities and third parties to contain and mitigate the risk of spread of COVID-19 may have an adverse impact on our business. For example, in mid-March 2020, the Peru government issued a Supreme Decree and declaration of a National Emergency in its efforts to contain the outbreak of COVID-19, and subsequently extended the order through May 10, 2020.",
+        "added_text": "Additionally, although several vaccines for COVID-19 have been approved, there are risks that these vaccines will be effective against variants of virus and that these vaccines may not be accepted widely available areas in which we operate due shortages or other issues with distribution. A major outbreak of COVID-19 at any of our operating sites, particularly at remote operating site, have a material adverse effect on results of operations. Actions taken by governmental authorities and third parties to contain and mitigate the risk of spread of COVID-19 may have an adverse impact on business. For example, mid-March 2020, the Peru government i",
+        "removed_text": "If PT-FI does complete construction of a new smelter in Indonesia by December 21, 2023, fulfill its defined fiscal obligations to the Indonesia government as set forth IUPK, the IUPK will likely not be extended from 2031 2041, we would be unable to mine all of ore reserves in the Grasberg minerals district, which would adversely affect our business, results of operations and financial position. Operational risks Our mining operations are subject to operational risks that adversely affect underground mining operations can be particularly dangerous. Our mines are very large scale and, by their nature are subject significant operational risks, s",
+        "offsets": {
+          "prior": {
+            "start": 140864,
+            "end": 141708
+          },
+          "current": {
+            "start": 147161,
+            "end": 148046
+          }
+        },
+        "changed_numbers": {
+          "added": [
+            "10,",
+            "19",
+            "19,",
+            "2020",
+            "2020,"
+          ],
+          "removed": [
+            "2023,",
+            "2031",
+            "2041,",
+            "21,"
+          ]
+        },
+        "new_entities": [
+          "National Emergency",
+          "Supreme Decree"
+        ],
+        "related_prior_8k": [
+          {
+            "evidence_id": "evidence-v1:8d4598f4ea16f15c7048:prior-8k:0000831259-20-000024",
+            "acceptance_timestamp": "2020-06-03T16:25:03-04:00",
+            "accession_number": "0000831259-20-000024",
+            "information_date": "2020-06-04",
+            "item_codes": "1.01 2.03 5.03 5.07 8.01 9.01",
+            "match_score": 5.767,
+            "matched_terms": [
+              "could",
+              "may"
+            ],
+            "primary_category": "financing_capital_structure",
+            "similarity": 0.0669,
+            "url": "https://www.sec.gov/Archives/edgar/data/831259/000083125920000024/fcxform8-kx6x3x2020.htm"
+          },
+          {
+            "evidence_id": "evidence-v1:8d4598f4ea16f15c7048:prior-8k:0001193125-20-042621",
+            "acceptance_timestamp": "2020-02-20T06:50:14-05:00",
+            "accession_number": "0001193125-20-042621",
+            "information_date": "2020-02-20",
+            "item_codes": "1.01 8.01 9.01",
+            "match_score": 3.026,
+            "matched_terms": [
+              "may"
+            ],
+            "primary_category": "financing_capital_structure",
+            "similarity": 0.0689,
+            "url": "https://www.sec.gov/Archives/edgar/data/831259/000119312520042621/d870928d8k.htm"
+          },
+          {
+            "evidence_id": "evidence-v1:8d4598f4ea16f15c7048:prior-8k:0001193125-20-061782",
+            "acceptance_timestamp": "2020-03-04T17:11:40-05:00",
+            "accession_number": "0001193125-20-061782",
+            "information_date": "2020-03-05",
+            "item_codes": "1.01 2.03 8.01 9.01",
+            "match_score": 2.974,
+            "matched_terms": [
+              "may"
+            ],
+            "primary_category": "financing_capital_structure",
+            "similarity": 0.056,
+            "url": "https://www.sec.gov/Archives/edgar/data/831259/000119312520061782/d858584d8k.htm"
+          }
+        ],
+        "related_prior_news": [
+          {
+            "evidence_id": "evidence-v1:8d4598f4ea16f15c7048:prior-news:1788dff6cd66373cefbdc7c4284612fa7e70a16deec74853377ca7e80848fb47",
+            "headline": "These Under-the-Radar Stocks Could Be Big Winners of a Renewable Energy Revolution",
+            "match_score": 2.75,
+            "matched_terms": [
+              "could"
+            ],
+            "provider_host": "finance.yahoo.com",
+            "publication_timestamp": "2020-12-15T12:07:00+00:00",
+            "similarity": 0.0,
+            "story_chain_id": "1788DFF6CD66373CEFBDC7C4284612FA7E70A16DEEC74853377CA7E80848FB47"
+          },
+          {
+            "evidence_id": "evidence-v1:8d4598f4ea16f15c7048:prior-news:773e634f21253df61cac38064f341e175ef59c7a0132b287a116e64aa284e7b5",
+            "headline": "Why Gold Could Be Heading To $5000",
+            "match_score": 2.75,
+            "matched_terms": [
+              "could"
+            ],
+            "provider_host": "finance.yahoo.com",
+            "publication_timestamp": "2020-11-22T22:00:00+00:00",
+            "similarity": 0.0,
+            "story_chain_id": "773E634F21253DF61CAC38064F341E175EF59C7A0132B287A116E64AA284E7B5"
+          }
+        ]
+      },
+      "frozen_classification": {
+        "category": "Newly added risk factor",
+        "category_slug": "new_risk_factor",
+        "direction": "negative",
+        "materiality": "high",
+        "confidence": 0.99,
+        "classification_method": "deterministic-evidence-rule-v1",
+        "alignment_model": "sklearn-hashing-word-bigram-l2-v1",
+        "alignment_similarity": 0.1129,
+        "matched_terms": [
+          "adversely affect",
+          "could",
+          "material adverse",
+          "may",
+          "risk"
+        ]
+      },
+      "reason": {
+        "code": "new_risk_factor",
+        "why_it_matters": "A clearly new risk-factor passage can focus analyst review on newly disclosed exposure."
+      },
+      "novelty": {
+        "classification": "previously disclosed in 8-K",
+        "prior_8k_search_count": 14,
+        "prior_news_search_count": 32,
+        "method": "corpus-bounded-deterministic-headline-and-8k-text-match-v1"
+      },
+      "provenance": {
+        "document_hashes": {
+          "current_parsed_artifact_hash": "e9dfcb339d43caee30c10f37ed49a290fbe2a254bd4d5672391ff0da58eb935e",
+          "current_primary_document_hash": "a26d4d18a2091db246192378e8295a72082097115a280be4e3d3dfccca5667a6",
+          "prior_parsed_artifact_hash": "1d1858942cd6abeaeeb201cfc139513fc69b0b6ebdd618ac2a45ea93450647ed",
+          "prior_primary_document_hash": "2de14a038346bab58598b6961d9e3070afb9d01082c196c209b06315c803d273"
+        }
+      },
+      "member_sha256": "718f9aba0cdd161b4c3ea35d90d0907de0510de5f52a7326daf550db5066c73c"
+    },
+    {
+      "input_version": "1.0",
+      "input_id": "research-idea-input-v1:279e7d4e407851a19548",
+      "case_order": 7,
+      "change_id": "279e7d4e407851a19548",
+      "issuer": "EQUIFAX INC",
+      "ticker": "EFX",
+      "filing_date": "2022-02-24",
+      "formation_timestamp": "2022-02-24T21:55:14.000Z",
+      "section": "item_1a",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/33185/000003318522000014/efx-20211231.htm",
+      "selection": {
+        "rationale": "Corpus-bounded genuinely new annual disclosure",
+        "used_future_outcomes": false
+      },
+      "identifiers": {
+        "cik": "0000033185",
+        "permno": "52476",
+        "sector_code": "7",
+        "current_filing_id": "sec10k:0000033185-22-000014",
+        "prior_filing_id": "sec10k:0000033185-21-000025",
+        "current_accession_number": "0000033185-22-000014",
+        "prior_accession_number": "0000033185-21-000025"
+      },
+      "prior_filing": {
+        "filing_date": "2021-02-25",
+        "acceptance_timestamp": "2021-02-25T21:41:22.000Z",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/33185/000003318521000025/efx-20201231.htm"
+      },
+      "evidence": {
+        "evidence_ids": {
+          "prior_excerpt": "evidence-v1:279e7d4e407851a19548:prior-10k-excerpt",
+          "current_excerpt": "evidence-v1:279e7d4e407851a19548:current-10k-excerpt",
+          "added_text": "evidence-v1:279e7d4e407851a19548:added-text",
+          "removed_text": "evidence-v1:279e7d4e407851a19548:removed-text"
+        },
+        "prior_excerpt": "The remaining $346.7 million to be paid to the Consumer Restitution Fund will be made after a final adjudication affirming the U.S. Consumer MDL Litigation Settlement or dismissal of the pending appeals. Although we expect this payment and the remaining settlement payments to be made in 2021, we can give no assurance that these payments will occur in 2021 due to pending approvals or appeals. As a result of the possible payments that could be made in 2021 related to the losses associated with certain legal proceedings and government investigations related to the 2017 cybersecurity incident and other requirements, funds generated by operating activities may not be sufficient to fund working capital and other cash requirements, including for acquisitions and share repurchases, throughout 2021. Our plan is to finance the payments with existing cash balances and borrowing capacity, as necessa",
+        "current_excerpt": "To the extent we are unable to comply or we are viewed as not being in compliance with these business practice commitments or other requirements of a relevant order, we could face an enforcement action or contempt proceeding that could potentially result in fines, penalties and new business practice commitments, which, depending on the amount and type, could have a material adverse effect on our financial condition. In addition, we may be required to deposit additional amounts in the consumer settlement fund under certain circumstances if the fund is insufficient to cover claims and certain expenses. While we do not believe that we will be required to deposit additional amounts into the consumer settlement fund based on our claims experience to date, we could be obligated to fund up to an additional $125 million if our claims experience changes and the consumer fund is exhausted.",
+        "added_text": "To the extent we are unable comply or we are viewed as not being in compliance with these business practice commitments or other requirements of a relevant order, we could face an enforcement action or contempt proceeding that could potentially result in fines, penalties and new business practice commitments, which, depending on the amount and type, could have a material adverse effect on our financial condition. In addition, we may required deposit additional amounts in consumer settlement fund under certain circumstances if the fund is insufficient to cover claims and certain expenses. While we do not believe that we required to deposit add",
+        "removed_text": "The remaining $346.7 million paid Consumer Restitution Fund made after a final adjudication affirming U.S. Consumer MDL Litigation Settlement or dismissal of the pending appeals. Although expect this payment remaining settlement payments to be made in 2021, we can give no assurance that these payments will occur in 2021 due to pending approvals or appeals. As a result of the possible payments that could be made in 2021 related to the losses associated with certain legal proceedings and government investigations related to the 2017 cybersecurity incident and other requirements, funds generated by operating activities may not be sufficient to w",
+        "offsets": {
+          "prior": {
+            "start": 198392,
+            "end": 199295
+          },
+          "current": {
+            "start": 113327,
+            "end": 114219
+          }
+        },
+        "changed_numbers": {
+          "added": [
+            "$125 million"
+          ],
+          "removed": [
+            "$346.7 million",
+            "2017",
+            "2021",
+            "2021,"
+          ]
+        },
+        "new_entities": [],
+        "related_prior_8k": [],
+        "related_prior_news": []
+      },
+      "frozen_classification": {
+        "category": "Litigation or regulatory escalation",
+        "category_slug": "litigation_regulatory_escalation",
+        "direction": "negative",
+        "materiality": "high",
+        "confidence": 0.941,
+        "classification_method": "deterministic-evidence-rule-v1",
+        "alignment_model": "sklearn-hashing-word-bigram-l2-v1",
+        "alignment_similarity": 0.136,
+        "matched_terms": [
+          "enforcement",
+          "investigation",
+          "legal proceeding",
+          "litigation"
+        ]
+      },
+      "reason": {
+        "code": "litigation_regulatory_escalation",
+        "why_it_matters": "Escalating legal or regulatory exposure can affect cash flows, operations, and management attention."
+      },
+      "novelty": {
+        "classification": "genuinely new in the 10-K",
+        "prior_8k_search_count": 3,
+        "prior_news_search_count": 283,
+        "method": "corpus-bounded-deterministic-headline-and-8k-text-match-v1"
+      },
+      "provenance": {
+        "document_hashes": {
+          "current_parsed_artifact_hash": "b155f307d364839fdc568922a48eeb2545ad95caf3318c2cae0992e660adc2dd",
+          "current_primary_document_hash": "dce64b7df4929cab0a9217c04260cf10d714fe878df43c3dbce5fc963c49f9d1",
+          "prior_parsed_artifact_hash": "f5bfc3b26856680f9c9ea257767eea1f03a17750e367f66ec1fc02bb7e42598f",
+          "prior_primary_document_hash": "666b16ae9f1f78659d5c3d397eabcbadde547921990c6f251ec5fefaec915943"
+        }
+      },
+      "member_sha256": "ff3ec52f37c10e27d53634772d5aebec1116f1becd2439f45a0ef8b9862080ac"
+    },
+    {
+      "input_version": "1.0",
+      "input_id": "research-idea-input-v1:2f22dc2216c9df31d377",
+      "case_order": 8,
+      "change_id": "2f22dc2216c9df31d377",
+      "issuer": "CHEMED CORP",
+      "ticker": "CHE",
+      "filing_date": "2022-02-28",
+      "formation_timestamp": "2022-02-28T15:40:26.000Z",
+      "section": "item_7",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/19584/000156276222000060/che-20211231x10k.htm",
+      "selection": {
+        "rationale": "Null or low-materiality comparison",
+        "used_future_outcomes": false
+      },
+      "identifiers": {
+        "cik": "0000019584",
+        "permno": "64194",
+        "sector_code": "6",
+        "current_filing_id": "sec10k:0001562762-22-000060",
+        "prior_filing_id": "sec10k:0000019584-21-000003",
+        "current_accession_number": "0001562762-22-000060",
+        "prior_accession_number": "0000019584-21-000003"
+      },
+      "prior_filing": {
+        "filing_date": "2021-02-26",
+        "acceptance_timestamp": "2021-02-26T15:45:38.000Z",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/19584/000001958421000003/che-20201231x10k.htm"
+      },
+      "evidence": {
+        "evidence_ids": {
+          "prior_excerpt": "evidence-v1:2f22dc2216c9df31d377:prior-10k-excerpt",
+          "current_excerpt": "evidence-v1:2f22dc2216c9df31d377:current-10k-excerpt",
+          "added_text": "evidence-v1:2f22dc2216c9df31d377:added-text",
+          "removed_text": "evidence-v1:2f22dc2216c9df31d377:removed-text"
+        },
+        "prior_excerpt": "We are subject to various lawsuits and claims in the normal course of our business. In addition, we periodically receive communications from governmental and regulatory agencies concerning compliance with Medicare and Medicaid billing requirements at our VITAS subsidiary. We establish reserves for specific, uninsured liabilities in connection with regulatory and legal action that we deem to be probable and estimable. We disclose the existence of regulatory and legal actions when we believe it is reasonably possible that a loss could occur in connection with the specific action. In most instances, we are unable to make a reasonable estimate of any reasonably possible liability due to the uncertainty of the outcome and stage of litigation. We record legal fees associated with legal and regulatory actions as the costs are incurred.",
+        "current_excerpt": "Item 7. M anagement’s Discussion and Analysis of Financial Conditions and Results of Operations",
+        "added_text": "Item 7. M anagement’s Discussion Analysis Financial Conditions Results Operations",
+        "removed_text": "We are subject to various lawsuits claims in the normal course our business. In addition, we periodically receive communications from governmental regulatory agencies concerning compliance with Medicare and Medicaid billing requirements at our VITAS subsidiary. We establish reserves for specific, uninsured liabilities in connection with regulatory and legal action that we deem to be probable and estimable. We disclose the existence regulatory and legal actions when we believe it is reasonably possible that a loss could occur in connection with the specific action. In most instances, we are unable to make a reasonable estimate of any reasonabl",
+        "offsets": {
+          "prior": {
+            "start": 299073,
+            "end": 299913
+          },
+          "current": {
+            "start": 123000,
+            "end": 123095
+          }
+        },
+        "changed_numbers": {
+          "added": [
+            "7"
+          ],
+          "removed": []
+        },
+        "new_entities": [
+          "Financial Conditions"
+        ],
+        "related_prior_8k": [
+          {
+            "evidence_id": "evidence-v1:2f22dc2216c9df31d377:prior-8k:0001562762-21-000230",
+            "acceptance_timestamp": "2021-05-19T10:57:38-04:00",
+            "accession_number": "0001562762-21-000230",
+            "information_date": "2021-05-19",
+            "item_codes": "5.07",
+            "match_score": 4.193,
+            "matched_terms": [
+              "material",
+              "may"
+            ],
+            "primary_category": "governance_executive",
+            "similarity": 0.0483,
+            "url": "https://www.sec.gov/Archives/edgar/data/19584/000156276221000230/che-20210519x8k.htm"
+          }
+        ],
+        "related_prior_news": []
+      },
+      "frozen_classification": {
+        "category": "Removed or softened risk language",
+        "category_slug": "removed_softened_risk",
+        "direction": "positive",
+        "materiality": "medium",
+        "confidence": 0.81,
+        "classification_method": "deterministic-evidence-rule-v1",
+        "alignment_model": "sklearn-hashing-word-bigram-l2-v1",
+        "alignment_similarity": 0.0,
+        "matched_terms": [
+          "could",
+          "uncertain"
+        ]
+      },
+      "reason": {
+        "code": "removed_softened_risk",
+        "why_it_matters": "Removed or softened language may reflect changed exposure, drafting, or disclosure emphasis and requires context."
+      },
+      "novelty": {
+        "classification": "previously disclosed in 8-K",
+        "prior_8k_search_count": 1,
+        "prior_news_search_count": 0,
+        "method": "corpus-bounded-deterministic-headline-and-8k-text-match-v1"
+      },
+      "provenance": {
+        "document_hashes": {
+          "current_parsed_artifact_hash": "f870d72a2c16c6c5a77f6d0642c2e7a874fc3d75404b217be10a5881203f9aa1",
+          "current_primary_document_hash": "a8dcde291887636871d86ce87dcf8ced95bbc249dc49bded9f8102385925114c",
+          "prior_parsed_artifact_hash": "3fa93b9055db1183026aff36daa441f7f98af79f7cba84f79997888676bba4c8",
+          "prior_primary_document_hash": "67dc7b0e9a1fe5e25de3befbe39de2c78081b277c1655b8bf7ef7bd3e51b792b"
+        }
+      },
+      "member_sha256": "4ffdcac873359b2a5b8d05ca6c20777d2cfad9156da678a1c98d9ef070ff4a4e"
+    }
+  ]
+}

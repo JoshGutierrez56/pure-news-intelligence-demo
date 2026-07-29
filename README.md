@@ -8,6 +8,14 @@ The project began as a broad news-to-stock prediction hypothesis. Locked tests d
 
 The current MVP separates the product from the quantitative research claim. It is an operational evidence workflow with a final research classification of `INSUFFICIENT_EVIDENCE`.
 
+## AI Research Idea
+
+The bounded V1 extension moves from “What changed?” to “What should an analyst investigate next?” Eight formation-time-only case packets were generated offline with pinned local Ollama model `qwen3.6:35b-a3b`, then separately challenged by a skeptical pass using a frozen response-envelope contract. The public site loads only validated, precomputed JSON and never calls a model or exposes credentials.
+
+The corrected frozen eight-case review set contains no publishable packets: four are held for insufficient evidence and four were rejected by the skeptic. The held cases are CHE, DLTR, EFX, and TFC; DVN, FCX, KHC, and RH were rejected. This is a `HOLD_GROUNDING` result, not a product-success claim. Every trade expression is labeled **Illustrative Trade Hypothesis — Analyst Review Required**, remains `NOT_READY`, and contains no price target, leverage, allocation, or position size. These are unvalidated research hypotheses—not recommendations or evidence of alpha.
+
+The feature-branch review surfaces are `demo/research_idea.html`, `demo/research_idea_gallery.html`, and `demo/research_idea_methodology.html`. They are intentionally **not deployed** while the release classification is `HOLD_GROUNDING`.
+
 ## Public pages
 
 - [Overview](https://joshgutierrez56.github.io/pure-news-intelligence-demo/)
@@ -36,11 +44,29 @@ The current MVP separates the product from the quantitative research claim. It i
 ```powershell
 npm install
 npm test
+python -m pip install -r requirements-research-idea.txt
+python -m pytest -q tests/test_research_idea_engine.py
+python scripts/validate_research_idea_packets.py --mode final
 ```
 
 The Playwright configuration starts a local server at `http://127.0.0.1:4173`. Tests cover metrics, links, filters, sorting, pagination, onboarding, the local shortlist, presentation durations, notes and keyboard controls, evidence boundaries, responsive widths, accessibility labels, axe checks, deterministic rendering, and console errors.
 
-Screenshots are generated at 1920×1080, 1440×900, 1024×768, and 390×844 under `artifacts/screenshots/v2/`.
+The final Research Idea deterministic suite passes 67/67 tests. Its focused permanent browser suite passes 15/15 tests, and the complete browser-suite target is 32/32.
+
+Screenshots are generated at 1920×1080, 1440×900, 1024×768, and 390×844.
+The established demo set is under `artifacts/screenshots/v2/`; the 20-image
+Research Idea review set is under `artifacts/screenshots/research_idea_v1/`.
+
+Local generation is an explicit experimental workflow and is not needed by the public site:
+
+```powershell
+python scripts/build_research_idea_inputs.py
+python scripts/generate_research_idea_packets.py
+python scripts/review_research_idea_packets.py
+python scripts/export_research_idea_packet.py --all
+```
+
+The scripts verify the pinned local model digest, use temperature zero and a fixed seed, reject future information, allow at most one schema-repair retry, and cache valid outputs. Do not run generation against the full 995-record corpus; V1 is bounded to the eight case studies.
 
 ## Deployment
 
