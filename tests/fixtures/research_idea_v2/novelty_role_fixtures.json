@@ -1,0 +1,115 @@
+{
+  "fixture_version": "2.0",
+  "frozen_before_real_case_rerun": true,
+  "fixtures": [
+    {
+      "fixture_id": "efx-negative-regression",
+      "description": "Existing conditional top-up omitted from the selected prior excerpt.",
+      "prior_full_text": "The Company agreed to contribute $380.5 million to the Consumer Restitution Fund and up to an additional $125.0 million if the fund is exhausted. The remaining $346.7 million will be paid after final adjudication.",
+      "prior_display_excerpt": "The remaining $346.7 million will be paid after final adjudication.",
+      "current_text": "The settlement became effective and the Company deposited approximately $345 million. The Company could fund up to an additional $125 million if claims experience changes and the fund is exhausted.",
+      "expectations": {
+        "$125M conditional top-up": "PREVIOUSLY_DISCLOSED_IN_10K",
+        "prior selected excerpt": "DISPLAY_EXCERPT_OMITTED_PRIOR_EVIDENCE",
+        "$346.7M": "remaining balance",
+        "approximately $345M": "cash deposit",
+        "$346.7M versus $125M": "INCOMPARABLE_QUANTITIES",
+        "reserve inadequacy": "UNSUPPORTED",
+        "current liquidity stress": "UNSUPPORTED",
+        "bondholder effect": "UNSUPPORTED",
+        "defensible update": "RESOLVED_OR_FINALIZED_PRIOR_UNCERTAINTY",
+        "trade hypothesis": "NO_ACTIONABLE_VIEW"
+      }
+    },
+    {
+      "fixture_id": "existing-obligation-repeated",
+      "prior_full_text": "The company must pay $40 million under the agreement.",
+      "current_text": "The company must pay $40 million under the agreement.",
+      "expected_novelty": "PREVIOUSLY_DISCLOSED_IN_10K"
+    },
+    {
+      "fixture_id": "existing-risk-newly-quantified",
+      "prior_full_text": "The company may incur remediation costs.",
+      "current_text": "The company may incur up to $90 million of remediation costs.",
+      "expected_novelty": "NEW_QUANTIFICATION_OF_EXISTING_TERM"
+    },
+    {
+      "fixture_id": "truly-new-risk",
+      "prior_full_text": "The company discusses commodity and labor risks.",
+      "current_text": "A newly enacted export ban may prevent shipment from the primary facility.",
+      "expected_novelty": "GENUINELY_NEW_TERM"
+    },
+    {
+      "fixture_id": "earlier-8k-fully-anticipated",
+      "prior_8k_text": "The facility was closed after the regulator issued an order.",
+      "current_text": "The facility was closed after the regulator issued an order.",
+      "expected_novelty": "PREVIOUSLY_DISCLOSED_IN_8K"
+    },
+    {
+      "fixture_id": "earlier-8k-partially-anticipated",
+      "prior_8k_text": "The regulator is reviewing the facility.",
+      "current_text": "The regulator completed its review and ordered the facility closed.",
+      "expected_novelty": "PARTIALLY_ANTICIPATED"
+    },
+    {
+      "fixture_id": "resolved-prior-uncertainty",
+      "prior_full_text": "The settlement remains subject to appeal.",
+      "current_text": "The appeals were resolved and the settlement became effective.",
+      "expected_novelty": "RESOLVED_OR_FINALIZED_PRIOR_UNCERTAINTY"
+    },
+    {
+      "fixture_id": "wording-no-economic-change",
+      "prior_full_text": "Demand may decline materially.",
+      "current_text": "Demand could decrease substantially.",
+      "expected_novelty": "RESTATED_EXISTING_TERM"
+    },
+    {
+      "fixture_id": "incompatible-units",
+      "left": "Revenue increased by $20 million.",
+      "right": "Operating margin increased by 20%.",
+      "expected_comparison": "INCOMPARABLE_QUANTITIES"
+    },
+    {
+      "fixture_id": "settlement-versus-reserve",
+      "left": "The settlement amount is $300 million.",
+      "right": "The company accrued a $250 million reserve.",
+      "expected_comparison": "INCOMPARABLE_QUANTITIES"
+    },
+    {
+      "fixture_id": "debt-versus-borrowing-capacity",
+      "left": "Debt outstanding is $500 million.",
+      "right": "Available borrowing capacity is $500 million.",
+      "expected_comparison": "INCOMPARABLE_QUANTITIES"
+    },
+    {
+      "fixture_id": "conditional-versus-current-liability",
+      "left": "The company may pay up to $100 million if claims exceed the fund.",
+      "right": "The company has a current liability of $100 million.",
+      "expected_comparison": "INCOMPARABLE_QUANTITIES"
+    },
+    {
+      "fixture_id": "strong-evidence-no-instrument",
+      "current_text": "The filing establishes a new reporting requirement but provides no market transmission mechanism.",
+      "expected_trade_status": "NOT_READY"
+    },
+    {
+      "fixture_id": "valid-hypothesis-no-trade",
+      "current_text": "A new customer concentration disclosure may warrant investigation through future segment revenue disclosures.",
+      "expected_packet_status": "PASS_HYPOTHESIS_ONLY",
+      "expected_trade_status": "NOT_READY"
+    },
+    {
+      "fixture_id": "unsupported-causal-chain",
+      "current_text": "The company disclosed a conditional legal risk.",
+      "unsupported_claim": "The disclosure will cause a credit downgrade and equity multiple compression.",
+      "expected_support": "UNSUPPORTED"
+    },
+    {
+      "fixture_id": "boilerplate-risk-language",
+      "prior_full_text": "Cyber incidents could adversely affect operations.",
+      "current_text": "Cyber incidents could adversely affect operations.",
+      "expected_novelty": "CONTEXT_ONLY_CHANGE",
+      "expected_skeptic_status": "REJECT_GENERIC_IDEA"
+    }
+  ]
+}

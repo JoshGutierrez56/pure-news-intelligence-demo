@@ -1,0 +1,8 @@
+{
+  "audit": "prohibited_language",
+  "audited_at_utc": "2026-07-29T14:10:49.206964+00:00",
+  "finding_count": 0,
+  "findings": [],
+  "packet_count": 8,
+  "status": "PASS"
+}

@@ -1,0 +1,16 @@
+{
+  "audit": "future_data_leakage",
+  "audited_at_utc": "2026-07-29T14:10:49.206964+00:00",
+  "findings": [],
+  "forbidden_keys": [
+    "abnormal_return_6m",
+    "future_return",
+    "later_return",
+    "outcome",
+    "outcome_date",
+    "post_filing_performance",
+    "realized_pnl"
+  ],
+  "packet_count": 8,
+  "status": "PASS"
+}

@@ -1,0 +1,48 @@
+{
+  "additional_retrieved_context": [],
+  "atomic_claims": [
+    {
+      "claim_type": "fact",
+      "exact_wording": "The prior filing excerpt explicitly states: 'In most instances, we are unable to make a reasonable estimate of any reasonably possible liability due to the uncertainty of the outcome and stage of litigation.'",
+      "proposition_id": "proposition-v2:f30d9f8a0a9f491ab286",
+      "support_status": "AMBIGUOUS"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "The current filing excerpt omits the sentence regarding the inability to make reasonable estimates of liability due to uncertainty",
+      "proposition_id": "proposition-v2:11986cc0c2e88e410304",
+      "support_status": "AMBIGUOUS"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "The prior filing excerpt mentions periodic communications from governmental and regulatory agencies concerning compliance with Medicare and Medicaid billing requirements at the VITAS subsidiary",
+      "proposition_id": "proposition-v2:c69f7b9f5b11b295f726",
+      "support_status": "AMBIGUOUS"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "The frozen classification indicates the change is a 'Removed or softened risk language' with 'medium' materiality and 'positive' direction",
+      "proposition_id": "proposition-v2:fddacfec66c45850ebcb",
+      "support_status": "SUPPORTED"
+    }
+  ],
+  "blinded_case_id": "CASE-H",
+  "current_evidence": "Item 7. M anagement’s Discussion and Analysis of Financial Conditions and Results of Operations",
+  "desired_publication_result_included": false,
+  "financial_quantities": [],
+  "future_outcomes_included": false,
+  "identity_redacted_where_practical": true,
+  "novelty_result": {
+    "final_novelty": "GENUINELY_NEW_TERM",
+    "provisional_novelty": "previously disclosed in 8-K",
+    "what_is_new": "Only the retained, evidence-linked proposition or hypothesis.",
+    "what_is_not_new": "Terms matched in eligible prior evidence."
+  },
+  "prior_evidence": "We are subject to various lawsuits and claims in the normal course of our business. In addition, we periodically receive communications from governmental and regulatory agencies concerning compliance with Medicare and Medicaid billing requirements at our VITAS subsidiary. We establish reserves for specific, uninsured liabilities in connection with regulatory and legal action that we deem to be probable and estimable. We disclose the existence of regulatory and legal actions when we believe it is reasonably possible that a loss could occur in connection with the specific action. In most instances, we are unable to make a reasonable estimate of any reasonably possible liability due to the uncertainty of the outcome and stage of litigation. We record legal fees associated with legal and regulatory actions as the costs are incurred.",
+  "proposed_mechanism_and_hypotheses": [],
+  "review_packet_version": "2.0",
+  "skeptic_objections": [
+    "The proposed mechanism depends on unsupported causal steps."
+  ],
+  "v1_decision_included": false
+}

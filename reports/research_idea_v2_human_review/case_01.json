@@ -1,0 +1,91 @@
+{
+  "additional_retrieved_context": [
+    {
+      "evidence_id": "evidence-index-v2:000009223021000032:paragraph-00697",
+      "section": "item_16",
+      "text": "In response to the COVID-19 pandemic, the FRB adopted an interim final rule that temporarily changes the supplementary leverage ratio to exclude U.S. Treasury securities and deposits at Federal Reserve Banks from the calculation of a firm's leverage exposure. The interim final rule applies to BHCs. The interim final rule became effective April 1, 2020 and will remain in effect through March 31, 2021. While a similar rule providing relief to IDIs was issued, Truist Bank has elected not to take advantage of this provision for Truist Bank."
+    },
+    {
+      "evidence_id": "evidence-index-v2:000009223021000032:paragraph-11210",
+      "section": "item_8",
+      "text": "LHFS with valuation adjustments in the table above consisted primarily of residential mortgages and commercial loans that were valued using market prices and measured at the lower of cost or market. LHFS as of December 31, 2020 includes the small ticket loan and lease portfolio. The table above excludes $125 million of LHFS carried at cost at December 31, 2020 that did not require a valuation adjustment during the period. The remainder of LHFS is carried at fair value. Excluding government guaranteed loans, the Company held $5 million in nonperforming LHFS at December 31, 2020 and $107 million of nonperforming LHFS at December 31, 2019. LHFS that were 90 days or more past due and still accruing interest were not material at December 31, 2020. Loans and leases are primarily collateral dependent and may be subject to liquidity adjustments. Refer to \"Note 1. Basis of Presentation\" for additional discussion of individually evaluated loans and leases. Other includes foreclosed real estate, other foreclosed property, ROU assets, premises and equipment and OREO, and consists primarily of residential homes, commercial properties, vacant lots and automobiles. ROU assets are measured based on the fair value of the assets, which considers the potential for future sublease income. The remaining assets are measured at the lower of cost or fair value less costs to sell."
+    },
+    {
+      "evidence_id": "evidence-index-v2:000009223022000008:paragraph-01101",
+      "section": "item_1a",
+      "text": "The liquidity standards applicable to large U.S. banking organizations have been supplemented in recent years. The NSFR rule, which is designed to ensure that banking organizations maintain a stable funding profile in relation to their asset composition and off-balance sheet activities, became effective on July 1, 2021. Public disclosure of the NSFR will begin in 2023."
+    },
+    {
+      "evidence_id": "evidence-index-v2:000009223022000008:paragraph-10528",
+      "section": "item_8",
+      "text": "LHFS with valuation adjustments in the table above consisted primarily of residential mortgages and commercial loans that were valued using market prices and measured at LOCOM. LHFS as of December 31, 2020 includes the small ticket loan and lease portfolio that was sold during the first quarter of 2021. The table above excludes $1.2 billion and $125 million of LHFS carried at cost at December 31, 2021 and December 31, 2020, respectively, that did not require a valuation adjustment during the period. The remainder of LHFS is carried at fair value. The Company held $22 million in nonperforming LHFS at December 31, 2021 and $5 million of nonperforming LHFS at December 31, 2020. LHFS that were 90 days or more past due and still accruing interest were not material at December 31, 2021 and December 31, 2020."
+    },
+    {
+      "evidence_id": "evidence-index-v2:000009223023000034:paragraph-00736",
+      "section": "item_16",
+      "text": "States are also increasingly proposing or enacting legislation that relates to data privacy and data protection such as the California Consumer Privacy Act. Truist has undertaken significant efforts to comply with these laws and continues to assess their requirements and applicability to Truist. These laws and proposed legislation are still subject to revision or formal guidance and may be interpreted or applied in a manner inconsistent with the Company’s understanding. California voters also recently passed the California Privacy Rights Act, which became effective on January 1, 2023, and significantly modifies the California Consumer Privacy Act, including by imposing additional obligations on covered companies and expanding California consumers’ rights with respect to certain sensitive personal information, potentially resulting in further uncertainty and requiring Truist to incur additional costs to comply. Truist may be subject to similar laws in other states where Truist does business or in states where Truist may collect personal information of residents."
+    },
+    {
+      "evidence_id": "evidence-index-v2:000009223023000034:paragraph-01112",
+      "section": "item_1a",
+      "text": "The liquidity standards applicable to large U.S. banking organizations have been supplemented in recent years. The NSFR rule, which is designed to ensure that banking organizations maintain a stable funding profile in relation to their asset composition and off-balance sheet activities, became effective on July 1, 2021. Public disclosure of the NSFR will begin in 2023."
+    }
+  ],
+  "atomic_claims": [
+    {
+      "claim_type": "fact",
+      "exact_wording": "The prior filing (2021 10-K) contained a distinct 'Compliance Risk' section defining compliance risk as exposure to fines, penalties, and contract voiding due to regulatory violations",
+      "proposition_id": "proposition-v2:d61eed930eea40a372b7",
+      "support_status": "AMBIGUOUS"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "The current filing (2022 10-K) contains a new 'Technology Risk' section defining technology risk as business risk associated with IT use, ownership, and operation, citing a defined technology risk framework",
+      "proposition_id": "proposition-v2:ff2072bed6413c962019",
+      "support_status": "AMBIGUOUS"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "The 'Liquidity Risk' definition in the current filing is identical to the prior filing",
+      "proposition_id": "proposition-v2:8fb753da065a108ea83e",
+      "support_status": "AMBIGUOUS"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "the prior 'Compliance Risk' text now appears within the 'Liquidity Risk' section boundary in the current filing",
+      "proposition_id": "proposition-v2:f916389aca8d3c70597f",
+      "support_status": "AMBIGUOUS"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "The frozen classification identifies the category as 'Liquidity deterioration' with high materiality and ambiguous direction",
+      "proposition_id": "proposition-v2:9f49869956b660f17a7e",
+      "support_status": "SUPPORTED"
+    },
+    {
+      "claim_type": "interpretation",
+      "exact_wording": "Proposed affected entity or group: [ISSUER]oration",
+      "proposition_id": "proposition-v2:2ea79f689d5563162af1",
+      "support_status": "PARTIALLY_SUPPORTED"
+    }
+  ],
+  "blinded_case_id": "CASE-A",
+  "current_evidence": "Liquidity Risk Liquidity risk is the risk that (i) Truist will be unable to meet its obligations as they come due because of an inability to obtain adequate funding (funding liquidity risk), or (ii) Truist cannot easily unwind or offset specific exposures without significantly lowering market prices because of inadequate market depth or market disruptions (market liquidity risk). Refer to the “Liquidity” section in MD&A for additional discussion. Technology Risk Technology risk is the business risk associated with the use, ownership, operation, involvement, influence, and adoption of information technology across the Company. Truist has defined and adopted a technology risk framework that provides the foundation for technology risk strategy, program, and oversight and defines key objectives, operating model components, risk domains, and capabilities to manage this risk.",
+  "desired_publication_result_included": false,
+  "financial_quantities": [],
+  "future_outcomes_included": false,
+  "identity_redacted_where_practical": true,
+  "novelty_result": {
+    "final_novelty": "GENUINELY_NEW_TERM",
+    "provisional_novelty": "genuinely new in the 10-K",
+    "what_is_new": "Only the retained, evidence-linked proposition or hypothesis.",
+    "what_is_not_new": "Terms matched in eligible prior evidence."
+  },
+  "prior_evidence": "[ISSUER]oration 69 Liquidity Risk Liquidity risk is the risk that (i) Truist will be unable to meet its obligations as they come due because of an inability to obtain adequate funding (funding liquidity risk), or (ii) Truist cannot easily unwind or offset specific exposures without significantly lowering market prices because of inadequate market depth or market disruptions (market liquidity risk). Refer to the \"Liquidity” section in MD&A for additional discussion. Compliance Risk Compliance risk is the risk to current or anticipated earnings or capital arising from violations of laws, rules, or regulations, or from non-conformance with prescribed practices, internal policies and procedures or ethical standards. This risk exposes Truist to fines, civil monetary penalties, payment of damages, and the voiding of contracts.",
+  "proposed_mechanism_and_hypotheses": [],
+  "review_packet_version": "2.0",
+  "skeptic_objections": [
+    "The central disclosure term was already available in eligible prior evidence."
+  ],
+  "v1_decision_included": false
+}

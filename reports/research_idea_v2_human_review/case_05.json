@@ -1,0 +1,103 @@
+{
+  "additional_retrieved_context": [
+    {
+      "evidence_id": "evidence-index-v2:000155837020003383:paragraph-00954",
+      "section": "item_1a",
+      "text": "A significant subset of our products sourced from China has been affected by increased levels of tariffs that were imposed in 2018 and 2019. The initial round of these increased tariffs became effective on certain products that we source from China including furniture and lighting initially as a 10 percent ad valorem duty on September 24, 2018, which amount increased to 25 percent on May 10, 2019, and is expected to increase further to 30 percent on October 1, 2019. On August 1, 2019, President Trump announced a new 10 percent ad valorem duty on additional categories of goods imported from China, which amount was then increased to 15 percent on August 23, 2019. The new tariff at the rate of 15 percent became effective September 1, 2019 with respect to certain categories of goods and was expected to become effective for additional categories of goods on December 15, 2019. In January 2020, the U.S. and China signed a “Phase One” trade agreement pursuant to which, among other things, the U.S. will modify its Section 301 tariff actions and which suspended the tariff on this additional set of goods. Further, as of February 14, 2020, the 15 percent tariff which was implemented on September 1, 2019 was reduced to 7.5 percent."
+    },
+    {
+      "evidence_id": "evidence-index-v2:000155837020003383:paragraph-11572",
+      "section": "item_8",
+      "text": "The option contains dual-condition restrictions consisting of both time-based service restrictions over four years and performance-based restrictions linked to achieving the Company’s common stock price objectives of $100, $125 and $150 per share. The option is fully vested on the date of grant but the shares underlying the option remain subject to transfer restrictions to the extent the performance-based and time-based requirements have not been met. The option resulted in a non-cash stock compensation charge of $23.9 million in fiscal 2017, which is included in the $37.5 million stock-based compensation expense for stock options recorded in fiscal 2017 discussed above."
+    },
+    {
+      "evidence_id": "evidence-index-v2:000155837020003383:paragraph-11576",
+      "section": "item_8",
+      "text": "The stock price objectives are measured each year and are set at prices for the Company’s common stock of $100, $125 and $150 per share. If all three stock price objectives are met in the first performance year, restrictions will"
+    },
+    {
+      "evidence_id": "evidence-index-v2:000155837020003383:paragraph-11579",
+      "section": "item_8",
+      "text": "lapse as to 250,000 shares in aggregate at the end of such year, with 83,333 shares tied to a $100 price per share, 83,333 shares tied to a $125 price per share and 83,334 shares tied to a $150 price per share."
+    },
+    {
+      "evidence_id": "evidence-index-v2:000155837021003728:paragraph-01101",
+      "section": "item_1a",
+      "text": "A significant subset of our products sourced from China has been affected by increased levels of tariffs that were imposed in 2018 and 2019. The initial round of these increased tariffs became effective on certain products that we source from China including furniture and lighting initially as a 10 percent ad valorem duty on September 24, 2018, which amount increased to 25 percent on May 10, 2019, and were slated to increase further to 30 percent on October 1, 2019 before an interim deal was reached between the U.S. and China. On August 1, 2019, a new 10 percent ad valorem duty on additional categories of goods imported from China was announced, which amount was then increased to 15 percent on August 23, 2019. The new tariff at the rate of 15 percent became effective September 1, 2019 with respect to certain categories of goods and had been expected to become effective for additional categories of goods on December 15, 2019. In January 2020, the U.S. and China signed a “Phase One” trade agreement pursuant to which, among other things, the U.S. will modify its Section 301 tariff actions and which suspended the tariff on this additional set of goods. Further, as of February 14, 2020, the 15 percent tariff which was implemented on September 1, 2019 was reduced to 7.5 percent. While the trade deal remains effective, there is no guarantee that the agreement will be honored by either party, and it could be subject to further revision or renegotiation."
+    },
+    {
+      "evidence_id": "evidence-index-v2:000155837021003728:paragraph-15331",
+      "section": "item_11",
+      "text": "Aggregate value of $125,000(2)"
+    },
+    {
+      "evidence_id": "evidence-index-v2:000155837022004753:paragraph-05776",
+      "section": "item_8",
+      "text": "In December 2019, the Financial Accounting Standards Board (“FASB”) issued Accounting Standards Update (“ASU”) 2019-12—Income Taxes (Topic 740): Simplifying the Accounting for Income Taxes. The ASU impacts various topic areas within ASC 740, including accounting for taxes under hybrid tax regimes, accounting for increases in goodwill, allocation of tax amounts to separate company financial statements within a group that files a consolidated tax return, intra period tax allocation, interim period accounting, and accounting for ownership changes in investments, among other minor codification improvements. The guidance in this ASU became effective for fiscal years, and interim periods within those fiscal years, beginning after December 15, 2020. We adopted this standard in the first quarter of fiscal 2021 and the adoption did not have an impact on our consolidated financial statements."
+    },
+    {
+      "evidence_id": "evidence-index-v2:000155837023004942:paragraph-06739",
+      "section": "item_8",
+      "text": "Includes $125 million of construction in progress, which is included in “building and building improvements” within property and equipment—net."
+    }
+  ],
+  "atomic_claims": [
+    {
+      "claim_type": "fact",
+      "exact_wording": "The filing section is Item 1A (Risk Factors) of the 10-K for the period ending January 28, 2023, filed on March 29, 2023",
+      "proposition_id": "proposition-v2:9d0f35db5cf9a20a176c",
+      "support_status": "SUPPORTED"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "The frozen classification identifies this as a 'Newly added risk factor' with high materiality and negative direction",
+      "proposition_id": "proposition-v2:3e9f8f8e2b5d812aa3d9",
+      "support_status": "SUPPORTED"
+    }
+  ],
+  "blinded_case_id": "CASE-E",
+  "current_evidence": "In addition to the possibility of fines, lawsuits and other claims, we could be required to expend significant resources to change our business practices or modify our service offerings in connection with the protection of personally identifiable information, which could have a material adverse effect on our business. Any breach could also cause consumers to lose confidence in the security of our website and information technology systems and choose not to purchase from us. We are also subject to payment card association rules and network operating rules, including data security rules, certification requirements and rules governing electronic funds transfers, which could change over time.",
+  "desired_publication_result_included": false,
+  "financial_quantities": [],
+  "future_outcomes_included": false,
+  "identity_redacted_where_practical": true,
+  "novelty_result": {
+    "final_novelty": "GENUINELY_NEW_TERM",
+    "provisional_novelty": "previously disclosed in 8-K",
+    "what_is_new": "Only the retained, evidence-linked proposition or hypothesis.",
+    "what_is_not_new": "Terms matched in eligible prior evidence."
+  },
+  "prior_evidence": "We have in the past experienced volatility in our sales trends related to many of these factors and believe our sales may be impacted by these economic factors in future periods. These headwinds tied to macroeconomic factors may continue in future quarters. For more information, refer to Item 1A—Risk Factors — Changes in consumer spending and factors that influence spending of the specific categories of consumers that purchase from us, including the health of the high-end housing market, may significantly impact our revenue and results of operations —The COVID-19 pandemic poses significant and widespread risks to our business as well as to the business environment and the markets in which we operate . Fluctuation in Quarterly Results .",
+  "proposed_mechanism_and_hypotheses": [
+    {
+      "confirmation_conditions": [
+        "Eligible evidence identifies issuer-specific control, compliance, or incident changes."
+      ],
+      "evidence_ids": [
+        "evidence-v1:412b08746bb0ed5a7745:added-text",
+        "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt",
+        "evidence-v1:412b08746bb0ed5a7745:prior-10k-excerpt",
+        "evidence-v1:412b08746bb0ed5a7745:removed-text"
+      ],
+      "falsification_conditions": [
+        "The language matches peer boilerplate and no issuer-specific change is disclosed."
+      ],
+      "hypothesis": "The added PII and payment-card risk disclosure may warrant investigation into whether it reflects issuer-specific control changes or expanded risk-factor coverage; an incident is not established.",
+      "hypothesis_id": "hypothesis-v2:data-risk-specificity-test",
+      "mechanism": "Issuer-specific control remediation or compliance changes would create observable security spending, control, or incident disclosures beyond boilerplate.",
+      "publishable": true,
+      "required_data": [
+        "Contemporaneous control disclosures",
+        "Earlier eligible 8-K text",
+        "Peer risk-factor language"
+      ],
+      "support_status": "PARTIALLY_SUPPORTED",
+      "testable_prediction": "Contemporaneous filings and control disclosures will either identify issuer-specific changes or show that the language is generic expansion."
+    }
+  ],
+  "review_packet_version": "2.0",
+  "skeptic_objections": [
+    "Unsupported V1 causal extensions were removed before publication."
+  ],
+  "v1_decision_included": false
+}

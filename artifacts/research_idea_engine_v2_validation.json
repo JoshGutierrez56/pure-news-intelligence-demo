@@ -1,0 +1,101 @@
+{
+  "critical_published_defects": 0,
+  "deployment_authorized": false,
+  "eight_case_gate": "READY_FOR_PUBLIC_DEMO",
+  "errors": [],
+  "grounded_hypothesis_count": 2,
+  "no_action_view_count": 8,
+  "packet_count": 8,
+  "packets": [
+    {
+      "change_id": "279e7d4e407851a19548",
+      "evidence_coverage_ratio": 0.571429,
+      "packet_hash": "94b81b5ba843a77272980175cdc01c773f96229de35625e54ffb912a2dc7301c",
+      "packet_status": "REJECT_MISLEADING_COMPARISON",
+      "skeptic_status": "REJECT_MISLEADING_COMPARISON",
+      "ticker": "EFX"
+    },
+    {
+      "change_id": "2f22dc2216c9df31d377",
+      "evidence_coverage_ratio": 0.25,
+      "packet_hash": "80c3241c4bdc2f3f47c20626dae045891a10b269b9ce65f1a6d368ca86b603dc",
+      "packet_status": "REJECT_UNSUPPORTED_MECHANISM",
+      "skeptic_status": "REJECT_UNSUPPORTED_MECHANISM",
+      "ticker": "CHE"
+    },
+    {
+      "change_id": "339fae2941721ee094b0",
+      "evidence_coverage_ratio": 0.428571,
+      "packet_hash": "7d836223c88f3bff7fcaa945fadb04676c1b225a83a0c50ffc6bb5948dae29eb",
+      "packet_status": "REJECT_UNSUPPORTED_MECHANISM",
+      "skeptic_status": "REJECT_UNSUPPORTED_MECHANISM",
+      "ticker": "DLTR"
+    },
+    {
+      "change_id": "412b08746bb0ed5a7745",
+      "evidence_coverage_ratio": 1.0,
+      "packet_hash": "289281db50bf9b9225a633cfa4544773a68dbed238f9b762e783ee088eacbcc7",
+      "packet_status": "PUBLISHABLE",
+      "skeptic_status": "PASS_HYPOTHESIS_ONLY",
+      "ticker": "RH"
+    },
+    {
+      "change_id": "4784f62ad001b2a12af4",
+      "evidence_coverage_ratio": 1.0,
+      "packet_hash": "f40423ed49df07638de518143b50626590d92c2d17de9ecbcf654cc27ef1af5e",
+      "packet_status": "PUBLISHABLE",
+      "skeptic_status": "PASS_HYPOTHESIS_ONLY",
+      "ticker": "DVN"
+    },
+    {
+      "change_id": "8d4598f4ea16f15c7048",
+      "evidence_coverage_ratio": 0.285714,
+      "packet_hash": "11a27073166c5f5753c5978be714dcf61152875741323e481c4a30b77b3179c5",
+      "packet_status": "REJECT_UNSUPPORTED_MECHANISM",
+      "skeptic_status": "REJECT_UNSUPPORTED_MECHANISM",
+      "ticker": "FCX"
+    },
+    {
+      "change_id": "8f5336b55618ffe68e8a",
+      "evidence_coverage_ratio": 0.125,
+      "packet_hash": "564dff1dc9662ab1728528c350d08a52ec93495c5c5ec9dc09c3ab5399e34dcb",
+      "packet_status": "REJECT_PREVIOUSLY_DISCLOSED",
+      "skeptic_status": "REJECT_PREVIOUSLY_DISCLOSED",
+      "ticker": "KHC"
+    },
+    {
+      "change_id": "dbe75bc24f2888f4166a",
+      "evidence_coverage_ratio": 0.2,
+      "packet_hash": "5a7de1a5b15c13dcffa123f2eb8f1d677ba5663c013894d7f76aff50efd4479c",
+      "packet_status": "REJECT_PREVIOUSLY_DISCLOSED",
+      "skeptic_status": "REJECT_PREVIOUSLY_DISCLOSED",
+      "ticker": "TFC"
+    }
+  ],
+  "protected_artifact_preservation": {
+    "artifacts/research_idea_efx_outcome_blinded_review_receipt.json": true,
+    "demo/data/catalog.json": true,
+    "demo/data/changes.json": true,
+    "demo/research_results.html": true,
+    "reports/research_idea_efx_outcome_blinded_review.md": true
+  },
+  "publishable_packet_count": 2,
+  "publishable_tickers": [
+    "RH",
+    "DVN"
+  ],
+  "sixty_case_gate": "BLOCKED",
+  "status": "PASS",
+  "v1_preservation": {
+    "279e7d4e407851a19548": true,
+    "2f22dc2216c9df31d377": true,
+    "339fae2941721ee094b0": true,
+    "412b08746bb0ed5a7745": true,
+    "4784f62ad001b2a12af4": true,
+    "8d4598f4ea16f15c7048": true,
+    "8f5336b55618ffe68e8a": true,
+    "dbe75bc24f2888f4166a": true
+  },
+  "validation_version": "2.0",
+  "warnings": []
+}

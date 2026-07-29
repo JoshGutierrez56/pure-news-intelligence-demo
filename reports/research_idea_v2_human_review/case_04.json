@@ -1,0 +1,160 @@
+{
+  "additional_retrieved_context": [
+    {
+      "evidence_id": "evidence-index-v2:000156459019003382:paragraph-04182",
+      "section": "item_7",
+      "text": "Production taxes increased on an absolute dollar basis primarily due to the increase in our U.S. upstream revenues, on which the majority of our production taxes are assessed. Additionally, the increase in Oklahoma severance tax rates that became effective during the third quarter of 2018 also contributed to the increase on an absolute dollar basis and as a percentage of oil, gas and NGL sales."
+    },
+    {
+      "evidence_id": "evidence-index-v2:000156459020005182:paragraph-03738",
+      "section": "item_7",
+      "text": "Production taxes increased on an absolute dollar basis primarily due to the increase in our upstream revenues. Additionally, the increase in Oklahoma severance tax rates that became effective during the third quarter of 2018 also contributed to the increase on an absolute dollar basis and as a percentage of oil, gas and NGL sales."
+    },
+    {
+      "evidence_id": "evidence-index-v2:000156459020005182:paragraph-06326",
+      "section": "item_8",
+      "text": "The SEC released Final Rule Release No. 33-10618, FAST Act Modernization and Simplification of Regulation S-K, which amends Regulation S-K to modernize and simplify certain disclosure requirements in a manner that reduces costs and burdens on registrants while continuing to provide all material information to investors. The rule became effective May 2, 2019. The rule amended numerous SEC rules, items and forms covering a diverse group of topics, primarily focusing on reducing or eliminating disclosures. Other than presentation, this adoption did not have a material impact on Devon’s consolidated financial statements."
+    },
+    {
+      "evidence_id": "evidence-index-v2:000156459022005321:paragraph-05243",
+      "section": "item_8",
+      "text": "As of December 31, 2021, Devon’s $368 million investment in Catalyst exceeded the underlying equity in net assets by approximately $125 million. The basis difference results primarily from intangible assets associated with Devon’s acreage dedication and is amortized over the remaining 17-year term of the associated oil gathering and natural gas processing agreements."
+    }
+  ],
+  "atomic_claims": [
+    {
+      "claim_type": "interpretation",
+      "exact_wording": "gas assets were not at risk of impairment as of December 31, 2021, citing significant increases in commodity prices during 2021. This contrasts with the 2020 filing",
+      "proposition_id": "proposition-v2:36cdeac95f61cceb1a97",
+      "support_status": "PARTIALLY_SUPPORTED"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "the significant increases in commodity prices during 2021, none of our oil and gas assets were at risk of impairment as of December 31, 2021.'",
+      "proposition_id": "proposition-v2:2a4c379276b12bcf5c5d",
+      "support_status": "SUPPORTED"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "The 2020 10-K stated: 'we assessed all our oil and gas fields for impairment as of March 31, 2020 and recognized proved and unproved impairments totaling $2.8 billion.'",
+      "proposition_id": "proposition-v2:ccf5e084f31882347021",
+      "support_status": "SUPPORTED"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "The current filing section is Item 7 (Management’s Discussion",
+      "proposition_id": "proposition-v2:b37b1ef1673af99b46a5",
+      "support_status": "SUPPORTED"
+    },
+    {
+      "claim_type": "interpretation",
+      "exact_wording": "Fair value of assets exceeds carrying value",
+      "proposition_id": "proposition-v2:716c6d8eb4d6846761e0",
+      "support_status": "PARTIALLY_SUPPORTED"
+    }
+  ],
+  "blinded_case_id": "CASE-D",
+  "current_evidence": "As a result of the impairments recognized in 2020 and the significant increases in commodity prices during 2021, none of our oil and gas assets were at risk of impairment as of December 31, 2021.",
+  "desired_publication_result_included": false,
+  "financial_quantities": [
+    {
+      "amount": 2.8,
+      "conditionality": "unconditional_or_unspecified",
+      "context": "mmodity prices and reduced near-term investment, we assessed all our oil and gas fields for impairment as of March 31, 2020 and recognized proved and unproved impairments totaling $2.8 billion. The impairments relate to our Anadarko Basin and Rockies fields in which our basis included acquisitions completed in 2016 and 2015, respectively, when commodity prices were much",
+      "currency": "USD",
+      "date": "March 31, 2020",
+      "duration": null,
+      "end_offset": 448,
+      "evidence_id": "evidence-v1:4784f62ad001b2a12af4:prior-10k-excerpt",
+      "financial_role": "unknown or ambiguous",
+      "gross_net_basis": "gross_or_unspecified",
+      "historical_current": "historical",
+      "normalized_amount": 2800000000.0,
+      "payment_status": "unspecified",
+      "percentage": null,
+      "quantity_id": "quantity-v2:a0cd6b4111d11e73841f",
+      "raw_text": "$2.8 billion",
+      "scale": "billion",
+      "start_offset": 436
+    },
+    {
+      "amount": null,
+      "conditionality": "unconditional_or_unspecified",
+      "context": "Reduced demand from the COVID-19 pandemic and management of production levels from OPEC caused WTI pricing to decrease more than 60% during the first quarter of 2020. As a result, we reduced our planned 2020 capital investment 45%. With materially lower commodity prices and reduced near-term investment, we asse",
+      "currency": null,
+      "date": "2020",
+      "duration": null,
+      "end_offset": 132,
+      "evidence_id": "evidence-v1:4784f62ad001b2a12af4:prior-10k-excerpt",
+      "financial_role": "maximum exposure",
+      "gross_net_basis": "not_applicable",
+      "historical_current": "current_or_unspecified",
+      "normalized_amount": null,
+      "payment_status": "not_applicable",
+      "percentage": 60.0,
+      "quantity_id": "quantity-v2:99b7fb6e622c1c8ed6f7",
+      "raw_text": "60%",
+      "scale": "percentage",
+      "start_offset": 129
+    },
+    {
+      "amount": null,
+      "conditionality": "unconditional_or_unspecified",
+      "context": "anagement of production levels from OPEC caused WTI pricing to decrease more than 60% during the first quarter of 2020. As a result, we reduced our planned 2020 capital investment 45%. With materially lower commodity prices and reduced near-term investment, we assessed all our oil and gas fields for impairment as of March 31, 2020 and recognized proved and unpr",
+      "currency": null,
+      "date": "2020",
+      "duration": null,
+      "end_offset": 230,
+      "evidence_id": "evidence-v1:4784f62ad001b2a12af4:prior-10k-excerpt",
+      "financial_role": "maximum exposure",
+      "gross_net_basis": "not_applicable",
+      "historical_current": "current_or_unspecified",
+      "normalized_amount": null,
+      "payment_status": "not_applicable",
+      "percentage": 45.0,
+      "quantity_id": "quantity-v2:d9686a6e83c433061c14",
+      "raw_text": "45%",
+      "scale": "percentage",
+      "start_offset": 227
+    }
+  ],
+  "future_outcomes_included": false,
+  "identity_redacted_where_practical": true,
+  "novelty_result": {
+    "final_novelty": "GENUINELY_NEW_TERM",
+    "provisional_novelty": "genuinely new in the 10-K",
+    "what_is_new": "Only the retained, evidence-linked proposition or hypothesis.",
+    "what_is_not_new": "Terms matched in eligible prior evidence."
+  },
+  "prior_evidence": "Reduced demand from the COVID-19 pandemic and management of production levels from OPEC caused WTI pricing to decrease more than 60% during the first quarter of 2020. As a result, we reduced our planned 2020 capital investment 45%. With materially lower commodity prices and reduced near-term investment, we assessed all our oil and gas fields for impairment as of March 31, 2020 and recognized proved and unproved impairments totaling $2.8 billion. The impairments relate to our Anadarko Basin and Rockies fields in which our basis included acquisitions completed in 2016 and 2015, respectively, when commodity prices were much higher than they are today.",
+  "proposed_mechanism_and_hypotheses": [
+    {
+      "confirmation_conditions": [
+        "Reasonable downside price assumptions materially reduce recoverable-value headroom."
+      ],
+      "evidence_ids": [
+        "evidence-v1:4784f62ad001b2a12af4:current-10k-excerpt",
+        "evidence-v1:4784f62ad001b2a12af4:prior-10k-excerpt"
+      ],
+      "falsification_conditions": [
+        "Disclosed sensitivity shows substantial headroom under reasonable downside prices."
+      ],
+      "hypothesis": "The disclosed removal of near-term impairment risk may warrant testing whether asset recoverability remains robust under lower commodity-price assumptions; durability is not established.",
+      "hypothesis_id": "hypothesis-v2:asset-recoverability-sensitivity",
+      "mechanism": "Commodity-price assumptions affect projected field cash flows and therefore the margin between recoverable value and carrying value.",
+      "publishable": true,
+      "required_data": [
+        "Impairment-test price deck",
+        "Field-level carrying values",
+        "Reserve and production assumptions"
+      ],
+      "support_status": "PARTIALLY_SUPPORTED",
+      "testable_prediction": "A sensitivity analysis using disclosed reserve and price assumptions will show whether a moderate price decline restores impairment risk."
+    }
+  ],
+  "review_packet_version": "2.0",
+  "skeptic_objections": [
+    "Unsupported V1 causal extensions were removed before publication."
+  ],
+  "v1_decision_included": false
+}

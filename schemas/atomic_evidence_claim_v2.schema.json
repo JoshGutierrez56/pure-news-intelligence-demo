@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-news.local/schemas/atomic_evidence_claim_v2.schema.json",
+  "title": "Atomic Evidence Claim V2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "proposition_id",
+    "exact_wording",
+    "claim_type",
+    "source_path",
+    "source_evidence_ids",
+    "counterevidence_ids",
+    "prior_occurrence_search",
+    "novelty_status",
+    "novelty_review",
+    "support_status",
+    "confidence",
+    "final_disposition"
+  ],
+  "properties": {
+    "proposition_id": {
+      "type": "string",
+      "pattern": "^proposition-v2:[0-9a-f]{20}$"
+    },
+    "exact_wording": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000
+    },
+    "claim_type": {
+      "enum": [
+        "fact",
+        "interpretation",
+        "hypothesis",
+        "speculative_extension"
+      ]
+    },
+    "source_path": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "source_evidence_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "counterevidence_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "prior_occurrence_search": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "performed",
+        "query_terms",
+        "documents_searched",
+        "top_matches"
+      ],
+      "properties": {
+        "performed": {
+          "const": true
+        },
+        "query_terms": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "documents_searched": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "top_matches": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "novelty_status": {
+      "$ref": "#/$defs/noveltyStatus"
+    },
+    "novelty_review": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "status",
+        "earliest_identified_prior_occurrence",
+        "best_matching_prior_evidence_span",
+        "semantic_similarity",
+        "lexical_overlap",
+        "matching_numeric_terms",
+        "matching_legal_or_accounting_role",
+        "what_specifically_changed",
+        "what_did_not_change",
+        "confidence",
+        "ambiguity_reason",
+        "top_prior_matches"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/noveltyStatus"
+        }
+      }
+    },
+    "support_status": {
+      "enum": [
+        "SUPPORTED",
+        "PARTIALLY_SUPPORTED",
+        "UNSUPPORTED",
+        "CONTRADICTED",
+        "AMBIGUOUS"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "final_disposition": {
+      "enum": [
+        "RETAIN",
+        "RETAIN_AS_LABELED_HYPOTHESIS",
+        "REMOVE_UNSUPPORTED",
+        "REMOVE_CONTRADICTED",
+        "VISIBLE_UNCERTAINTY",
+        "PENDING_REVIEW"
+      ]
+    }
+  },
+  "$defs": {
+    "noveltyStatus": {
+      "enum": [
+        "GENUINELY_NEW_TERM",
+        "NEW_QUANTIFICATION_OF_EXISTING_TERM",
+        "MODIFIED_EXISTING_TERM",
+        "RESTATED_EXISTING_TERM",
+        "RESOLVED_OR_FINALIZED_PRIOR_UNCERTAINTY",
+        "PREVIOUSLY_DISCLOSED_IN_10K",
+        "PREVIOUSLY_DISCLOSED_IN_8K",
+        "PREVIOUSLY_COVERED_IN_NEWS",
+        "PARTIALLY_ANTICIPATED",
+        "CONTEXT_ONLY_CHANGE",
+        "DISPLAY_EXCERPT_OMITTED_PRIOR_EVIDENCE",
+        "INCOMPARABLE_QUANTITIES",
+        "UNCLEAR"
+      ]
+    }
+  }
+}

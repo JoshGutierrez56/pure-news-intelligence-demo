@@ -1,0 +1,509 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-news.local/schemas/research_idea_packet_v2.schema.json",
+  "title": "Research Idea Evidence and Hypothesis Packet V2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "packet_version",
+    "packet_id",
+    "packet_hash",
+    "packet_status",
+    "change_id",
+    "issuer",
+    "ticker",
+    "filing_date",
+    "formation_timestamp",
+    "section",
+    "source_url",
+    "provisional_classification",
+    "retrieval_metadata",
+    "source_evidence",
+    "atomic_claims",
+    "financial_quantities",
+    "quantity_comparisons",
+    "novelty_review",
+    "research_hypotheses",
+    "counterevidence_review",
+    "illustrative_trade_hypothesis",
+    "skeptic_review",
+    "evidence_coverage",
+    "analyst_disposition",
+    "disclaimer"
+  ],
+  "properties": {
+    "packet_version": {
+      "const": "2.0"
+    },
+    "packet_id": {
+      "type": "string",
+      "pattern": "^research-idea-v2:[0-9a-f]{20}$"
+    },
+    "packet_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "packet_status": {
+      "enum": [
+        "PUBLISHABLE",
+        "NO_ACTIONABLE_VIEW",
+        "HOLD_MISSING_CONTEXT",
+        "HOLD_NUMERIC_ROLE_CONFLICT",
+        "HOLD_AMBIGUOUS_NOVELTY",
+        "REJECT_PREVIOUSLY_DISCLOSED",
+        "REJECT_UNSUPPORTED_MECHANISM",
+        "REJECT_MISLEADING_COMPARISON",
+        "REJECT_GENERIC_IDEA"
+      ]
+    },
+    "change_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{20}$"
+    },
+    "issuer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ticker": {
+      "type": "string",
+      "minLength": 1
+    },
+    "filing_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "formation_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "section": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "provisional_classification": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "retrieval_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_index_version",
+        "evidence_index_sha256",
+        "full_prior_filing_search_completed",
+        "documents_searched",
+        "sections_searched",
+        "timing_violations",
+        "unresolved_gaps"
+      ],
+      "properties": {
+        "evidence_index_version": {
+          "const": "2.0"
+        },
+        "evidence_index_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "full_prior_filing_search_completed": {
+          "const": true
+        },
+        "documents_searched": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "sections_searched": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "timing_violations": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "unresolved_gaps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "source_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prior_excerpt",
+        "current_excerpt",
+        "current_context",
+        "additional_prior_evidence",
+        "earliest_occurrence"
+      ],
+      "properties": {
+        "prior_excerpt": {
+          "type": "string"
+        },
+        "current_excerpt": {
+          "type": "string"
+        },
+        "current_context": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "additional_prior_evidence": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "earliest_occurrence": {
+          "type": [
+            "object",
+            "null"
+          ]
+        }
+      }
+    },
+    "atomic_claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "atomic_evidence_claim_v2.schema.json"
+      }
+    },
+    "financial_quantities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "quantity_id",
+          "raw_text",
+          "financial_role",
+          "conditionality",
+          "payment_status"
+        ]
+      }
+    },
+    "quantity_comparisons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "left_quantity_id",
+          "right_quantity_id",
+          "status",
+          "conflicts"
+        ]
+      }
+    },
+    "novelty_review": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "provisional_novelty",
+        "final_novelty",
+        "what_is_new",
+        "what_is_not_new"
+      ]
+    },
+    "research_hypotheses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "hypothesis_id",
+          "hypothesis",
+          "mechanism",
+          "testable_prediction",
+          "required_data",
+          "confirmation_conditions",
+          "falsification_conditions",
+          "evidence_ids",
+          "support_status",
+          "publishable"
+        ],
+        "properties": {
+          "hypothesis_id": {
+            "type": "string"
+          },
+          "hypothesis": {
+            "type": "string",
+            "minLength": 1
+          },
+          "mechanism": {
+            "type": "string",
+            "minLength": 1
+          },
+          "testable_prediction": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required_data": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "confirmation_conditions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "falsification_conditions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "support_status": {
+            "enum": [
+              "SUPPORTED",
+              "PARTIALLY_SUPPORTED"
+            ]
+          },
+          "publishable": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "counterevidence_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "search_performed",
+        "strongest_counterevidence",
+        "effect_on_novelty",
+        "effect_on_mechanism",
+        "effect_on_trade_hypothesis",
+        "final_result",
+        "claim_reviews"
+      ],
+      "properties": {
+        "search_performed": {
+          "const": true
+        },
+        "strongest_counterevidence": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "effect_on_novelty": {
+          "type": "string"
+        },
+        "effect_on_mechanism": {
+          "type": "string"
+        },
+        "effect_on_trade_hypothesis": {
+          "type": "string"
+        },
+        "final_result": {
+          "type": "string"
+        },
+        "claim_reviews": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "illustrative_trade_hypothesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "candidate_view",
+        "instrument",
+        "required_market_checks",
+        "research_only",
+        "analyst_review_required"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "NOT_READY",
+            "WITHHELD",
+            "RESEARCH_ONLY"
+          ]
+        },
+        "candidate_view": {
+          "type": "string"
+        },
+        "instrument": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "required_market_checks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "research_only": {
+          "const": true
+        },
+        "analyst_review_required": {
+          "const": true
+        }
+      }
+    },
+    "skeptic_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "objections",
+        "opposite_interpretation",
+        "generic_idea",
+        "instrument_fit",
+        "falsifiable"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "PASS_GROUNDED",
+            "PASS_HYPOTHESIS_ONLY",
+            "HOLD_MISSING_CONTEXT",
+            "HOLD_NUMERIC_ROLE_CONFLICT",
+            "HOLD_AMBIGUOUS_NOVELTY",
+            "REJECT_PREVIOUSLY_DISCLOSED",
+            "REJECT_UNSUPPORTED_MECHANISM",
+            "REJECT_MISLEADING_COMPARISON",
+            "REJECT_GENERIC_IDEA"
+          ]
+        },
+        "objections": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "opposite_interpretation": {
+          "type": "string"
+        },
+        "generic_idea": {
+          "type": "boolean"
+        },
+        "instrument_fit": {
+          "type": "string"
+        },
+        "falsifiable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "evidence_coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "supported_factual_propositions",
+        "all_factual_propositions",
+        "evidence_coverage_ratio",
+        "contradicted_factual_claims",
+        "unresolved_critical_numeric_role_conflicts",
+        "missing_counterevidence_searches",
+        "publication_gate_passed"
+      ],
+      "properties": {
+        "supported_factual_propositions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "all_factual_propositions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "evidence_coverage_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "contradicted_factual_claims": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unresolved_critical_numeric_role_conflicts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "missing_counterevidence_searches": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "publication_gate_passed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "analyst_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "analyst_notes",
+        "review_timestamp",
+        "saved_locally_only"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "UNREVIEWED",
+            "ACCEPTED",
+            "EDITED",
+            "REJECTED",
+            "ESCALATED"
+          ]
+        },
+        "analyst_notes": {
+          "type": "string"
+        },
+        "review_timestamp": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "saved_locally_only": {
+          "const": true
+        }
+      }
+    },
+    "disclaimer": {
+      "const": "AI-generated research hypothesis based on the cited evidence. It is not a fact, personalized investment advice, or a validated trading signal. Analyst review is required."
+    }
+  }
+}

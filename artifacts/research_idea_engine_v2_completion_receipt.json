@@ -1,0 +1,91 @@
+{
+  "receipt_version": "2.0",
+  "completed_at_utc": "2026-07-29T14:11:47.4928672Z",
+  "repository": "JoshGutierrez56/pure-news-intelligence-demo",
+  "source_branch": "feat/research-idea-engine-v1",
+  "source_commit": "f875fdf5a941136c9464d830d6a337b6a9643266",
+  "working_branch": "feat/research-idea-engine-v2-grounding-repair",
+  "bounded_rerun": {
+    "case_count": 8,
+    "tickers": ["TFC", "DLTR", "EFX", "CHE", "KHC", "DVN", "RH", "FCX"],
+    "publishable_count": 2,
+    "publishable_tickers": ["RH", "DVN"],
+    "safe_failure_count": 6,
+    "grounded_hypothesis_count": 2,
+    "no_action_view_count": 8,
+    "critical_published_defects": 0
+  },
+  "gates": {
+    "eight_case_gate": "READY_FOR_PUBLIC_DEMO",
+    "sixty_case_gate": "BLOCKED",
+    "deployment_authorized": false,
+    "deployment_performed": false
+  },
+  "efx_regression": {
+    "status": "REJECT_MISLEADING_COMPARISON",
+    "top_up_novelty": "PREVIOUSLY_DISCLOSED_IN_10K",
+    "display_excerpt_status": "DISPLAY_EXCERPT_OMITTED_PRIOR_EVIDENCE",
+    "remaining_balance_role": "remaining balance",
+    "deposit_role": "cash deposit",
+    "quantity_comparison": "INCOMPARABLE_QUANTITIES",
+    "defensible_update": "RESOLVED_OR_FINALIZED_PRIOR_UNCERTAINTY",
+    "actionable_view": "NO_ACTIONABLE_VIEW"
+  },
+  "evidence_index": {
+    "issuers_indexed": 8,
+    "filings_indexed": 31,
+    "paragraphs_indexed": 50216,
+    "failed_extractions": 0,
+    "timing_violations": 0,
+    "full_prior_filing_search_completed": true,
+    "case_file_count": 8,
+    "case_file_bytes": 44974979
+  },
+  "tests": {
+    "python": {"passed": 84, "failed": 0},
+    "playwright": {"passed": 39, "failed": 0},
+    "axe_accessibility_violations": 0,
+    "viewports_checked": ["1920x1080", "1440x900", "1024x768", "390x844"],
+    "console_errors": 0,
+    "broken_links": 0
+  },
+  "audits": {
+    "prohibited_language": "PASS",
+    "future_data_leakage": "PASS",
+    "frozen_source_hashes": "PASS",
+    "public_deployment_unchanged": "PASS",
+    "v1_preservation": "PASS"
+  },
+  "public_deployment": {
+    "branch": "gh-pages",
+    "expected_commit": "74ec311a7eaf3e848ef242da4f5a8a4ff7b1613a",
+    "observed_commit": "74ec311a7eaf3e848ef242da4f5a8a4ff7b1613a",
+    "unchanged": true
+  },
+  "packet_hashes_sha256": {
+    "279e7d4e407851a19548": "94b81b5ba843a77272980175cdc01c773f96229de35625e54ffb912a2dc7301c",
+    "2f22dc2216c9df31d377": "80c3241c4bdc2f3f47c20626dae045891a10b269b9ce65f1a6d368ca86b603dc",
+    "339fae2941721ee094b0": "7d836223c88f3bff7fcaa945fadb04676c1b225a83a0c50ffc6bb5948dae29eb",
+    "412b08746bb0ed5a7745": "289281db50bf9b9225a633cfa4544773a68dbed238f9b762e783ee088eacbcc7",
+    "4784f62ad001b2a12af4": "f40423ed49df07638de518143b50626590d92c2d17de9ecbcf654cc27ef1af5e",
+    "8d4598f4ea16f15c7048": "11a27073166c5f5753c5978be714dcf61152875741323e481c4a30b77b3179c5",
+    "8f5336b55618ffe68e8a": "564dff1dc9662ab1728528c350d08a52ec93495c5c5ec9dc09c3ab5399e34dcb",
+    "dbe75bc24f2888f4166a": "5a7de1a5b15c13dcffa123f2eb8f1d677ba5663c013894d7f76aff50efd4479c"
+  },
+  "method_hashes_sha256": {
+    "schemas/atomic_evidence_claim_v2.schema.json": "bc12b24b009fce46cdd23550bd4584ac759842fc79edddccdc260e4361abf626",
+    "schemas/research_idea_packet_v2.schema.json": "4354709266bb3a7cdae021cb06d8bf713ca72f24272ea6a3c1edd378275d760a",
+    "prompts/research_idea_generator_v2.md": "4970b264301c230791411b99be26d887d88cb0bec993ff5571221d2bce18ef7c",
+    "prompts/research_idea_skeptic_v2.md": "d04e67a7c71fc3f1a554c772e75062b5b00d290021fcf3bab22094a86ced66d6",
+    "artifacts/research_idea_evidence_index_v2_receipt.json": "b9f82b123b3bb75ad5e8320794b437def99242067691c7fb153e6918688de2a8",
+    "artifacts/research_idea_engine_v2_validation.json": "80126dea561012b3e155f3cfc37ed298274eb02ec99534b116354eacc7ba957c",
+    "reports/v1_v2_packet_comparison.md": "6c425362e353705fee1017dbd680742aae310c65d90deca162f3561a84207576"
+  },
+  "analyst_review": {
+    "blinded_packets_created": 8,
+    "review_form_created": true,
+    "ratings_fabricated": false,
+    "analyst_review_required": true
+  },
+  "final_classification": "READY_FOR_PUBLIC_DEMO_WITH_DEPLOYMENT_STILL_UNAUTHORIZED"
+}

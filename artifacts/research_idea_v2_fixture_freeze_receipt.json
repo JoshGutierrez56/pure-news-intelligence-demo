@@ -1,0 +1,14 @@
+{
+  "receipt_type": "research_idea_v2_fixture_freeze",
+  "frozen_at_utc": "2026-07-29T14:02:23.5594147Z",
+  "status": "FROZEN_BEFORE_REAL_CASE_RERUN",
+  "fixture_count": 16,
+  "hashes_sha256": {
+    "tests/fixtures/research_idea_v2/novelty_role_fixtures.json": "34256d606eaa0a3887b224e63e57be3efa46f3221685b8cdf54f244e18226bd6",
+    "schemas/atomic_evidence_claim_v2.schema.json": "bc12b24b009fce46cdd23550bd4584ac759842fc79edddccdc260e4361abf626",
+    "schemas/research_idea_packet_v2.schema.json": "4354709266bb3a7cdae021cb06d8bf713ca72f24272ea6a3c1edd378275d760a",
+    "prompts/research_idea_generator_v2.md": "4970b264301c230791411b99be26d887d88cb0bec993ff5571221d2bce18ef7c",
+    "prompts/research_idea_skeptic_v2.md": "d04e67a7c71fc3f1a554c772e75062b5b00d290021fcf3bab22094a86ced66d6"
+  },
+  "note": "Fixture expectations were frozen before the bounded eight-case V2 rerun. No future outcomes were inspected."
+}

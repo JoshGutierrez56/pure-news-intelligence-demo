@@ -1,0 +1,139 @@
+{
+  "additional_retrieved_context": [
+    {
+      "evidence_id": "evidence-index-v2:000093570319000024:paragraph-01751",
+      "section": "liquidity_and_capital_resources",
+      "text": "Letters of credit and surety bonds. We are a party to three Letter of Credit Reimbursement and Security Agreements providing $125.0 million, $120.0 million and $110.0 million, respectively, for letters of credit. Letters of credit are generally issued for the routine purchase of imported merchandise and we had approximately $166.4 million of purchases committed under these letters of credit at February 2, 2019."
+    },
+    {
+      "evidence_id": "evidence-index-v2:000093570319000024:paragraph-03054",
+      "section": "item_8",
+      "text": "The Company is a party to three Letter of Credit Reimbursement and Security Agreements providing $125.0 million, $120.0 million, and $110.0 million, respectively, for letters of credit. Letters of credit under these agreements are generally issued for the routine purchase of imported merchandise and approximately $166.4 million was committed to these letters of credit at February 2, 2019."
+    },
+    {
+      "evidence_id": "evidence-index-v2:000093570320000006:paragraph-01442",
+      "section": "item_1a",
+      "text": "In addition, we are subject to laws and regulations in various jurisdictions in which we operate regarding privacy, data protection and data security, including those related to the collection, storage, handling, use, disclosure, transfer and security of personal data. For example, the California Consumer Privacy Act (“CCPA”), which became effective on January 1, 2020, imposes new responsibilities on us for the handling, disclosure and deletion of personal information for consumers who reside in California. The CCPA permits California to assess potentially significant fines for violating CCPA and creates a right for individuals to bring class action suits seeking damages for violations. Our efforts to comply with CCPA and other privacy and data protection laws may impose significant costs and challenges that are likely to increase over time, and we could incur substantial penalties or be subject to litigation related to violation of existing or future data privacy laws and regulations."
+    },
+    {
+      "evidence_id": "evidence-index-v2:000093570321000014:paragraph-00410",
+      "section": "item_1a",
+      "text": "We are subject to laws and regulations in various jurisdictions in which we operate regarding privacy, data protection and data security, including those related to the collection, storage, handling, use, disclosure, transfer and security of personal data. For example, the California Consumer Privacy Act (“CCPA”), which became effective on January 1, 2020, imposes responsibilities on us for the handling, disclosure and deletion of personal information for consumers who reside in California. The CCPA permits California to assess potentially significant fines for violating CCPA and creates a right for individuals to bring class action suits seeking damages for violations. Our efforts to comply with CCPA and other privacy and data protection laws may impose significant"
+    },
+    {
+      "evidence_id": "evidence-index-v2:000093570322000020:paragraph-00391",
+      "section": "item_1a",
+      "text": "We are subject to laws and regulations in various jurisdictions in which we operate regarding privacy, data protection and data security, including those related to the collection, storage, handling, use, disclosure, transfer and security of personal data. For example, the California Consumer Privacy Act, which became effective on January 1, 2020, and the California Privacy Rights Act of 2020, which will become effective on January 1, 2023, impose responsibilities on us for the handling, disclosure and deletion of personal information for consumers who reside in California. These laws permit California to assess potentially significant fines for data privacy violations and create a right for individuals to bring class action suits seeking damages for violations. Our efforts to comply with California’s consumer privacy laws and other similar privacy and data protection laws may impose significant costs and challenges that are likely to increase over time, and we could incur substantial penalties or be subject to litigation related to violation of existing or future data privacy laws and regulations."
+    }
+  ],
+  "atomic_claims": [
+    {
+      "claim_type": "hypothesis",
+      "exact_wording": "Dollar Tree disclosed a $313.0 million non-cash goodwill impairment charge in its fiscal 2019 results (reported in the 2022 10-K). The company clarified that excluding this charge, its SG&A expense rate was 23.2%. The filing explicitly warns that future changes in assumptions or estimates could lead to additional material impairment charges against earnings",
+      "proposition_id": "proposition-v2:8ef1f9eb7d4bc030d40c",
+      "support_status": "PARTIALLY_SUPPORTED"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "The issuer recorded a non-cash goodwill impairment charge of $313.0 million in fiscal 2019",
+      "proposition_id": "proposition-v2:d648675cb22b904233fd",
+      "support_status": "SUPPORTED"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "Excluding the goodwill impairment charge, the selling, general and administrative (SG&A) expense rate was 23.2% in 2019",
+      "proposition_id": "proposition-v2:f40855f2f24a4dc2df85",
+      "support_status": "SUPPORTED"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "The prior filing (2021 10-K) contained risk factor language stating that if assumptions and related estimates change, the company may be required to record impairment charges against earnings in future periods",
+      "proposition_id": "proposition-v2:9dd452e4691fcc89ea8d",
+      "support_status": "AMBIGUOUS"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "could be material",
+      "proposition_id": "proposition-v2:ce8c9530dbc501fcf5c0",
+      "support_status": "AMBIGUOUS"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "The current filing explicitly links the impairment to 'Goodwill and Nonamortizing Intangible Assets' and reiterates the risk of future material charges if assumptions change",
+      "proposition_id": "proposition-v2:3df70c57584041258210",
+      "support_status": "AMBIGUOUS"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "Frozen classification indicates the category is 'Impairment or write-down', direction is 'negative', materiality is 'high'",
+      "proposition_id": "proposition-v2:bee1a2b8ed93d54d1f3b",
+      "support_status": "SUPPORTED"
+    },
+    {
+      "claim_type": "fact",
+      "exact_wording": "confidence is 0.924",
+      "proposition_id": "proposition-v2:89aafc89c765a51a7ec5",
+      "support_status": "AMBIGUOUS"
+    }
+  ],
+  "blinded_case_id": "CASE-C",
+  "current_evidence": "We recorded a non-cash goodwill impairment charge of $313.0 million in fiscal 2019, as discussed further in to our consolidated financial statements under the caption “Goodwill and Nonamortizing Intangible Assets.” Excluding the goodwill impairment charge in 2019, the selling, general and administrative expense rate was 23.2% in 2019. Operating Income",
+  "desired_publication_result_included": false,
+  "financial_quantities": [
+    {
+      "amount": 313.0,
+      "conditionality": "committed",
+      "context": "We recorded a non-cash goodwill impairment charge of $313.0 million in fiscal 2019, as discussed further in to our consolidated financial statements under the caption “Goodwill and Nonamortizing Intangible Assets.” Excluding the goodwill impairmen",
+      "currency": "USD",
+      "date": "2019",
+      "duration": null,
+      "end_offset": 67,
+      "evidence_id": "evidence-v1:339fae2941721ee094b0:current-10k-excerpt",
+      "financial_role": "recognized expense",
+      "gross_net_basis": "gross_or_unspecified",
+      "historical_current": "current_or_unspecified",
+      "normalized_amount": 313000000.0,
+      "payment_status": "unspecified",
+      "percentage": null,
+      "quantity_id": "quantity-v2:235079fd3deacee49ce5",
+      "raw_text": "$313.0 million",
+      "scale": "million",
+      "start_offset": 53
+    },
+    {
+      "amount": null,
+      "conditionality": "committed",
+      "context": "ements under the caption “Goodwill and Nonamortizing Intangible Assets.” Excluding the goodwill impairment charge in 2019, the selling, general and administrative expense rate was 23.2% in 2019. Operating Income",
+      "currency": null,
+      "date": "2019",
+      "duration": null,
+      "end_offset": 327,
+      "evidence_id": "evidence-v1:339fae2941721ee094b0:current-10k-excerpt",
+      "financial_role": "recognized expense",
+      "gross_net_basis": "not_applicable",
+      "historical_current": "historical",
+      "normalized_amount": null,
+      "payment_status": "not_applicable",
+      "percentage": 23.2,
+      "quantity_id": "quantity-v2:945117579abc34743787",
+      "raw_text": "23.2%",
+      "scale": "percentage",
+      "start_offset": 322
+    }
+  ],
+  "future_outcomes_included": false,
+  "identity_redacted_where_practical": true,
+  "novelty_result": {
+    "final_novelty": "GENUINELY_NEW_TERM",
+    "provisional_novelty": "genuinely new in the 10-K",
+    "what_is_new": "Only the retained, evidence-linked proposition or hypothesis.",
+    "what_is_not_new": "Terms matched in eligible prior evidence."
+  },
+  "prior_evidence": "Item 1A. Risk Factors ” and elsewhere within this “Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations.” If our assumptions and related estimates change in the future, we may be required to record impairment charges against earnings in future periods. Any impairment charges that we may take in the future could be material to our results of operations and financial condition.",
+  "proposed_mechanism_and_hypotheses": [],
+  "review_packet_version": "2.0",
+  "skeptic_objections": [
+    "The proposed mechanism depends on unsupported causal steps."
+  ],
+  "v1_decision_included": false
+}
