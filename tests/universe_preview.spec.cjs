@@ -20,7 +20,7 @@ test("summary metrics reconcile and indexing boundary is explicit", async ({ pag
   await expect(page.getByText("3,072", { exact: true })).toBeVisible();
   await expect(page.getByText("776", { exact: true })).toBeVisible();
   await expect(page.getByText("2,973", { exact: true })).toBeVisible();
-  await expect(page.getByText("This page shows metadata coverage and processing readiness.", { exact: false })).toBeVisible();
+  await expect(page.getByText("Metadata indexing does not mean full disclosure-change analysis has been completed.", { exact: false })).toBeVisible();
   expect(issues).toEqual([]);
 });
 

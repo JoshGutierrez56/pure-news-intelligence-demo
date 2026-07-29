@@ -1,0 +1,45 @@
+{
+  "assets": [
+    {
+      "build_timestamp": "2026-07-29T19:20:59-04:00",
+      "path": "demo/data/universe_preview/build_receipt.json",
+      "raw_byte_size": 755,
+      "record_count": 1,
+      "semantic_json_sha256": "2b4cabe4a1da5c4145094540d0f9fc90087181d451594dd39ac096373e821088",
+      "sha256": "8baaa7f4bb1c2a15a4a300e19492011759772186a83fae9a9ea8f033fe0bc6ac",
+      "source_commit": "43beba25a878f52736848288e16e030f30bbacd9"
+    },
+    {
+      "build_timestamp": "2026-07-29T19:20:59-04:00",
+      "path": "demo/data/universe_preview/source_manifest.json",
+      "raw_byte_size": 3870,
+      "record_count": 4,
+      "semantic_json_sha256": "d7e40214147a59e908c103e40281d7751bd813cd9ecbe2828a874766df8a47b4",
+      "sha256": "8b896467a719c4f2fb23eacdeb8166239740cd300f7517c82a619b53461f94cb",
+      "source_commit": "43beba25a878f52736848288e16e030f30bbacd9"
+    },
+    {
+      "build_timestamp": "2026-07-29T19:20:59-04:00",
+      "path": "demo/data/universe_preview/universe_coverage.json",
+      "raw_byte_size": 4136821,
+      "record_count": 6190,
+      "semantic_json_sha256": "970c9459009271a8bd077b0c56ba3914c6a3282b6f212d861e928da4ded3da83",
+      "sha256": "9a5930919767b8295ea82c47109935529e2406ad5b0ecab10d5a029b88e35628",
+      "source_commit": "43beba25a878f52736848288e16e030f30bbacd9"
+    },
+    {
+      "build_timestamp": "2026-07-29T19:20:59-04:00",
+      "path": "demo/data/universe_preview/universe_summary.json",
+      "raw_byte_size": 914,
+      "record_count": 1,
+      "semantic_json_sha256": "0a5a7fa1cc677e2bfe5cdef02f0a649b67e5a9cb6f53a18702583abaca536798",
+      "sha256": "09f35d5ce2f1f8ffbe6a0a357b0b848875d687c94e1d0e8f3d329c388d04d7a2",
+      "source_commit": "43beba25a878f52736848288e16e030f30bbacd9"
+    }
+  ],
+  "build_timestamp": "2026-07-29T19:20:59-04:00",
+  "hash_source": "committed Git blobs",
+  "line_ending_contract": "UTF-8 JSON with LF line endings",
+  "schema": "pure-news-universe-preview.public-assets.v1",
+  "source_commit": "43beba25a878f52736848288e16e030f30bbacd9"
+}
