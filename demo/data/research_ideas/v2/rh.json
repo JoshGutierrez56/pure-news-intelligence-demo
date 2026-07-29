@@ -1,0 +1,273 @@
+{
+  "affected_entities_and_instruments": {
+    "grounded_relationships": [],
+    "status": "No grounded instrument relationship was established."
+  },
+  "economic_mechanism": {
+    "affected_financial_driver": "Data-security controls, compliance activity, and related operating costs",
+    "confidence": "Not separately scored in the frozen packet",
+    "counterargument": "The disclosure may reflect wording, resolution, or precaution rather than deterioration.",
+    "label": "POSSIBLE MECHANISM — NOT ESTABLISHED FACT",
+    "proposed_causal_chain": "Issuer-specific control remediation or compliance changes would create observable security spending, control, or incident disclosures beyond boilerplate.",
+    "supporting_evidence_ids": [
+      "evidence-v1:412b08746bb0ed5a7745:added-text",
+      "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt",
+      "evidence-v1:412b08746bb0ed5a7745:prior-10k-excerpt",
+      "evidence-v1:412b08746bb0ed5a7745:removed-text"
+    ]
+  },
+  "experimental_disclaimer": "Experimental feature: These are AI-generated research hypotheses grounded in cited filing evidence. They are not facts, personalized investment advice, or validated trading signals. Analyst review is required.",
+  "feature_name": "Experimental Research Idea Engine",
+  "financial_quantities": [],
+  "human_review_status": "Independent evidence review and automated grounding checks completed. Formal blinded human ratings remain pending.",
+  "identity": {
+    "category": "Newly added risk factor",
+    "change_id": "412b08746bb0ed5a7745",
+    "direction": "negative",
+    "filing_date": "2023-03-29",
+    "issuer": "RH",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/1528849/000155837023004942/rh-20230128x10k.htm",
+    "section": "item_1a",
+    "ticker": "RH"
+  },
+  "interpretation_layers": {
+    "facts": [
+      {
+        "claim_type": "fact",
+        "confidence": 0.65,
+        "evidence_ids": [
+          "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt"
+        ],
+        "final_disposition": "RETAIN",
+        "novelty_status": "GENUINELY_NEW_TERM",
+        "proposition_id": "proposition-v2:9d0f35db5cf9a20a176c",
+        "support_status": "SUPPORTED",
+        "wording": "The filing section is Item 1A (Risk Factors) of the 10-K for the period ending January 28, 2023, filed on March 29, 2023"
+      },
+      {
+        "claim_type": "fact",
+        "confidence": 0.65,
+        "evidence_ids": [
+          "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt"
+        ],
+        "final_disposition": "RETAIN",
+        "novelty_status": "GENUINELY_NEW_TERM",
+        "proposition_id": "proposition-v2:3e9f8f8e2b5d812aa3d9",
+        "support_status": "SUPPORTED",
+        "wording": "The frozen classification identifies this as a 'Newly added risk factor' with high materiality and negative direction"
+      }
+    ],
+    "inferences": [],
+    "uncertainties": [
+      "The disclosure may reflect wording, resolution, or precaution rather than deterioration.",
+      "The frozen packet does not establish a market effect."
+    ]
+  },
+  "kind": "publishable_hypothesis",
+  "novelty": {
+    "final_novelty": "GENUINELY_NEW_TERM",
+    "provisional_novelty": "previously disclosed in 8-K",
+    "related_prior_8k_count": 0,
+    "related_prior_news_count": 0,
+    "unresolved_uncertainty": [],
+    "what_is_new": "Only the retained, evidence-linked proposition or hypothesis.",
+    "what_is_not_new": "Terms matched in eligible prior evidence."
+  },
+  "public_safe": true,
+  "public_schema_version": "1.0",
+  "publication": {
+    "analyst_review_required": true,
+    "evidence_coverage_ratio": 1.0,
+    "hypothesis_count": 1,
+    "skeptic_status": "PASS_HYPOTHESIS_ONLY",
+    "trade_readiness": "NOT_READY"
+  },
+  "research_hypotheses": [
+    {
+      "confirmation_conditions": [
+        "Eligible evidence identifies issuer-specific control, compliance, or incident changes."
+      ],
+      "confounders": [
+        "The disclosure may reflect wording, resolution, or precaution rather than deterioration.",
+        "Peer boilerplate or a presentation-only wording change"
+      ],
+      "evidence_ids": [
+        "evidence-v1:412b08746bb0ed5a7745:added-text",
+        "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt",
+        "evidence-v1:412b08746bb0ed5a7745:prior-10k-excerpt",
+        "evidence-v1:412b08746bb0ed5a7745:removed-text"
+      ],
+      "expected_direction": "Not specified in the frozen packet",
+      "falsification_conditions": [
+        "The language matches peer boilerplate and no issuer-specific change is disclosed."
+      ],
+      "future_outcome_validation": "NOT_PERFORMED",
+      "grounding_score": "Not separately scored",
+      "hypothesis": "The added PII and payment-card risk disclosure may warrant investigation into whether it reflects issuer-specific control changes or expanded risk-factor coverage; an incident is not established.",
+      "hypothesis_id": "hypothesis-v2:data-risk-specificity-test",
+      "label": "AI-GENERATED RESEARCH HYPOTHESIS",
+      "required_data": [
+        "Contemporaneous control disclosures",
+        "Earlier eligible 8-K text",
+        "Peer risk-factor language"
+      ],
+      "support_status": "PARTIALLY_SUPPORTED",
+      "testability_score": "Not separately scored",
+      "testable_prediction": "Contemporaneous filings and control disclosures will either identify issuer-specific changes or show that the language is generic expansion.",
+      "time_horizon": "Not specified in the frozen packet",
+      "title": "Does the expanded data-risk language reflect issuer-specific control changes?",
+      "unit_of_analysis": "Not separately specified in the frozen packet"
+    }
+  ],
+  "scenarios": {
+    "base": null,
+    "bear": null,
+    "bull": null,
+    "disclaimer": "Scenarios are structured research frames, not forecasts.",
+    "status": "Not produced by the frozen bounded packet"
+  },
+  "skeptical_review": {
+    "alternate_explanation": "The disclosure may reflect wording, resolution, or precaution rather than deterioration.",
+    "counterevidence_effect": {
+      "mechanism": "UNSUPPORTED_DRAFT_CLAIMS_REMOVED",
+      "novelty": "CORRECTED",
+      "trade_hypothesis": "WITHHELD"
+    },
+    "final_status": "PASS_HYPOTHESIS_ONLY",
+    "strongest_objections": [
+      "Unsupported V1 causal extensions were removed before publication."
+    ],
+    "unsupported_claims_removed": [
+      "Unsupported V1 causal extensions were removed before publication."
+    ]
+  },
+  "source_evidence": {
+    "added_text": "In addition to the possibility of fines, lawsuits and other claims, we could be required to expend significant resources to change our business practices or modify our service offerings in connection with the protection of personally identifiable information, which could a material adverse effect on our business. Any breach could also cause consumers to lose confidence security of website and information technology systems and choose not us. We are also subject to payment card association rules and network operating rules, data security rules, certification requirements rules governing electronic funds transfers, could change over time.",
+    "additional_prior_evidence_metadata": [],
+    "current_excerpt": "In addition to the possibility of fines, lawsuits and other claims, we could be required to expend significant resources to change our business practices or modify our service offerings in connection with the protection of personally identifiable information, which could have a material adverse effect on our business. Any breach could also cause consumers to lose confidence in the security of our website and information technology systems and choose not to purchase from us. We are also subject to payment card association rules and network operating rules, including data security rules, certification requirements and rules governing electronic funds transfers, which could change over time.",
+    "display_evidence_ids": {
+      "added_text": "evidence-v1:412b08746bb0ed5a7745:added-text",
+      "current_excerpt": "evidence-v1:412b08746bb0ed5a7745:current-10k-excerpt",
+      "prior_excerpt": "evidence-v1:412b08746bb0ed5a7745:prior-10k-excerpt",
+      "removed_text": "evidence-v1:412b08746bb0ed5a7745:removed-text"
+    },
+    "display_evidence_offsets": {
+      "current": {
+        "end": 126737,
+        "start": 126040
+      },
+      "prior": {
+        "end": 209800,
+        "start": 209055
+      }
+    },
+    "display_evidence_offsets_verified": true,
+    "documents_searched": [
+      "000155837020003383",
+      "000155837021003728",
+      "000155837022004753",
+      "000155837023004942"
+    ],
+    "earliest_occurrence": null,
+    "full_prior_filing_evidence_checked": true,
+    "prior_excerpt": "We have in the past experienced volatility in our sales trends related to many of these factors and believe our sales may be impacted by these economic factors in future periods. These headwinds tied to macroeconomic factors may continue in future quarters. For more information, refer to Item 1A—Risk Factors — Changes in consumer spending and factors that influence spending of the specific categories of consumers that purchase from us, including the health of the high-end housing market, may significantly impact our revenue and results of operations —The COVID-19 pandemic poses significant and widespread risks to our business as well as to the business environment and the markets in which we operate . Fluctuation in Quarterly Results .",
+    "prior_sec_url": "https://www.sec.gov/Archives/edgar/data/1528849/000155837022004753/rh-20220129x10k.htm",
+    "related_prior_8k": [
+      {
+        "acceptance_timestamp": "2022-12-08T16:19:27-05:00",
+        "accession_number": "0001558370-22-018485",
+        "evidence_id": "evidence-v1:412b08746bb0ed5a7745:prior-8k:0001558370-22-018485",
+        "information_date": "2022-12-09",
+        "item_codes": "8.01 9.01",
+        "match_score": 9.239,
+        "matched_terms": [
+          "could",
+          "may",
+          "risk",
+          "uncertain"
+        ],
+        "primary_category": "other",
+        "similarity": 0.0598,
+        "url": "https://www.sec.gov/Archives/edgar/data/1528849/000155837022018485/rh-20221208x8k.htm"
+      },
+      {
+        "acceptance_timestamp": "2022-05-17T07:30:32-04:00",
+        "accession_number": "0001558370-22-009063",
+        "evidence_id": "evidence-v1:412b08746bb0ed5a7745:prior-8k:0001558370-22-009063",
+        "information_date": "2022-05-17",
+        "item_codes": "1.01 2.03 7.01 8.01 9.01",
+        "match_score": 9.117,
+        "matched_terms": [
+          "could",
+          "may",
+          "risk",
+          "uncertain"
+        ],
+        "primary_category": "financing_capital_structure",
+        "similarity": 0.0293,
+        "url": "https://www.sec.gov/Archives/edgar/data/1528849/000155837022009063/rh-20220513x8k.htm"
+      },
+      {
+        "acceptance_timestamp": "2022-04-18T06:03:32-04:00",
+        "accession_number": "0001104659-22-046630",
+        "evidence_id": "evidence-v1:412b08746bb0ed5a7745:prior-8k:0001104659-22-046630",
+        "information_date": "2022-04-18",
+        "item_codes": "1.01 8.01 9.01",
+        "match_score": 9.11,
+        "matched_terms": [
+          "could",
+          "may",
+          "risk",
+          "uncertain"
+        ],
+        "primary_category": "financing_capital_structure",
+        "similarity": 0.0274,
+        "url": "https://www.sec.gov/Archives/edgar/data/1528849/000110465922046630/tm2212856d1_8k.htm"
+      }
+    ],
+    "related_prior_news": [],
+    "removed_text": "We past experienced volatility in sales trends related many of these factors and believe our sales may be impacted by these economic factors in future periods. These headwinds tied to macroeconomic factors may continue in future quarters. For more information, refer to Item 1A—Risk Factors — Changes in consumer spending and factors that influence spending of the specific categories of consumers that us, the health of the high-end housing market, may significantly impact our revenue results of operations —The COVID-19 pandemic poses significant and widespread risks to our business as well as to the business environment and the markets in we op",
+    "sections_searched": [
+      "8_k",
+      "full_filing",
+      "item_10",
+      "item_11",
+      "item_12",
+      "item_13",
+      "item_14",
+      "item_15",
+      "item_16",
+      "item_1a",
+      "item_1b",
+      "item_2",
+      "item_3",
+      "item_4",
+      "item_5",
+      "item_6",
+      "item_7",
+      "item_7a",
+      "item_8",
+      "item_9",
+      "item_9a",
+      "item_9b",
+      "liquidity_and_capital_resources"
+    ],
+    "timing_violations": []
+  },
+  "source_packet": {
+    "file_sha256": "e9004af7ed1ed1a536a94f0b3a73a658bd1736625c07fd9d055dcc5bb45f7921",
+    "immutable": true,
+    "packet_hash": "289281db50bf9b9225a633cfa4544773a68dbed238f9b762e783ee088eacbcc7",
+    "packet_id": "research-idea-v2:412b08746bb0ed5a7745",
+    "packet_version": "2.0",
+    "status": "PUBLISHABLE"
+  },
+  "trade_research": {
+    "candidate_bias": "no actionable view",
+    "instrument_class": null,
+    "missing_market_checks": [],
+    "readiness_failure_reason": "No grounded instrument expression.",
+    "research_only": true,
+    "status": "NO_ACTIONABLE_TRADE_VIEW"
+  }
+}

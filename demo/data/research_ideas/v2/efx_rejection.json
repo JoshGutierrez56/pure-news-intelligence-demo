@@ -1,0 +1,109 @@
+{
+  "experimental_disclaimer": "Experimental feature: These are AI-generated research hypotheses grounded in cited filing evidence. They are not facts, personalized investment advice, or validated trading signals. Analyst review is required.",
+  "feature_name": "Experimental Research Idea Engine",
+  "final_result": {
+    "defensible_update": [
+      "Settlement finality",
+      "Approximately $345 million cash deposit"
+    ],
+    "packet_disposition": "REJECT_MISLEADING_COMPARISON",
+    "rejected_claims": [
+      "Reserve inadequacy",
+      "Current liquidity stress",
+      "Bondholder impact"
+    ],
+    "skeptic_status": "REJECT_MISLEADING_COMPARISON",
+    "trade_research_status": "NO_ACTIONABLE_TRADE_VIEW"
+  },
+  "full_prior_evidence_review": {
+    "comparison_status": "INCOMPARABLE_QUANTITIES",
+    "deposit_evidence": {
+      "acceptance_timestamp": "2022-02-24T21:55:14.000Z",
+      "document_id": "000003318522000014",
+      "end_offset": 256936,
+      "evidence_id": "evidence-index-v2:000003318522000014:paragraph-01732",
+      "filing_date": "2022-02-24",
+      "outside_display_excerpt": true,
+      "paragraph_number": 1732,
+      "point_in_time_eligible": true,
+      "section": "item_7",
+      "source_type": "SEC_10_K_CURRENT",
+      "start_offset": 256787,
+      "text": "Consumer Settlement became effective, and on January 24, 2022, we deposited the remaining amount of $345.0 million into the Consumer Settlement Fund.",
+      "text_sha256": "a46363c4f77f1a916791a5ecb1085c918c12cd3ac8587db27139533b0840a218"
+    },
+    "full_prior_filing_evidence_checked": true,
+    "prior_top_up_evidence": {
+      "acceptance_timestamp": "2020-02-20T21:24:35Z",
+      "evidence_id": "evidence-index-v2:000003318520000011:paragraph-00470",
+      "filing_date": "2020-02-20",
+      "outside_display_excerpt": true,
+      "paragraph_number": 470,
+      "section": "item_3",
+      "source_type": "SEC_10_K",
+      "text": "The Company has agreed to contribute up to an additional $125.0 million to the Consumer Restitution Fund to cover unreimbursed costs and expenditures described in (1) above in the event the $380.5 million in the Consumer Restitution Fund is exhausted."
+    },
+    "quantity_roles": [
+      {
+        "amount": "$125M",
+        "correct_role": "Conditional top-up",
+        "novelty_result": "PREVIOUSLY_DISCLOSED_IN_10K"
+      },
+      {
+        "amount": "$346.7M",
+        "correct_role": "Remaining payment balance",
+        "novelty_result": "Not an exposure cap"
+      },
+      {
+        "amount": "~$345M",
+        "correct_role": "Cash deposit",
+        "novelty_result": "Current-period settlement update"
+      }
+    ],
+    "settlement_finality_evidence": {
+      "acceptance_timestamp": "2022-02-24T21:55:14.000Z",
+      "document_id": "000003318522000014",
+      "end_offset": 165798,
+      "evidence_id": "evidence-index-v2:000003318522000014:paragraph-00434",
+      "filing_date": "2022-02-24",
+      "outside_display_excerpt": true,
+      "paragraph_number": 434,
+      "point_in_time_eligible": true,
+      "section": "item_1a",
+      "source_type": "SEC_10_K_CURRENT",
+      "start_offset": 164838,
+      "text": "In July 2019, the Company entered into multiple agreements that resolve the U.S. consolidated consumer class action cases, captioned In re: Equifax, Inc. Customer Data Security Breach Litigation, MDL No. 2800 (Consumer Cases) (the “U.S. Consumer MDL Litigation”), and the investigations of the FTC, the CFPB, the Attorneys General of 48 states, the District of Columbia and Puerto Rico (the “MSAG Group”) and the NYDFS (collectively, the “Consumer Settlement”) relating to the 2017 cybersecurity incident. On January 13, 2020, the U.S. District Court for the Northern District of Georgia (the “MDL Court”) entered an order granting final approval of the settlement in connection with the U.S. Consumer MDL Litigation, from which several objectors appealed. Those appeals have all been resolved. On January 11, 2022, the Consumer Settlement became effective which triggered our obligation to deposit approximately $345 million into the consumer settlement fund.",
+      "text_sha256": "e0f0c0bb47d2605063f2869f9524ac208906d05803215e83fe372c96e6a9aae3"
+    }
+  },
+  "human_review_status": "Independent evidence review and automated grounding checks completed. Formal blinded human ratings remain pending.",
+  "identity": {
+    "change_id": "279e7d4e407851a19548",
+    "filing_date": "2022-02-24",
+    "issuer": "EQUIFAX INC",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/33185/000003318522000014/efx-20211231.htm",
+    "section": "item_1a",
+    "ticker": "EFX"
+  },
+  "kind": "grounding_rejection",
+  "public_safe": true,
+  "public_schema_version": "1.0",
+  "rejected_v1_interpretation": {
+    "defects": [
+      "The selected prior excerpt omitted relevant language.",
+      "The $125 million conditional top-up appeared falsely new.",
+      "The $346.7 million remaining balance was misread as an exposure cap.",
+      "Unsupported liquidity, reserve, and bondholder mechanisms followed."
+    ],
+    "label": "REJECTED V1 INTERPRETATION"
+  },
+  "source_packet": {
+    "file_sha256": "32056ef6523c5729fc1f98d1570e586a78dc43cd8a2648fc471599159679438a",
+    "immutable": true,
+    "packet_hash": "94b81b5ba843a77272980175cdc01c773f96229de35625e54ffb912a2dc7301c",
+    "packet_id": "research-idea-v2:279e7d4e407851a19548",
+    "status": "REJECT_MISLEADING_COMPARISON"
+  },
+  "title": "When the Evidence Rejects the Idea",
+  "value_statement": "The engine’s value is not generating more ideas. It is preventing unsupported ideas from reaching the analyst."
+}

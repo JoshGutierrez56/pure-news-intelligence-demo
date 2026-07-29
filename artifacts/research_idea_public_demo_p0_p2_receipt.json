@@ -1,0 +1,72 @@
+{
+  "receipt_version": "1.0",
+  "completed_at_utc": "2026-07-29T15:43:53.4729365Z",
+  "repository": "JoshGutierrez56/pure-news-intelligence-demo",
+  "branch": "feat/research-idea-engine-public-demo-v1",
+  "starting_v2_commit": "093c4d80ef1d4e475a1c608131a1e3ab571bc48f",
+  "deployed_gh_pages_starting_commit": "74ec311a7eaf3e848ef242da4f5a8a4ff7b1613a",
+  "deployed_gh_pages_observed_commit": "74ec311a7eaf3e848ef242da4f5a8a4ff7b1613a",
+  "gates": {
+    "P0_preserve_and_branch": "PASS",
+    "P1_public_safe_manifest": "PASS",
+    "P2_gallery_and_detail_pages": "PASS",
+    "P3_existing_demo_integration": "NOT_STARTED",
+    "P4_full_reconciliation": "NOT_STARTED",
+    "P5_deployment_readiness": "NOT_STARTED"
+  },
+  "pages_created": [
+    "demo/research_ideas.html",
+    "demo/research_idea_rh.html",
+    "demo/research_idea_dvn.html",
+    "demo/research_idea_efx.html"
+  ],
+  "pages_updated": [
+    "demo/research_idea_methodology.html"
+  ],
+  "public_data": {
+    "directory": "demo/data/research_ideas/v2",
+    "manifest_sha256": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7",
+    "rh_sha256": "684dfea02feaeb76d8a3de134118e18a8bfe192216757a8c127cf6fa5b1e5585",
+    "dvn_sha256": "103b1894bba6fb1ed3ed82e907315e92f3c749262c65aeaed1a0a4b7db6db655",
+    "efx_rejection_sha256": "e92004321017a148b8f88df832d7b535ca90535e8e0b94c1e9988e96ba8d388c",
+    "public_safe_audit": "PASS",
+    "deterministic_build": true
+  },
+  "bounded_result": {
+    "cases_reviewed": 8,
+    "publishable_hypotheses": ["RH", "DVN"],
+    "safe_failures": ["EFX", "CHE", "DLTR", "FCX", "KHC", "TFC"],
+    "actionable_trade_views": 0,
+    "broader_generation": "BLOCKED",
+    "formal_blinded_human_ratings": "PENDING"
+  },
+  "tests": {
+    "python_passed": 95,
+    "python_failed": 0,
+    "playwright_passed": 49,
+    "playwright_failed": 0,
+    "new_python_tests": 11,
+    "new_playwright_tests": 10,
+    "serious_or_critical_axe_violations": 0,
+    "broken_internal_links": 0,
+    "console_errors": 0,
+    "request_or_response_errors": 0,
+    "horizontal_overflow_failures": 0
+  },
+  "screenshots_sha256": {
+    "reports/screenshots/research_idea_public_demo_v1/baseline/v2-gallery-1024x768.png": "26aba534ba3002a95b0be62be89016e453678b1bdc71230f0ef8a80007183526",
+    "reports/screenshots/research_idea_public_demo_v1/baseline/v2-gallery-1440x900.png": "77cce901861908b1711b491f2174377edf5ac14a8d586eb3841136d5929db3e4",
+    "reports/screenshots/research_idea_public_demo_v1/baseline/v2-rh-390x844.png": "31775e8d8d87d00156e0c5bf255186b0a638b02ef340c2a20bb0d5f8e3a57e06",
+    "reports/screenshots/research_idea_public_demo_v1/p0_p2/efx-1440x900.png": "632df3aeb1ccc344f90c2f8816f14abb18e614cbd446eed4f443a292da55b26c",
+    "reports/screenshots/research_idea_public_demo_v1/p0_p2/gallery-1440x900.png": "3934db6b40f347ba901f1040aa5347e9399bce43cb0d20839d4aca2a41a61a56",
+    "reports/screenshots/research_idea_public_demo_v1/p0_p2/rh-1024x768.png": "dcdde8afe69e2e04dc4e06db15f6757de8146ec858ca59151d255640638525a6",
+    "reports/screenshots/research_idea_public_demo_v1/p0_p2/rh-1440x900.png": "ac7388520dc5fa83f7dc235dbe37a1bd60ce34272ff7b29ba670cdf62d486775",
+    "reports/screenshots/research_idea_public_demo_v1/p0_p2/rh-390x844.png": "d4cffb6016744c358421b18117d60b13affc9100086fd36234e5711132963a2e"
+  },
+  "frozen_packet_preservation": "PASS",
+  "new_packet_generation_performed": false,
+  "sixty_case_phase_started": false,
+  "deployment_performed": false,
+  "deployment_authorized": false,
+  "milestone_classification": "P0_P2_LOCAL_PREVIEW_READY"
+}

@@ -1,0 +1,142 @@
+{
+  "excluded_content": [
+    "private reviewer notes",
+    "local filesystem paths",
+    "unpublished speculative claims",
+    "licensed article bodies",
+    "future outcomes",
+    "hidden reasoning traces"
+  ],
+  "experimental_disclaimer": "Experimental feature: These are AI-generated research hypotheses grounded in cited filing evidence. They are not facts, personalized investment advice, or validated trading signals. Analyst review is required.",
+  "feature_name": "Experimental Research Idea Engine",
+  "frozen": true,
+  "human_review_status": "Independent evidence review and automated grounding checks completed. Formal blinded human ratings remain pending.",
+  "manifest_version": "1.0",
+  "new_packet_generation_performed": false,
+  "public_files": {
+    "dvn.json": {
+      "sha256": "103b1894bba6fb1ed3ed82e907315e92f3c749262c65aeaed1a0a4b7db6db655",
+      "source_packet_file_sha256": "34059b002a144130c44de18de850ed00f09a4fbf052160e134626403b1d7b06f",
+      "source_packet_hash": "f40423ed49df07638de518143b50626590d92c2d17de9ecbcf654cc27ef1af5e"
+    },
+    "efx_rejection.json": {
+      "sha256": "e92004321017a148b8f88df832d7b535ca90535e8e0b94c1e9988e96ba8d388c",
+      "source_packet_file_sha256": "32056ef6523c5729fc1f98d1570e586a78dc43cd8a2648fc471599159679438a",
+      "source_packet_hash": "94b81b5ba843a77272980175cdc01c773f96229de35625e54ffb912a2dc7301c"
+    },
+    "rh.json": {
+      "sha256": "684dfea02feaeb76d8a3de134118e18a8bfe192216757a8c127cf6fa5b1e5585",
+      "source_packet_file_sha256": "e9004af7ed1ed1a536a94f0b3a73a658bd1736625c07fd9d055dcc5bb45f7921",
+      "source_packet_hash": "289281db50bf9b9225a633cfa4544773a68dbed238f9b762e783ee088eacbcc7"
+    }
+  },
+  "publishable": [
+    {
+      "category": "Newly added risk factor",
+      "change_id": "412b08746bb0ed5a7745",
+      "evidence_coverage_ratio": 1.0,
+      "filing_date": "2023-03-29",
+      "final_novelty": "GENUINELY_NEW_TERM",
+      "hypothesis_count": 1,
+      "issuer": "RH",
+      "route": "research_idea_rh.html",
+      "section": "item_1a",
+      "skeptic_status": "PASS_HYPOTHESIS_ONLY",
+      "ticker": "RH",
+      "trade_readiness": "NO_ACTIONABLE_TRADE_VIEW"
+    },
+    {
+      "category": "Material capex increase or reduction",
+      "change_id": "4784f62ad001b2a12af4",
+      "evidence_coverage_ratio": 1.0,
+      "filing_date": "2022-02-16",
+      "final_novelty": "GENUINELY_NEW_TERM",
+      "hypothesis_count": 1,
+      "issuer": "DEVON ENERGY CORP/DE",
+      "route": "research_idea_dvn.html",
+      "section": "item_7",
+      "skeptic_status": "PASS_HYPOTHESIS_ONLY",
+      "ticker": "DVN",
+      "trade_readiness": "NO_ACTIONABLE_TRADE_VIEW"
+    }
+  ],
+  "safe_failures": [
+    {
+      "actionable_trade_view": false,
+      "change_id": "279e7d4e407851a19548",
+      "final_status": "REJECT_MISLEADING_COMPARISON",
+      "issuer": "EQUIFAX INC",
+      "published_packet": false,
+      "reason": "The $125 million conditional top-up was already disclosed in the prior 10-K.",
+      "route": "research_idea_efx.html",
+      "skeptic_status": "REJECT_MISLEADING_COMPARISON",
+      "ticker": "EFX"
+    },
+    {
+      "actionable_trade_view": false,
+      "change_id": "2f22dc2216c9df31d377",
+      "final_status": "REJECT_UNSUPPORTED_MECHANISM",
+      "issuer": "CHEMED CORP",
+      "published_packet": false,
+      "reason": "The proposed mechanism depends on unsupported causal steps.",
+      "route": null,
+      "skeptic_status": "REJECT_UNSUPPORTED_MECHANISM",
+      "ticker": "CHE"
+    },
+    {
+      "actionable_trade_view": false,
+      "change_id": "339fae2941721ee094b0",
+      "final_status": "REJECT_UNSUPPORTED_MECHANISM",
+      "issuer": "DOLLAR TREE, INC.",
+      "published_packet": false,
+      "reason": "The proposed mechanism depends on unsupported causal steps.",
+      "route": null,
+      "skeptic_status": "REJECT_UNSUPPORTED_MECHANISM",
+      "ticker": "DLTR"
+    },
+    {
+      "actionable_trade_view": false,
+      "change_id": "8d4598f4ea16f15c7048",
+      "final_status": "REJECT_UNSUPPORTED_MECHANISM",
+      "issuer": "FREEPORT-MCMORAN INC",
+      "published_packet": false,
+      "reason": "The proposed mechanism depends on unsupported causal steps.",
+      "route": null,
+      "skeptic_status": "REJECT_UNSUPPORTED_MECHANISM",
+      "ticker": "FCX"
+    },
+    {
+      "actionable_trade_view": false,
+      "change_id": "8f5336b55618ffe68e8a",
+      "final_status": "REJECT_PREVIOUSLY_DISCLOSED",
+      "issuer": "Kraft Heinz Co",
+      "published_packet": false,
+      "reason": "The central disclosure term was already available in eligible prior evidence.",
+      "route": null,
+      "skeptic_status": "REJECT_PREVIOUSLY_DISCLOSED",
+      "ticker": "KHC"
+    },
+    {
+      "actionable_trade_view": false,
+      "change_id": "dbe75bc24f2888f4166a",
+      "final_status": "REJECT_PREVIOUSLY_DISCLOSED",
+      "issuer": "TRUIST FINANCIAL CORP",
+      "published_packet": false,
+      "reason": "The central disclosure term was already available in eligible prior evidence.",
+      "route": null,
+      "skeptic_status": "REJECT_PREVIOUSLY_DISCLOSED",
+      "ticker": "TFC"
+    }
+  ],
+  "selectivity_statement": "The engine is designed to reject unsupported stories rather than generate an idea for every disclosure.",
+  "source_commit": "093c4d80ef1d4e475a1c608131a1e3ab571bc48f",
+  "source_version": "Research Idea Engine V2",
+  "summary": {
+    "actionable_trade_views": 0,
+    "broader_generation": "BLOCKED",
+    "cases_reviewed": 8,
+    "publishable_hypotheses": 2,
+    "published_packet_evidence_coverage_ratio": 1.0,
+    "safe_failures": 6
+  }
+}

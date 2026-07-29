@@ -1,0 +1,97 @@
+{
+  "receipt_version": "1.0",
+  "created_at_utc": "2026-07-29T15:26:29.5824026Z",
+  "repository": "JoshGutierrez56/pure-news-intelligence-demo",
+  "source_branch": "feat/research-idea-engine-v2-grounding-repair",
+  "source_commit": "093c4d80ef1d4e475a1c608131a1e3ab571bc48f",
+  "working_branch": "feat/research-idea-engine-public-demo-v1",
+  "public_deployment": {
+    "branch": "gh-pages",
+    "starting_commit": "74ec311a7eaf3e848ef242da4f5a8a4ff7b1613a",
+    "verified_unchanged_before_edit": true,
+    "deployment_authorized": false
+  },
+  "v1_packet_file_hashes_sha256": {
+    "279e7d4e407851a19548": "eaad36709c4bb22c9a0ce6181430d58b38051d4737eaca6c8fb8d490023e09bf",
+    "2f22dc2216c9df31d377": "09006f7faae1fd1ba33f53254f2608cbdc1ad477e054bcf52411d3079a981a23",
+    "339fae2941721ee094b0": "c48884a8d2416f77f3755704496a4fb46ce9245237a0e0be4af17456ec1eea56",
+    "412b08746bb0ed5a7745": "93f87375bd8be410bb78008880ee0111cd00ac62b9c0c0dabfa9040ce7f9bb85",
+    "4784f62ad001b2a12af4": "e0b2a6d2303a555abfd1dcc3233e55491c14ae11b03934eb343b851e58d85bbc",
+    "8d4598f4ea16f15c7048": "bc60517e32093b8f242678f89214de3387d522913d8f34728f5ceaef20516954",
+    "8f5336b55618ffe68e8a": "81b73939ed53148451c0ddcaf89bd7d478630dfff08a53061d40270403d7c075",
+    "dbe75bc24f2888f4166a": "2ee6dae07d49e105312a38a8c1ca3f978f468c8e788aafea205be2ff1a45a822"
+  },
+  "v2_packet_file_hashes_sha256": {
+    "279e7d4e407851a19548": "32056ef6523c5729fc1f98d1570e586a78dc43cd8a2648fc471599159679438a",
+    "2f22dc2216c9df31d377": "cce16b1202c72d51631f896cae1c31772f5832a5d9999adb2c91c7ef92510e62",
+    "339fae2941721ee094b0": "9fe49ca6034466fa37274bc438b8dc7efbc928800a2522ca50a8fc430c94d663",
+    "412b08746bb0ed5a7745": "e9004af7ed1ed1a536a94f0b3a73a658bd1736625c07fd9d055dcc5bb45f7921",
+    "4784f62ad001b2a12af4": "34059b002a144130c44de18de850ed00f09a4fbf052160e134626403b1d7b06f",
+    "8d4598f4ea16f15c7048": "a129b676aec00502ec18ff5dbf721741dfa528dad05f33d5c606dd1efc786ac7",
+    "8f5336b55618ffe68e8a": "1bceb7daf24aa59e98194b452f275f38203ef7095daae79d3c7869c31944fefb",
+    "dbe75bc24f2888f4166a": "727162fe17471d3a5bc5f92e30adc3d8376cc3d0154293165d451e8e2364cca9"
+  },
+  "other_frozen_file_hashes_sha256": {
+    "demo/data/changes.json": "17d3ec79ea48d8affa42f6f8a6b775b52a285736bf65853ae849bdb760211271",
+    "demo/data/catalog.json": "678dc89759e171d5a30593eb8120e9604d220380af63430d5559266047627d13",
+    "demo/research_results.html": "1db9185b725c3601098c082ff6f89469e86e8b6d9fa264a80bcacb90a60836f1",
+    "reports/research_idea_efx_outcome_blinded_review.md": "67aef22f88d4397199a4aff63f79704b88ee72364a54c54a0620055eb4b88550",
+    "artifacts/research_idea_efx_outcome_blinded_review_receipt.json": "19e183ca7dccf2ffbaa87103ccd4655a0d40722fdfe960be4a8950edb70dc6bd",
+    "artifacts/research_idea_engine_v2_completion_receipt.json": "4bbc2f8408022c3231ffbee7f675e10eaa367d9007ee90489addc4ff69ea7325",
+    "artifacts/research_idea_engine_v2_validation.json": "80126dea561012b3e155f3cfc37ed298274eb02ec99534b116354eacc7ba957c"
+  },
+  "planned_routes": [
+    "demo/research_ideas.html",
+    "demo/research_idea_rh.html",
+    "demo/research_idea_dvn.html",
+    "demo/research_idea_efx.html",
+    "demo/research_idea_methodology.html"
+  ],
+  "expected_gate_p0_p2_files": [
+    "artifacts/research_idea_public_demo_start_receipt.json",
+    "artifacts/research_idea_public_demo_p0_p2_receipt.json",
+    "demo/data/research_ideas/v2/manifest.json",
+    "demo/data/research_ideas/v2/rh.json",
+    "demo/data/research_ideas/v2/dvn.json",
+    "demo/data/research_ideas/v2/efx_rejection.json",
+    "demo/assets/research_ideas.js",
+    "demo/assets/style.css",
+    "demo/research_ideas.html",
+    "demo/research_idea_rh.html",
+    "demo/research_idea_dvn.html",
+    "demo/research_idea_efx.html",
+    "demo/research_idea_methodology.html",
+    "reports/research_idea_public_demo_scope.md",
+    "reports/research_idea_public_safe_data_audit.md",
+    "reports/research_idea_public_ux_review.md",
+    "reports/screenshots/research_idea_public_demo_v1/baseline/",
+    "reports/screenshots/research_idea_public_demo_v1/p0_p2/",
+    "tests/research_idea_public_demo.spec.cjs",
+    "tests/test_research_idea_public_demo.py"
+  ],
+  "claim_boundaries": {
+    "feature_name": "Experimental Research Idea Engine",
+    "publishable_hypotheses": 2,
+    "safe_failures": 6,
+    "actionable_trade_views": 0,
+    "formal_blinded_human_ratings": "PENDING",
+    "broader_generation": "BLOCKED",
+    "required_disclaimer": "Experimental feature: These are AI-generated research hypotheses grounded in cited filing evidence. They are not facts, personalized investment advice, or validated trading signals. Analyst review is required.",
+    "prohibited_positioning": [
+      "Trade Recommendation Engine",
+      "AI Stock Picker",
+      "Alpha Generator",
+      "Buy/Sell Signal",
+      "Investment Recommendation",
+      "Automated Portfolio Manager"
+    ]
+  },
+  "preservation_rules": [
+    "Do not regenerate or modify any V1 or V2 packet.",
+    "Do not change frozen disclosure-change data or locked research results.",
+    "Do not start the 60-case phase.",
+    "Do not deploy without explicit authorization.",
+    "Public-safe derivatives must preserve source packet hashes and omit private or unpublished material."
+  ],
+  "known_documentation_gap": "docs/innovation_club/CLAIMS_REGISTRY.md is not present; the prompt's explicit public claim boundaries and existing prohibited-language registry are used as the controlling fallback."
+}

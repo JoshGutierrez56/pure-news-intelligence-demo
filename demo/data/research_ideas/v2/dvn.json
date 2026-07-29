@@ -1,0 +1,301 @@
+{
+  "affected_entities_and_instruments": {
+    "grounded_relationships": [],
+    "status": "No grounded instrument relationship was established."
+  },
+  "economic_mechanism": {
+    "affected_financial_driver": "Commodity-price assumptions and oil-and-gas asset recoverability",
+    "confidence": "Not separately scored in the frozen packet",
+    "counterargument": "The disclosure may reflect wording, resolution, or precaution rather than deterioration.",
+    "label": "POSSIBLE MECHANISM — NOT ESTABLISHED FACT",
+    "proposed_causal_chain": "Commodity-price assumptions affect projected field cash flows and therefore the margin between recoverable value and carrying value.",
+    "supporting_evidence_ids": [
+      "evidence-v1:4784f62ad001b2a12af4:current-10k-excerpt",
+      "evidence-v1:4784f62ad001b2a12af4:prior-10k-excerpt"
+    ]
+  },
+  "experimental_disclaimer": "Experimental feature: These are AI-generated research hypotheses grounded in cited filing evidence. They are not facts, personalized investment advice, or validated trading signals. Analyst review is required.",
+  "feature_name": "Experimental Research Idea Engine",
+  "financial_quantities": [
+    {
+      "conditionality": "unconditional_or_unspecified",
+      "currency": "USD",
+      "date": "March 31, 2020",
+      "evidence_id": "evidence-v1:4784f62ad001b2a12af4:prior-10k-excerpt",
+      "gross_net_basis": "gross_or_unspecified",
+      "historical_current": "historical",
+      "payment_status": "unspecified",
+      "raw_text": "$2.8 billion",
+      "role": "unknown or ambiguous",
+      "scale": "billion"
+    },
+    {
+      "conditionality": "unconditional_or_unspecified",
+      "currency": null,
+      "date": "2020",
+      "evidence_id": "evidence-v1:4784f62ad001b2a12af4:prior-10k-excerpt",
+      "gross_net_basis": "not_applicable",
+      "historical_current": "current_or_unspecified",
+      "payment_status": "not_applicable",
+      "raw_text": "60%",
+      "role": "maximum exposure",
+      "scale": "percentage"
+    },
+    {
+      "conditionality": "unconditional_or_unspecified",
+      "currency": null,
+      "date": "2020",
+      "evidence_id": "evidence-v1:4784f62ad001b2a12af4:prior-10k-excerpt",
+      "gross_net_basis": "not_applicable",
+      "historical_current": "current_or_unspecified",
+      "payment_status": "not_applicable",
+      "raw_text": "45%",
+      "role": "maximum exposure",
+      "scale": "percentage"
+    }
+  ],
+  "human_review_status": "Independent evidence review and automated grounding checks completed. Formal blinded human ratings remain pending.",
+  "identity": {
+    "category": "Material capex increase or reduction",
+    "change_id": "4784f62ad001b2a12af4",
+    "direction": "ambiguous",
+    "filing_date": "2022-02-16",
+    "issuer": "DEVON ENERGY CORP/DE",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/1090012/000156459022005321/dvn-10k_20211231.htm",
+    "section": "item_7",
+    "ticker": "DVN"
+  },
+  "interpretation_layers": {
+    "facts": [
+      {
+        "claim_type": "fact",
+        "confidence": 0.868824,
+        "evidence_ids": [
+          "evidence-v1:4784f62ad001b2a12af4:current-10k-excerpt"
+        ],
+        "final_disposition": "RETAIN",
+        "novelty_status": "GENUINELY_NEW_TERM",
+        "proposition_id": "proposition-v2:2a4c379276b12bcf5c5d",
+        "support_status": "SUPPORTED",
+        "wording": "the significant increases in commodity prices during 2021, none of our oil and gas assets were at risk of impairment as of December 31, 2021.'"
+      },
+      {
+        "claim_type": "fact",
+        "confidence": 0.680856,
+        "evidence_ids": [
+          "evidence-v1:4784f62ad001b2a12af4:prior-10k-excerpt"
+        ],
+        "final_disposition": "RETAIN",
+        "novelty_status": "PREVIOUSLY_DISCLOSED_IN_10K",
+        "proposition_id": "proposition-v2:ccf5e084f31882347021",
+        "support_status": "SUPPORTED",
+        "wording": "The 2020 10-K stated: 'we assessed all our oil and gas fields for impairment as of March 31, 2020 and recognized proved and unproved impairments totaling $2.8 billion.'"
+      },
+      {
+        "claim_type": "fact",
+        "confidence": 0.65,
+        "evidence_ids": [
+          "evidence-v1:4784f62ad001b2a12af4:current-10k-excerpt"
+        ],
+        "final_disposition": "RETAIN",
+        "novelty_status": "GENUINELY_NEW_TERM",
+        "proposition_id": "proposition-v2:b37b1ef1673af99b46a5",
+        "support_status": "SUPPORTED",
+        "wording": "The current filing section is Item 7 (Management’s Discussion"
+      }
+    ],
+    "inferences": [
+      {
+        "claim_type": "interpretation",
+        "confidence": 0.445773,
+        "evidence_ids": [
+          "evidence-v1:4784f62ad001b2a12af4:added-text",
+          "evidence-v1:4784f62ad001b2a12af4:current-10k-excerpt",
+          "evidence-v1:4784f62ad001b2a12af4:prior-10k-excerpt",
+          "evidence-v1:4784f62ad001b2a12af4:removed-text"
+        ],
+        "final_disposition": "RETAIN_AS_LABELED_HYPOTHESIS",
+        "novelty_status": "GENUINELY_NEW_TERM",
+        "proposition_id": "proposition-v2:36cdeac95f61cceb1a97",
+        "support_status": "PARTIALLY_SUPPORTED",
+        "wording": "gas assets were not at risk of impairment as of December 31, 2021, citing significant increases in commodity prices during 2021. This contrasts with the 2020 filing"
+      },
+      {
+        "claim_type": "interpretation",
+        "confidence": 0.389516,
+        "evidence_ids": [
+          "evidence-v1:4784f62ad001b2a12af4:current-10k-excerpt",
+          "evidence-v1:4784f62ad001b2a12af4:prior-10k-excerpt"
+        ],
+        "final_disposition": "RETAIN_AS_LABELED_HYPOTHESIS",
+        "novelty_status": "PREVIOUSLY_DISCLOSED_IN_10K",
+        "proposition_id": "proposition-v2:716c6d8eb4d6846761e0",
+        "support_status": "PARTIALLY_SUPPORTED",
+        "wording": "Fair value of assets exceeds carrying value"
+      }
+    ],
+    "uncertainties": [
+      "The disclosure may reflect wording, resolution, or precaution rather than deterioration.",
+      "The frozen packet does not establish a market effect."
+    ]
+  },
+  "kind": "publishable_hypothesis",
+  "novelty": {
+    "final_novelty": "GENUINELY_NEW_TERM",
+    "provisional_novelty": "genuinely new in the 10-K",
+    "related_prior_8k_count": 0,
+    "related_prior_news_count": 0,
+    "unresolved_uncertainty": [],
+    "what_is_new": "Only the retained, evidence-linked proposition or hypothesis.",
+    "what_is_not_new": "Terms matched in eligible prior evidence."
+  },
+  "public_safe": true,
+  "public_schema_version": "1.0",
+  "publication": {
+    "analyst_review_required": true,
+    "evidence_coverage_ratio": 1.0,
+    "hypothesis_count": 1,
+    "skeptic_status": "PASS_HYPOTHESIS_ONLY",
+    "trade_readiness": "NOT_READY"
+  },
+  "research_hypotheses": [
+    {
+      "confirmation_conditions": [
+        "Reasonable downside price assumptions materially reduce recoverable-value headroom."
+      ],
+      "confounders": [
+        "The disclosure may reflect wording, resolution, or precaution rather than deterioration.",
+        "Peer boilerplate or a presentation-only wording change"
+      ],
+      "evidence_ids": [
+        "evidence-v1:4784f62ad001b2a12af4:current-10k-excerpt",
+        "evidence-v1:4784f62ad001b2a12af4:prior-10k-excerpt"
+      ],
+      "expected_direction": "Not specified in the frozen packet",
+      "falsification_conditions": [
+        "Disclosed sensitivity shows substantial headroom under reasonable downside prices."
+      ],
+      "future_outcome_validation": "NOT_PERFORMED",
+      "grounding_score": "Not separately scored",
+      "hypothesis": "The disclosed removal of near-term impairment risk may warrant testing whether asset recoverability remains robust under lower commodity-price assumptions; durability is not established.",
+      "hypothesis_id": "hypothesis-v2:asset-recoverability-sensitivity",
+      "label": "AI-GENERATED RESEARCH HYPOTHESIS",
+      "required_data": [
+        "Impairment-test price deck",
+        "Field-level carrying values",
+        "Reserve and production assumptions"
+      ],
+      "support_status": "PARTIALLY_SUPPORTED",
+      "testability_score": "Not separately scored",
+      "testable_prediction": "A sensitivity analysis using disclosed reserve and price assumptions will show whether a moderate price decline restores impairment risk.",
+      "time_horizon": "Not specified in the frozen packet",
+      "title": "How durable is the disclosed reduction in near-term impairment risk?",
+      "unit_of_analysis": "Not separately specified in the frozen packet"
+    }
+  ],
+  "scenarios": {
+    "base": null,
+    "bear": null,
+    "bull": null,
+    "disclaimer": "Scenarios are structured research frames, not forecasts.",
+    "status": "Not produced by the frozen bounded packet"
+  },
+  "skeptical_review": {
+    "alternate_explanation": "The disclosure may reflect wording, resolution, or precaution rather than deterioration.",
+    "counterevidence_effect": {
+      "mechanism": "UNSUPPORTED_DRAFT_CLAIMS_REMOVED",
+      "novelty": "CORRECTED",
+      "trade_hypothesis": "WITHHELD"
+    },
+    "final_status": "PASS_HYPOTHESIS_ONLY",
+    "strongest_objections": [
+      "Unsupported V1 causal extensions were removed before publication."
+    ],
+    "unsupported_claims_removed": [
+      "Unsupported V1 causal extensions were removed before publication."
+    ]
+  },
+  "source_evidence": {
+    "added_text": "result of the impairments recognized in and the significant increases in during 2021, none of assets were at risk of December 2021.",
+    "additional_prior_evidence_metadata": [],
+    "current_excerpt": "As a result of the impairments recognized in 2020 and the significant increases in commodity prices during 2021, none of our oil and gas assets were at risk of impairment as of December 31, 2021.",
+    "display_evidence_ids": {
+      "added_text": "evidence-v1:4784f62ad001b2a12af4:added-text",
+      "current_excerpt": "evidence-v1:4784f62ad001b2a12af4:current-10k-excerpt",
+      "prior_excerpt": "evidence-v1:4784f62ad001b2a12af4:prior-10k-excerpt",
+      "removed_text": "evidence-v1:4784f62ad001b2a12af4:removed-text"
+    },
+    "display_evidence_offsets": {
+      "current": {
+        "end": 144942,
+        "start": 144747
+      },
+      "prior": {
+        "end": 145898,
+        "start": 145242
+      }
+    },
+    "display_evidence_offsets_verified": true,
+    "documents_searched": [
+      "000156459019003382",
+      "000156459020005182",
+      "000156459021006239",
+      "000156459022005321"
+    ],
+    "earliest_occurrence": {
+      "acceptance_timestamp": "2021-02-17T16:02:04.000Z",
+      "evidence_id": "evidence-index-v2:000156459021006239:paragraph-03517",
+      "filing_date": "2021-02-17",
+      "outside_display_excerpt": false,
+      "paragraph_number": 3517,
+      "section": "item_7",
+      "source_type": "SEC_10_K",
+      "text": "Reduced demand from the COVID-19 pandemic and management of production levels from OPEC caused WTI pricing to decrease more than 60% during the first quarter of 2020. As a result, we reduced our planned 2020 capital investment 45%. With materially lower commodity prices and reduced near-term investment, we assessed all our oil and gas fields for impairment as of March 31, 2020 and recognized proved and unproved impairments totaling $2.8 billion. The impairments relate to our Anadarko Basin and Rockies fields in which our basis included acquisitions completed in 2016 and 2015, respectively, when commodity prices were much higher than they are today."
+    },
+    "full_prior_filing_evidence_checked": true,
+    "prior_excerpt": "Reduced demand from the COVID-19 pandemic and management of production levels from OPEC caused WTI pricing to decrease more than 60% during the first quarter of 2020. As a result, we reduced our planned 2020 capital investment 45%. With materially lower commodity prices and reduced near-term investment, we assessed all our oil and gas fields for impairment as of March 31, 2020 and recognized proved and unproved impairments totaling $2.8 billion. The impairments relate to our Anadarko Basin and Rockies fields in which our basis included acquisitions completed in 2016 and 2015, respectively, when commodity prices were much higher than they are today.",
+    "prior_sec_url": "https://www.sec.gov/Archives/edgar/data/1090012/000156459021006239/dvn-10k_20201231.htm",
+    "related_prior_8k": [],
+    "related_prior_news": [],
+    "removed_text": "Reduced demand from the COVID-19 pandemic and management of production levels from OPEC caused WTI pricing to decrease more than 60% during the first quarter of 2020. result, we reduced our planned capital investment 45%. With materially lower and reduced near-term investment, we assessed all fields for March 2020 and recognized proved and unproved impairments totaling $2.8 billion. The impairments relate to our Anadarko Basin and Rockies fields in which our basis included acquisitions completed in 2016 and 2015, respectively, when commodity prices were much higher than they are today.",
+    "sections_searched": [
+      "full_filing",
+      "item_10",
+      "item_11",
+      "item_12",
+      "item_13",
+      "item_14",
+      "item_15",
+      "item_16",
+      "item_1a",
+      "item_1b",
+      "item_3",
+      "item_4",
+      "item_5",
+      "item_6",
+      "item_7",
+      "item_7a",
+      "item_8",
+      "item_9",
+      "item_9a",
+      "item_9b"
+    ],
+    "timing_violations": []
+  },
+  "source_packet": {
+    "file_sha256": "34059b002a144130c44de18de850ed00f09a4fbf052160e134626403b1d7b06f",
+    "immutable": true,
+    "packet_hash": "f40423ed49df07638de518143b50626590d92c2d17de9ecbcf654cc27ef1af5e",
+    "packet_id": "research-idea-v2:4784f62ad001b2a12af4",
+    "packet_version": "2.0",
+    "status": "PUBLISHABLE"
+  },
+  "trade_research": {
+    "candidate_bias": "no actionable view",
+    "instrument_class": null,
+    "missing_market_checks": [],
+    "readiness_failure_reason": "No grounded instrument expression.",
+    "research_only": true,
+    "status": "NO_ACTIONABLE_TRADE_VIEW"
+  }
+}
