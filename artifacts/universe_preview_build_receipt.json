@@ -1,0 +1,74 @@
+{
+  "schema": "pure-news-universe-preview.v1.release-receipt",
+  "repository": "JoshGutierrez56/pure-news-intelligence-demo",
+  "branch": "feat/research-idea-engine-public-demo-v1",
+  "started_at_commit": "58231cd36f5030a0b7039edb791e4a10957392bc",
+  "implementation_commit": "d0c3404",
+  "completed_at": "2026-07-29T19:19:52-04:00",
+  "timebox_result": "COMPLETED_WITHIN_3_TO_4_HOURS",
+  "universe": {
+    "label": "Broad U.S. public-company coverage preview",
+    "as_of_timestamp": "2024-12-31T23:59:59Z",
+    "definition": "One normalized issuer record for every valid non-zero CIK observed in the frozen parsed SEC 8-K metadata corpus from 2012-01-03 through 2024-12-31.",
+    "total_issuers_indexed": 6190,
+    "issuers_with_10k_metadata": 149,
+    "issuers_with_recent_8k_metadata": 3072,
+    "issuers_with_permitted_news_metadata": 776,
+    "issuers_fully_validated": 149,
+    "issuers_indexed_but_not_fully_validated": 6041,
+    "issuers_not_yet_processed": 2973
+  },
+  "missing_data_counts": {
+    "latest_10k_date": 6041,
+    "latest_10k_accession": 6041,
+    "latest_10k_url": 6041,
+    "recent_8k_metadata": 3118,
+    "news_metadata_count": 5414,
+    "latest_news_timestamp": 5414,
+    "sector": 6190,
+    "industry": 6190
+  },
+  "output_hashes_sha256": {
+    "demo/data/universe_preview/universe_coverage.json": "9a5930919767b8295ea82c47109935529e2406ad5b0ecab10d5a029b88e35628",
+    "demo/data/universe_preview/universe_summary.json": "09f35d5ce2f1f8ffbe6a0a357b0b848875d687c94e1d0e8f3d329c388d04d7a2",
+    "demo/data/universe_preview/source_manifest.json": "8b896467a719c4f2fb23eacdeb8166239740cd300f7517c82a619b53461f94cb",
+    "demo/data/universe_preview/build_receipt.json": "8baaa7f4bb1c2a15a4a300e19492011759772186a83fae9a9ea8f033fe0bc6ac"
+  },
+  "validation": {
+    "focused_python": {
+      "passed": 8,
+      "failed": 0
+    },
+    "focused_playwright": {
+      "passed": 7,
+      "failed": 0
+    },
+    "full_python": {
+      "passed": 114,
+      "failed": 0
+    },
+    "full_playwright": {
+      "passed": 75,
+      "failed": 0
+    },
+    "serious_or_critical_axe_violations": 0,
+    "broken_internal_links": 0,
+    "console_or_request_errors": 0,
+    "responsive": "PASS",
+    "keyboard": "PASS",
+    "print": "PASS",
+    "summary_reconciliation": "PASS",
+    "public_data_audit": "PASS",
+    "frozen_data_preservation": "PASS"
+  },
+  "preservation": {
+    "live_gh_pages_commit": "61c50b0b0f8d95ea9b39edd2a2b02d451ef9890f",
+    "public_research_idea_manifest_sha256": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7",
+    "frozen_v1_v2_packet_hashes": "VERIFIED_UNCHANGED",
+    "locked_research_result_hashes": "VERIFIED_UNCHANGED",
+    "research_claims": "VERIFIED_UNCHANGED",
+    "sixty_case_phase": "BLOCKED_NOT_RUN",
+    "deployment_status": "NOT_RUN"
+  },
+  "final_classification": "UNIVERSE_METADATA_PREVIEW_READY"
+}

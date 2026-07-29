@@ -6,9 +6,12 @@ Provide a bounded, metadata-first view of which issuers are present in existing 
 
 ## Universe definition
 
-**Label:** Broad U.S. public-company coverage preview  
-**Definition:** one normalized issuer record for every valid non-zero CIK observed in the frozen parsed SEC 8-K metadata corpus from 2012-01-03 through 2024-12-31.  
-**Issuer count:** 6,190  
+**Label:** Broad U.S. public-company coverage preview
+
+**Definition:** one normalized issuer record for every valid non-zero CIK observed in the frozen parsed SEC 8-K metadata corpus from 2012-01-03 through 2024-12-31.
+
+**Issuer count:** 6,190
+
 **As-of timestamp:** 2024-12-31T23:59:59Z
 
 The latest SEC record supplies the canonical issuer name and ticker. Records are sorted by normalized ten-digit CIK and de-duplicated deterministically.
