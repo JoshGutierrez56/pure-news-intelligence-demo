@@ -1,0 +1,78 @@
+{
+  "receipt_version": "1.0",
+  "review_completed_at_utc": "2026-07-29T13:09:49.4776606Z",
+  "review_type": "OUTCOME_BLINDED_INDEPENDENT_EVIDENCE_REVIEW",
+  "reviewer_kind": "AI_ASSISTANT_NOT_HUMAN",
+  "human_rating_recorded": false,
+  "disposition_blinded": false,
+  "outcome_blinded": true,
+  "change_id": "279e7d4e407851a19548",
+  "issuer": "EQUIFAX INC",
+  "ticker": "EFX",
+  "source_packet_status": "HOLD_INSUFFICIENT_EVIDENCE",
+  "independent_review_decision": "REJECT_CURRENT_PACKET",
+  "publication_decision": "REJECT",
+  "expansion_decision": "BLOCK_60_CHANGE_SAMPLE",
+  "frozen_v1_mutated": false,
+  "analyst_disposition_mutated": false,
+  "prompt_or_schema_changed": false,
+  "deployment_changed": false,
+  "decisive_finding": "The $125 million conditional top-up was already disclosed in the prior 2020 Form 10-K. The selected prior excerpt omitted that disclosure and made an existing term appear new.",
+  "findings": [
+    {
+      "code": "PRIOR_FULL_FILING_CONTRADICTION",
+      "status": "FAIL",
+      "detail": "The 2020 Form 10-K already disclosed the $380.5 million fund and an additional conditional $125.0 million contribution."
+    },
+    {
+      "code": "NONCOMPARABLE_AMOUNT_FRAMING",
+      "status": "FAIL",
+      "detail": "The $346.7 million amount was a remaining payment balance, while $125 million was a conditional top-up; they were not alternative exposure caps."
+    },
+    {
+      "code": "ACTUAL_CURRENT_UPDATE_MISSED",
+      "status": "FAIL",
+      "detail": "The 2021 filing's actual update was settlement effectiveness and the triggered approximately $345 million deposit, not discovery of a new $125 million obligation."
+    },
+    {
+      "code": "RESERVE_INADEQUACY_UNSUPPORTED",
+      "status": "FAIL",
+      "detail": "The evidence does not establish inadequate reserves; the filing reports a 2019 best-estimate accrual and does not isolate the conditional top-up as under-reserved."
+    },
+    {
+      "code": "CURRENT_LIQUIDITY_INFERENCE_UNSUPPORTED",
+      "status": "FAIL",
+      "detail": "A prior-period warning about 2021 operating cash flow cannot establish current liquidity insufficiency."
+    },
+    {
+      "code": "BONDHOLDER_MECHANISM_SPECULATIVE",
+      "status": "FAIL",
+      "detail": "A conditional fund contribution is not existing debt and does not directly change leverage or bondholder priority."
+    }
+  ],
+  "source_materials": [
+    {
+      "type": "PACKET",
+      "path": "demo/data/research_idea_packets/v1/279e7d4e407851a19548.json",
+      "sha256": "eaad36709c4bb22c9a0ce6181430d58b38051d4737eaca6c8fb8d490023e09bf"
+    },
+    {
+      "type": "HUMAN_REVIEW_EXPORT",
+      "path": "artifacts/research_idea_exports/v1/279e7d4e407851a19548.research_idea.json",
+      "sha256": "c9551836aed3f17f52537a7e9beda8160dfe0f32b7a177cf44d615056ae70386"
+    },
+    {
+      "type": "SEC_FORM_10_K",
+      "filing_year": 2021,
+      "url": "https://www.sec.gov/Archives/edgar/data/33185/000003318522000014/efx-20211231.htm",
+      "retrieved_utf8_sha256": "dce64b7df4929cab0a9217c04260cf10d714fe878df43c3dbce5fc963c49f9d1"
+    },
+    {
+      "type": "SEC_FORM_10_K",
+      "filing_year": 2020,
+      "url": "https://www.sec.gov/Archives/edgar/data/33185/000003318521000025/efx-20201231.htm",
+      "retrieved_utf8_sha256": "666b16ae9f1f78659d5c3d397eabcbadde547921990c6f251ec5fefaec915943"
+    }
+  ],
+  "next_single_recommended_action": "Repair full-prior-filing evidence coverage and novelty logic, freeze a new version, and rerun the bounded eight cases. Preserve EFX as a negative regression fixture."
+}
