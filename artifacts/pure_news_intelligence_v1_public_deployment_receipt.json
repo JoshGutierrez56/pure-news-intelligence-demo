@@ -1,0 +1,64 @@
+{
+  "receipt_version": "1.0",
+  "source_branch": "feat/research-idea-engine-public-demo-v1",
+  "exact_source_commit": "2c1d92517600587d74ee36a6f10d38cb25f9dcbf",
+  "prior_gh_pages_commit": "61c50b0b0f8d95ea9b39edd2a2b02d451ef9890f",
+  "attempted_new_gh_pages_commit": "2c1d92517600587d74ee36a6f10d38cb25f9dcbf",
+  "current_gh_pages_commit": "61c50b0b0f8d95ea9b39edd2a2b02d451ef9890f",
+  "rollback_commit": "61c50b0b0f8d95ea9b39edd2a2b02d451ef9890f",
+  "deployment_timestamp_utc": "2026-07-29T22:49:50Z",
+  "rollback_timestamp_utc": "2026-07-29T22:53:58Z",
+  "deployment_url": "https://joshgutierrez56.github.io/pure-news-intelligence-demo/",
+  "required_manifest_sha256": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7",
+  "attempted_live_manifest_sha256": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7",
+  "manifest_semantics": "PASS",
+  "public_packet_hash_integrity": {
+    "result": "FAIL",
+    "file": "demo/data/research_ideas/v2/dvn.json",
+    "declared_sha256": "103b1894bba6fb1ed3ed82e907315e92f3c749262c65aeaed1a0a4b7db6db655",
+    "live_sha256": "8bf5dbafdf508c789bbd7f6003060979072a4fcac00c768510c928c270d8708a",
+    "cause": "Line-ending normalization; only manifest.json has a path-specific -text rule."
+  },
+  "live_routes": {
+    "html_routes_checked": 16,
+    "html_routes_passed": 16,
+    "share_resources_checked": 8,
+    "share_resources_passed": 8,
+    "internal_links_checked": 30
+  },
+  "python": {
+    "passed": 106,
+    "failed": 0,
+    "result": "PASS"
+  },
+  "playwright": {
+    "passed": 68,
+    "failed": 0,
+    "result": "PASS"
+  },
+  "accessibility": {
+    "serious_or_critical_axe_violations": 0,
+    "result": "PASS"
+  },
+  "broken_link_count": 0,
+  "console_or_request_error_count": 0,
+  "responsive_result": "PASS",
+  "print_result": "PASS",
+  "export_result": "PASS",
+  "claim_reconciliation_result": "FAIL_PACKET_BYTE_INTEGRITY",
+  "public_data_result": "FAIL_PACKET_BYTE_INTEGRITY",
+  "frozen_data_preservation_result": "PASS",
+  "research_integrity_result": "FAIL_PACKET_BYTE_INTEGRITY",
+  "research_semantics": {
+    "cases_reviewed": 8,
+    "publishable_hypotheses": 2,
+    "safe_failures": 6,
+    "actionable_trade_views": 0,
+    "published_evidence_coverage": 1.0,
+    "efx_status": "REJECT_MISLEADING_COMPARISON",
+    "formal_blinded_human_review": "PENDING",
+    "sixty_case_phase": "BLOCKED_NOT_RUN"
+  },
+  "rollback_status": "COMPLETE_AND_LIVE_VERIFIED",
+  "final_classification": "ROLLBACK_REQUIRED"
+}
