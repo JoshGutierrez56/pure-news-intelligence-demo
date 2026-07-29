@@ -1,0 +1,223 @@
+{
+  "receipt_version": "1.0",
+  "completed_at_utc": "2026-07-29T03:25:04.7256423Z",
+  "repository": "JoshGutierrez56/pure-news-intelligence-demo",
+  "repository_url": "https://github.com/JoshGutierrez56/pure-news-intelligence-demo",
+  "branch": "feat/research-idea-engine-v1",
+  "starting_branch": "gh-pages",
+  "starting_commit": "74ec311a7eaf3e848ef242da4f5a8a4ff7b1613a",
+  "final_commit": "452fe7ce2c60f9d30aeab2e0a598dcc9c2d34c26",
+  "final_commit_scope": "Validated implementation commit. This receipt is committed separately to avoid a circular self-hash.",
+  "final_classification": "HOLD_GROUNDING",
+  "gates": {
+    "I0": {
+      "status": "PASS",
+      "detail": "Repository, deployment, counts, and frozen hashes recorded before implementation."
+    },
+    "I1": {
+      "status": "PASS",
+      "detail": "Strict schema and generator/skeptic prompts frozen and hashed."
+    },
+    "I2": {
+      "status": "PASS",
+      "detail": "Deterministic and adversarial fixture coverage passed."
+    },
+    "I3": {
+      "status": "PASS",
+      "detail": "All eight bounded cases were generated, reviewed, and audited; zero packets cleared semantic grounding."
+    },
+    "I4": {
+      "status": "PASS",
+      "detail": "Eight JSON and eight Markdown human-review exports were created without fabricated human ratings."
+    },
+    "I5": {
+      "status": "NOT_RUN",
+      "detail": "The stratified 60-change sample was blocked by the bounded grounding result."
+    },
+    "I6": {
+      "status": "HOLD",
+      "decision": "HOLD_GROUNDING"
+    },
+    "I7": {
+      "status": "HOLD",
+      "detail": "Feature pages and validated hold/rejection packets exist only on the feature branch; no packet is approved for public publication."
+    },
+    "I8": {
+      "status": "NOT_RUN",
+      "detail": "No merge or GitHub Pages deployment was performed."
+    }
+  },
+  "local_model": {
+    "provider": "Ollama localhost only",
+    "name": "qwen3.6:35b-a3b",
+    "runtime_version": "0.32.5",
+    "manifest_digest": "sha256:07d35212591fc27746f0a317c975a6d68754fb38e9053d82e25f06057af28522",
+    "weights_digest": "sha256:f5ee307a2982106a6eb82b62b2c00b575c9072145a759ae4660378acda8dcf2d",
+    "config_digest": "sha256:5d1c86a949f7f3b5e75370e129765af7526f0cc1812a9de21a541da042596faa",
+    "temperature": 0,
+    "seed": 20260728,
+    "context_length": 32768,
+    "maximum_output_tokens": 8192,
+    "thinking": false,
+    "output_mode": "JSON output followed by strict projection and frozen-schema validation",
+    "cloud_calls": false,
+    "generator_cache_hit_replay": "8/8",
+    "skeptic_cache_hit_replay": "8/8"
+  },
+  "frozen_hashes": {
+    "schema_sha256": "4a1c2717a477770cbd5fd8dc5566146bf403c91d59c0b97584e837314c9b1ed4",
+    "generator_prompt_sha256": "22de2d6bf245a0bbeb2e7fdf9ec618f2115d6236a3a5393f129db881b540ead7",
+    "skeptic_prompt_sha256": "c308632c768a59ef6ef6bdb02f886ba53f4c7c2c3b74cec1f836def1f03235ab",
+    "prohibited_language_registry_sha256": "6c77381ab6c79883b2d0cd740576216a967c656defb7553712554279c71ab59a",
+    "bounded_sample_membership_sha256": "b79e392fcf82ba13f7dfa9c6b7e539e8e702bea040d0f7bdbb6404dd4ae17322",
+    "bounded_input_bundle_sha256": "8088ed16c4a1d4aee13d9047c440f255f7a51233829f261a46bed7037b6abfcf",
+    "packet_index_file_sha256": "42165f100c51a9e1134b78b03a34ee47c00ca4bc9aca4dc42905242c32860de4",
+    "packet_index_membership_sha256": "04181d0adb27c3c827e505f18f186f5a36922fa57b037d1597c17f2d4d5be38c",
+    "validation_artifact_sha256": "b45b9be6505c7c46be875a172010d90c1fe2982b2ab96268b2de452c90240cec",
+    "audit_artifact_sha256": "b45b9be6505c7c46be875a172010d90c1fe2982b2ab96268b2de452c90240cec",
+    "export_manifest_sha256": "d27c07f56b6efc56af1dd6c774a29591b2eff58471b58bb77973cf0d4761f063",
+    "screenshot_hash_artifact_sha256": "ee9737494a5b11ac53e15d1f6f7bdbe069fea877768638eb8d5c57cb6f37a830",
+    "screenshot_manifest_sha256": "e15e8998c1e0a8f0f8625bcd03f142eb3c9f355a4871eef3f2a07e8aa2703198"
+  },
+  "generation": {
+    "packets_attempted": 8,
+    "packets_structurally_valid": 8,
+    "packets_accepted_for_publication": 0,
+    "packets_held": 4,
+    "packets_rejected": 4,
+    "held_tickers": [
+      "TFC",
+      "DLTR",
+      "EFX",
+      "CHE"
+    ],
+    "rejected_tickers": [
+      "KHC",
+      "DVN",
+      "RH",
+      "FCX"
+    ],
+    "trade_not_ready": 8,
+    "analyst_unreviewed": 8,
+    "stratified_60_sample": "NOT_RUN",
+    "full_995_generation": "NOT_AUTHORIZED"
+  },
+  "grounding_audit": {
+    "packets_checked": 8,
+    "evidence_integrity_passed": 8,
+    "unresolved_evidence_ids": 0,
+    "future_information_violations": 0,
+    "semantic_grounding_clearances": 0,
+    "critical_grounding_defects": 8,
+    "result": "HOLD"
+  },
+  "skeptic_audit": {
+    "packets_reviewed": 8,
+    "hold_decisions": 4,
+    "rejection_decisions": 4,
+    "application_policy_version": "research_idea_skeptic_application_v1.7",
+    "false_pending_lifecycle_objections": 0,
+    "correction_proposals": 52,
+    "final_state_corrections_logged": 20,
+    "corrections_rejected": 15,
+    "unlogged_effective_replacements": 0,
+    "result": "PASS"
+  },
+  "prohibited_language_audit": {
+    "packets_checked": 8,
+    "violations": 0,
+    "adversarial_negation_variants_blocked": "13/13",
+    "legitimate_denials_clean": "5/5",
+    "price_targets": 0,
+    "position_sizes": 0,
+    "leverage_instructions": 0,
+    "result": "PASS"
+  },
+  "tests": {
+    "python": {
+      "passed": 67,
+      "failed": 0
+    },
+    "playwright_full": {
+      "passed": 32,
+      "failed": 0
+    },
+    "unique_required_suite_tests_passed": 99,
+    "focused_research_idea_playwright": {
+      "passed": 15,
+      "failed": 0,
+      "note": "Subset of the full Playwright suite."
+    },
+    "python_compile": "PASS",
+    "javascript_syntax": "PASS",
+    "json_parse": {
+      "files": 50,
+      "errors": 0
+    },
+    "git_diff_check": "PASS"
+  },
+  "accessibility": {
+    "result": "PASS",
+    "current_feature_axe_scans": 5,
+    "serious_or_critical_findings": 0,
+    "documented_total_axe_runs": 24,
+    "documented_total_axe_violations": 0,
+    "keyboard_and_screen_reader_labels": "PASS"
+  },
+  "responsive": {
+    "result": "PASS",
+    "all_packet_viewport_checks": "32/32",
+    "screenshot_surface_checks": "20/20",
+    "horizontal_overflow_findings": 0,
+    "console_page_request_or_http_failures": 0,
+    "viewports": [
+      "1920x1080",
+      "1440x900",
+      "1024x768",
+      "390x844"
+    ]
+  },
+  "screenshots": {
+    "count": 20,
+    "root": "artifacts/screenshots/research_idea_v1",
+    "manifest_sha256": "e15e8998c1e0a8f0f8625bcd03f142eb3c9f355a4871eef3f2a07e8aa2703198",
+    "all_file_hashes_verified": true
+  },
+  "deployment": {
+    "gate": "NOT_RUN",
+    "provider": "GitHub Pages",
+    "live_branch": "gh-pages",
+    "live_commit": "74ec311a7eaf3e848ef242da4f5a8a4ff7b1613a",
+    "live_status": "success",
+    "live_root_matches_starting_commit": true,
+    "canonical_url": "https://joshgutierrez56.github.io/pure-news-intelligence-demo/",
+    "existing_routes_checked": "8/8 HTTP 200",
+    "feature_routes": {
+      "https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/research_idea.html": "INTENTIONALLY_UNDEPLOYED",
+      "https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/research_idea_gallery.html": "INTENTIONALLY_UNDEPLOYED",
+      "https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/research_idea_methodology.html": "INTENTIONALLY_UNDEPLOYED"
+    }
+  },
+  "frozen_data_preservation": {
+    "result": "PASS",
+    "changes_json_records": 995,
+    "changes_json_unique_ids": 995,
+    "changes_json_sha256": "17d3ec79ea48d8affa42f6f8a6b775b52a285736bf65853ae849bdb760211271",
+    "catalog_json_sha256": "678dc89759e171d5a30593eb8120e9604d220380af63430d5559266047627d13",
+    "original_demo_data_manifest_sha256": "f9aa5ac3772fe683b647d05b00a2578ca6de9511666fc4d5ae474c6dd3126c1d",
+    "archive_partition_manifest_sha256": "0ebfb57c1e08bcac6141a345c6c1cefb059354438e941fb7502d0eb22be04f07",
+    "evidence_packet_manifest_sha256": "cb2ac71e6cec091b5bd781270f6280aa006a5dd9f481593f65b15fad21a8579d",
+    "locked_research_results_html_sha256": "1db9185b725c3601098c082ff6f89469e86e8b6d9fa264a80bcacb90a60836f1",
+    "upstream_changes_parquet_sha256": "5504d44f9206986629397b028b448ed23187696fd71bee8ead345429bc390f20",
+    "upstream_sample_membership_sha256": "e3f2d9f3682e5f3b0531f5a2412e505667e620a332d7c4030a1e268b2184993a",
+    "upstream_case_studies_sha256": "fa7e4fb3809d622ddee4144fc3b75d54314db7091491d3635f194b0f5349396d"
+  },
+  "claim_boundaries": [
+    "The original pure-news studies did not establish reliable incremental alpha.",
+    "No generated packet is validated as a trading signal or investment recommendation.",
+    "No packet contains a price target, leverage instruction, personalized allocation, or position size.",
+    "No analyst rating, acceptance, time-savings result, live-trading result, or institutional endorsement is claimed.",
+    "Later outcomes were excluded from packet generation and remain visually separated."
+  ],
+  "next_single_recommended_action": "Run blinded human review of the EFX hold packet and its cited source evidence before revising prompts, approving publication, or expanding to the 60-change sample."
+}
