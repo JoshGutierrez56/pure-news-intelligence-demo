@@ -1,0 +1,87 @@
+{
+  "receipt_version": "1.0",
+  "created_at_utc": "2026-07-29T16:49:00Z",
+  "repository": "JoshGutierrez56/pure-news-intelligence-demo",
+  "branch": "feat/research-idea-engine-public-demo-v1",
+  "starting_commit": "a2102b7",
+  "starting_v2_commit": "093c4d80ef1d4e475a1c608131a1e3ab571bc48f",
+  "final_implementation_commit": "3b32ebcbf4e834f211bca764df663d3fda4e66ec",
+  "deployed_gh_pages_commit": "74ec311a7eaf3e848ef242da4f5a8a4ff7b1613a",
+  "public_manifest_sha256": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7",
+  "public_packet_hashes_sha256": {
+    "rh.json": "684dfea02feaeb76d8a3de134118e18a8bfe192216757a8c127cf6fa5b1e5585",
+    "dvn.json": "103b1894bba6fb1ed3ed82e907315e92f3c749262c65aeaed1a0a4b7db6db655",
+    "efx_rejection.json": "e92004321017a148b8f88df832d7b535ca90535e8e0b94c1e9988e96ba8d388c"
+  },
+  "source_packet_file_hashes_sha256": {
+    "RH": "e9004af7ed1ed1a536a94f0b3a73a658bd1736625c07fd9d055dcc5bb45f7921",
+    "DVN": "34059b002a144130c44de18de850ed00f09a4fbf052160e134626403b1d7b06f",
+    "EFX": "32056ef6523c5729fc1f98d1570e586a78dc43cd8a2648fc471599159679438a"
+  },
+  "pages_updated": [
+    "index.html",
+    "demo/professor_presentation.html",
+    "demo/ranked_change_feed.html",
+    "demo/case_studies.html",
+    "demo/research_results.html (render-time integration; locked HTML preserved)",
+    "demo/methodology.html",
+    "demo/innovation_framework.html",
+    "demo/pilot_plan.html",
+    "demo/professor_materials.html",
+    "README.md"
+  ],
+  "assets_updated": [
+    "demo/assets/feed.js",
+    "demo/assets/site.js",
+    "demo/assets/style.css"
+  ],
+  "tests": {
+    "python": {
+      "status": "PASS",
+      "passed": 99,
+      "failed": 0
+    },
+    "playwright": {
+      "status": "PASS",
+      "passed": 55,
+      "failed": 0
+    },
+    "axe_serious_or_critical_violations": 0,
+    "broken_links": 0,
+    "console_or_request_errors": 0,
+    "horizontal_overflow_failures": 0,
+    "keyboard_review": "PASS",
+    "responsive_review": "PASS",
+    "print_review": "PASS",
+    "content_reconciliation": "PASS",
+    "public_data_audit": "PASS",
+    "source_preservation_audit": "PASS"
+  },
+  "screenshot_hashes_sha256": {
+    "homepage-1920x1080.png": "22f272afd2d4b4c9fa77ec07607aff2a518f77c8ea244d9d5ba3a2f42e25d525",
+    "homepage-390x844.png": "9fcb6cf3340da2f4d21e318ddcc98f884379f3a5195e296d914e07a6b93f8205",
+    "innovation-framework-1920x1080.png": "2c3c849027070e0a92fa7bc5ba51b334841c5d6e154a64fe4432f0e1fa32eabf",
+    "methodology-1920x1080.png": "e48bef4f4c18f8a1217dd293e5bbc51189654125c0ba225b6a2b77abe06fba76",
+    "pilot-plan-1920x1080.png": "5cdef842edc076f8b905d787fff12f4192956c50d703b3fb96088b6288f6e6e6",
+    "professor-efx-safe-failure-1920x1080.png": "5434fad13fa1d13f9d4d586865626f9cbd3afe49d0b9a08c33ea97bb8748d5ad",
+    "professor-research-question-1920x1080.png": "020db0c8d9b65d2cdf3d51ca5153f5d9938ac9cd4f6fc962496ff038b65dea2d",
+    "ranked-feed-research-status-1920x1080.png": "3e9946ffa5f9874f455214dc8dad15aad75f484c4a15bfd6745e1749ead15010",
+    "research-results-1920x1080.png": "0d70b5f43d9df8a1d53fe46aea2be3a451b5315e52bd04ad16f567f6521f52d5",
+    "rh-390x844.png": "d4cffb6016744c358421b18117d60b13affc9100086fd36234e5711132963a2e",
+    "rh-print-1920x1080.png": "0438b3e2b67354a080a99e7e3b649f89ccd24a734c54de383b5ac6f083eb36e8"
+  },
+  "research_integrity": {
+    "cases_reviewed": 8,
+    "publishable_hypotheses": 2,
+    "safe_failures": 6,
+    "actionable_trade_views": 0,
+    "human_review_status": "Formal blinded human ratings remain pending.",
+    "sixty_case_phase": "BLOCKED_NOT_RUN",
+    "new_packets_generated": false,
+    "frozen_v1_v2_artifacts_unchanged": true,
+    "locked_research_results_sha256": "1db9185b725c3601098c082ff6f89469e86e8b6d9fa264a80bcacb90a60836f1"
+  },
+  "deployment_status": "HOLD_NOT_DEPLOYED",
+  "deployment_authorized": false,
+  "final_classification": "PUBLIC_DEMO_IMPLEMENTATION_READY"
+}
