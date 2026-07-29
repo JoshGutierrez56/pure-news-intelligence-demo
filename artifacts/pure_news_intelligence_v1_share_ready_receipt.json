@@ -1,0 +1,173 @@
+{
+  "receipt_version": "1.0",
+  "completed_at_utc": "2026-07-29T21:39:47Z",
+  "repository": "JoshGutierrez56/pure-news-intelligence-demo",
+  "branch": "feat/research-idea-engine-public-demo-v1",
+  "starting_commit": "3539e9a60de1868a73968cfc1f33077f1f2fc0b7",
+  "final_polish_commit": "a9c36fdec64ef5b0ff6e65231022b98c89c105fc",
+  "current_live_gh_pages_commit": "61c50b0b0f8d95ea9b39edd2a2b02d451ef9890f",
+  "deployment_status": "NOT_RUN",
+  "public_manifest_sha256": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7",
+  "frozen_packet_hashes_sha256": {
+    "v1": {
+      "279e7d4e407851a19548": "eaad36709c4bb22c9a0ce6181430d58b38051d4737eaca6c8fb8d490023e09bf",
+      "2f22dc2216c9df31d377": "09006f7faae1fd1ba33f53254f2608cbdc1ad477e054bcf52411d3079a981a23",
+      "339fae2941721ee094b0": "c48884a8d2416f77f3755704496a4fb46ce9245237a0e0be4af17456ec1eea56",
+      "412b08746bb0ed5a7745": "93f87375bd8be410bb78008880ee0111cd00ac62b9c0c0dabfa9040ce7f9bb85",
+      "4784f62ad001b2a12af4": "e0b2a6d2303a555abfd1dcc3233e55491c14ae11b03934eb343b851e58d85bbc",
+      "8d4598f4ea16f15c7048": "bc60517e32093b8f242678f89214de3387d522913d8f34728f5ceaef20516954",
+      "8f5336b55618ffe68e8a": "81b73939ed53148451c0ddcaf89bd7d478630dfff08a53061d40270403d7c075",
+      "dbe75bc24f2888f4166a": "2ee6dae07d49e105312a38a8c1ca3f978f468c8e788aafea205be2ff1a45a822"
+    },
+    "v2": {
+      "279e7d4e407851a19548": "32056ef6523c5729fc1f98d1570e586a78dc43cd8a2648fc471599159679438a",
+      "2f22dc2216c9df31d377": "cce16b1202c72d51631f896cae1c31772f5832a5d9999adb2c91c7ef92510e62",
+      "339fae2941721ee094b0": "9fe49ca6034466fa37274bc438b8dc7efbc928800a2522ca50a8fc430c94d663",
+      "412b08746bb0ed5a7745": "e9004af7ed1ed1a536a94f0b3a73a658bd1736625c07fd9d055dcc5bb45f7921",
+      "4784f62ad001b2a12af4": "34059b002a144130c44de18de850ed00f09a4fbf052160e134626403b1d7b06f",
+      "8d4598f4ea16f15c7048": "a129b676aec00502ec18ff5dbf721741dfa528dad05f33d5c606dd1efc786ac7",
+      "8f5336b55618ffe68e8a": "1bceb7daf24aa59e98194b452f275f38203ef7095daae79d3c7869c31944fefb",
+      "dbe75bc24f2888f4166a": "727162fe17471d3a5bc5f92e30adc3d8376cc3d0154293165d451e8e2364cca9"
+    }
+  },
+  "files_changed": {
+    "count": 85,
+    "public_pages_updated": [
+      "index.html",
+      "demo/ranked_change_feed.html",
+      "demo/case_studies.html",
+      "demo/methodology.html",
+      "demo/innovation_framework.html",
+      "demo/professor_presentation.html"
+    ],
+    "public_pages_created": [
+      "demo/faq.html",
+      "demo/known_limitations.html",
+      "demo/future_research.html",
+      "demo/public_architecture.html"
+    ],
+    "repository_documents": [
+      "README.md",
+      "CHANGELOG.md",
+      "CONTRIBUTING.md",
+      "SECURITY.md",
+      "CITATION.cff",
+      "LICENSE_STATUS.md"
+    ],
+    "share_package_files": 8,
+    "report_files": 10,
+    "screenshot_files": 44,
+    "test_files_created": 3,
+    "test_files_updated": 1
+  },
+  "pages_reviewed": [
+    "homepage",
+    "ranked feed",
+    "case studies",
+    "research ideas",
+    "RH",
+    "DVN",
+    "EFX",
+    "research results",
+    "methodology",
+    "professor presentation",
+    "innovation framework",
+    "pilot plan",
+    "FAQ",
+    "known limitations",
+    "future research",
+    "public architecture"
+  ],
+  "hostile_review": {
+    "reviewers": 5,
+    "critical_findings_unresolved": 0,
+    "high_findings_identified": 10,
+    "high_findings_resolved": 10,
+    "medium_findings_unresolved_and_disclosed": 5
+  },
+  "tests": {
+    "python_passed": 106,
+    "python_failed": 0,
+    "playwright_passed": 68,
+    "playwright_failed": 0
+  },
+  "accessibility": {
+    "result": "PASS",
+    "serious_axe_violations": 0,
+    "critical_axe_violations": 0,
+    "inaccessible_controls": 0
+  },
+  "links": {
+    "result": "PASS",
+    "broken_internal_links": 0,
+    "stable_external_links_sampled": 5,
+    "stable_external_link_failures": 0
+  },
+  "console_and_requests": {
+    "result": "PASS",
+    "console_errors": 0,
+    "page_errors": 0,
+    "failed_requests": 0
+  },
+  "responsive": {
+    "result": "PASS",
+    "viewports": [
+      "1920x1080",
+      "1440x900",
+      "1024x768",
+      "390x844"
+    ],
+    "horizontal_overflow_failures": 0
+  },
+  "print": {
+    "result": "PASS",
+    "research_packet_content_preserved": true,
+    "local_controls_hidden": true
+  },
+  "screenshot_hashes": {
+    "algorithm": "SHA-256",
+    "count": 44,
+    "ordered_hash_list_sha256": "502fe346f92b6b5782299006726be1147824466d2ff4d8afbe52781c2efa76e7",
+    "desktop_1920x1080": {
+      "homepage": "3a13658f5f7c4adff4a3af31812090c8b4c7f0c71ff9037a1dbb756383ebff7b",
+      "ranked_feed": "5937b72495c76540b5ea3025d35fe453343313200e91185abc2415dee3f49609",
+      "rh": "302c9b1002da8c77b3c2d7814d21187704812519bc4f6c75a27113888a4b09cc",
+      "dvn": "f711aa5a16b4624c7d19a70d7ddea93575a89ec12e0d36e98a153b6add64dad5",
+      "efx": "51349b22ba6b826970979cca389041a2397188588c41e85fd53bb29be77e4d1b",
+      "research_results": "b3b2b57496c1cab14569b4e222a6059d541be82ed7e4941fa1c8cfcb113ae7cb",
+      "methodology": "07138a4ca8cc0496329c6e9246a6ef140043b01e7a846e3941c68bffeef4b301",
+      "professor_presentation": "4d03987192627040db901eb13906a6d5ac4efb6e401ba656de556e718703897f",
+      "innovation_framework": "ca3b4121649bf493ba0eade6aafa5d2e9e1de1c0be0af1b38e9fb703eea7c91d",
+      "pilot_plan": "264e3076223cd1896450e95c079b773d2ac2f024e901a57a87efc2836a83d078",
+      "public_architecture": "d2adc397123f98be61fe2ef0d39788dafab6e4d28296a49e8586cecd094477a3"
+    },
+    "mobile_390x844": {
+      "homepage": "2bb7835494d498df7fec7be92e895580102e812c0df869fc181f3bde542afd47",
+      "ranked_feed": "12739584db7fdedc935ffd84281ef7225f86d01c59c2844595f123e66e68b092",
+      "rh": "d4cffb6016744c358421b18117d60b13affc9100086fd36234e5711132963a2e",
+      "dvn": "233507f7ab48e9f27e9cb079463726b11ccc50fe1a29ea846b2d0e93ed3fe490",
+      "efx": "f2fd66b96e05a9afa9371ebe240edb9778d3865cb1035469ab676c17b9bce53c",
+      "research_results": "a11a20da5041ad6e550accbb6cccff7fc56d1c5948a7f1d0240e305ecad63a06",
+      "methodology": "66eee81f478e96bc2d27dd30b983614de1534bf7c5301af88c6cfa734734a9d3",
+      "professor_presentation": "55df097f73ccc7a60b0e405b69db591baeb61d8c59c3a8554ba59b1d90144f54",
+      "innovation_framework": "e3db26d8a1f8c7646ed70f02a5acf2e2649490ba0a60da4a3a75bb7fe592afe6",
+      "pilot_plan": "e5af6df39c3a661a3221971c1dc0e169b5c6799f872de1ad22ac5622a49aa460",
+      "public_architecture": "2173c46f0a5a0b6bfd3de5b009f5a32e3c72a46e191233e1e7a5d39e52280469"
+    }
+  },
+  "public_data_audit": "PASS",
+  "claim_reconciliation": "PASS",
+  "frozen_data_preservation": "PASS",
+  "research_boundaries": {
+    "cases_reviewed": 8,
+    "publishable_hypotheses": 2,
+    "safe_failures": 6,
+    "actionable_trade_views": 0,
+    "rh_evidence_coverage": 1.0,
+    "dvn_evidence_coverage": 1.0,
+    "efx_status": "REJECT_MISLEADING_COMPARISON",
+    "formal_blinded_human_review": "PENDING",
+    "sixty_case_phase": "BLOCKED_NOT_RUN"
+  },
+  "final_classification": "PURE_NEWS_INTELLIGENCE_V1_0_SHARE_READY"
+}
