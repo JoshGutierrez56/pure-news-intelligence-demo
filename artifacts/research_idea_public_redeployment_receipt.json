@@ -1,0 +1,40 @@
+{
+  "receipt_version": "1.0",
+  "deployment_timestamp_utc": "2026-07-29T17:22:00Z",
+  "verification_completed_at_utc": "2026-07-29T17:24:20Z",
+  "repository": "JoshGutierrez56/pure-news-intelligence-demo",
+  "source_branch": "feat/research-idea-engine-public-demo-v1",
+  "source_commit": "61c50b0b0f8d95ea9b39edd2a2b02d451ef9890f",
+  "prior_gh_pages_commit": "74ec311a7eaf3e848ef242da4f5a8a4ff7b1613a",
+  "new_gh_pages_commit": "61c50b0b0f8d95ea9b39edd2a2b02d451ef9890f",
+  "rollback_commit": "74ec311a7eaf3e848ef242da4f5a8a4ff7b1613a",
+  "deployment_url": "https://joshgutierrez56.github.io/pure-news-intelligence-demo/",
+  "public_manifest_sha256": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7",
+  "live_verification": {
+    "routes_checked": 14,
+    "routes_passed": 14,
+    "internal_links_checked": 61,
+    "broken_links": 0,
+    "console_or_request_errors": 0,
+    "serious_or_critical_axe_violations": 0,
+    "mobile": "PASS",
+    "print": "PASS",
+    "json_export": "PASS",
+    "markdown_export": "PASS",
+    "local_analyst_controls": "PASS",
+    "presentation_modes": "PASS",
+    "relative_paths": "PASS"
+  },
+  "research_integrity": {
+    "frozen_data_preservation": "PASS",
+    "manifest_semantics_unchanged": true,
+    "cases_reviewed": 8,
+    "publishable_hypotheses": 2,
+    "safe_failures": 6,
+    "actionable_trade_views": 0,
+    "published_evidence_coverage_ratio": 1.0,
+    "human_review_status": "PENDING",
+    "sixty_case_phase": "BLOCKED_NOT_RUN"
+  },
+  "final_classification": "PUBLIC_DEPLOYMENT_COMPLETE"
+}

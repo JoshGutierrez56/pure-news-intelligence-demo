@@ -1,0 +1,28 @@
+{
+  "receipt_version": "1.0",
+  "completed_at_utc": "2026-07-29T17:24:20Z",
+  "repository": "JoshGutierrez56/pure-news-intelligence-demo",
+  "source_branch": "feat/research-idea-engine-public-demo-v1",
+  "repair_start_commit": "61264078ccef73adc787d68636e6442799232eba",
+  "validated_implementation_commit": "934d0d8b8f5450cb89b70514136e98b69c03d697",
+  "repair_commit": "61c50b0b0f8d95ea9b39edd2a2b02d451ef9890f",
+  "repair_scope": [
+    ".gitattributes",
+    "demo/data/research_ideas/v2/manifest.json"
+  ],
+  "manifest": {
+    "path": "demo/data/research_ideas/v2/manifest.json",
+    "sha256": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7",
+    "git_blob_bytes": 5747,
+    "json_semantics_unchanged": true,
+    "gitattributes_rule": "demo/data/research_ideas/v2/manifest.json -text"
+  },
+  "tests": {
+    "python_passed": 99,
+    "playwright_passed": 55,
+    "frozen_hash_audit": "PASS",
+    "public_data_audit": "PASS"
+  },
+  "prohibited_changes_detected": 0,
+  "classification": "PACKAGING_REPAIR_COMPLETE"
+}
