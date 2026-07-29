@@ -1,0 +1,94 @@
+{
+  "schema": "pure-news-universe-preview.deployment-readiness.v1",
+  "repository": "JoshGutierrez56/pure-news-intelligence-demo",
+  "branch": "feat/research-idea-engine-public-demo-v1",
+  "starting_commit": "43beba25a878f52736848288e16e030f30bbacd9",
+  "final_repair_commit": "37af530a62a16a9b8f3289e42bbebfc7498fc35b",
+  "current_live_commit": "61c50b0b0f8d95ea9b39edd2a2b02d451ef9890f",
+  "universe_counts": {
+    "total_issuers_indexed": 6190,
+    "issuers_with_curated_10k_metadata": 149,
+    "issuers_with_recent_8k_metadata": 3072,
+    "issuers_with_permitted_news_metadata": 776,
+    "issuers_fully_validated": 149,
+    "issuers_indexed_but_not_fully_validated": 6041,
+    "issuers_not_yet_processed": 2973
+  },
+  "public_assets": [
+    {
+      "path": "demo/data/universe_preview/build_receipt.json",
+      "raw_byte_size": 755,
+      "sha256": "8baaa7f4bb1c2a15a4a300e19492011759772186a83fae9a9ea8f033fe0bc6ac",
+      "semantic_json_sha256": "2b4cabe4a1da5c4145094540d0f9fc90087181d451594dd39ac096373e821088",
+      "record_count": 1
+    },
+    {
+      "path": "demo/data/universe_preview/source_manifest.json",
+      "raw_byte_size": 3870,
+      "sha256": "8b896467a719c4f2fb23eacdeb8166239740cd300f7517c82a619b53461f94cb",
+      "semantic_json_sha256": "d7e40214147a59e908c103e40281d7751bd813cd9ecbe2828a874766df8a47b4",
+      "record_count": 4
+    },
+    {
+      "path": "demo/data/universe_preview/universe_coverage.json",
+      "raw_byte_size": 4136821,
+      "sha256": "9a5930919767b8295ea82c47109935529e2406ad5b0ecab10d5a029b88e35628",
+      "semantic_json_sha256": "970c9459009271a8bd077b0c56ba3914c6a3282b6f212d861e928da4ded3da83",
+      "record_count": 6190
+    },
+    {
+      "path": "demo/data/universe_preview/universe_summary.json",
+      "raw_byte_size": 914,
+      "sha256": "09f35d5ce2f1f8ffbe6a0a357b0b848875d687c94e1d0e8f3d329c388d04d7a2",
+      "semantic_json_sha256": "0a5a7fa1cc677e2bfe5cdef02f0a649b67e5a9cb6f53a18702583abaca536798",
+      "record_count": 1
+    }
+  ],
+  "byte_integrity": {
+    "working_tree_matches_source_commit": true,
+    "staged_index_matches_source_commit": true,
+    "current_commit_matches_source_commit": true,
+    "clean_clone_matches_source_commit": true,
+    "hash_mismatches": 0,
+    "json_parse_failures": 0,
+    "semantic_hash_mismatches": 0
+  },
+  "clean_clone": {
+    "commit": "37af530a62a16a9b8f3289e42bbebfc7498fc35b",
+    "universe_builder_check": "PASS",
+    "asset_manifest_check": "PASS",
+    "focused_python_passed": 14,
+    "focused_python_failed": 0,
+    "post_test_worktree": "CLEAN",
+    "result": "PASS"
+  },
+  "tests": {
+    "python_passed": 120,
+    "python_failed": 0,
+    "playwright_passed": 75,
+    "playwright_failed": 0
+  },
+  "accessibility": {
+    "result": "PASS",
+    "serious_axe_violations": 0,
+    "critical_axe_violations": 0
+  },
+  "links_and_console": {
+    "broken_internal_links": 0,
+    "console_or_request_errors": 0,
+    "result": "PASS"
+  },
+  "responsive": "PASS",
+  "keyboard": "PASS",
+  "print": "PASS",
+  "summary_reconciliation": "PASS",
+  "claim_reconciliation": "PASS",
+  "public_data": "PASS",
+  "frozen_data_preservation": {
+    "result": "PASS",
+    "research_manifest_sha256": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7",
+    "sixty_case_phase": "BLOCKED_NOT_RUN"
+  },
+  "deployment_status": "NOT_RUN",
+  "final_classification": "UNIVERSE_PREVIEW_PUBLIC_DEPLOYMENT_READY"
+}
