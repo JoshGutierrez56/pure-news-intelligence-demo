@@ -4,12 +4,16 @@
   const PAGE_SIZE = 18;
   const STORAGE = { onboarding: "pni-onboarding-dismissed-v2", shortlist: "pni-shortlist-v2" };
   const CASES = { TFC: "01_TFC", KHC: "02_KHC", DLTR: "03_DLTR", DVN: "04_DVN", RH: "05_RH", FCX: "06_FCX", EFX: "07_EFX", CHE: "08_CHE" };
-  const RESEARCH_IDEA_IDS = new Set([
-    "dbe75bc24f2888f4166a", "8f5336b55618ffe68e8a",
-    "339fae2941721ee094b0", "4784f62ad001b2a12af4",
-    "412b08746bb0ed5a7745", "8d4598f4ea16f15c7048",
-    "279e7d4e407851a19548", "2f22dc2216c9df31d377"
-  ]);
+  const RESEARCH_IDEA_STATUS = {
+    "412b08746bb0ed5a7745": { key: "available", label: "Research idea available", action: "View AI Research Hypothesis", href: "research_idea_rh.html" },
+    "4784f62ad001b2a12af4": { key: "available", label: "Research idea available", action: "View AI Research Hypothesis", href: "research_idea_dvn.html" },
+    "279e7d4e407851a19548": { key: "rejected", label: "Idea rejected after full evidence review", action: "View grounding rejection", href: "research_idea_efx.html" },
+    "2f22dc2216c9df31d377": { key: "no-publishable", label: "No publishable research hypothesis" },
+    "339fae2941721ee094b0": { key: "no-publishable", label: "No publishable research hypothesis" },
+    "8d4598f4ea16f15c7048": { key: "no-publishable", label: "No publishable research hypothesis" },
+    "8f5336b55618ffe68e8a": { key: "no-publishable", label: "No publishable research hypothesis" },
+    "dbe75bc24f2888f4166a": { key: "no-publishable", label: "No publishable research hypothesis" }
+  };
   const SECTORS = { TFC: "Financials", KHC: "Consumer Staples", DLTR: "Consumer Staples", DVN: "Energy", RH: "Consumer Discretionary", FCX: "Materials", EFX: "Industrials", CHE: "Health Care" };
   const materialityRank = { high: 3, medium: 2, low: 1 };
   const noveltyRank = { "genuinely new": 4, unclear: 3, "partially anticipated": 2, "previously disclosed": 1 };
@@ -35,12 +39,13 @@
   const noveltyClass = (value) => ({ "genuinely new": "new", "previously disclosed": "previous", "partially anticipated": "partial", unclear: "unclear" })[value];
   const comparisonUrl = (record) => isCase(record) ? `company_comparison.html#case-${Object.keys(CASES).indexOf(record.ticker) + 1}` : `company_comparison.html?ticker=${encodeURIComponent(record.ticker)}`;
   const timelineUrl = (record) => isCase(record) ? `company_timeline.html#timeline-${Object.keys(CASES).indexOf(record.ticker) + 1}` : `company_timeline.html?ticker=${encodeURIComponent(record.ticker)}`;
-  const researchIdeaUrl = (record) => `research_idea.html?change_id=${encodeURIComponent(record.id)}`;
+  const researchIdeaStatus = (record) => RESEARCH_IDEA_STATUS[record.id] || { key: "not-reviewed", label: "Research idea not yet reviewed" };
 
   function cardHtml(record) {
     const novelty = noveltyOf(record);
     const direction = record.direction || "ambiguous";
     const saved = state.saved.has(record.id);
+    const idea = researchIdeaStatus(record);
     return `<article class="change-card" data-record-id="${escapeHtml(record.id)}" data-attention="${escapeHtml(record.materiality)}" data-direction="${escapeHtml(direction)}">
       <div class="change-card-header">
         <div><div class="company-line"><span class="ticker">${escapeHtml(record.ticker)}</span> ${escapeHtml(record.issuer)}</div><div class="filing-meta">${escapeHtml(record.date)} · ${escapeHtml(sectionOf(record))} · ${escapeHtml(sectorOf(record))}</div></div>
@@ -50,13 +55,14 @@
         <span class="badge ${escapeHtml(record.materiality)}">${escapeHtml(titleCase(record.materiality))} materiality</span>
         <span class="badge ${noveltyClass(novelty)}">${escapeHtml(noveltyLabel(novelty))}</span>
         <span class="badge ${escapeHtml(direction)}">${escapeHtml(titleCase(direction))} direction</span>
+        <span class="badge research-${escapeHtml(idea.key)}">${escapeHtml(idea.label)}</span>
       </div>
       <p class="label">Change category</p><h3>${escapeHtml(record.category)}</h3>
       <p class="change-summary clamped">${escapeHtml(summaryText(record))}</p>
       <details class="record-detail"><summary>Show full context</summary><div><p>${escapeHtml(summaryText(record))}</p><p><strong>Why it may matter:</strong> ${escapeHtml(record.why)}</p></div></details>
       <p class="why-brief"><strong>Why review:</strong> ${escapeHtml(record.why)}</p>
       <div class="card-actions">
-        <a class="button secondary" href="${researchIdeaUrl(record)}" data-research-idea-available="${RESEARCH_IDEA_IDS.has(record.id)}">Generate Research Idea</a>
+        ${idea.href ? `<a class="button secondary" href="${idea.href}">${escapeHtml(idea.action)}</a>` : `<span class="research-idea-static-status">${escapeHtml(idea.label)}</span>`}
         <a href="${escapeHtml(record.url)}" target="_blank">Original SEC filing ↗</a>
         <a href="${comparisonUrl(record)}">Compare filings</a><a href="${timelineUrl(record)}">Timeline</a>
         ${isCase(record) ? `<a href="evidence_packets/${CASES[record.ticker]}.html">Evidence packet</a>` : ""}
@@ -70,9 +76,10 @@
       <thead><tr><th>Company</th><th>Filing</th><th>Classification</th><th>Why review</th><th>Evidence</th></tr></thead>
       <tbody>${records.map((record) => {
         const novelty = noveltyOf(record);
+        const idea = researchIdeaStatus(record);
         return `<tr><td><strong>${escapeHtml(record.ticker)} · ${escapeHtml(record.issuer)}</strong></td><td>${escapeHtml(record.date)}<br>${escapeHtml(sectionOf(record))}</td>
-          <td>${escapeHtml(record.category)}<br><span class="badge ${escapeHtml(record.materiality)}">${escapeHtml(record.materiality)}</span> <span class="badge ${noveltyClass(novelty)}">${escapeHtml(noveltyLabel(novelty))}</span></td>
-          <td>${escapeHtml(record.why)}</td><td><a href="${researchIdeaUrl(record)}">Generate Research Idea</a><br><a href="${escapeHtml(record.url)}" target="_blank">SEC filing</a><br>Confidence ${Number(record.confidence).toFixed(3)}<br><button type="button" class="save-record table-save" data-save-record="${escapeHtml(record.id)}" aria-pressed="${state.saved.has(record.id)}">${state.saved.has(record.id) ? "Saved" : "Save"}</button></td></tr>`;
+          <td>${escapeHtml(record.category)}<br><span class="badge ${escapeHtml(record.materiality)}">${escapeHtml(record.materiality)}</span> <span class="badge ${noveltyClass(novelty)}">${escapeHtml(noveltyLabel(novelty))}</span><br><span class="badge research-${escapeHtml(idea.key)}">${escapeHtml(idea.label)}</span></td>
+          <td>${escapeHtml(record.why)}</td><td>${idea.href ? `<a href="${idea.href}">${escapeHtml(idea.action)}</a><br>` : ""}<a href="${escapeHtml(record.url)}" target="_blank">SEC filing</a><br>Confidence ${Number(record.confidence).toFixed(3)}<br><button type="button" class="save-record table-save" data-save-record="${escapeHtml(record.id)}" aria-pressed="${state.saved.has(record.id)}">${state.saved.has(record.id) ? "Saved" : "Save"}</button></td></tr>`;
       }).join("")}</tbody></table></div>`;
   }
 
@@ -82,7 +89,8 @@
       section: byId("filter-section").value, category: byId("filter-category").value,
       materiality: byId("filter-materiality").value, novelty: byId("filter-novelty").value,
       direction: byId("filter-direction").value, confidence: byId("filter-confidence").value,
-      sector: byId("filter-sector").value, caseStatus: byId("filter-case").value
+      sector: byId("filter-sector").value, caseStatus: byId("filter-case").value,
+      researchIdea: byId("filter-research-idea").value
     };
   }
 
@@ -106,9 +114,10 @@
         && (!f.section || sectionOf(r) === f.section) && (!f.category || r.category === f.category)
         && (!f.materiality || r.materiality === f.materiality) && (!f.novelty || noveltyOf(r) === f.novelty)
         && (!f.direction || r.direction === f.direction) && (!f.confidence || confidenceBand(r.confidence) === f.confidence)
-        && (!f.sector || sectorOf(r) === f.sector) && (!f.caseStatus || (f.caseStatus === "yes") === isCase(r));
+        && (!f.sector || sectorOf(r) === f.sector) && (!f.caseStatus || (f.caseStatus === "yes") === isCase(r))
+        && (!f.researchIdea || researchIdeaStatus(r).key === f.researchIdea);
     }));
-    const labels = Object.entries(f).filter(([, value]) => value).map(([key, value]) => `<span class="filter-token">${escapeHtml(titleCase(key.replace("caseStatus", "case study")))}: ${escapeHtml(titleCase(value))}</span>`);
+    const labels = Object.entries(f).filter(([, value]) => value).map(([key, value]) => `<span class="filter-token">${escapeHtml(titleCase(key.replace("caseStatus", "case study").replace("researchIdea", "research idea")))}: ${escapeHtml(titleCase(value))}</span>`);
     byId("active-filters").innerHTML = labels.join("") || "None";
     render();
   }

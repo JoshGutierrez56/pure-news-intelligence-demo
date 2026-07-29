@@ -1,0 +1,39 @@
+{
+  "receipt_version": "1.0",
+  "created_at_utc": "2026-07-29T16:18:00Z",
+  "repository": "JoshGutierrez56/pure-news-intelligence-demo",
+  "branch": "feat/research-idea-engine-public-demo-v1",
+  "starting_commit": "a2102b7",
+  "starting_v2_commit": "093c4d80ef1d4e475a1c608131a1e3ab571bc48f",
+  "deployed_gh_pages_commit": "74ec311a7eaf3e848ef242da4f5a8a4ff7b1613a",
+  "public_manifest_sha256": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7",
+  "validated_state": {
+    "working_tree_clean": true,
+    "publishable_hypotheses": 2,
+    "safe_failures": 6,
+    "actionable_trade_views": 0,
+    "sixty_case_phase": "BLOCKED",
+    "deployment_authorized": false
+  },
+  "frozen_hash_source": "artifacts/research_idea_public_demo_start_receipt.json",
+  "planned_updates": [
+    "index.html",
+    "demo/professor_presentation.html",
+    "demo/ranked_change_feed.html",
+    "demo/case_studies.html",
+    "demo/research_results.html",
+    "demo/methodology.html",
+    "demo/innovation_framework.html",
+    "demo/pilot_plan.html",
+    "demo/professor_materials.html",
+    "demo/assets/feed.js",
+    "demo/assets/style.css",
+    "README.md"
+  ],
+  "prohibitions": [
+    "Do not deploy.",
+    "Do not regenerate research packets.",
+    "Do not start the 60-case phase.",
+    "Do not weaken grounding or publication gates."
+  ]
+}

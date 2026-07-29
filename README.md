@@ -8,13 +8,32 @@ The project began as a broad news-to-stock prediction hypothesis. Locked tests d
 
 The current MVP separates the product from the quantitative research claim. It is an operational evidence workflow with a final research classification of `INSUFFICIENT_EVIDENCE`.
 
-## AI Research Idea
+## Experimental Research Idea Engine
 
-The bounded V1 extension moves from “What changed?” to “What should an analyst investigate next?” Eight formation-time-only case packets were generated offline with pinned local Ollama model `qwen3.6:35b-a3b`, then separately challenged by a skeptical pass using a frozen response-envelope contract. The public site loads only validated, precomputed JSON and never calls a model or exposes credentials.
+The bounded V2 extension asks, “What should an analyst investigate next?” Full-prior retrieval, atomic claim review, financial-role normalization, counterevidence search, and an independent skeptical pass are applied before a frozen packet can appear in the public demo.
 
-The corrected frozen eight-case review set contains no publishable packets: four are held for insufficient evidence and four were rejected by the skeptic. The held cases are CHE, DLTR, EFX, and TFC; DVN, FCX, KHC, and RH were rejected. This is a `HOLD_GROUNDING` result, not a product-success claim. Every trade expression is labeled **Illustrative Trade Hypothesis — Analyst Review Required**, remains `NOT_READY`, and contains no price target, leverage, allocation, or position size. These are unvalidated research hypotheses—not recommendations or evidence of alpha.
+The eight-case result is deliberately selective:
 
-The feature-branch review surfaces are `demo/research_idea.html`, `demo/research_idea_gallery.html`, and `demo/research_idea_methodology.html`. They are intentionally **not deployed** while the release classification is `HOLD_GROUNDING`.
+- 2 publishable research hypotheses: RH and DVN
+- 6 safe failures: EFX, CHE, DLTR, FCX, KHC, and TFC
+- 0 actionable trade views
+- 1.00 factual evidence coverage for both published packets
+- formal blinded human ratings pending
+- 60-case expansion blocked
+
+EFX is the permanent negative fixture. V2 found that the $125M conditional top-up was previously disclosed, classified $346.7M as a remaining balance and approximately $345M as a cash deposit, rejected the comparison as `INCOMPARABLE_QUANTITIES`, and removed unsupported liquidity, reserve, and bondholder claims.
+
+Public routes:
+
+- `demo/research_ideas.html`
+- `demo/research_idea_rh.html`
+- `demo/research_idea_dvn.html`
+- `demo/research_idea_efx.html`
+- `demo/research_idea_methodology.html`
+
+The public-safe layer under `demo/data/research_ideas/v2/` contains only validated derivatives plus a hash manifest. Frozen source packets remain under `data/research_idea_packets/v2/`; their hashes are audited against `artifacts/research_idea_public_demo_start_receipt.json`. Analyst dispositions and notes use browser-local storage and never modify packet JSON.
+
+The public demo uses frozen, validated research-idea packets. It does not run live model inference or generate personalized recommendations. GitHub Pages performs no inference because the site is static: there is no model endpoint, credential, or live generation control. Broader scaling remains blocked pending formal blinded human validation.
 
 ## Public pages
 
@@ -22,6 +41,7 @@ The feature-branch review surfaces are `demo/research_idea.html`, `demo/research
 - [Professor presentation](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/professor_presentation.html)
 - [Ranked disclosure changes](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/ranked_change_feed.html)
 - [Case-study gallery](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/case_studies.html)
+- [Experimental research ideas](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/research_ideas.html)
 - [Two-case walkthrough](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/case_study_walkthrough.html)
 - [Research results](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/research_results.html)
 - [Methodology and trust](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/methodology.html)
@@ -45,7 +65,8 @@ The feature-branch review surfaces are `demo/research_idea.html`, `demo/research
 npm install
 npm test
 python -m pip install -r requirements-research-idea.txt
-python -m pytest -q tests/test_research_idea_engine.py
+python -m pytest -q
+python -m pytest -q tests/test_research_idea_public_demo.py
 python scripts/validate_research_idea_packets.py --mode final
 ```
 

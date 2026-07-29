@@ -74,31 +74,31 @@ test("all static internal links and public downloads resolve", async ({ request 
 
 test("presentation supports duration modes, notes, navigation, demo jump, and clean exit", async ({ page }) => {
   await page.goto("/demo/professor_presentation.html");
-  await expect(page.locator(".story-section")).toHaveCount(10);
+  await expect(page.locator(".story-section")).toHaveCount(12);
   await page.getByRole("button", { name: "5 min" }).click();
   await expect(page.getByRole("button", { name: "5 min" })).toHaveAttribute("aria-pressed", "true");
   await page.getByRole("button", { name: "Present" }).click();
   await expect(page.locator("body")).toHaveClass(/presentation-active/);
-  await expect(page.locator("[data-presentation-position]")).toHaveText("1 / 7");
+  await expect(page.locator("[data-presentation-position]")).toHaveText("1 / 8");
   await page.keyboard.press("ArrowRight");
-  await expect(page.locator("[data-presentation-position]")).toHaveText("2 / 7");
+  await expect(page.locator("[data-presentation-position]")).toHaveText("2 / 8");
   await page.keyboard.press("Space");
   await page.keyboard.press("PageDown");
   await page.keyboard.press("PageUp");
   await page.keyboard.press("Home");
-  await expect(page.locator("[data-presentation-position]")).toHaveText("1 / 7");
+  await expect(page.locator("[data-presentation-position]")).toHaveText("1 / 8");
   await page.keyboard.press("n");
   await expect(page.locator("body")).toHaveClass(/notes-visible/);
   await expect(page.locator(".story-section.is-current .speaker-notes")).toBeVisible();
   await page.getByRole("button", { name: "Jump to demo" }).click();
   await expect(page.locator(".story-section.is-current")).toHaveAttribute("id", "slide-workflow");
   await page.keyboard.press("End");
-  await expect(page.locator("[data-presentation-position]")).toHaveText("7 / 7");
+  await expect(page.locator("[data-presentation-position]")).toHaveText("8 / 8");
   await page.keyboard.press("Escape");
   await expect(page.locator("body")).not.toHaveClass(/presentation-active/);
   await page.getByRole("button", { name: "10 min" }).click();
   await page.keyboard.press("f");
-  await expect(page.locator("[data-presentation-position]")).toHaveText("1 / 10");
+  await expect(page.locator("[data-presentation-position]")).toHaveText("1 / 12");
   await page.keyboard.press("Escape");
 });
 
@@ -154,7 +154,7 @@ test("innovation, pilot, materials, and research decision pages expose required 
   await page.goto("/demo/professor_materials.html");
   await expect(page.locator("a[download]")).toHaveCount(14);
   await page.goto("/demo/research_results.html");
-  await expect(page.locator(".study-panel")).toHaveCount(3);
+  await expect(page.locator(".study-panel")).toHaveCount(4);
   await expect(page.getByText("Negative and null results were preserved rather than tuned away.", { exact: true })).toBeVisible();
 });
 

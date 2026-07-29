@@ -141,3 +141,72 @@ test("all public research idea internal links resolve with relative GitHub Pages
     }
   }
 });
+
+test("homepage and shared navigation expose the experimental engine without displacing the core product", async ({ page }) => {
+  await page.goto("/");
+  const coreHero = page.locator("main > .hero");
+  const experimental = page.locator(".experimental-capability");
+  await expect(coreHero).toBeVisible();
+  await expect(experimental).toBeVisible();
+  expect(await coreHero.evaluate((node) => node.compareDocumentPosition(document.querySelector(".experimental-capability")) & Node.DOCUMENT_POSITION_FOLLOWING)).toBeTruthy();
+  await expect(page.getByRole("heading", { name: "Turn a Verified Change into a Testable Research Question" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Explore the Research Idea Engine" })).toHaveAttribute("href", "demo/research_ideas.html");
+  for (const route of [
+    "/", "/demo/professor_presentation.html", "/demo/ranked_change_feed.html",
+    "/demo/case_studies.html", "/demo/research_results.html", "/demo/methodology.html",
+    "/demo/innovation_framework.html", "/demo/pilot_plan.html", "/demo/professor_materials.html"
+  ]) {
+    await page.goto(route);
+    await expect(page.locator("#primary-nav").getByRole("link", { name: "Research Ideas", exact: true })).toBeVisible();
+  }
+});
+
+test("professor presentation includes grounded hypothesis and safe-failure screens in both duration modes", async ({ page }) => {
+  await page.goto("/demo/professor_presentation.html");
+  await expect(page.locator(".story-section")).toHaveCount(12);
+  await expect(page.getByRole("heading", { name: /verified change can become a falsifiable research agenda/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /Full-prior retrieval stopped/i })).toBeVisible();
+  await expect(page.getByText("no improvement in Sharpe ratio or information coefficient", { exact: false })).toBeAttached();
+  await page.getByRole("button", { name: "5 min" }).click();
+  await page.getByRole("button", { name: "Present" }).click();
+  await expect(page.locator("[data-presentation-position]")).toHaveText("1 / 8");
+  await page.keyboard.press("End");
+  await expect(page.locator("[data-presentation-position]")).toHaveText("8 / 8");
+  await page.keyboard.press("Escape");
+  await page.getByRole("button", { name: "10 min" }).click();
+  await page.keyboard.press("f");
+  await expect(page.locator("[data-presentation-position]")).toHaveText("1 / 12");
+  await page.keyboard.press("Escape");
+});
+
+test("ranked feed uses frozen research statuses and filtering with no live generation", async ({ page }) => {
+  await page.goto("/demo/ranked_change_feed.html");
+  await expect(page.getByLabel("Research idea status")).toBeVisible();
+  await page.locator("#filter-search").fill("RH");
+  const rhCard = page.locator('.change-card[data-record-id="412b08746bb0ed5a7745"]');
+  await expect(rhCard.getByText("Research idea available", { exact: true }).first()).toBeVisible();
+  await expect(rhCard.getByRole("link", { name: "View AI Research Hypothesis" })).toHaveAttribute("href", "research_idea_rh.html");
+  await page.locator("#filter-search").fill("EFX");
+  const efxCard = page.locator('.change-card[data-record-id="279e7d4e407851a19548"]');
+  await expect(efxCard.getByText("Idea rejected after full evidence review", { exact: true }).first()).toBeVisible();
+  await expect(efxCard.getByRole("link", { name: "View grounding rejection" })).toHaveAttribute("href", "research_idea_efx.html");
+  await page.locator("#filter-search").fill("");
+  await page.locator("#filter-research-idea").selectOption("available");
+  await expect(page.locator(".change-card")).not.toHaveCount(0);
+  await expect(page.getByText("Generate Research Idea", { exact: true })).toHaveCount(0);
+});
+
+test("results, methodology, framework, pilot, and cases reconcile the bounded result", async ({ page }) => {
+  const expectations = [
+    ["/demo/research_results.html", "Research Idea Engine V2", "READY_FOR_PUBLIC_DEMO"],
+    ["/demo/methodology.html", "How Research Ideas Are Grounded", "broader generation remains blocked"],
+    ["/demo/innovation_framework.html", "A research-question layer, governed by safe refusal", "Formal human ratings pending"],
+    ["/demo/pilot_plan.html", "Measure research-agenda quality before market performance", "Only after hypotheses are frozen prospectively"],
+    ["/demo/case_studies.html", "Three Outcomes the Engine Can Produce", "formal analyst validation remains pending"]
+  ];
+  for (const [route, heading, copy] of expectations) {
+    await page.goto(route);
+    await expect(page.getByRole("heading", { name: heading })).toBeVisible();
+    await expect(page.getByText(copy, { exact: false }).first()).toBeVisible();
+  }
+});

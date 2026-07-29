@@ -204,3 +204,77 @@ def test_public_builder_is_deterministic():
     )
     after = {path.name: sha256(path) for path in PUBLIC_DIR.glob("*.json")}
     assert after == before
+
+
+def test_p3_pages_reconcile_public_claims_and_routes():
+    pages = {
+        "index.html": (
+            "Turn a Verified Change into a Testable Research Question",
+            "<strong>8</strong><span>cases reviewed",
+            "<strong>2</strong><span>publishable hypotheses",
+            "<strong>6</strong><span>safe failures",
+            "<strong>0</strong><span>actionable trade views",
+        ),
+        "demo/assets/site.js": (
+            "Research Idea Engine V2",
+            "READY_FOR_PUBLIC_DEMO",
+            "60-case phase remains blocked",
+        ),
+        "demo/methodology.html": ("How Research Ideas Are Grounded",),
+        "demo/innovation_framework.html": ("A research-question layer, governed by safe refusal",),
+        "demo/pilot_plan.html": ("Only after hypotheses are frozen prospectively",),
+        "demo/case_studies.html": ("Three Outcomes the Engine Can Produce",),
+    }
+    for relative, phrases in pages.items():
+        text = (ROOT / relative).read_text(encoding="utf-8")
+        for phrase in phrases:
+            assert phrase in text
+
+
+def test_p3_shared_navigation_and_no_live_generation():
+    pages = (
+        ROOT / "index.html",
+        ROOT / "demo/professor_presentation.html",
+        ROOT / "demo/ranked_change_feed.html",
+        ROOT / "demo/case_studies.html",
+        ROOT / "demo/research_results.html",
+        ROOT / "demo/methodology.html",
+        ROOT / "demo/innovation_framework.html",
+        ROOT / "demo/pilot_plan.html",
+        ROOT / "demo/professor_materials.html",
+    )
+    for path in pages:
+        text = path.read_text(encoding="utf-8")
+        if path.name != "research_results.html":
+            assert "research_ideas.html" in text
+            assert "Research Ideas" in text
+    assert 'location.pathname.endsWith("/research_results.html")' in (
+        ROOT / "demo/assets/site.js"
+    ).read_text(encoding="utf-8")
+    assert "Generate Research Idea" not in (
+        ROOT / "demo/assets/feed.js"
+    ).read_text(encoding="utf-8")
+
+
+def test_readme_documents_frozen_public_architecture():
+    text = (ROOT / "README.md").read_text(encoding="utf-8")
+    for phrase in (
+        "Experimental Research Idea Engine",
+        "demo/research_ideas.html",
+        "public-safe layer",
+        "browser-local storage",
+        "does not run live model inference",
+        "Broader scaling remains blocked",
+    ):
+        assert phrase in text
+
+
+def test_deployment_is_unchanged_before_p5():
+    result = subprocess.run(
+        ["git", "rev-parse", "origin/gh-pages"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    assert result.stdout.strip() == "74ec311a7eaf3e848ef242da4f5a8a4ff7b1613a"

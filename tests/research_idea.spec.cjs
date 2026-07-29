@@ -158,33 +158,34 @@ test("final packet index reconciles to the honest eight-packet hold/rejection ou
   expect(counts).toEqual({ PUBLISHABLE: 0, HOLD: 4, REJECTED_BY_SKEPTIC: 4 });
 });
 
-test("ranked cards link exact change IDs and a non-indexed record gets the missing-packet state", async ({ page }) => {
+test("ranked cards expose only frozen public V2 statuses and no live generation", async ({ page }) => {
   const issues = monitorPage(page);
   await page.goto("/demo/ranked_change_feed.html");
   await expect(page.locator(".change-card").first()).toBeVisible();
   const dismiss = page.getByRole("button", { name: "Dismiss" });
   if (await dismiss.isVisible()) await dismiss.click();
 
-  for (const [changeId] of expectedCases) {
+  for (const [changeId, ticker] of expectedCases) {
     await page.locator("#filter-search").fill(packetById.get(changeId).issuer);
     const card = page.locator(`.change-card[data-record-id="${changeId}"]`);
     await expect(card).toBeVisible();
-    const link = card.getByRole("link", { name: "Generate Research Idea" });
-    await expect(link).toHaveAttribute("href", `research_idea.html?change_id=${changeId}`);
-    await expect(link).toHaveAttribute("data-research-idea-available", "true");
+    if (ticker === "RH" || ticker === "DVN") {
+      const link = card.getByRole("link", { name: "View AI Research Hypothesis" });
+      await expect(link).toHaveAttribute("href", `research_idea_${ticker.toLowerCase()}.html`);
+    } else if (ticker === "EFX") {
+      await expect(card.getByRole("link", { name: "View grounding rejection" })).toHaveAttribute("href", "research_idea_efx.html");
+    } else {
+      await expect(card.getByText("No publishable research hypothesis", { exact: true }).first()).toBeVisible();
+    }
+    await expect(card.getByText("Generate Research Idea", { exact: true })).toHaveCount(0);
   }
 
   const missingId = "90dfbd96252aa63be9ed";
   await page.locator("#filter-search").fill("UNP");
   const missingCard = page.locator(`.change-card[data-record-id="${missingId}"]`);
   await expect(missingCard).toBeVisible();
-  const missingLink = missingCard.getByRole("link", { name: "Generate Research Idea" });
-  await expect(missingLink).toHaveAttribute("href", `research_idea.html?change_id=${missingId}`);
-  await expect(missingLink).toHaveAttribute("data-research-idea-available", "false");
-  await missingLink.click();
-  await expect(page).toHaveURL(new RegExp(`research_idea\\.html\\?change_id=${missingId}$`));
-  await expect(page.getByRole("heading", { name: "Research idea not yet generated for this record." })).toBeVisible();
-  await expect(page.locator("#idea-packet-status")).toHaveText("NOT AVAILABLE");
+  await expect(missingCard.getByText("Research idea not yet reviewed", { exact: true }).first()).toBeVisible();
+  await expect(missingCard.getByText("Generate Research Idea", { exact: true })).toHaveCount(0);
   expect(issues).toEqual([]);
 });
 

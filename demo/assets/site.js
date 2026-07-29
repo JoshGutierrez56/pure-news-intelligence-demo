@@ -12,6 +12,38 @@
     });
   }
 
+  // Keep the locked research-results HTML byte-identical while layering the
+  // bounded V2 public-demo section at render time.
+  if (location.pathname.endsWith("/research_results.html")) {
+    if (nav && !nav.querySelector('a[href="research_ideas.html"]')) {
+      const ideasLink = document.createElement("a");
+      ideasLink.href = "research_ideas.html";
+      ideasLink.textContent = "Research Ideas";
+      nav.insertBefore(ideasLink, nav.querySelector('a[href="research_results.html"]'));
+    }
+    const finalCta = document.querySelector("main > .section-block:last-of-type");
+    if (finalCta && !byId("idea-v2-results")) {
+      const ideaResults = document.createElement("section");
+      ideaResults.className = "section-block study-panel";
+      ideaResults.setAttribute("aria-labelledby", "idea-v2-results");
+      ideaResults.innerHTML = `<p class="eyebrow">Bounded experimental result</p>
+        <h2 id="idea-v2-results">Research Idea Engine V2</h2>
+        <h3>Can the system generate grounded, falsifiable research hypotheses while rejecting unsupported narratives?</h3>
+        <dl class="study-plain">
+          <div><dt>Question</dt><dd>Can full-prior evidence, atomic claims, numeric-role checks, and skeptical review produce bounded research agendas without forcing a story?</dd></div>
+          <div><dt>Result</dt><dd>8 cases evaluated; 2 publishable hypotheses; 6 safe failures; 0 actionable trade views; 1.00 evidence coverage for the published packets.</dd></div>
+          <div><dt>Decision</dt><dd><span class="status teal">READY_FOR_PUBLIC_DEMO</span> Demonstrate the frozen bounded outputs.</dd></div>
+          <div><dt>Supported</dt><dd>Two grounded, falsifiable hypothesis packets and transparent safe failure.</dd></div>
+          <div><dt>Not supported</dt><dd>Broad generation, analyst validation, or investment-performance claims.</dd></div>
+          <div><dt>Inconclusive</dt><dd>Analyst usefulness and edit burden until blinded ratings are complete.</dd></div>
+          <div><dt>Not tested</dt><dd>Information coefficient, Sharpe ratio, hit rate, signal decay, or realized performance.</dd></div>
+        </dl>
+        <p class="boundary-note"><strong>Boundary:</strong> the 60-case phase remains blocked. Zero trade views reflects conservative gating, not a missing display field.</p>
+        <p><a href="research_ideas.html">Review the bounded gallery</a></p>`;
+      finalCta.before(ideaResults);
+    }
+  }
+
   document.querySelectorAll('a[target="_blank"]').forEach((link) => {
     link.rel = "noreferrer noopener";
   });
