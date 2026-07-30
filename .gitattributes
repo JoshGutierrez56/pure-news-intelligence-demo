@@ -1,5 +1,8 @@
 # Preserve the validated public-manifest byte sequence for deployment hashing.
 demo/data/research_ideas/v2/manifest.json -text
+demo/data/research_ideas/v2/rh.json -text
+demo/data/research_ideas/v2/dvn.json -text
+demo/data/research_ideas/v2/efx_rejection.json -text
 
 # Universe-preview assets are canonical UTF-8 JSON with LF line endings.
 demo/data/universe_preview/*.json text eol=lf

@@ -1,0 +1,47 @@
+{
+  "schema": "pure-news-final-packet-integrity-repair.start.v1",
+  "repository": "JoshGutierrez56/pure-news-intelligence-demo",
+  "branch": "feat/research-idea-engine-public-demo-v1",
+  "started_at": "2026-07-29T20:03:09-04:00",
+  "starting_commit": "0e1e2e0fbb4e9c87d8a09bb39580c490e66b9669",
+  "live_gh_pages_commit": "61c50b0b0f8d95ea9b39edd2a2b02d451ef9890f",
+  "research_manifest_sha256": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7",
+  "packet_baseline": {
+    "demo/data/research_ideas/v2/rh.json": {
+      "canonical_sha256": "684dfea02feaeb76d8a3de134118e18a8bfe192216757a8c127cf6fa5b1e5585",
+      "working_tree_sha256": "684dfea02feaeb76d8a3de134118e18a8bfe192216757a8c127cf6fa5b1e5585",
+      "committed_sha256": "30c37a689e341e1838c4e3fea9dc79e064ddf28340187059b378a597ca2bc2a1",
+      "semantic_json_sha256": "7ad8dfa3c196950ca78ef18410b452c6256c90711077282ed7c020df0ebcf750"
+    },
+    "demo/data/research_ideas/v2/dvn.json": {
+      "canonical_sha256": "103b1894bba6fb1ed3ed82e907315e92f3c749262c65aeaed1a0a4b7db6db655",
+      "working_tree_sha256": "103b1894bba6fb1ed3ed82e907315e92f3c749262c65aeaed1a0a4b7db6db655",
+      "committed_sha256": "8bf5dbafdf508c789bbd7f6003060979072a4fcac00c768510c928c270d8708a",
+      "semantic_json_sha256": "9e9ae28abf9aaa27f7a206613bfb71756c25982d7ccf89ff7dc805d2e5982a9c"
+    },
+    "demo/data/research_ideas/v2/efx_rejection.json": {
+      "canonical_sha256": "e92004321017a148b8f88df832d7b535ca90535e8e0b94c1e9988e96ba8d388c",
+      "working_tree_sha256": "e92004321017a148b8f88df832d7b535ca90535e8e0b94c1e9988e96ba8d388c",
+      "committed_sha256": "76f9218df1586a416efeb7edd5e7be125fdec89c72ec51bd522e8ceb7d5f4c05",
+      "semantic_json_sha256": "a5229d3f4864b4ee61a66ca602a91308720dfc96bc9a6115c8665ee4fd1550d2"
+    }
+  },
+  "universe_counts": {
+    "total_issuers_indexed": 6190,
+    "issuers_with_curated_10k_metadata": 149,
+    "issuers_with_recent_8k_metadata": 3072,
+    "issuers_with_permitted_news_metadata": 776,
+    "issuers_fully_validated": 149,
+    "issuers_indexed_but_not_fully_validated": 6041,
+    "issuers_not_yet_processed": 2973
+  },
+  "research_outcomes": {
+    "rh": "PASS_HYPOTHESIS_ONLY",
+    "dvn": "PASS_HYPOTHESIS_ONLY",
+    "efx": "REJECT_MISLEADING_COMPARISON",
+    "actionable_trade_views": 0,
+    "formal_blinded_human_ratings": "PENDING",
+    "sixty_case_phase": "BLOCKED_NOT_RUN"
+  },
+  "preservation_gate": "PASS"
+}
