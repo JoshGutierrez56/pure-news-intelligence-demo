@@ -1,0 +1,52 @@
+{
+  "schema": "pure-news-full-branch-public-deployment.v1",
+  "source_branch": "feat/research-idea-engine-public-demo-v1",
+  "exact_deployed_source_commit": "4f884e92a5229519c229ae89c4d25fe4256cc7ad",
+  "prior_gh_pages_commit": "61c50b0b0f8d95ea9b39edd2a2b02d451ef9890f",
+  "new_gh_pages_commit": "4f884e92a5229519c229ae89c4d25fe4256cc7ad",
+  "rollback_commit": "61c50b0b0f8d95ea9b39edd2a2b02d451ef9890f",
+  "deployment_verified_at": "2026-07-29T20:12:28-04:00",
+  "deployment_url": "https://joshgutierrez56.github.io/pure-news-intelligence-demo/",
+  "live_hashes": {
+    "research_manifest": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7",
+    "rh": "684dfea02feaeb76d8a3de134118e18a8bfe192216757a8c127cf6fa5b1e5585",
+    "dvn": "103b1894bba6fb1ed3ed82e907315e92f3c749262c65aeaed1a0a4b7db6db655",
+    "efx_rejection": "e92004321017a148b8f88df832d7b535ca90535e8e0b94c1e9988e96ba8d388c",
+    "universe_build_receipt": "8baaa7f4bb1c2a15a4a300e19492011759772186a83fae9a9ea8f033fe0bc6ac",
+    "universe_source_manifest": "8b896467a719c4f2fb23eacdeb8166239740cd300f7517c82a619b53461f94cb",
+    "universe_coverage": "9a5930919767b8295ea82c47109935529e2406ad5b0ecab10d5a029b88e35628",
+    "universe_summary": "09f35d5ce2f1f8ffbe6a0a357b0b848875d687c94e1d0e8f3d329c388d04d7a2"
+  },
+  "live_verification": {
+    "routes_checked": 19,
+    "route_failures": 0,
+    "internal_links_checked": 38,
+    "broken_internal_links": 0,
+    "console_or_request_errors": 0,
+    "serious_or_critical_axe_violations": 0
+  },
+  "tests": {
+    "python_passed": 125,
+    "python_failed": 0,
+    "playwright_passed": 75,
+    "playwright_failed": 0,
+    "clean_clone_passed": 19,
+    "clean_clone_failed": 0
+  },
+  "responsive": "PASS",
+  "keyboard": "PASS",
+  "print": "PASS",
+  "exports": "PASS",
+  "analyst_controls": "PASS",
+  "presentation_modes": "PASS",
+  "universe_search_and_filters": "PASS",
+  "json_semantics": "PASS",
+  "research_claim_reconciliation": "PASS",
+  "universe_claim_reconciliation": "PASS",
+  "public_data_audit": "PASS",
+  "frozen_data_preservation": "PASS",
+  "research_integrity": "PASS",
+  "universe_preview_integrity": "PASS",
+  "rollback_status": "NOT_REQUIRED",
+  "final_classification": "PURE_NEWS_INTELLIGENCE_FULL_BRANCH_PUBLIC_DEPLOYMENT_COMPLETE"
+}
