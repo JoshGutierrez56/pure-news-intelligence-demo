@@ -4,7 +4,9 @@ Pure News Intelligence is an evidence-linked research workflow for finding what 
 
 The project began by testing whether “pure news” in 10-K filings predicted returns. The locked tests did **not** support that thesis. The product therefore pivoted toward a narrower and more defensible analyst problem: prioritizing disclosure changes and challenging plausible but unsupported narratives.
 
-[Open the public demo](https://joshgutierrez56.github.io/pure-news-intelligence-demo/) · [Review the research evidence](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/research_results.html) · [Read the methodology](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/methodology.html)
+[Open the public demo](https://joshgutierrez56.github.io/pure-news-intelligence-demo/) · [Review the research evidence](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/research_results.html) · [Research Repository](https://github.com/JoshGutierrez56/pure-news-research-public) · [Read the methodology](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/methodology.html)
+
+The [Pure News Research repository](https://github.com/JoshGutierrez56/pure-news-research-public) documents the empirical methodology, validation gates, public-safe synthetic fixtures, and null findings that motivated this workflow pivot.
 
 ## What the workflow does
 

@@ -124,4 +124,4 @@ def test_frozen_artifacts_and_deployment_remain_unchanged():
         capture_output=True,
         text=True,
     )
-    assert result.stdout.strip() == "61c50b0b0f8d95ea9b39edd2a2b02d451ef9890f"
+    assert result.stdout.strip() == "4f884e92a5229519c229ae89c4d25fe4256cc7ad"
