@@ -1088,6 +1088,8 @@ body:not(.presentation-active) .hero.story-section > .slide-kicker,
 body:not(.presentation-active) .hero.story-section > .speaker-notes,
 body:not(.presentation-active) .hero.story-section > .next-idea { grid-column: 1 / -1; }
 .hero.story-section h1 { overflow-wrap: anywhere; }
+.ri-gallery-card { overflow-wrap: anywhere; }
+.ri-gallery-card .status { max-width: 100%; white-space: normal; }
 
 .compact-metrics {
   margin-top: 1.25rem;

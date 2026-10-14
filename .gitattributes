@@ -19,6 +19,8 @@ artifacts/research_idea_engine_v2_completion_receipt.json text eol=lf
 # those exact source bytes on every OS; do not rewrite the frozen receipts.
 data/research_idea_packets/v1/*.json text eol=crlf
 data/research_idea_packets/v2/*.json text eol=crlf
+demo/data/research_idea_packets/v1/*.json text eol=crlf
+demo/data/research_idea_packets/v2/*.json text eol=crlf
 demo/data/changes.json text eol=crlf
 demo/data/catalog.json text eol=crlf
 demo/research_results.html text eol=crlf
