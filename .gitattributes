@@ -9,3 +9,8 @@ demo/data/universe_preview/*.json text eol=lf
 artifacts/universe_preview_public_asset_manifest.json text eol=lf
 scripts/build_universe_preview.py text eol=lf
 scripts/build_universe_preview_asset_manifest.py text eol=lf
+
+# Preserve the canonical LF bytes of frozen research-review evidence.
+reports/research_idea_efx_outcome_blinded_review.md text eol=lf
+artifacts/research_idea_efx_outcome_blinded_review_receipt.json text eol=lf
+artifacts/research_idea_engine_v2_completion_receipt.json text eol=lf

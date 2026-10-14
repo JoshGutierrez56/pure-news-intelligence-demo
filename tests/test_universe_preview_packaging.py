@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import subprocess
+import sys
 from pathlib import Path
 
 
@@ -36,7 +37,7 @@ def load_manifest() -> dict:
 
 def test_asset_manifest_is_deterministic():
     subprocess.run(
-        ["python", "scripts/build_universe_preview_asset_manifest.py", "--check"],
+        [sys.executable, "scripts/build_universe_preview_asset_manifest.py", "--check"],
         cwd=ROOT,
         check=True,
     )

@@ -1,5 +1,7 @@
 # Pure News Intelligence
 
+[![Evidence and interface checks](https://github.com/JoshGutierrez56/pure-news-intelligence-demo/actions/workflows/validation.yml/badge.svg)](https://github.com/JoshGutierrez56/pure-news-intelligence-demo/actions/workflows/validation.yml)
+
 **Evidence-linked disclosure research: what changed, what supports it, and what to investigate next.**
 
 This prototype compares 10-K disclosures, traces source excerpts, and challenges unsupported narratives. Locked tests **did not support its original return-prediction thesis**; the project pivoted to inspectable disclosure research, not trading signals.
@@ -66,11 +68,11 @@ Open **http://127.0.0.1:4173/**. Keep the server running while reviewing; stop i
 
 ### Check release claims and packet integrity
 
-From a Python virtual environment:
+From a **Python 3.11** virtual environment, using a full Git clone (the provenance checks inspect historical commits):
 
 ```bash
-python -m pip install -r requirements-research-idea.txt
-python -m pytest -q tests/test_final_polish_release_candidate.py tests/test_final_packet_git_blobs.py
+python -m pip install --require-hashes -r requirements-lock.txt
+python -m pytest -q tests
 ```
 
 For browser checks, install Node.js/npm and the configured **Microsoft Edge** browser:
@@ -81,7 +83,11 @@ npx playwright install msedge
 npm test
 ```
 
-Skip Edge installation if it is already installed; the [test configuration](playwright.config.cjs) selects `msedge`, not default Chromium. The focused Python checks verify public claims and canonical packet bytes. The [broader suites](tests/) also cover time boundaries, browser behavior, accessibility, exports, and EFX rejection; some historical checks pin an earlier deployment commit or exact checkout bytes. Test scope is not investment effectiveness.
+Skip Edge installation if it is already installed; the [test configuration](playwright.config.cjs) selects `msedge`, not default Chromium. The Python checks verify public claims, canonical packet bytes, time boundaries, generation-failure handling, EFX rejection and the preserved release history. Browser checks cover public behavior, accessibility and exports. Tests substitute fixtures for model calls; this validation does not require an LLM service. Test scope is not investment effectiveness.
+
+The [CI workflow](.github/workflows/validation.yml) runs the complete Python suite on Linux and Windows and the browser suite on Linux. [`requirements-lock.txt`](requirements-lock.txt) pins validation dependencies and hashes; `requirements-research-idea.txt` remains the dependency input. Refresh deliberately with `uv pip compile requirements-research-idea.txt --python-version 3.11 --universal --generate-hashes --output-file requirements-lock.txt` and repeat validation.
+
+If you used a shallow clone, fetch the preserved history with `git fetch --unshallow origin` before testing. Narrow `.gitattributes` rules preserve the original frozen review and packet bytes across operating systems. The historical baseline must remain an ancestor of a release; subsequent authorized commits do not invalidate its evidence. No frozen packet, receipt, empirical result or public manifest was rewritten to make these checks pass.
 
 ## Universe coverage preview
 
