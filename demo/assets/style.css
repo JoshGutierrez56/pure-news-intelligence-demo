@@ -91,7 +91,7 @@ p { margin: 0 0 1rem; }
 }
 .hero-aside { padding: 1.35rem; border-top: 4px solid var(--teal); }
 .hero-aside dt { margin-top: .75rem; color: var(--muted); font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-.hero-aside dd { margin: .15rem 0 0; font-weight: 720; }
+.hero-aside dd { margin: .15rem 0 0; font-weight: 720; overflow-wrap: anywhere; }
 .claim-boundary { margin-top: .9rem; padding: .8rem; color: var(--slate); background: var(--gray-soft); border-radius: 5px; font-size: .86rem; }
 
 .section-block { padding: 4rem 0; border-top: 1px solid var(--line); }
@@ -551,6 +551,7 @@ body.presentation-active[data-duration-mode="5"] [data-optional="true"] { displa
 .ri-hero { align-items: center; }
 .ri-hero h1 { font-size: clamp(2.35rem, 4.5vw, 4.25rem); }
 .ri-packet-summary dl { margin: 0; }
+.ri-packet-summary .status { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
 .ri-disclaimer { margin: 1rem 0 2rem; }
 .ri-live-status { min-height: 1px; }
 .ri-detail-shell, .ri-guided-example { min-width: 0; }
