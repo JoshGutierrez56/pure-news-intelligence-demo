@@ -1,128 +1,104 @@
 # Pure News Intelligence
 
-Pure News Intelligence is an evidence-linked research workflow for finding what changed in corporate disclosures, tracing the supporting record, preserving institutional memory, and forming testable research questions.
+**Evidence-linked disclosure research: what changed, what supports it, and what to investigate next.**
 
-The project began by testing whether “pure news” in 10-K filings predicted returns. The locked tests did **not** support that thesis. The product therefore pivoted toward a narrower and more defensible analyst problem: prioritizing disclosure changes and challenging plausible but unsupported narratives.
+This prototype compares 10-K disclosures, traces source excerpts, and challenges unsupported narratives. Locked tests **did not support its original return-prediction thesis**; the project pivoted to inspectable disclosure research, not trading signals.
 
-[Open the public demo](https://joshgutierrez56.github.io/pure-news-intelligence-demo/) · [Review the research evidence](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/research_results.html) · [Read the methodology](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/methodology.html)
+[**Explore the frozen demo**](https://joshgutierrez56.github.io/pure-news-intelligence-demo/) · [Research results](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/research_results.html) · [Methodology](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/methodology.html) · [Browse the build and audit code](scripts/)
 
-## What the workflow does
+**Public mode:** the static public-safe layer serves frozen research packets. It does not run live model inference or execute trades, and provides no personalized recommendations.
 
-1. Retrieves point-in-time public filings and permitted evidence.
-2. Compares consecutive disclosures and links exact source spans.
-3. Checks prior filings, earlier 8-Ks, and eligible news context.
-4. Separates facts, interpretations, uncertainty, and hypotheses.
-5. Normalizes financial quantities before comparing them.
-6. Searches for counterevidence and permits safe rejection.
-7. Leaves the final decision with the analyst.
+## A five-minute review
 
-The Experimental Research Idea Engine is a bounded secondary capability; it does not replace the core Disclosure Change Engine.
+1. [Ranked Changes](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/ranked_change_feed.html): select a disclosure change and trace its source evidence.
+2. [Case Studies](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/case_studies.html): compare the change with prior disclosures and context.
+3. [Research Ideas](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/research_ideas.html): contrast the RH/DVN hypothesis-only packets with EFX's rejected comparison.
+4. [Research Results](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/research_results.html): inspect the negative findings and the boundary between evidence coverage and investment validity.
 
-The public site is static. Its public-safe layer serves frozen packets and does not run live model inference, personalized recommendations, or trade execution.
+## What the frozen evidence shows
 
-## Validated public results
+| Result | Evidence and interpretation |
+| :--- | :--- |
+| **150 consecutive 10-K pairs in the study** | Reported study scope; [claim reconciliation](reports/final_polish_claim_reconciliation.md) |
+| **995 evidence-backed changes; 629 high-confidence** | [Change records](demo/data/changes.json); confidence labels are not measured predictive accuracy |
+| **1,990 excerpt-offset checks** | Checks that the cited spans match the disclosure record; [claim reconciliation](reports/final_polish_claim_reconciliation.md) |
+| **8 idea cases: 2 publishable hypotheses, 6 safe failures** | [V2 manifest](demo/data/research_ideas/v2/manifest.json); **0 actionable trade views** |
+| **RH / DVN: `PASS_HYPOTHESIS_ONLY`** | [RH packet](demo/data/research_ideas/v2/rh.json) and [DVN packet](demo/data/research_ideas/v2/dvn.json), each with evidence coverage **1.00** |
+| **EFX: `REJECT_MISLEADING_COMPARISON`** | [Rejected packet](demo/data/research_ideas/v2/efx_rejection.json): distinct financial quantities must not be presented as like-for-like |
 
-- 150 companies and consecutive 10-K pairs
-- 995 evidence-backed disclosure changes
-- 629 high-confidence changes
-- 1,990 verified excerpt-offset checks
-- Research Idea Engine V2: 8 cases reviewed, 2 publishable research hypotheses, 6 safe failures, and 0 actionable trade views
-- RH and DVN: `PASS_HYPOTHESIS_ONLY`, evidence coverage 1.00
-- EFX: `REJECT_MISLEADING_COMPARISON`
-- Formal blinded human ratings: pending
-- 60-case phase: blocked and not run
+“Publishable” is the bounded packet gate, not external peer review. Evidence coverage 1.00 means the published packet's factual propositions have cited support; it does **not** validate the hypothesis, usefulness to analysts, or investment performance. Formal blinded human ratings remain pending; the 60-case phase is blocked and has not run.
 
-Evidence coverage 1.00 means every factual proposition in a published packet was supported by cited packet evidence. It does not validate the hypothesis, analyst usefulness, or investment performance.
+## Engineering workflow
 
-## What the research did not prove
+The core **Disclosure Change Engine** supports change detection and source tracing. The secondary **Experimental Research Idea Engine** turns selected changes into falsifiable questions and can hold or reject a packet.
 
-The project did not demonstrate alpha, Sharpe-ratio improvement, information-coefficient improvement, return prediction, causality, analyst adoption, commercial success, or institutional validation. It is not investment advice.
-
-## Recommended demo path
-
-1. [Overview](https://joshgutierrez56.github.io/pure-news-intelligence-demo/)
-2. [Ranked Changes](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/ranked_change_feed.html)
-3. [Case Studies](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/case_studies.html)
-4. [Research Ideas](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/research_ideas.html)
-5. [Research Results](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/research_results.html)
-6. [Methodology](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/methodology.html)
-7. [Pilot Plan](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/pilot_plan.html)
-
-Supporting resources: [FAQ](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/faq.html), [Known Limitations](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/known_limitations.html), [Future Research](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/future_research.html), [Public Architecture](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/public_architecture.html), [Professor Presentation](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/professor_presentation.html), and [Innovation Framework](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/innovation_framework.html).
-
-## Universe coverage preview
-
-The local [Universe Coverage Preview](demo/universe_coverage_preview.html) indexes 6,190 normalized CIKs observed in the frozen parsed SEC 8-K metadata corpus. It is labeled **Broad U.S. public-company coverage preview** and does not claim Russell 3000 or other index membership.
-
-As of 2024-12-31, the preview combines:
-
-- frozen SEC 8-K metadata from 2012–2024;
-- permitted news metadata from 2015–2024, with article bodies excluded;
-- 10-K metadata available in the curated disclosure-change demo; and
-- bounded Research Idea Engine review status.
-
-The preview reports metadata availability and processing readiness—not completed full-universe analysis. Missing news coverage is `null`/unavailable, never interpreted as zero news. The page performs no live API calls.
-
-Rebuild and verify:
-
-```powershell
-python scripts/build_universe_preview.py
-python scripts/build_universe_preview.py --check
-python -m pytest -q tests/test_universe_preview.py
-npx playwright test tests/universe_preview.spec.cjs
+```text
+Frozen filings and permitted context
+  → formation-time evidence bundle and exact source spans
+  → structured hypothesis and separate skeptical review
+  → quantity normalization, counterevidence, and integrity checks
+  → frozen public-safe packet
+  → analyst review in the static interface
 ```
 
-Known gaps include 6,041 issuers without curated 10-K metadata, 5,414 without permitted news metadata, and 3,118 without 8-K metadata in the frozen 2024 recent window. These are explicit coverage gaps, not negative findings.
+| Component | Browse the implementation |
+| :--- | :--- |
+| Evidence inputs and prior context | [Input builder](scripts/build_research_idea_inputs.py), [prior-evidence index](scripts/build_full_prior_evidence_index.py) |
+| Structured generation and review | [V2 generator](scripts/generate_research_idea_packets_v2.py), [review stage](scripts/review_research_idea_packets.py), [prompts](prompts/), [schemas](schemas/) |
+| Financial and evidence checks | [Quantity normalization](scripts/normalize_financial_quantities.py), [counterevidence search](scripts/search_counterevidence.py), [V2 validation](scripts/validate_research_idea_packets_v2.py), [audit](scripts/audit_research_idea_v2.py) |
+| Public delivery | [Public-safe builder](scripts/build_public_research_ideas.py), [static interface](demo/), [frozen receipts](artifacts/), [integrity and browser tests](tests/) |
 
-## Repository map
+Generation runs separately and locally. Analyst notes use browser-local storage; they never modify frozen packets or imply approval. [Architecture walkthrough](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/public_architecture.html)
 
-- `demo/` — static public interface and public-safe data
-- `data/` — frozen research inputs, packets, and indexes
-- `schemas/` — versioned packet and claim schemas
-- `prompts/` — frozen generator and skeptic instructions
-- `scripts/` — deterministic build, validation, and audit utilities
-- `tests/` — Python integrity tests and Playwright browser tests
-- `reports/` — methodology, audit, validation, and screenshot reports
-- `artifacts/` — machine-readable receipts and frozen gate decisions
-- `share/` — concise external-review package
+**Stack:** Python validation/build utilities, JSON schemas, JavaScript/HTML/CSS, and Playwright accessibility/browser checks.
 
-## Local preview
+## Run the public demo locally
 
-Requirements: Python 3, Node.js, and npm.
+A static preview needs **Python 3 only**, with no API keys, model download, or data subscription:
 
-```powershell
-npm install
-npx playwright install
-node tests/server.cjs
+```bash
+git clone https://github.com/JoshGutierrez56/pure-news-intelligence-demo.git
+cd pure-news-intelligence-demo
+python -m http.server 4173 --bind 127.0.0.1
 ```
 
-Then open `http://127.0.0.1:4173/`.
+Open **http://127.0.0.1:4173/**. Keep the server running while reviewing; stop it with `Ctrl+C` before browser tests, which start their own server on that port.
 
-## Tests
+### Check release claims and packet integrity
 
-```powershell
-python -m unittest discover -s tests -p "test_*.py"
+From a Python virtual environment:
+
+```bash
+python -m pip install -r requirements-research-idea.txt
+python -m pytest -q tests/test_final_polish_release_candidate.py tests/test_final_packet_git_blobs.py
+```
+
+For browser checks, install Node.js/npm and the configured **Microsoft Edge** browser:
+
+```bash
+npm ci
+npx playwright install msedge
 npm test
 ```
 
-The suites cover packet preservation, point-in-time discipline, claim boundaries, accessibility, links, relative paths, browser behavior, responsive layout, exports, and the EFX negative regression fixture.
+Skip Edge installation if it is already installed; the [test configuration](playwright.config.cjs) selects `msedge`, not default Chromium. The focused Python checks verify public claims and canonical packet bytes. The [broader suites](tests/) also cover time boundaries, browser behavior, accessibility, exports, and EFX rejection; some historical checks pin an earlier deployment commit or exact checkout bytes. Test scope is not investment effectiveness.
 
-## Public-safe data and provenance
+## Universe coverage preview
 
-`demo/data/research_ideas/v2/manifest.json` identifies the three public packets and compact safe-failure metadata. Public derivatives are built from frozen V2 artifacts; packet hashes are recorded in receipts. The manifest’s validated byte sequence is preserved with a path-specific `.gitattributes` rule.
+The [coverage preview](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/universe_coverage_preview.html) indexes **6,190 normalized CIKs** from frozen 2012–2024 SEC 8-K metadata, with permitted 2015–2024 news metadata and curated 10-K context, as of **2024-12-31**. This is broad U.S. public-company **metadata coverage**, not Russell 3000 membership or completed full-universe analysis.
 
-Browser-only analyst dispositions and notes use browser-local storage. They never modify packet JSON or create an approval claim.
+Missing news coverage is `null`/unavailable, not zero news. Gaps include 6,041 issuers without curated 10-K metadata, 5,414 without permitted news metadata, and 3,118 without 8-K metadata in the frozen 2024 window. [Scope](reports/universe_preview_scope.md) · [Coverage receipt](demo/data/universe_preview/universe_summary.json) · [Known gaps](reports/universe_preview_known_gaps.md)
 
-## Deployment
+## Boundaries and next evidence gate
 
-GitHub Pages serves the repository’s validated static content from `gh-pages`. There is no server-side model, database, or secret in the public deployment. Deployment receipts record the source commit, manifest hash, live checks, and rollback commit.
+The project has **not** demonstrated alpha, return prediction, causality, analyst time savings/adoption, commercial success, or institutional validation. The frozen interface is a research demonstration, not an operating investment service. [Full limitations](share/KNOWN_LIMITATIONS.md) · [Supported and unsupported claims](share/RESEARCH_CLAIMS.md)
 
-## Contributing, security, citation, and license status
+The next gate is formal blinded human review. Broader scaling remains blocked; workflow pilots and prospective investment tests are separate, future evaluations.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), [CITATION.cff](CITATION.cff), and [LICENSE_STATUS.md](LICENSE_STATUS.md). No open-source license has been selected; reuse rights are not granted by repository visibility alone.
+GitHub Pages serves the **`gh-pages` default branch**. Packet hashes and byte-preservation rules protect frozen evidence. [Provenance and deployment reports](reports/research_idea_deployment_verification.md)
 
-## Next evidence gate
+## Project notes
 
-Formal blinded human review comes next. Broader scaling remains blocked. Only after that gate should the project consider an analyst workflow pilot, prospective hypothesis freezing, broader case evaluation, and—last—separate investment-performance analysis.
+[One-page summary](share/ONE_PAGE_SUMMARY.md) · [Demo guide](share/DEMO_GUIDE.md) · [FAQ](share/FAQ.md) · [Future research](share/FUTURE_RESEARCH.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Citation](CITATION.cff)
 
-Core public route: `demo/research_ideas.html`.
+No open-source license has been selected; public visibility alone does not grant reuse rights. See [license status](LICENSE_STATUS.md).
