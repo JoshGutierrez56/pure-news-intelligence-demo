@@ -70,6 +70,7 @@ def write_json(path: Path, value: Any) -> None:
     path.write_text(
         json.dumps(value, indent=2, ensure_ascii=False, sort_keys=True) + "\n",
         encoding="utf-8",
+        newline="\r\n",  # The immutable public packet blobs were published with CRLF.
     )
 
 

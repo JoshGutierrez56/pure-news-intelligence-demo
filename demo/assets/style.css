@@ -1080,6 +1080,15 @@ body.presentation-active[data-duration-mode="5"] [data-optional="true"] { displa
   border-top: 4px solid var(--teal, #167c80);
 }
 
+/* Grid children must not impose long-identifier minimum widths. Preserve the
+   text instead of clipping it; the same pages must work with OS fallback fonts. */
+.hero > * { min-width: 0; }
+.ri-hero h1, .ri-hero .lede, .ri-hero .hero-copy { overflow-wrap: anywhere; }
+body:not(.presentation-active) .hero.story-section > .slide-kicker,
+body:not(.presentation-active) .hero.story-section > .speaker-notes,
+body:not(.presentation-active) .hero.story-section > .next-idea { grid-column: 1 / -1; }
+.hero.story-section h1 { overflow-wrap: anywhere; }
+
 .compact-metrics {
   margin-top: 1.25rem;
 }
