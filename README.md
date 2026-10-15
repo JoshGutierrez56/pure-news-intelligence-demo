@@ -10,6 +10,10 @@ This prototype compares 10-K disclosures, traces source excerpts, and challenges
 
 **Public mode:** the static public-safe layer serves frozen research packets. It does not run live model inference or execute trades, and provides no personalized recommendations.
 
+**New research-operations layer:** source acquisition with content hashes, freshness/recovery controls, and a counterbalanced analyst-evaluation toolkit. Three public cases now have **24 prepared calibration tasks across eight reviewer slots**—not eight recruited reviewers and **not human effectiveness results**. The participant interface supports source search, timing, response export and separate adjudication. [Evaluation protocol and runnable workflow](reports/ANALYST_EVALUATION_PROTOCOL.md) · [Source-acquisition runbook](reports/SOURCE_ACQUISITION_RUNBOOK.md).
+
+The live acquisition check fetched/revalidated a public control document (HTTP 200 → 304); SEC submissions returned **403** and are explicitly blocked. The frozen demo remains unchanged. [Recorded source checks](reports/source_acquisition_live_receipt.json) · [Calibration readiness](reports/analyst_evaluation_readiness.json).
+
 ## A five-minute review
 
 1. [Ranked Changes](https://joshgutierrez56.github.io/pure-news-intelligence-demo/demo/ranked_change_feed.html): select a disclosure change and trace its source evidence.
@@ -99,7 +103,7 @@ Missing news coverage is `null`/unavailable, not zero news. Gaps include 6,041 i
 
 The project has **not** demonstrated alpha, return prediction, causality, analyst time savings/adoption, commercial success, or institutional validation. The frozen interface is a research demonstration, not an operating investment service. [Full limitations](share/KNOWN_LIMITATIONS.md) · [Supported and unsupported claims](share/RESEARCH_CLAIMS.md)
 
-The next gate is formal blinded human review. Broader scaling remains blocked; workflow pilots and prospective investment tests are separate, future evaluations.
+The next gate is actual human review on a sampled, independently adjudicated unseen corpus. [Preparation, scoring and uncertainty tooling](research_ops/study.py) is implemented; source-grounded human judgments are not replaced by model ratings or automated UI tests. Broader scaling remains blocked; workflow pilots and prospective investment tests are separate, future evaluations.
 
 GitHub Pages serves the **`gh-pages` default branch**. Packet hashes and byte-preservation rules protect frozen evidence. [Provenance and deployment reports](reports/research_idea_deployment_verification.md)
 

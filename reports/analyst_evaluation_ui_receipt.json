@@ -1,0 +1,17 @@
+{
+  "passed": 337,
+  "browser_errors": [],
+  "widths": [
+    1440,
+    390
+  ],
+  "reviewer_packets": 8,
+  "human_ratings": 0,
+  "scope": "Automated UI QA; synthetic downloaded answer excluded from human study and public metrics",
+  "axe_violations": {
+    "1440": 0,
+    "390": 0
+  },
+  "status": "Passed automated interface QA, not human research evidence",
+  "test_script_scope": "All eight generated calibration packets, each assigned case, search/source fidelity, draft retention, local save/export and time capture"
+}

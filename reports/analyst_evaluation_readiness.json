@@ -1,0 +1,34 @@
+{
+  "status": "Prepared for calibration only; no human collection or efficacy result",
+  "study_id": "pure-news-calibration-241015",
+  "purpose": "calibration",
+  "cases": 3,
+  "reviewer_slots": 8,
+  "prepared_tasks": 24,
+  "real_reviewers_recruited": 0,
+  "human_ratings": 0,
+  "source_hashes": {
+    "RH": "684dfea02feaeb76d8a3de134118e18a8bfe192216757a8c127cf6fa5b1e5585",
+    "DVN": "103b1894bba6fb1ed3ed82e907315e92f3c749262c65aeaed1a0a4b7db6db655",
+    "EFX": "e92004321017a148b8f88df832d7b535ca90535e8e0b94c1e9988e96ba8d388c"
+  },
+  "seed": 241015,
+  "packet_sha256": {
+    "REVIEWER-01": "835d78cc4281df7b88125c266e193fa0295996a2d38e2efa578f0be25038a60a",
+    "REVIEWER-02": "f81588a55eee57d7bd8d4b537f7fec2e834c1d788c2e19d8ddb47c1dc85c4431",
+    "REVIEWER-03": "2534d6d598e830b6505f463189e0a93a51a94498ef2ee9b1b3acc4ec8a7825f3",
+    "REVIEWER-04": "70858f7342330c609330abeaffb5c7ee8d4f9adbc53a747733532c96db8cfcfe",
+    "REVIEWER-05": "82dac96de41f821c9f00df46d264ef47d55f832f3caffdfd8e5c2f2c17d267a2",
+    "REVIEWER-06": "cf6551d97fb33609440ca02642616d2ec281487b82c7d7d9bc3a95d6c2246314",
+    "REVIEWER-07": "6197044e95350e410172b3c13acf973d196491d9978b57e9776b38b1ebbc6d70",
+    "REVIEWER-08": "052808be5a8c36b0739886338a7b54b805434dbd629180b959249f421e226e4a"
+  },
+  "conditions": [
+    "filing_diff",
+    "source_search",
+    "extractive_summary",
+    "pure_news"
+  ],
+  "source_scope": "Previously public RH/DVN/EFX curated excerpts; not unseen full-filing pairs",
+  "private_materials": "Assignment key, individual participant packets and unfilled adjudication sheet retained outside public repository"
+}

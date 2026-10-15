@@ -10,3 +10,8 @@ artifacts/research_idea_generation/
 
 .venv/
 .pytest_cache/
+artifacts/research_ops_cache/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+private-evaluation/

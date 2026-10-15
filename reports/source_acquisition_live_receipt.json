@@ -1,0 +1,91 @@
+{
+  "scope": "Live acquisition controls, not a functioning SEC filing service or analyst evaluation",
+  "sec_attempt": {
+    "command": "annual-pair",
+    "source_mode": "current-vintage public acquisition, not a PIT archive",
+    "model_calls": 0,
+    "frozen_packet_changes": 0,
+    "status": "blocked",
+    "error_type": "AcquisitionError",
+    "reason": "HTTP 403: acquisition stopped; cached data are not relabeled fresh",
+    "attempts": [
+      {
+        "id": 1,
+        "url": "https://data.sec.gov/submissions/CIK0000320193.json",
+        "at": "2026-10-15T01:04:48.024497+00:00",
+        "outcome": "blocked_or_missing",
+        "status": 403,
+        "detail": "No retry or synthetic/provider fallback"
+      }
+    ]
+  },
+  "public_control_initial": {
+    "command": "fetch",
+    "source_mode": "current-vintage public acquisition, not a PIT archive",
+    "model_calls": 0,
+    "frozen_packet_changes": 0,
+    "source": {
+      "url": "https://raw.githubusercontent.com/JoshGutierrez56/pure-news-intelligence-demo/f0834b7ddee306a537d12ce4896509e803d5931e/demo/data/research_ideas/v2/manifest.json",
+      "sha256": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7",
+      "etag": "\"61b9e02d8a8544226d3724a6e77b3656f1dc1bf1da185c1f96993748d75cd273\"",
+      "last_modified": null,
+      "retrieved_at": "2026-10-15T01:04:59.912782+00:00",
+      "checked_at": "2026-10-15T01:04:59.912782+00:00",
+      "content_type": "text/plain",
+      "byte_count": 5747,
+      "http_status": 200,
+      "outcome": "acquired"
+    },
+    "status": "completed",
+    "attempts": [
+      {
+        "id": 1,
+        "url": "https://raw.githubusercontent.com/JoshGutierrez56/pure-news-intelligence-demo/f0834b7ddee306a537d12ce4896509e803d5931e/demo/data/research_ideas/v2/manifest.json",
+        "at": "2026-10-15T01:04:59.920037+00:00",
+        "outcome": "acquired",
+        "status": 200,
+        "detail": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7"
+      }
+    ]
+  },
+  "public_control_revalidated": {
+    "command": "fetch",
+    "source_mode": "current-vintage public acquisition, not a PIT archive",
+    "model_calls": 0,
+    "frozen_packet_changes": 0,
+    "source": {
+      "url": "https://raw.githubusercontent.com/JoshGutierrez56/pure-news-intelligence-demo/f0834b7ddee306a537d12ce4896509e803d5931e/demo/data/research_ideas/v2/manifest.json",
+      "sha256": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7",
+      "etag": "\"61b9e02d8a8544226d3724a6e77b3656f1dc1bf1da185c1f96993748d75cd273\"",
+      "last_modified": null,
+      "retrieved_at": "2026-10-15T01:04:59.912782+00:00",
+      "checked_at": "2026-10-15T01:05:00.148901+00:00",
+      "content_type": "text/plain",
+      "byte_count": 5747,
+      "http_status": 304,
+      "outcome": "not_modified"
+    },
+    "status": "completed",
+    "attempts": [
+      {
+        "id": 1,
+        "url": "https://raw.githubusercontent.com/JoshGutierrez56/pure-news-intelligence-demo/f0834b7ddee306a537d12ce4896509e803d5931e/demo/data/research_ideas/v2/manifest.json",
+        "at": "2026-10-15T01:04:59.920037+00:00",
+        "outcome": "acquired",
+        "status": 200,
+        "detail": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7"
+      },
+      {
+        "id": 2,
+        "url": "https://raw.githubusercontent.com/JoshGutierrez56/pure-news-intelligence-demo/f0834b7ddee306a537d12ce4896509e803d5931e/demo/data/research_ideas/v2/manifest.json",
+        "at": "2026-10-15T01:05:00.158339+00:00",
+        "outcome": "not_modified",
+        "status": 304,
+        "detail": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7"
+      }
+    ]
+  },
+  "source_manifest_sha256": "1611006a6a85fa9702846b22af4a957d2a2d2d0597123f7615d65bf71077f2d7",
+  "human_reviews": 0,
+  "frozen_packet_mutations": 0
+}
